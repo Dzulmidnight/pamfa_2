@@ -50,7 +50,10 @@
 				<div class="col-md-6 order-md-2 g-bg-white">
 					<div class="g-pa-15x">
 						<div class="g-mb-50">
-							<h1 class="g-color-green g-font-weight-700 g-font-size-50 g-letter-spacing-0_5 mb-4">PAMFA</h1>
+							<div class="col-sm-12">
+								<img style="width: 100%" src="<?php echo base_url(); ?>assets/img/logo/logo_pamfa.png" alt="">
+							</div>
+							
 							<p class="lead g-color-green">Inicio de sesión para usuarios con una cuenta PAMFA.</p>
 						</div>
 
@@ -59,7 +62,7 @@
 								<form>
 									<!-- Pricing -->
 									<label class="u-check d-block g-mb-20 ">
-										<input class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" name="radGroup1_1" type="radio" checked>
+										<input id="cliente" class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" name="radGroup1_1" type="radio" value="cliente" onclick="cambiarColor(this)" checked>
 
 										<div class="media d-block d-md-flex u-shadow-v25 g-bg-primary--checked ">
 											<div class="d-md-flex align-self-center g-pa-30">
@@ -68,16 +71,14 @@
 												</div>
 											</div>
 
-											<div class="media-body g-py-25 g-px-30 g-brd-top--dashed g-brd-top-none--md g-brd-left--dashed--md g-brd-gray-light-v3">
-												<h4 class="h4 text-uppercase g-font-weight-700 g-font-size-14 g-color-white--checked">Acceso para los clientes de PAMFA</h4>
-											</div>
+									
 										</div>
 									</label>
 									<!-- End Pricing -->
 
 									<!-- Pricing -->
 									<label class="u-check d-block g-mb-20">
-										<input class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" name="radGroup1_1" type="radio">
+										<input id="auditor" class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" name="radGroup1_1" type="radio" value="auditor" onclick="cambiarColor(this)">
 
 										<div class="media d-block d-md-flex u-shadow-v25 g-bg-primary--checked">
 											<div class="d-flex align-self-center g-pa-30">
@@ -86,16 +87,14 @@
 												</div>
 											</div>
 
-											<div class="media-body g-py-25 g-px-30 g-brd-top--dashed g-brd-top-none--md g-brd-left--dashed--md g-brd-gray-light-v3">
-												<h4 class="h4 text-uppercase g-font-weight-700 g-font-size-14 g-color-white--checked">Auditores PAMFA</h4>
-											</div>
+									
 										</div>
 									</label>
 									<!-- End Pricing -->
 
 									<!-- Pricing -->
 									<label class="u-check d-block">
-										<input class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" name="radGroup1_1" type="radio">
+										<input id="administrador" class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" name="radGroup1_1" type="radio" value="administrador" onclick="cambiarColor(this)">
 
 										<div class="media d-block d-md-flex u-shadow-v25 g-bg-primary--checked">
 											<div class="d-flex align-self-center g-pa-30">
@@ -104,9 +103,6 @@
 												</div>
 											</div>
 
-											<div class="media-body g-py-25 g-px-30 g-brd-top--dashed g-brd-top-none--md g-brd-left--dashed--md g-brd-gray-light-v3">
-												<h4 class="h4 text-uppercase g-font-weight-700 g-font-size-14 g-color-white--checked">Acceso para administrador</h4>
-											</div>
 										</div>
 									</label>
 									<!-- End Pricing -->
@@ -116,53 +112,44 @@
 					</div>
 				</div>
 
-				<div class="col-md-6 g-bg-gray-lineargradient">
-					<div class="g-pa-50 g-mx-70--xl">
+				<div id="iniciarSesion" class="col-md-6 g-bg-blue">
+					<div class="g-pa-50">
 						<!-- Form -->
 						<form class="g-py-15">
-							<h2 class="h3 g-color-black mb-4">Ingresar como cliente</h2>
-
+							<h2 id="tipoUsuario" class="h3 g-color-white mb-4">CLIENTE</h2>
 							<div class="mb-4">
-								<div class="input-group g-brd-primary--focus">
+								<div class="input-group">
 									<div class="input-group-prepend">
-										<span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-primary"><i class="icon-finance-067 u-line-icon-pro g-pos-rel g-top-2"></i></span>
+										<span class="input-group-text g-width-45 g-brd-right-none g-brd-white g-color-white"><i class="icon-finance-067 u-line-icon-pro"></i></span>
 									</div>
-									<input class="form-control g-color-black g-brd-left-none g-bg-white g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-15" type="email" placeholder="Usuario">
+									<input class="form-control g-color-black g-brd-left-none g-brd-white g-bg-transparent g-color-white g-placeholder-white g-pl-0 g-pr-15 g-py-13" type="email" placeholder="Usuario">
 								</div>
 							</div>
 
-							<div class="mb-4">
-								<div class="input-group g-brd-primary--focus">
+							<div class="g-mb-40">
+								<div class="input-group rounded">
 									<div class="input-group-prepend">
-										<span class="input-group-text g-width-45 g-brd-right-none g-brd-gray-light-v4 g-color-primary"><i class="icon-media-094 u-line-icon-pro g-pos-rel g-top-2"></i></span>
+										<span class="input-group-text g-width-45 g-brd-right-none g-brd-white g-color-white"><i class="icon-communication-062 u-line-icon-pro"></i></span>
 									</div>
-									<input class="form-control g-color-black g-brd-left-none g-bg-white g-brd-gray-light-v4 g-pl-0 g-pr-15 g-py-15" type="password" placeholder="Contraseña">
+									<input class="form-control g-color-black g-brd-left-none g-brd-white g-bg-transparent g-color-white g-placeholder-white g-pl-0 g-pr-15 g-py-13" type="tel" placeholder="Contraseña">
 								</div>
 							</div>
 
-							<div class="row justify-content-between mb-4">
-
-								<div class="col align-self-center text-right">
-									<a class="g-color-gray-dark-v4 g-color-primary--hover" href="#!">¿Olvido su contraseña?</a>
-								</div>
-							</div>
-
-							<div class="g-mb-50">
+							<div class="g-mb-60">
 								<button class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13" type="button">Ingresar</button>
 							</div>
-
-							<div class="text-center g-pos-rel pb-2 g-mb-50">
-								<div class="d-inline-block g-width-200 g-height-1 g-bg-gray-light-v4"></div>
-								<span class="u-icon-v2 u-icon-size--lg g-brd-gray-light-v4 g-color-gray-dark-v4 g-bg-white g-font-size-default rounded-circle text-uppercase g-absolute-centered g-pa-24">O</span>
-							</div>
-
-							<div class="row justify-content-between no-gutters mb-4">
-								<div class="col-12 text-center">
-									<button class="btn btn-md u-btn-outline-teal g-mr-10 g-py-13" type="button">
-										<i class="et-icon-document"></i>
-										¿No cuenta con un usuario? Regístrate
-									</button>
+							
+							<div id="seccionRegistrarse">
+								<div class="text-center g-pos-rel pb-2 g-mb-60">
+									<div class="d-inline-block w-100 g-height-1 g-bg-white"></div>
+									<span class="u-icon-v2 u-icon-size--lg g-brd-white g-color-white g-bg-teal g-font-size-default rounded-circle text-uppercase g-absolute-centered g-pa-24">Ó</span>
 								</div>
+
+
+								<button id="" class="btn btn-block u-btn-twitter rounded text-uppercase g-py-13" type="button">
+									<i class="et-icon-profile-male"></i>
+									¿Aún no tienes una cuenta? Regístrate
+								</button>								
 							</div>
 
 						</form>
@@ -191,77 +178,111 @@
 
 		<!-- Copyright Footer -->
 		<footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-20">
-		<div class="container">
-		<div class="row">
-		<div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
-		<div class="d-lg-flex">
-		<small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 &copy; All Rights Reserved.</small>
-		<ul class="u-list-inline">
-		<li class="list-inline-item">
-		<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Privacy Policy</a>
-		</li>
-		<li class="list-inline-item">
-		<span>|</span>
-		</li>
-		<li class="list-inline-item">
-		<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Terms of Use</a>
-		</li>
-		<li class="list-inline-item">
-		<span>|</span>
-		</li>
-		<li class="list-inline-item">
-		<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">License</a>
-		</li>
-		<li class="list-inline-item">
-		<span>|</span>
-		</li>
-		<li class="list-inline-item">
-		<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Support</a>
-		</li>
-		</ul>
-		</div>
-		</div>
+			<div class="container">
+			<div class="row">
+			<div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
+			<div class="d-lg-flex">
+			<small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 &copy; All Rights Reserved.</small>
+			<ul class="u-list-inline">
+			<li class="list-inline-item">
+			<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Privacy Policy</a>
+			</li>
+			<li class="list-inline-item">
+			<span>|</span>
+			</li>
+			<li class="list-inline-item">
+			<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Terms of Use</a>
+			</li>
+			<li class="list-inline-item">
+			<span>|</span>
+			</li>
+			<li class="list-inline-item">
+			<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">License</a>
+			</li>
+			<li class="list-inline-item">
+			<span>|</span>
+			</li>
+			<li class="list-inline-item">
+			<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Support</a>
+			</li>
+			</ul>
+			</div>
+			</div>
 
-		<div class="col-md-4 align-self-center">
-		<ul class="list-inline text-center text-md-right mb-0">
-		<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Facebook">
-		<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-		<i class="fa fa-facebook"></i>
-		</a>
-		</li>
-		<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Skype">
-		<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-		<i class="fa fa-skype"></i>
-		</a>
-		</li>
-		<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Linkedin">
-		<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-		<i class="fa fa-linkedin"></i>
-		</a>
-		</li>
-		<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Pinterest">
-		<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-		<i class="fa fa-pinterest"></i>
-		</a>
-		</li>
-		<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Twitter">
-		<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-		<i class="fa fa-twitter"></i>
-		</a>
-		</li>
-		<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Dribbble">
-		<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-		<i class="fa fa-dribbble"></i>
-		</a>
-		</li>
-		</ul>
-		</div>
-		</div>
-		</div>
+			<div class="col-md-4 align-self-center">
+			<ul class="list-inline text-center text-md-right mb-0">
+			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Facebook">
+			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+			<i class="fa fa-facebook"></i>
+			</a>
+			</li>
+			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Skype">
+			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+			<i class="fa fa-skype"></i>
+			</a>
+			</li>
+			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Linkedin">
+			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+			<i class="fa fa-linkedin"></i>
+			</a>
+			</li>
+			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Pinterest">
+			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+			<i class="fa fa-pinterest"></i>
+			</a>
+			</li>
+			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Twitter">
+			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+			<i class="fa fa-twitter"></i>
+			</a>
+			</li>
+			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Dribbble">
+			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+			<i class="fa fa-dribbble"></i>
+			</a>
+			</li>
+			</ul>
+			</div>
+			</div>
+			</div>
 		</footer>
 		<!-- End Copyright Footer -->
 
 	</main>
+
+	<script>
+		function cambiarColor(valor){
+			var valor = valor.value;
+			var seccion = document.getElementById('iniciarSesion');
+			var tipoUsuario = document.getElementById('tipoUsuario');
+			var seccionRegistrarse = document.getElementById('seccionRegistrarse');
+			var nombreClase = document.getElementById('iniciarSesion').classList.item(1);
+			console.log(nombreClase);
+
+			switch(valor){
+				case 'cliente':
+					seccion.classList.remove(nombreClase);
+					seccion.classList.add('g-bg-blue');
+					tipoUsuario.innerHTML = 'CLIENTE';
+					seccionRegistrarse.style.display = 'block';
+				break;
+				case 'auditor':
+					seccion.classList.remove(nombreClase);
+					seccion.classList.add('g-bg-deeporange');
+					tipoUsuario.innerHTML = 'AUDITOR';
+					seccionRegistrarse.style.display = 'none';
+				break;
+				case 'administrador':
+					seccion.classList.remove(nombreClase);
+					seccion.classList.add('g-bg-bluegray');
+					tipoUsuario.innerHTML = 'ADMINISTRADOR';
+					seccionRegistrarse.style.display = 'none';
+				break;
+				default:
+			}
+		}	
+	</script>
+
 
 	<!-- JS Global Compulsory -->
 	<script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
