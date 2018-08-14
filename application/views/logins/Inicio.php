@@ -34,7 +34,7 @@
 
 							<!-- Pricing -->
 							<label class="u-check d-block g-mb-20">
-								<input id="auditor" class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" name="radGroup1_1" type="radio" value="auditor" onclick="cambiarColor(this)">
+								<input id="auditor" class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" name="radGroup1_1" type="radio" value="auditor" onclick="cambiarColor(this)" onchange="mostrarFrmRegistro('ocultar')">
 
 								<div class="media d-block d-md-flex u-shadow-v25 g-bg-primary--checked">
 									<div class="d-flex align-self-center g-pa-30">
@@ -50,7 +50,7 @@
 
 							<!-- Pricing -->
 							<label class="u-check d-block">
-								<input id="administrador" class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" name="radGroup1_1" type="radio" value="administrador" onclick="cambiarColor(this)">
+								<input id="administrador" class="g-hidden-xs-up g-pos-abs g-top-10 g-right-10" name="radGroup1_1" type="radio" value="administrador" onclick="cambiarColor(this)" onchange="mostrarFrmRegistro('ocultar')">
 
 								<div class="media d-block d-md-flex u-shadow-v25 g-bg-primary--checked">
 									<div class="d-flex align-self-center g-pa-30">
@@ -95,7 +95,9 @@
 					</div>
 
 					<div class="g-mb-60">
-						<button class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13" type="button">Ingresar</button>
+						<a href="<?php echo base_url('backend/cliente/main/'); ?>" class="btn btn-md btn-block u-btn-primary rounded text-uppercase g-py-13">
+							Ingresar
+						</a>
 					</div>
 					
 					<div id="seccionRegistrarse">
@@ -153,9 +155,8 @@
 				<!-- End Form -->
 
 				<!-- Form nuevo registro -->
-				<form id="frmNuevoRegistro" class="g-py-15 g-bg-white g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" style="display:block">
-					<h2 id="tipoUsuario" class="h3 g-color-white mb-4">REGISTRARSE COMO NUEVO CLIENTE</h2>
-					
+				<form id="frmNuevoRegistro" class="g-py-15 g-bg-white g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" style="display:none">
+					<h2 id="tipoUsuario" class="h3 g-color-blue mb-4">REGISTRARSE COMO NUEVO CLIENTE</h2>
 					<div class="row">
 						<!-- INFORMACIÓN DEL USUARIO -->
 						<div class="col-sm-6">
@@ -187,14 +188,14 @@
 							<!-- -->
 							<div class="form-group g-mb-20">
 								<label class="g-mb-10" for="nombre_entidad">Nombre de la entidad legal *</label>
-								<textarea id="nombre_entidad" class="form-control form-control-md u-textarea-expandable rounded-0" rows="3" placeholder="Nombre de la entidad legal *"></textarea>
+								<textarea id="nombre_entidad" class="form-control form-control-md u-textarea-expandable rounded-0" rows="3" placeholder="Nombre de la entidad legal *" required></textarea>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<!-- -->
 							<div class="form-group g-mb-20">
 								<label class="g-mb-10" for="representante_legal">Nombre del representante lega *</label>
-								<textarea id="representante_legal" class="form-control form-control-md u-textarea-expandable rounded-0" rows="3" placeholder="Nombre del representante legal *"></textarea>
+								<textarea id="representante_legal" class="form-control form-control-md u-textarea-expandable rounded-0" rows="3" placeholder="Nombre del representante legal *" required></textarea>
 							</div>
 						</div>
 
@@ -273,10 +274,16 @@
 							</div>
 						</div>
 
-						<div class="col-sm-12">
+						<div class="col-sm-8">
 							<button type="button" class="btn btn-lg u-btn-primary g-mr-10 g-mb-15" onclick="validarInformacion('frmNuevoRegistro');">
 								<i class="fa fa-check-circle g-mr-5"></i>
 								Enviar información
+							</button>
+						</div>
+						<div class="col-sm-4">
+							<button type="button" class="btn btn-lg u-btn-bluegray g-mr-10 g-mb-15" onclick="mostrarFrmRegistro('ocultar');">
+								<i class="icon-close g-mr-5"></i>
+								Cancelar
 							</button>
 						</div>
 					</div>

@@ -2,7 +2,7 @@
 		<section class="g-bg-gray-light-v5 g-pa-30">
 			<div class="d-md-flex justify-content-md-center text-center">
 				<div class="align-self-md-center">
-					<p class="lead g-font-weight-400 g-mr-20--md g-mb-15 g-mb-0--md">¿Quieres saber los servicios que ofrece PAMFA?</p>
+					<p class="lead g-font-weight-400 g-mr-20--md g-mb-15 g-mb-0--md">¿Deseas conocer más sobre los servicios que ofrece PAMFA?</p>
 				</div>
 				<div class="align-self-md-center">
 					<a class="btn btn-md u-btn-darkgray" href="http://www.pamfa.com.mx/">Saber más</a>
@@ -16,71 +16,42 @@
 		<!-- Copyright Footer -->
 		<footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-20">
 			<div class="container">
-			<div class="row">
-			<div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
-			<div class="d-lg-flex">
-			<small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 &copy; All Rights Reserved.</small>
-			<ul class="u-list-inline">
-			<li class="list-inline-item">
-			<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Privacy Policy</a>
-			</li>
-			<li class="list-inline-item">
-			<span>|</span>
-			</li>
-			<li class="list-inline-item">
-			<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Terms of Use</a>
-			</li>
-			<li class="list-inline-item">
-			<span>|</span>
-			</li>
-			<li class="list-inline-item">
-			<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">License</a>
-			</li>
-			<li class="list-inline-item">
-			<span>|</span>
-			</li>
-			<li class="list-inline-item">
-			<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Support</a>
-			</li>
-			</ul>
-			</div>
-			</div>
+				<div class="row">
+					<div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
+						<div class="d-lg-flex">
+							<small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 &copy; Todos los derechos reservados.</small>
+							<ul class="u-list-inline">
+								<li class="list-inline-item">
+									<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Politica de privacidad</a>
+								</li>
+								<li class="list-inline-item">
+									<span>|</span>
+								</li>
+								<li class="list-inline-item">
+									<a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Terminos de uso</a>
+								</li>
+								<li class="list-inline-item">
+									<span>|</span>
+								</li>
+							</ul>
+						</div>
+					</div>
 
-			<div class="col-md-4 align-self-center">
-			<ul class="list-inline text-center text-md-right mb-0">
-			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Facebook">
-			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-			<i class="fa fa-facebook"></i>
-			</a>
-			</li>
-			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Skype">
-			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-			<i class="fa fa-skype"></i>
-			</a>
-			</li>
-			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Linkedin">
-			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-			<i class="fa fa-linkedin"></i>
-			</a>
-			</li>
-			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Pinterest">
-			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-			<i class="fa fa-pinterest"></i>
-			</a>
-			</li>
-			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Twitter">
-			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-			<i class="fa fa-twitter"></i>
-			</a>
-			</li>
-			<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Dribbble">
-			<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
-			<i class="fa fa-dribbble"></i>
-			</a>
-			</li>
-			</ul>
-			</div>
-			</div>
+					<div class="col-md-4 align-self-center">
+						<ul class="list-inline text-center text-md-right mb-0">
+							<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Facebook">
+								<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+									<i class="fa fa-facebook"></i>
+								</a>
+							</li>
+							<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="Skype">
+								<a href="#!" class="g-color-white-opacity-0_5 g-color-white--hover">
+									<i class="fa fa-skype"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</footer>
 		<!-- End Copyright Footer -->
@@ -142,7 +113,8 @@
 				break;
 				case 'ocultar': 
 					document.getElementById('frmNuevoRegistro').style.display = 'none';
-					document.getElementById('frmNuevoRegistro').style.display = 'block';
+					document.getElementById('frmNuevoRegistro').reset();
+					document.getElementById('recuperarPassword').style.display = 'none';
 					document.getElementById('frmIngresar').style.display = 'block';
 				break;
 			}
@@ -164,16 +136,32 @@
 
 			}
 		}
-
+//ernest maya
 		function validarInformacion(id){
 			var id = id;
 			var formulario = document.forms[id];
-			var elementos = formulario.elements.length;
-			console.log(formulario);
-			console.log(elementos);
+			var numElementos = formulario.elements.length;
+			//console.log(formulario);
+			//console.log(numElementos);
 
-			for(var i = 0; i < elementos; i++){
-				console.log(formulario[i].required);
+			for(var i = 0; i < numElementos; i++){
+				//console.log(formulario[i].required);
+				if(formulario[i].required){
+					if(formulario[i].type == 'select-one'){
+						indice = document.getElementById(formulario[i].id).selectedIndex;
+						if( indice == null || indice == 0 ) {
+							document.getElementById(formulario[i].id).focus();
+						}
+					}else{
+						if(!formulario[i].value){
+							document.getElementById(formulario[i].id).focus();
+							//console.log('falta este: '+formulario[i].id);
+							//console.log('tipo: '+formulario[i].type);
+						}
+					}
+					//console.log(formulario[i].id);
+					//console.log(formulario[i].value);
+				}
 			}
 
 
