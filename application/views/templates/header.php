@@ -11,7 +11,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>favicon.ico">
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/logo/favicon.png">
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 	<!-- CSS Global Compulsory -->

@@ -156,7 +156,7 @@
 
 				<!-- Form nuevo registro -->
 				<form id="frmNuevoRegistro" class="g-py-15 g-bg-white g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" style="display:none">
-					<h2 id="tipoUsuario" class="h3 g-color-blue mb-4">REGISTRARSE COMO NUEVO CLIENTE</h2>
+					<h2 id="tipoUsuario" class="h3 g-color-dark mb-4">REGISTRARSE COMO NUEVO CLIENTE</h2>
 					<div class="row">
 						<!-- INFORMACIÓN DEL USUARIO -->
 						<div class="col-sm-6">
@@ -188,14 +188,14 @@
 							<!-- -->
 							<div class="form-group g-mb-20">
 								<label class="g-mb-10" for="nombre_entidad">Nombre de la entidad legal *</label>
-								<textarea id="nombre_entidad" class="form-control form-control-md u-textarea-expandable rounded-0" rows="3" placeholder="Nombre de la entidad legal *" required></textarea>
+								<textarea id="nombre_entidad" class="form-control form-control-md u-textarea-expandable rounded-0" rows="3" placeholder="Empresa o persona física *" required></textarea>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<!-- -->
 							<div class="form-group g-mb-20">
-								<label class="g-mb-10" for="representante_legal">Nombre del representante lega *</label>
-								<textarea id="representante_legal" class="form-control form-control-md u-textarea-expandable rounded-0" rows="3" placeholder="Nombre del representante legal *" required></textarea>
+								<label class="g-mb-10" for="representante_legal">Nombre del representante legal *</label>
+								<textarea id="representante_legal" class="form-control form-control-md u-textarea-expandable rounded-0" rows="3" placeholder="Representante legal *" required></textarea>
 							</div>
 						</div>
 
@@ -280,8 +280,8 @@
 								Enviar información
 							</button>
 						</div>
-						<div class="col-sm-4">
-							<button type="button" class="btn btn-lg u-btn-bluegray g-mr-10 g-mb-15" onclick="mostrarFrmRegistro('ocultar');">
+						<div class="col-sm-4 text-right">
+							<button type="button" class="btn btn-lg u-btn-bluegray g-mb-15" onclick="mostrarFrmRegistro('ocultar');">
 								<i class="icon-close g-mr-5"></i>
 								Cancelar
 							</button>
