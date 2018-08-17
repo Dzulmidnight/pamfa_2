@@ -93,6 +93,7 @@
 
 				break;
 			}
+				
 		}
 		function recuperarPassword(estado){
 			var estado = estado;
@@ -169,7 +170,7 @@
 				}
 			}
 
-
+		
 		}
 	</script>
 

@@ -21,7 +21,7 @@
 							<div class="col-md-6">
 								<div class="row g-mb-20">
 									<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-										<label class="mb-0" for="#firstName">Usuario *</label>
+										<label class="mb-0" for="#username">Usuario *</label>
 									</div>
 
 									<div class="col-md-9 align-self-center">
@@ -29,7 +29,7 @@
 											<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
 												<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
 											</span>
-											<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
+											<input id="username" name="username" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 										data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
 										</div>
 									</div>
@@ -38,7 +38,7 @@
 							<div class="col-md-6">
 								<div class="row g-mb-20">
 									<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-										<label class="mb-0" for="#firstName">Contraseña *</label>
+										<label class="mb-0" for="#password">Contraseña *</label>
 									</div>
 
 									<div class="col-md-9 align-self-center">
@@ -46,7 +46,7 @@
 											<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
 												<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
 											</span>
-											<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
+											<input id="password" name="password" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 										data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
 										</div>
 									</div>
@@ -316,4 +316,3 @@
 				</div>
 			</div>
 		</div>
-	</div>
