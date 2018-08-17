@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['backend/cliente/administrador/perfiles/(:any)'] = 'backend/administrador/usuario/Perfiles/index/$1';
 $route['backend/cliente/usuario/perfiles/(:any)'] = 'backend/cliente/usuario/Perfiles/index/$1';
 
 $route['default_controller'] = 'logins/view';

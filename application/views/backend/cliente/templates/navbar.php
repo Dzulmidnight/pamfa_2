@@ -61,6 +61,71 @@
 		</li>
 		<!-- End Layouts Settings -->
 
+		<!-- Layouts Settings -->
+		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item u-side-nav-opened has-active">
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu3">
+				<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+					<i class="et-icon-profile-male"></i>
+				</span>
+				<span class="media-body align-self-center">Usuario</span>
+				<span class="d-flex align-self-center u-side-nav--control-icon">
+					<i class="hs-admin-angle-right"></i>
+				</span>
+				<span class="u-side-nav--has-sub-menu__indicator"></span>
+			</a>
+
+			<!-- Layouts Settings: Submenu-1 -->
+			<ul id="subMenu3" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0" style="display: block;">
+				<!-- Header Static -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/cliente/usuario/perfiles'); ?>">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-settings"></i>
+						</span>
+						<span class="media-body align-self-center">Perfil</span>
+					</a>
+				</li>
+				<!-- End Header Static -->
+
+			</ul>
+			<!-- End Layouts Settings: Submenu-1 -->
+		</li>
+		<!-- End Layouts Settings -->
+
+		<!-- Layouts Settings -->
+		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item u-side-nav-opened has-active">
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu4">
+				<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+					<i class="et-icon-profile-male"></i>
+				</span>
+				<span class="media-body align-self-center">Usuario</span>
+				<span class="d-flex align-self-center u-side-nav--control-icon">
+					<i class="hs-admin-angle-right"></i>
+				</span>
+				<span class="u-side-nav--has-sub-menu__indicator"></span>
+			</a>
+
+			<!-- Layouts Settings: Submenu-1 -->
+			<ul id="subMenu4" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0" style="display: block;">
+				<!-- Header Static -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/cliente/usuario/perfiles'); ?>">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-settings"></i>
+						</span>
+						<span class="media-body align-self-center">Perfil</span>
+					</a>
+				</li>
+				<!-- End Header Static -->
+
+			</ul>
+			<!-- End Layouts Settings: Submenu-1 -->
+		</li>
+		<!-- End Layouts Settings -->
+
+
+
+
 
 		<!-- Salir -->
 		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">

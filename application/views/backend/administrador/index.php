@@ -33,7 +33,7 @@
 										<td>1</td>
 										<td>Stella Chandler</td>
 										<td>Dropbox Inc.</td>
-										<td>Sales Manager</td>
+										<td>Michoacan</td>
 										<td>
 											<span class="u-tags-v1 text-center g-width-110 g-brd-around g-brd-lightbrown g-bg-lightbrown g-font-weight-400 g-color-white g-rounded-50 g-py-4 g-px-15">Pendiente</span>
 										</td>
@@ -88,50 +88,5 @@
 		</div>
 
            
-<!-- JS Global Compulsory -->
-<script src="<?php echo base_url(); ?>admin/assets/vendor/jquery/jquery.min.js"></script>
-<script src="<?php echo base_url(); ?>admin/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
 
-<!-- JS Custom -->
-<script src="<?php echo base_url(); ?>admin/assets/js/custom.js"></script>
-
-<!-- JS Plugins Init. -->
-<script>
-	$(document).on('ready', function () {
-		// initialization of custom select
-		$('.js-select').selectpicker();
-
-		// initialization of sidebar navigation component
-		$.HSCore.components.HSSideNav.init('.js-side-nav');
-
-		// initialization of hamburger
-		$.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-		// initialization of HSDropdown component
-		$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-			dropdownHideOnScroll: false,
-			dropdownType: 'css-animation',
-			dropdownAnimationIn: 'fadeIn',
-			dropdownAnimationOut: 'fadeOut'
-		});
-
-		// initialization of custom scrollbar
-		$.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
-
-		// initialization of editable table
-		$('.js-editable-table tr').editable({
-			keyboard: true,
-			dblclick: true,
-			button: true,
-			buttonSelector: '.js-edit',
-			maintainWidth: true,
-			edit: function (values) {
-				$('.js-edit i', this).removeClass('hs-admin-pencil').addClass('hs-admin-check g-color-lightblue-v3');
-			},
-			save: function (values) {
-				$('.js-edit i', this).removeClass('hs-admin-check g-color-lightblue-v3').addClass('hs-admin-pencil');
-			}
-		});
-	});
-</script>
 
