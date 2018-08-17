@@ -73,21 +73,27 @@
 					seccion.classList.add('g-bg-blue');
 					tipoUsuario.innerHTML = 'CLIENTE';
 					seccionRegistrarse.style.display = 'block';
+					document.getElementById('inputOculto').value = 'cliente';
 				break;
 				case 'auditor':
 					seccion.classList.remove(nombreClase);
 					seccion.classList.add('g-bg-teal');
 					tipoUsuario.innerHTML = 'AUDITOR';
 					seccionRegistrarse.style.display = 'none';
+					document.getElementById('inputOculto').value = 'auditor';
 				break;
 				case 'administrador':
 					seccion.classList.remove(nombreClase);
 					seccion.classList.add('g-bg-bluegray');
 					tipoUsuario.innerHTML = 'ADMINISTRADOR';
 					seccionRegistrarse.style.display = 'none';
+					document.getElementById('inputOculto').value = 'administrador';
 				break;
 				default:
+
+				break;
 			}
+				
 		}
 		function recuperarPassword(estado){
 			var estado = estado;
@@ -164,7 +170,7 @@
 				}
 			}
 
-
+		
 		}
 	</script>
 
