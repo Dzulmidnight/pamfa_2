@@ -64,11 +64,14 @@
 
 		<!-- Salir -->
 		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
-			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#">
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="<?php echo base_url('CLogin/salir'); ?>">
 				<span class="d-flex align-self-center g-font-size-18 g-mr-18">
 					<i class="icon-logout"></i>
 				</span>
-				<span class="media-body align-self-center">Salir</span>
+               
+				<span class="media-body align-self-center" >Salire</span>
+             
+                
 			</a>
 		</li>
 		<!-- End Salir -->

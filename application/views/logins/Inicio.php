@@ -10,7 +10,7 @@
 						<img style="width: 100%" src="<?php echo base_url(); ?>assets/img/logo/logo_pamfa.png" alt="">
 					</div>
 					
-					<p class="lead g-color-green">Inicio de sesión para usuarios con una cuenta PAMFA.</p>
+					<p class="lead g-color-green">Inicio de sesión para usuarios con una cuenta PAMFA. </p>
 				</div>
 
 				<div class="row"><!-- inicia row -->
