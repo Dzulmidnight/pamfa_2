@@ -22,7 +22,8 @@ class cLogin extends CI_Controller {
 		
 		$res=$this->mLogin->ingresar($usu,$pass,$tipo);
 		
-		if($res){
+		if($res==1){
+		
 		
 		$this->load->view('backend/cliente/templates/header');
 			$this->load->view('backend/cliente/templates/topnavigation');
@@ -36,4 +37,17 @@ class cLogin extends CI_Controller {
 		$this->load->view('logins/inicio');
 			$this->load->view('templates/footer');}
 	}
+	
+	public function salir()
+	{
+		
+		
+		unset($_SESSION['s_idusuario'],
+		$_SESSION['s_usuario']);
+		
+		$this->load->view('templates/header');
+		$this->load->view('logins/inicio');
+			$this->load->view('templates/footer');
+	}
+		
 }

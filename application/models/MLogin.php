@@ -11,7 +11,7 @@ class mLogin extends CI_Model {
 	public function ingresar($usu,$pass,$tipo)
 	{
 		
-		$this->db->select('c.id_cliente,c.username,c.password,c.estatus');
+		$this->db->select('c.id_cliente,c.nombreLegal,c.username,c.password,c.estatus');
 		if($tipo=='cliente'){
 		$this->db->from('cliente c');
 		}
@@ -28,6 +28,15 @@ class mLogin extends CI_Model {
 	
 	$resultado=$this->db->get();
 	
-	return $resultado->result();
+	if($resultado->num_rows()>0){
+	$r=$resultado->row();
+	
+	$s_usuario=array('s_idusuario'=>$r->id_cliente,'s_usuario'=>$r->nombreLegal);
+	$this->session->set_userdata($s_usuario);
+	
+	return 1;
+	
+	}
+	else { return 0;}
 	}
 }
