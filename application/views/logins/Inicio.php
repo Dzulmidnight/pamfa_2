@@ -117,8 +117,13 @@
 							¿Aún no tienes una cuenta? Regístrate
 						</button>								
 					</div>
+<<<<<<< HEAD
+
+
+=======
                   
 <input type="hidden" id="inputOculto" name="inputOculto" value="cliente"/>
+>>>>>>> master
 				</form>
 				<!-- End Form -->
 

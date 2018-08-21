@@ -1,0 +1,173 @@
+<div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light">
+	<ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu g-min-height-100vh mb-0">
+		<!-- Dashboards -->
+		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu1">
+				<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+					<i class="hs-admin-server"></i>
+				</span>
+				<span class="media-body align-self-center">Dashboard</span>
+				<span class="d-flex align-self-center u-side-nav--control-icon">
+					<i class="hs-admin-angle-right"></i>
+				</span>
+				<span class="u-side-nav--has-sub-menu__indicator"></span>
+			</a>
+
+			<!-- Dashboards: Submenu-1 -->
+			<ul id="subMenu1" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<!-- Dashboards v1 -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/cliente/main'); ?>">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-infinite"></i>
+						</span>
+						<span class="media-body align-self-center">Inicio</span>
+					</a>
+				</li>
+				<!-- End Dashboards v1 -->
+			</ul>
+			<!-- End Dashboards: Submenu-1 -->
+		</li>
+		<!-- End Dashboards -->
+
+		<!-- Inicia opción usuario -->
+		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu2">
+				<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+					<i class="et-icon-profile-male"></i>
+				</span>
+				<span class="media-body align-self-center">Usuario</span>
+				<span class="d-flex align-self-center u-side-nav--control-icon">
+					<i class="hs-admin-angle-right"></i>
+				</span>
+				<span class="u-side-nav--has-sub-menu__indicator"></span>
+			</a>
+
+			<!-- Layouts Settings: Submenu-1 -->
+			<ul id="subMenu2" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0" style="display: block;">
+				<!-- Header Static -->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/administrador/usuario/perfiles'); ?>">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-settings"></i>
+						</span>
+						<span class="media-body align-self-center">Perfil</span>
+					</a>
+				</li>
+				<!-- End Header Static -->
+
+			</ul>
+			<!-- End Layouts Settings: Submenu-1 -->
+		</li>
+		<!-- Termina opcion usuario -->
+
+
+		<!-- Inicia opción clientes -->
+		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu4">
+				<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+					<i class="fa fa-handshake-o"></i>
+				</span>
+				<span class="media-body align-self-center">Clientes</span>
+				<span class="d-flex align-self-center u-side-nav--control-icon">
+					<i class="hs-admin-angle-right"></i>
+				</span>
+
+				<span class="u-side-nav--has-sub-menu__indicator"></span>
+			</a>
+
+			<ul id="subMenu4" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/administrador/clientes/clientes'); ?>">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-layout-list-thumb"></i>
+						</span>
+						<span class="media-body align-self-center">Listado clientes</span>
+					</a>
+				</li>
+
+			</ul>
+
+		</li>
+		<!-- Termina opción clientes -->
+
+		<!-- Inicia opción auditores -->
+		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu7">
+				<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+					<i class="icon-graduation"></i>
+				</span>
+				<span class="media-body align-self-center">Auditores</span>
+				<span class="d-flex align-self-center u-side-nav--control-icon">
+					<i class="hs-admin-angle-right"></i>
+				</span>
+
+				<span class="u-side-nav--has-sub-menu__indicator"></span>
+			</a>
+
+			<!-- auditores: Submenu-1 -->
+			<ul id="subMenu7" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="../tables/tables-basic.html">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-layout-list-thumb"></i>
+						</span>
+						<span class="media-body align-self-center">Listado auditores</span>
+					</a>
+				</li>
+			</ul>
+			<!-- End auditores: Submenu-1 -->
+		</li>
+		<!-- Termina opción auditores -->
+
+
+		<!-- Inicia opción administradores -->
+		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu8">
+				<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+					<i class="icon-communication-109 u-line-icon-pro"></i>
+				</span>
+				<span class="media-body align-self-center">Administradores</span>
+				<span class="d-flex align-self-center u-side-nav--control-icon">
+					<i class="hs-admin-angle-right"></i>
+				</span>
+
+				<span class="u-side-nav--has-sub-menu__indicator"></span>
+			</a>
+
+			<!-- administradores: Submenu-1 -->
+			<ul id="subMenu8" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="../tables/tables-basic.html">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-layout-list-thumb"></i>
+						</span>
+						<span class="media-body align-self-center">Listado administradores</span>
+					</a>
+				</li>
+
+			</ul>
+			<!-- End administradores: Submenu-1 -->
+		</li>
+		<!-- Termina opción administradores -->
+
+
+
+
+
+		<!-- Salir -->
+		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#">
+				<span class="d-flex align-self-center g-font-size-18 g-mr-18">
+					<i class="icon-logout"></i>
+				</span>
+				<span class="media-body align-self-center">Salir</span>
+			</a>
+		</li>
+		<!-- End Salir -->
+
+	</ul>
+</div>
+<!-- End Sidebar Nav -->
+
