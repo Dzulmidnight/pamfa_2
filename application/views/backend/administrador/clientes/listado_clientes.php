@@ -150,10 +150,19 @@
 									<td>
 										<div class="d-inline-block">
 											<span class="d-flex align-items-center justify-content-center u-tags-v1 g-brd-around g-bg-gray-light-v8 g-bg-gray-light-v8 g-font-size-default g-color-gray-dark-v6 g-rounded-50 g-py-4 g-px-15">
-												<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightblue-v3 g-mr-8"></span>
+												<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-red g-mr-8"></span>
+												<!-- 
+												EN ESPERA
+													<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-yellow g-mr-8"></span>
+												CANCELADO
+													<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-red g-mr-8"></span>
+												AUTORIZADO
+													<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-green g-mr-8"></span>
+												-->
 												Nombre representante
 											</span>
 										</div>
+
 									</td>
 
 									<!-- nombre del estado -->
@@ -228,7 +237,7 @@
 									<td>
 										<div class="d-inline-block">
 											<span class="d-flex align-items-center justify-content-center u-tags-v1 g-brd-around g-bg-gray-light-v8 g-bg-gray-light-v8 g-font-size-default g-color-gray-dark-v6 g-rounded-50 g-py-4 g-px-15">
-												<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightblue-v3 g-mr-8"></span>
+												<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-yellow g-mr-8"></span>
 												Employees
 											</span>
 										</div>
@@ -298,7 +307,7 @@
 									<td>
 										<div class="d-inline-block">
 											<span class="d-flex align-items-center justify-content-center u-tags-v1 g-brd-around g-bg-gray-light-v8 g-bg-gray-light-v8 g-font-size-default g-color-gray-dark-v6 g-rounded-50 g-py-4 g-px-15">
-												<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-lightblue-v3 g-mr-8"></span>
+												<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-green g-mr-8"></span>
 												Employees
 											</span>
 										</div>
