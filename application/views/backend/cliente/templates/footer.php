@@ -186,6 +186,16 @@
 		</script>
 
 
+<!-- FORM-WIZARD -->
+    <script src="<?php echo base_url(); ?>form-wizard/bootstrap/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>form-wizard/jquery.bootstrap.wizard.js"></script>
+	<script src="<?php echo base_url(); ?>form-wizard/prettify.js"></script>
+	<script>
+		
+		$(document).ready(function() {
+		  	$('#rootwizard').bootstrapWizard({'tabClass': 'bwizard-steps'});
+		});
+	</script>
 
 	</body>
 
