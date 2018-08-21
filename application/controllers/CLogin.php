@@ -17,7 +17,7 @@ class cLogin extends CI_Controller {
 		$tipo=$this->input->post('inputOculto');
 		
 		$usu=$this->input->post('username');
-		$pass=sha1($this->input->post('password'));
+		$pass=$this->input->post('password');
 		
 		
 		$res=$this->mLogin->ingresar($usu,$pass,$tipo);
