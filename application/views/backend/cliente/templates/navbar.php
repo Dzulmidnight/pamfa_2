@@ -68,7 +68,7 @@
 					<i class="icon-logout"></i>
 				</span>
                
-				<span class="media-body align-self-center" >Salire</span>
+				<span class="media-body align-self-center" >Salir</span>
              
                 
 			</a>

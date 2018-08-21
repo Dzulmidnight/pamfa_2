@@ -2,6 +2,10 @@
 	
 class Clientes extends CI_Controller{
 
+function __construct(){
+		parent:: __construct();
+		$this->load->model('mCliente');
+	}
 	function index($seccion = null){
 
 		$data['seccion'] = $seccion;
@@ -14,6 +18,7 @@ class Clientes extends CI_Controller{
 				$seccion = 'backend/administrador/usuario/datos_generales';
 				break;
 			default:
+			$data['consulta_gral'] = $this->mCliente->consulta_gral();
 				$seccion = 'backend/administrador/clientes/listado_clientes';
 				break;
 		}
