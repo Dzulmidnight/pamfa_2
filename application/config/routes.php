@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['backend/cliente/usuario/perfiles/(:any)'] = 'backend/cliente/usuario/Perfiles/index/$1';
+$route['backend/cliente/solicitud/solicitudes/(:any)'] = 'backend/cliente/solicitud/Solicitudes/$1';
 
 $route['default_controller'] = 'logins/view';
 $route['(:any)'] = 'logins/view/$1'; /// cualquier pagina que este dentro de esta ruta $1 = representa cualquiera
