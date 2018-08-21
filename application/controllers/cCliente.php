@@ -16,7 +16,7 @@ class cCliente extends CI_Controller {
 				
 
 		$params['username']=$this->input->post('username');
-		$params['password']=sha1($this->input->post('password'));
+		$params['password']=$this->input->post('password');
 		$params['nombreLegal']=$this->input->post('nombreLegal');
 		$params['nombreRepresentante']=$this->input->post('nombreRepresentante');
 		$params['direccion']=$this->input->post('direccion');
