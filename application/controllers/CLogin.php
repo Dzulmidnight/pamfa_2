@@ -24,12 +24,20 @@ class cLogin extends CI_Controller {
 		
 		if($res==1){
 		
-		
+		if($this->session->userdata('s_tipo')=='cliente'){
 		$this->load->view('backend/cliente/templates/header');
 			$this->load->view('backend/cliente/templates/topnavigation');
 			$this->load->view('backend/cliente/templates/navbar.php');
 			$this->load->view('backend/cliente/index');
 			$this->load->view('backend/cliente/templates/footer');
+		}
+		if($this->session->userdata('s_tipo')=='administrador'){
+			$this->load->view('backend/administrador/templates/header');
+			$this->load->view('backend/administrador/templates/topnavigation');
+			$this->load->view('backend/administrador/templates/navbar.php');
+			$this->load->view('backend/administrador/index');
+			$this->load->view('backend/administrador/templates/footer');
+		}
 		}
 		else{
 			//echo "datos incorrectos";
@@ -41,9 +49,9 @@ class cLogin extends CI_Controller {
 	public function salir()
 	{
 		
+		$this->session->sess_destroy();
 		
-		unset($_SESSION['s_idusuario'],
-		$_SESSION['s_usuario']);
+		
 		
 		$this->load->view('templates/header');
 		$this->load->view('logins/inicio');

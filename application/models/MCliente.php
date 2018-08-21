@@ -124,4 +124,44 @@ class mCliente extends CI_Model {
         }
 		
 	}
+
+public function consulta_gral()
+
+	{
+		
+		$this->db->select('*');
+		
+		$this->db->from('cliente c');
+		
+		//$this->db->where('id_cliente',$this->session->userdata('s_idusuario'));
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->result();
+        }
+}
+public function estatus($e,$id,$fm)
+	{
+		if($e=='activar'){
+		$campos=array('estatus'=>1,
+		
+		'fechaAceptado'=>$fm);
+		}
+		if($e=='rechazo'){
+		$campos=array('estatus'=>2,
+		
+		'fechaRechazo'=>$fm);
+		}
+		if($e=='baja'){
+		$campos=array('estatus'=>3,
+		
+		'fechaBaja'=>$fm);
+		}
+		
+		$this->db->where('id_cliente', $id);
+		$this->db->update('cliente',$campos);
+		
+		
+		
+	}
 }
