@@ -295,7 +295,7 @@ input.invalid {
 					<!-- termina DATOS DEL CLIENTE -->
 
 					<!-- inicia 2.- DATOS DE FACTURACIÓN -->
-					<div class="tab">Contact Info:
+					<div class="tab">
 				    	<div class="card g-brd-gray-light-v7 g-mb-30">
 							<div id="datos_facturacion">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
@@ -486,12 +486,12 @@ input.invalid {
 										</div>
 
 
-										<hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
+										<!--<hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
 
 										<div>
 											<button class="btn btn-md btn-xl--md u-btn-lightblue-v3 g-width-160--md g-font-size-12 g-font-size-default--md g-mb-10" type="submit">Guardar cambios</button>
 											<button class="btn btn-md btn-xl--md u-btn-outline-gray-dark-v6 g-font-size-12 g-font-size-default--md g-mr-10 g-mb-10" type="reset">Cancelar</button>
-										</div>
+										</div>-->
 									</form>
 								</div>
 							</div>
@@ -500,17 +500,173 @@ input.invalid {
 					<!-- termina DATOS DE FACTURACIÓN -->
 
 					<!-- inicia 3.- PRODUCTOS POR CERTIFICAR -->
-					<div class="tab">Birthday:
-						<p><input placeholder="dd" oninput="this.className = ''"></p>
-						<p><input placeholder="mm" oninput="this.className = ''"></p>
-						<p><input placeholder="yyyy" oninput="this.className = ''"></p>
+					<div class="tab">
+				     	<div class="card g-brd-gray-light-v7 g-mb-30">
+
+							<div id="datosCliente">
+								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+									<form class="js-validate">
+
+										<header>
+											<h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">3.- PRODUCTOS QUE DESEA CERTIFICAR</h2>
+										</header>
+										<hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
+
+										<div class="row">
+											<div class="col-md-12">
+												<button class="btn u-btn-blue g-mr-10 g-mb-15">
+													<i class="fa fa-plus"></i> Agregar otro
+												</button>
+												<table class="table">
+													<tr>
+														<td>
+															Nombre del producto
+														</td>
+														<td>
+															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder=""></textarea>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</form>
+								</div>
+								
+							</div>
+				     	</div>
 					</div>
 					<!-- termina PRODUCTOS POR CERTIFICAR -->
 
 					<!-- inicia 4.- CERTIFICACIONES ANTERIORES -->
-					<div class="tab">Login Info:
-						<p><input placeholder="Username..." oninput="this.className = ''"></p>
-						<p><input placeholder="Password..." oninput="this.className = ''"></p>
+					<div class="tab">
+				     	<div class="card g-brd-gray-light-v7 g-mb-30">
+
+							<div id="datosCliente">
+								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+									<form class="js-validate">
+
+										<header>
+											<h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">3.- CERTIFICACIONES CON LAS QUE CUENTA</h2>
+										</header>
+										<hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
+
+										<div class="row">
+											<div class="col-md-12">
+												<p>
+													Seleccione los esquemas de certificación con los que cuenta o conto.
+												</p>
+											</div>
+											<div class="col-md-6">
+<div class="d-flex align-items-center justify-content-between">
+    <p>Option 3</p>
+    <div>
+      <label class="u-check g-mr-15 mb-0">
+        <input class="g-hidden-xs-up g-pos-abs g-top-10 g-left-10" type="checkbox" checked="">
+        <div class="u-check-icon-checkbox-v3 g-bg-primary--checked rounded-0">
+          <i class="fa fa-check g-absolute-centered g-color-white g-show-check"></i>
+          <i class="fa fa-plus g-absolute-centered g-color-primary g-hide-check"></i>
+        </div>
+      </label>
+
+      <label class="u-check g-mr-15 mb-0">
+        <input class="g-hidden-xs-up g-pos-abs g-top-10 g-left-10" type="checkbox" checked="">
+        <div class="u-check-icon-checkbox-v3 g-bg-primary--checked rounded-0">
+          <i class="ti ti-check g-absolute-centered g-color-white g-show-check"></i>
+          <i class="ti ti-plus g-absolute-centered g-color-primary g-hide-check"></i>
+        </div>
+      </label>
+
+      <label class="u-check g-mr-15 mb-0">
+        <input class="g-hidden-xs-up g-pos-abs g-top-10 g-left-10" type="checkbox" checked="">
+        <div class="u-check-icon-checkbox-v3 g-bg-primary--checked rounded-0">
+          <i class="ti ti-check g-absolute-centered g-color-white g-show-check"></i>
+          <i class="ti ti-plus g-absolute-centered g-color-primary g-hide-check"></i>
+        </div>
+      </label>
+
+      <label class="u-check mb-0">
+        <input class="g-hidden-xs-up g-pos-abs g-top-10 g-left-10" type="checkbox">
+        <div class="u-check-icon-checkbox-v3 g-bg-primary--checked rounded-0">
+          <i class="ti ti-check g-absolute-centered g-color-white g-show-check"></i>
+          <i class="ti ti-plus g-absolute-centered g-color-primary g-hide-check"></i>
+        </div>
+      </label>
+    </div>
+  </div>
+											</div>
+											<!-- Left Column -->
+											<div class="col-md-6">
+												<div class="form-group g-mb-10">
+													<label class="u-check g-pl-25">
+														<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" checked="" type="checkbox">
+														<div class="u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
+															<i class="fa" data-check-icon="&#xf00c"></i>
+														</div>
+														GLOBALG.A.P
+													</label>
+												</div>
+
+												<div class="form-group g-mb-10">
+													<label class="u-check g-pl-25">
+														<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
+														<div class="u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
+															<i class="fa" data-check-icon="&#xf00c"></i>
+														</div>
+														Global Localization Number
+													</label>
+												</div>
+
+												<div class="form-group g-mb-10 g-mb-0--md">
+													<label class="u-check g-pl-25">
+														<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
+														<div class="u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
+															<i class="fa" data-check-icon="&#xf00c"></i>
+														</div>
+														GLOBALG.A.P CoC
+													</label>
+												</div>
+											</div>
+											<!-- End Left Column -->
+
+											<!-- Right Column -->
+											<div class="col-md-6">
+												<div class="form-group g-mb-10">
+													<label class="u-check g-pl-25">
+														<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
+														<div class="u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
+															<i class="fa" data-check-icon="&#xf00c"></i>
+														</div>
+														México Calidad Suprema
+													</label>
+												</div>
+
+												<div class="form-group g-mb-10">
+													<label class="u-check g-pl-25">
+														<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
+														<div class="u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
+															<i class="fa" data-check-icon="&#xf00c"></i>
+														</div>
+														PrimusGFS
+													</label>
+												</div>
+
+												<div class="form-group g-mb-10 g-mb-0--md">
+													<label class="u-check g-pl-25">
+														<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
+														<div class="u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
+															<i class="fa" data-check-icon="&#xf00c"></i>
+														</div>
+														Registro de SENASICA
+													</label>
+												</div>
+											</div>
+											<!-- End Right Column -->
+										</div>
+									</form>
+								</div>
+								
+							</div>
+				     	</div>
 					</div>
 					<!-- termina CERTIFICACIONES ANTERIORES -->
 
@@ -530,8 +686,8 @@ input.invalid {
 
 					<div style="overflow:auto;">
 						<div style="float:right;">
-							<button class="btn btn-md u-btn-3d u-btn-indigo g-mr-10 g-mb-15" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-						<button class="btn btn-md u-btn-3d u-btn-teal g-mr-10 g-mb-15" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+							<button class="btn btn-md u-btn-3d u-btn-indigo g-mr-10 g-mb-15" type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+						<button class="btn btn-md u-btn-3d u-btn-teal g-mr-10 g-mb-15" type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
 						</div>
 					</div>
 
@@ -560,7 +716,7 @@ function showTab(n) {
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Submit";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = "Siguiente";
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
@@ -588,7 +744,7 @@ function nextPrev(n) {
 function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
-  x = document.getElementsByClassName("tab");
+  /*x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByTagName("input");
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
@@ -599,7 +755,7 @@ function validateForm() {
       // and set the current valid status to false:
       valid = false;
     }
-  }
+  }*/
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";

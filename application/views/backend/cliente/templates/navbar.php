@@ -61,7 +61,6 @@
 		</li>
 		<!-- End Layouts Settings -->
 
-<<<<<<< HEAD
 		<!-- Opción solicitud -->
 		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
 			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu3">
@@ -95,10 +94,6 @@
 		</li>
 		<!-- End Opción solicitud -->
 
-
-
-=======
->>>>>>> master
 		<!-- Salir -->
 		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--top-level-menu-item">
 			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="<?php echo base_url('CLogin/salir'); ?>">
