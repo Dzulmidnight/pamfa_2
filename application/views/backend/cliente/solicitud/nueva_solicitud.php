@@ -1733,37 +1733,27 @@ input.invalid {
 													</div>
 
 													<div class="col-sm-6">
-														<div class="row g-mb-20">
-															<div class="col-xs-12 align-self-center g-mb-5 g-mb-0--md">
-																<label class="mb-0" for="#firstName">Número de unidades de producción / huertos o invernaderos</label>
-															</div>
-
-															<div class="col-xs-12 align-self-center">
-																<div class="form-group g-pos-rel mb-0">
-																	<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																		<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
-																	</span>
-																	<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-																data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
-																</div>
-															</div>
-														</div>	
+														<p>
+															Número de unidades de producción / huertos o invernaderos
+														</p>
+														<div class="form-group g-pos-rel mb-0">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															</span>
+															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
+														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+														</div>
 													</div>
 													<div class="col-sm-6">
-														<div class="row g-mb-20">
-															<div class="col-xs-12 align-self-center g-mb-5 g-mb-0--md">
-																<label class="mb-0" for="#firstName">Número de productores del área integral</label>
-															</div>
-
-															<div class="col-xs-12 align-self-center">
-																<div class="form-group g-pos-rel mb-0">
-																	<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																		<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
-																	</span>
-																	<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-																data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
-																</div>
-															</div>
+														<p>
+															Número de productores del área integral
+														</p>
+														<div class="form-group g-pos-rel mb-0">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															</span>
+															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
+														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
 														</div>
 													</div>
 
@@ -1810,13 +1800,148 @@ input.invalid {
 
 											<!-- inicia mostrar hecho en mexico -->
 											<div id="divHechoMex" class="col-md-12">
-												
+												<div class="row">
+													<div class="col-sm-12">
+														<h4 style="font-size:14px;">HECHO EN MÉXICO</h4>
+													</div>
+													<div class="col-sm-12">
+														<table class="table table-bordered">
+															<thead>
+																<tr>
+																	<th>
+																		Producto
+																	</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>
+																		<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+
+													<div class="col-sm-12">
+														<p>
+															Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo.
+														</p>
+														<div class="form-group g-pos-rel mb-0">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															</span>
+															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
+														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+														</div>
+													</div>
+												</div>
 											</div>
 											<!-- termina mostrar hecho en mexico -->
 
 											<!-- inicia mostrar denominación de origen -->
 											<div id="divDenominacionOrigen" class="col-md-12">
-												
+												<div class="row">
+													<div class="col-sm-12">
+														<h4 style="font-size:14px;">DENOMINACIÓN DE ORIGEN</h4>
+													</div>
+													<div class="col-sm-12">
+														<p>
+															Productos
+														</p>
+														<!-- Toggles Checkbox -->
+														<div class="form-group">
+															<label class="d-flex align-items-center justify-content-between">
+																<span>Café Chiapas</span>
+																<div class="u-check">
+																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
+																	<div class="u-check-icon-radio-v8">
+																		<i class="fa" data-check-icon="&#xf00c"></i>
+																	</div>
+																</div>
+															</label>
+														</div>
+														<!-- End Toggles Checkbox -->
+
+														<!-- Toggles Checkbox -->
+														<div class="form-group">
+															<label class="d-flex align-items-center justify-content-between">
+																<span>Café Veracruz</span>
+																<div class="u-check">
+																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
+																	<div class="u-check-icon-radio-v8">
+																		<i class="fa" data-check-icon="&#xf00c"></i>
+																	</div>
+																</div>
+															</label>
+														</div>
+														<!-- End Toggles Checkbox -->
+
+														<!-- Toggles Checkbox -->
+														<div class="form-group">
+															<label class="d-flex align-items-center justify-content-between">
+																<span>Charanda</span>
+																<div class="u-check">
+																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
+																	<div class="u-check-icon-radio-v8">
+																		<i class="fa" data-check-icon="&#xf00c"></i>
+																	</div>
+																</div>
+															</label>
+														</div>
+														<!-- End Toggles Checkbox -->
+
+
+														<!-- Toggles Checkbox -->
+														<div class="form-group">
+															<label class="d-flex align-items-center justify-content-between">
+																<span>Mango Ataúlfo</span>
+																<div class="u-check">
+																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
+																	<div class="u-check-icon-radio-v8">
+																		<i class="fa" data-check-icon="&#xf00c"></i>
+																	</div>
+																</div>
+															</label>
+														</div>
+														<!-- End Toggles Checkbox -->
+
+														<!-- Toggles Checkbox -->
+														<div class="form-group">
+															<label class="d-flex align-items-center justify-content-between">
+																<span>Vainilla de Papantla</span>
+																<div class="u-check">
+																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
+																	<div class="u-check-icon-radio-v8">
+																		<i class="fa" data-check-icon="&#xf00c"></i>
+																	</div>
+																</div>
+															</label>
+														</div>
+														<!-- End Toggles Checkbox -->
+
+													</div>
+
+													<div class="col-sm-12">
+														<p>
+															Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo.
+														</p>
+														<div class="form-group g-pos-rel mb-0">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
+																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															</span>
+															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
+														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+														</div>
+													</div>
+													<div class="col-sm-12">
+														<b>Anexo</b>
+														<p>
+															Constancia expedida por órgano competente que acredite que el establecimiento donde se realiza la actividad del solicitante, se encuentra dentro del territorio señalado en la declaración correspondiente (original o copia certificada).
+														</p>
+														<input class="form-control" type="file">
+													</div>
+												</div>
 											</div>
 											<!-- termina mostrar denominación de origen -->
 										</div>
