@@ -55,6 +55,7 @@
 		</main>
 
 		<!-- JS Global Compulsory -->
+      
 		<script src="<?php echo base_url(); ?>admin/assets/vendor/jquery/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>admin/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
 
@@ -110,6 +111,7 @@
 
 		<!-- JS Unify -->
 		<script  src="<?php echo base_url(); ?>assets/js/components/hs.masked-input.js"></script>
+        
 
 		<!-- JS Plugins Init. -->
 		<script >
@@ -181,7 +183,10 @@
 		}
 		});
 		});
-		</script>
+		</script> 
+        <?php if($this->uri->segment(5)=='datos_generales'){?>
+        <script  src="<?php echo base_url(); ?>js/pais.js"></script>
+        <?php }?>
 	</body>
 
 </html>

@@ -167,16 +167,18 @@
 									<div class="col-md-9 align-self-center">
 										<div class="row g-mx-minus-10">
 											<div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
-												<div class="form-group u-select--v2 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-													<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-														<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
-													</span>
-													<select class="js-select u-select--v2-select w-100" required="required" style="display: none;" name="pais">
-														<option>Listado de paises</option>
-														<option selected="selected">México</option>
-													</select>
-													<i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
-												</div>
+												
+                                                <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
+                                                    <select id="cboPais" class="js-select u-select--v3-select u-sibling w-100" required="required" title="Selecciona" >
+                                                    	
+                                                    
+                                                    </select>
+                                                    
+                                                    <div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+                                                    <i class="hs-admin-angle-down"></i>
+                                                    </div>
+                                                </div>
+                                                
 											</div>
 										</div>
 									</div>
@@ -288,3 +290,6 @@
 				</div>
 			</div>
 		</div>
+<script type="text/javascript">
+var baseurl="<?php echo base_url();?>";
+</script>
