@@ -9,7 +9,7 @@
 
 			<div class="col-md-9">
 				<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-					<form class="js-validate" action="<? echo base_url();?>cCliente/generales" method="post">
+					<form class="js-validate" action="<? echo base_url();?>backend/cliente/cCliente/generales" method="post">
 
 
 						<header>
@@ -169,8 +169,11 @@
 											<div class="col-md align-self-center g-px-10 g-mb-20 g-mb-0--md">
 												
                                                 <div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
-                                                    <select id="cboPais" class="js-select u-select--v3-select u-sibling w-100" required="required" title="Selecciona" >
-                                                    	
+                                                    <select id="pais" name="pais" class="js-select u-select--v3-select u-sibling w-100" required="required" title="Selecciona" >
+                                                    <?php foreach($pais as $fila2){?>
+                                                    	<option <?php if ($fila->pais==$fila2->id_pais) {?> selected
+                                                    		<?                                                   	} ?> value="<?php echo $fila2->id_pais;?>" ><?php echo $fila2->nombre;?></option>
+                                                        <?php }?>
                                                     
                                                     </select>
                                                     
@@ -290,6 +293,3 @@
 				</div>
 			</div>
 		</div>
-<script type="text/javascript">
-var baseurl="<?php echo base_url();?>";
-</script>

@@ -3,7 +3,7 @@
 class Perfiles extends CI_Controller{
 	function __construct(){
 		parent:: __construct();
-		$this->load->model('mCliente');
+		$this->load->model('mAuditor');
 	}
 
 	function index($seccion = null){
@@ -12,18 +12,15 @@ class Perfiles extends CI_Controller{
 		$data['seccion'] = $seccion;
 
 		switch ($seccion) {
-			case 'datos_fiscales':
-
-				$seccion = 'backend/auditor/usuario/datos_fiscales';
-				
-				
-				break;
+			
 			case 'datos_generales':
+				$data['consulta_id'] = $this->mAuditor->consulta_id();
 
 				$seccion = 'backend/auditor/usuario/datos_generales';
 				
 				break;
 			default:
+				$data['consulta_id'] = $this->mAuditor->consulta_id();
 
 				$seccion = 'backend/auditor/usuario/datos_generales';
 				
