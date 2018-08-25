@@ -184,9 +184,7 @@
 		});
 		});
 		</script> 
-        <?php if($this->uri->segment(5)=='datos_generales'){?>
-        <script  src="<?php echo base_url(); ?>js/pais.js"></script>
-        <?php }?>
+        
 	</body>
 
 </html>

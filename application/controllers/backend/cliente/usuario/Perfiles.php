@@ -4,6 +4,7 @@ class Perfiles extends CI_Controller{
 	function __construct(){
 		parent:: __construct();
 		$this->load->model('mCliente');
+		$this->load->model('mPais');
 	}
 
 	function index($seccion = null){
@@ -25,6 +26,7 @@ class Perfiles extends CI_Controller{
 				break;
 			default:
 			$data['consulta_datos_gral'] = $this->mCliente->consulta_datos_gral();
+			$data['pais'] = $this->mPais->paises();
 				$seccion = 'backend/cliente/usuario/datos_generales';
 				
 				break;

@@ -1,5 +1,6 @@
 // JavaScript Document
 //alert(baseurl+"cPais/getPais");
+/*
 $.post(baseurl+"cPais/pais",
 	function(data){
 		//alert(data);
@@ -14,4 +15,4 @@ $.post(baseurl+"cPais/pais",
 		$('#cboPais option:selected').each(function() {
             
         });
-		});
+		});*/

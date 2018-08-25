@@ -128,7 +128,10 @@
 							</thead>
 							
 							<!-- información de la tabla -->
-							<tbody>
+							
+							<tbody><?php 
+							
+foreach($consulta as $fila){$id=$fila->id_auditor;?>
 								<!-- inicia TR información cliente -->
 								<tr class="g-bg-gray-light-v8--opacity-0_4--checked">
 									<!-- numero consecutivo -->
@@ -141,7 +144,7 @@
 											<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0 g-bg-lightblue-v3--checked g-brd-lightblue-v3--checked">
 												<i class="fa" data-check-icon="&#xf00c"></i>
 											</div>
-											Auditor / Inspector
+											<? echo $fila->tipo;?>
 										</label>
 									</td>
 
@@ -149,25 +152,25 @@
 									<td>
 										<div class="d-inline-block">
 											<span class="d-flex align-items-center justify-content-center u-tags-v1 g-brd-around g-bg-gray-light-v8 g-bg-gray-light-v8 g-font-size-default g-color-gray-dark-v6 g-rounded-50 g-py-4 g-px-15">
-                    
+                    							<?if($fila->estatus==1){?>
 												<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-green g-mr-8"></span>
-                        
+                        						<?php }?>
 												<!-- 
-												EN ESPERA-->
-
+												EN pausa-->
+												<?if($fila->estatus==2){?>
 												<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-yellow g-mr-8"></span>
-                                
+                                				<?php }?>
                                                 <!-- 	<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-yellow g-mr-8"></span>
 												<!-- CANCELADO-->
-                    
+                    							<?if($fila->estatus==3){?>
 												<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-red g-mr-8"></span>
-                              
+                              					<?php }?>
                                                 <!--
 													<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-red g-mr-8"></span>
 												AUTORIZADO
 													<span class="u-badge-v2--md g-pos-stc g-transform-origin--top-left g-bg-green g-mr-8"></span>
 												-->
-												Nombre + Ap Paterno
+												<?php echo $fila->nombre." ".$fila->apPaterno;?>
 											</span>
 										</div>
 
@@ -190,20 +193,20 @@
 									</td>
 									<td class="text-right">
 										<div class="g-pos-rel g-top-3 d-inline-block">
-										<a id="dropDown3_1Invoker" class="u-link-v5 g-line-height-0 g-font-size-24 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" aria-controls="dropDown3_1" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#dropDown3_1">
+										<a id="dropDown3_1Invoker" class="u-link-v5 g-line-height-0 g-font-size-24 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" aria-controls="dropDown3_1" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="<?php echo "#dropDown3_1".$id;?>">
 												<i class="hs-admin-more-alt"></i>
 											</a>
 
-											<div id="dropDown3_1" class="u-shadow-v31 g-pos-abs g-right-0 g-z-index-2 g-bg-white" aria-labelledby="dropDown3_1Invoker">
+											<div id="<?php echo "dropDown3_1".$id;?>"" class="u-shadow-v31 g-pos-abs g-right-0 g-z-index-2 g-bg-white" aria-labelledby="dropDown3_1Invoker">
 												<ul class="list-unstyled g-nowrap mb-0">
 													<li>
-														<a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14" name="" id="" href="#">
+														<a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14" name="<? echo "activa".$id;?>" id="<? echo "activa".$id;?>" href="<?php echo base_url('backend/administrador/auditores/cAuditor/estatus/activar/'.$id.' '); ?>">
 															<i class="hs-admin-check g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"></i>
 															Activar
 														</a>
 													</li>
 													<li>
-														<a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14" name="" id="" href="#">
+														<a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14" name="<? echo "rechazo".$id;?>" id="<? echo "rechazo".$id;?>" href="<?php echo base_url('backend/administrador/auditores/cAuditor/estatus/pausa/'.$id.' '); ?>">
 															<i class="hs-admin-close g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"></i>
 															Cancelar
 														</a>
@@ -222,7 +225,7 @@
 														</a>
 													</li>
 													<li>
-														<a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14" name="" id="" href="#">
+														<a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14" name="<? echo "elimina".$id;?>" id="<? echo "elimina".$id;?>" href="<?php echo base_url('backend/administrador/auditores/cAuditor/estatus/baja/'.$id.' '); ?>">
 															<i class="hs-admin-trash g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"></i>
 															
                                                             Eliminar
@@ -233,6 +236,7 @@
 										</div>
 									</td>
 								</tr>
+								<? }?>
 							</tbody>
 						</table>
 	              	</div>

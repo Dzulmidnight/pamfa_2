@@ -4,7 +4,7 @@
 
 			<div class="col-md-12">
 				<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-					<form class="js-validate" action="<? echo base_url();?>cCliente/generales" method="post">
+					<form class="js-validate" action="<? echo base_url();?>backend/administrador/auditores/cAuditor/guardar" method="post">
 
 
 						<header>
@@ -53,7 +53,7 @@
 								<p>
 									Tipo
 								</p>
-								<select class="form-control" name="" id="">
+								<select class="form-control" name="tipo" id="tipo">
 									<option value="INSPECTOR">INSPECTOR</option>
 									<option value="AUDITOR">AUDITOR</option>
 								</select>
@@ -70,7 +70,7 @@
 							<div class="col-md-12">
 								<div class="row g-mb-20">
 									<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-										<label class="mb-0" for="#nombreLegal">Nombre</label>
+										<label class="mb-0" for="#nombre">Nombre</label>
 									</div>
 
 									<div class="col-md-12 align-self-center">
@@ -78,7 +78,7 @@
 											<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
 												<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
 											</span>
-											<textarea id="nombreLegal" name="nombreLegal" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
+											<textarea id="nombre" name="nombre" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 										</div>
 									</div>
 								</div>
@@ -86,7 +86,7 @@
 							<div class="col-md-6">
 								<div class="row g-mb-20">
 									<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-										<label class="mb-0" for="#nombreRepresentante">Apellido Paterno</label>
+										<label class="mb-0" for="#apPaterno">Apellido Paterno</label>
 									</div>
 
 									<div class="col-md-12 align-self-center">
@@ -94,7 +94,7 @@
 											<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
 												<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
 											</span>
-											<textarea id="nombreRepresentante" name="nombreRepresentante" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
+											<textarea id="apPaterno" name="apPaterno" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 										</div>
 									</div>
 								</div>
@@ -102,7 +102,7 @@
 							<div class="col-md-6">
 								<div class="row g-mb-20">
 									<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-										<label class="mb-0" for="#nombreRepresentante">Apellido Materno</label>
+										<label class="mb-0" for="#apMaterno">Apellido Materno</label>
 									</div>
 
 									<div class="col-md-12 align-self-center">
@@ -110,7 +110,7 @@
 											<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
 												<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
 											</span>
-											<textarea id="nombreRepresentante" name="nombreRepresentante" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
+											<textarea id="apMaterno" name="apMaterno" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 										</div>
 									</div>
 								</div>

@@ -242,8 +242,13 @@
 							<div class="form-group g-mb-20">
 								<label class="g-mb-10" for="pais">País *</label>
 								<select class="form-control form-control-md rounded-0" name="pais" id="pais" required>
-									<option value="">Listado de Paises</option>
-									<option value="1" selected>México</option>
+
+
+
+									
+									 <?php foreach($pais as $fila2){?>
+                                                    	<option value="<?php echo $fila2->id_pais;?>" ><?php echo $fila2->nombre;?></option>
+                                                        <?php }?>
 								</select>
 							</div>
 						</div>
