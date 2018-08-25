@@ -1954,9 +1954,42 @@ input.invalid {
 					<!-- termina ESQUEMAS DE CERTIFICACIÓN -->
 
 					<!-- inicia 6.- PASO FINAL -->
-					<div class="tab">Login Info:
-						<p><input placeholder="Username..." oninput="this.className = ''"></p>
-						<p><input placeholder="Password..." oninput="this.className = ''"></p>
+					<div class="tab">
+						<div class="row" style="margin-top:2em;">
+							<div class="col-md-12">
+								<h4 style="font-size:14px;">
+									Indicar el idioma en que se realizará la auditoría y el idioma que se utilizará en el informe de auditoría
+								</h4>
+								<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory" data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+							</div>
+							<div class="col-md-12">
+								<table class="table">
+									<tr class="text-center">
+										<td colspan="2">USO DE DATOS</td>
+									</tr>
+									<tr>
+										<td>
+											<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+												<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalIfa" checked="" type="radio">
+												<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+													<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+												</div>
+												<b>SI</b> <span style="padding-left:10px;">El cliente permite el acceso de su nombre de la empresa y dirección al grupo de acceso de datos "Publica".</span>
+											</label>
+										</td>
+										<td>
+											<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+												<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalIfa" checked="" type="radio">
+												<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+													<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+												</div>
+												<b>NO</b> <span style="padding-left:10px;">El cliente no está de acuerdo para conceder acceso de su nombre de la empresa y dirección al grupo de acceso de datos "Publica".</span>
+											</label>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
 					</div>
 					<!-- termina PASO FINAL -->
 
