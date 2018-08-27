@@ -61,6 +61,13 @@ class cLogin extends CI_Controller {
 			$this->load->view('backend/cliente/index');
 			$this->load->view('backend/cliente/templates/footer');
 		}
+		if($this->session->userdata('s_tipo')=='auditor'){
+		$this->load->view('backend/auditor/templates/header');
+			$this->load->view('backend/auditor/templates/topnavigation');
+			$this->load->view('backend/auditor/templates/navbar.php');
+			$this->load->view('backend/auditor/index');
+			$this->load->view('backend/auditor/templates/footer');	
+		}
 		if($this->session->userdata('s_tipo')=='administrador'){
 			$this->load->view('backend/administrador/templates/header');
 			$this->load->view('backend/administrador/templates/topnavigation');
@@ -69,6 +76,7 @@ class cLogin extends CI_Controller {
 			$this->load->view('backend/administrador/templates/footer');
 		}
 		}
+
 		else{
 			//echo "datos incorrectos";
 		$this->load->view('templates/header');
