@@ -17,7 +17,7 @@ class mLogin extends CI_Model {
 		$this->db->from('cliente c');
 		}
 		else if($tipo=='auditor'){
-			$this->db->select('c.id_cliente,c.nombreLegal,c.username,c.password,c.estatus');
+			$this->db->select('c.id_auditor,c.nombre,c.apPaterno,c.apMaterno,c.username,c.password,c.estatus');
 		$this->db->from('auditor c');
 		}
 		elseif($tipo=='administrador'){
@@ -37,7 +37,7 @@ class mLogin extends CI_Model {
 			$s_usuario=array('s_idusuario'=>$r->id_cliente,'s_usuario'=>$r->nombreLegal,'s_tipo'=>$tipo);
 		}
 		else if($tipo=='auditor'){
-			$s_usuario=array('s_idusuario'=>$r->id_cliente,'s_usuario'=>$r->nombreLegal,'s_tipo'=>$tipo);
+			$s_usuario=array('s_idusuario'=>$r->id_auditor,'s_usuario'=>$r->nombre." ".$r->apPaterno." ".$r->apMaterno,'s_tipo'=>$tipo);
 		}
 		elseif($tipo=='administrador'){
 			

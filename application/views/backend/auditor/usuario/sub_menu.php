@@ -18,26 +18,13 @@
 				<section>
 					<ul class="list-unstyled mb-0">
 						<li class="g-brd-top g-brd-gray-light-v7 mb-0">
-							<a class="d-flex align-items-center u-link-v5 g-parent g-py-15 <?php if($seccion == 'datos_generales' || $seccion == ''){ echo 'active'; }?>" href="<?php echo base_url('backend/cliente/usuario/perfiles/'); ?>">
+							<a class="d-flex align-items-center u-link-v5 g-parent g-py-15 <?php if($seccion == 'datos_generales' || $seccion == ''){ echo 'active'; }?>" href="<?php echo base_url('backend/auditor/usuario/perfiles/datos_generales'); ?>">
 								<span class="g-font-size-18 g-color-gray-light-v6 g-color-lightred-v3--parent-hover g-color-lightred-v3--parent-active g-mr-15">
 								<i class="hs-admin-user"></i>
 								</span>
 								<span class="g-color-gray-dark-v6 g-color-lightred-v3--parent-hover g-color-lightred-v3--parent-active">Información general</span>
 							</a>
 						</li>
-
-
-						<li class="g-brd-top g-brd-gray-light-v7 mb-0">
-                       
-							<a class="d-flex align-items-center u-link-v5 g-parent g-py-15 <?php if($seccion == 'datos_fiscales'){ echo 'active'; }?>" href="<?php echo base_url('backend/cliente/usuario/perfiles/datos_fiscales'); ?>">
-								<span class="g-font-size-18 g-color-gray-light-v6 g-color-lightred-v3--parent-hover g-color-lightred-v3--parent-active g-mr-15">
-									<i class="hs-admin-wallet"></i>
-								</span>
-								<span class="g-color-gray-dark-v6 g-color-lightred-v3--parent-hover g-color-lightred-v3--parent-active">Datos fiscales</span>
-							</a>
-						</li>
-
-
 					</ul>
 				</section>
 				<!-- End Profile Sidebar -->
