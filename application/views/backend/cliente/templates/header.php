@@ -42,9 +42,13 @@
 
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/css/custom.css">
+
+	<link href="<?php echo base_url(); ?>form-wizard/prettify.css" rel="stylesheet">
+
+
 </head>
 
 <body>
 
-	<main class="container-fluid px-0 g-pt-65">
+	<main class="container-lg px-0 g-pt-65">
 		<div class="row no-gutters g-pos-rel g-overflow-x-hidden">
