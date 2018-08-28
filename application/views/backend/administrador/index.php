@@ -5,18 +5,18 @@
 
 
 		<div class="row">
-			<div class="col-md-7">
+			<div class="col-md-6">
 				<div class="card g-brd-gray-light-v7 g-mb-30">
 					<!-- inicia tabla accesos pendientes -->
 					<div class="g-pa-20">
 
 						<header class="g-mb-20">
-							<h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">Accesos pendientes</h2>
+							<h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">Accesos pendientes (Clientes)</h2>
 						</header>
 
 						<div class="table-responsive g-mb-40">
-							<table class="table u-table--v3 g-color-black">
-								<thead>
+							<table class="table table-bordered table-condensed" style="font-size:12px;">
+								<thead style="font-size:12px;">
 									<tr>
 										<th>#</th>
 										<th>Representante</th>
