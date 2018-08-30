@@ -12,7 +12,9 @@
   width: 70%;*/
   min-width: 300px;
 }
-
+.temaEsquema{
+	color: #27ae60;
+}
 /* Style the input fields */
 
 
@@ -84,7 +86,140 @@ input.invalid {
 				<form id="regForm" action="">
 
 					<!-- One "tab" for each step in the form: -->
-					<!-- inicia 1.- DATOS DEL CLIENTE -->
+					<!-- inicia 1.- SELECCIONAR EL ESQUEMA DE CERTIFICACIÓN -->
+					<div class="tab">
+				     	<div class="card g-brd-gray-light-v7 g-mb-30">
+							<div id="esquema_certificacion">
+								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+									<form class="js-validate">
+
+										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
+											<h2 class="h3 u-heading-v1__title">ESQUEMA DE CERTIFICACIÓN</h2>
+										</div>
+
+										<div class="row">
+											<div class="col-md-12">
+												<h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black" style="margin-bottom:1em;">Seleccionar el esquema de certificación que está solicitando</h3>
+											</div>
+											<div class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group">
+														
+														<label class="d-flex align-items-center justify-content-between">
+															<span style="color: #27ae60">
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/globalgap.jpg'); ?>" alt="" style="width:100px;">
+																<b class="temaEsquema">GLOBALG.A.P IFA V5.1</b>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" type="checkbox" onclick="validarCheck('check_globalgap_ifa','divGlobalGapIfa')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group">
+														<label class="d-flex align-items-center justify-content-between">
+															<span>
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/globalgap.jpg'); ?>" alt="" style="width:100px;">
+																<b class="temaEsquema">GLOBALG.A.P CADENA DE CUSTODIA (CoC)</b>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" type="checkbox" onclick="validarCheck('check_globalgap_coc','divGlobalGapCoc')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group">
+														<label class="d-flex align-items-center justify-content-between">
+															<span>
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/mexico_calidad_suprema.jpg'); ?>" alt="" style="width:100px;">
+																<b class="temaEsquema">MÉXICO CALIDAD SUPREMA</b>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_mex_calidad_suprema" type="checkbox" onclick="validarCheck('check_mex_calidad_suprema','divMexCalidadSuprema')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group">
+														<label class="d-flex align-items-center justify-content-between">
+															<span>
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/senasica.jpg'); ?>" alt="" style="width:100px;">
+																<b class="temaEsquema">SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)</b>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_srrc" type="checkbox" onclick="validarCheck('check_srrc','divSrrc')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group">
+														<label class="d-flex align-items-center justify-content-between">
+															<span>
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/hecho_en_mexico.jpg'); ?>" alt="" style="width:100px;">
+																<b class="temaEsquema">HECHO EN MÉXICO</b>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_hecho_en_mexico" type="checkbox" onclick="validarCheck('check_hecho_en_mexico','divHechoEnMexico')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group">
+														<label class="d-flex align-items-center justify-content-between">
+															<span style="color: #2ecc71">
+																<b class="temaEsquema">DENOMINACIÓN DE ORIGEN</b>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_denominacion_origen" type="checkbox" onclick="validarCheck('check_denominacion_origen', 'divDenominacionOrigen')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+
+
+										</div>
+									</form>
+								</div>
+							</div>
+				     	</div>
+					</div>
+					<!-- termina SELECCIONAR EL ESQUEMA DE CERTIFICACIÓN -->
+
+					<!-- inicia 2.- DATOS DEL CLIENTE -->
 					<div class="tab">
 				     	<div class="card g-brd-gray-light-v7 g-mb-30">
 							<div id="datosCliente">
@@ -96,6 +231,7 @@ input.invalid {
 
 										<div class="row">
 											<div class="col-md-6">
+
 												<div class="row g-mb-20">
 													<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
 														<label class="pregunta mb-0" for="#firstName">Nombre de la entidad legal *</label>
@@ -306,7 +442,7 @@ input.invalid {
 					</div>
 					<!-- termina DATOS DEL CLIENTE -->
 
-					<!------------------------- inicia 2.- DATOS DE FACTURACIÓN ---------------------->
+					<!------------------------- inicia 3.- DATOS DE FACTURACIÓN ---------------------->
 					<div class="tab">
 				    	<div class="card g-brd-gray-light-v7 g-mb-30">
 							<div id="datos_facturacion">
@@ -518,7 +654,7 @@ input.invalid {
 					</div>
 					<!-- termina DATOS DE FACTURACIÓN -->
 
-					<!------------------------ inicia 3.- PRODUCTOS POR CERTIFICAR ------------------------>
+					<!------------------------ inicia 4.- PRODUCTOS POR CERTIFICAR ------------------------>
 					<div class="tab">
 				     	<div class="card g-brd-gray-light-v7 g-mb-30">
 
