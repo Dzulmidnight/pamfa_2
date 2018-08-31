@@ -13,7 +13,7 @@
   min-width: 300px;
 }
 .temaEsquema{
-	color: #27ae60;
+	display: inline-block;
 }
 /* Style the input fields */
 
@@ -61,6 +61,8 @@ input.invalid {
 
 .nombreEsquema{
 	color: #72c02c;
+	padding-top: 1em;
+	padding-bottom: 1em;
 	border-bottom: 4px solid #72c02c;
 	border-top: 4px solid #72c02c;
 }
@@ -101,35 +103,17 @@ input.invalid {
 											<div class="col-md-12">
 												<h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black" style="margin-bottom:1em;">Seleccionar el esquema de certificación que está solicitando</h3>
 											</div>
-											<div class="col-md-6">
+											<div  class="col-md-6">
 													<!-- Toggles Checkbox -->
 													<div class="form-group">
 														
-														<label class="d-flex align-items-center justify-content-between">
-															<span style="color: #27ae60">
-																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/globalgap.jpg'); ?>" alt="" style="width:100px;">
-																<b class="temaEsquema">GLOBALG.A.P IFA V5.1</b>
-															</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" type="checkbox" onclick="validarCheck('check_globalgap_ifa','divGlobalGapIfa')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-													<!-- End Toggles Checkbox -->
-											</div>
-											<div class="col-md-6">
-													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
+														<label id="divEsquema1" class="d-flex align-items-center justify-content-between" >
 															<span>
 																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/globalgap.jpg'); ?>" alt="" style="width:100px;">
-																<b class="temaEsquema">GLOBALG.A.P CADENA DE CUSTODIA (CoC)</b>
+																<p class="temaEsquema">GLOBALG.A.P IFA V5.1</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" type="checkbox" onclick="validarCheck('check_globalgap_coc','divGlobalGapCoc')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" type="checkbox" onclick="resaltarEsquema('check_globalgap_ifa','divEsquema1','p')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -138,16 +122,34 @@ input.invalid {
 													</div>
 													<!-- End Toggles Checkbox -->
 											</div>
-											<div class="col-md-6">
+											<div  class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group" >
+														<label id="divEsquema2" class="d-flex align-items-center justify-content-between">
+															<span>
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/globalgap.jpg'); ?>" alt="" style="width:100px;">
+																<p class="temaEsquema">GLOBALG.A.P CADENA DE CUSTODIA (CoC)</p>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" type="checkbox" onclick="resaltarEsquema('check_globalgap_coc','divEsquema2','p')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div  class="col-md-6">
 													<!-- Toggles Checkbox -->
 													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
+														<label id="divEsquema3" class="d-flex align-items-center justify-content-between">
 															<span>
 																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/mexico_calidad_suprema.jpg'); ?>" alt="" style="width:100px;">
-																<b class="temaEsquema">MÉXICO CALIDAD SUPREMA</b>
+																<p class="temaEsquema">MÉXICO CALIDAD SUPREMA</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_mex_calidad_suprema" type="checkbox" onclick="validarCheck('check_mex_calidad_suprema','divMexCalidadSuprema')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_mex_calidad_suprema" type="checkbox" onclick="resaltarEsquema('check_mex_calidad_suprema','divEsquema3','p')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -156,16 +158,16 @@ input.invalid {
 													</div>
 													<!-- End Toggles Checkbox -->
 											</div>
-											<div class="col-md-6">
+											<div  class="col-md-6">
 													<!-- Toggles Checkbox -->
 													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
+														<label id="divEsquema4" class="d-flex align-items-center justify-content-between">
 															<span>
 																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/senasica.jpg'); ?>" alt="" style="width:100px;">
-																<b class="temaEsquema">SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)</b>
+																<p class="temaEsquema">SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_srrc" type="checkbox" onclick="validarCheck('check_srrc','divSrrc')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_srrc" type="checkbox" onclick="resaltarEsquema('check_srrc','divEsquema4','p')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -174,16 +176,16 @@ input.invalid {
 													</div>
 													<!-- End Toggles Checkbox -->
 											</div>
-											<div class="col-md-6">
+											<div  class="col-md-6">
 													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
+													<div class="form-group" >
+														<label id="divEsquema5" class="d-flex align-items-center justify-content-between">
 															<span>
 																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/hecho_en_mexico.jpg'); ?>" alt="" style="width:100px;">
-																<b class="temaEsquema">HECHO EN MÉXICO</b>
+																<p class="temaEsquema">HECHO EN MÉXICO</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_hecho_en_mexico" type="checkbox" onclick="validarCheck('check_hecho_en_mexico','divHechoEnMexico')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_hecho_en_mexico" type="checkbox" onclick="resaltarEsquema('check_hecho_en_mexico','divEsquema5','p')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -192,15 +194,15 @@ input.invalid {
 													</div>
 													<!-- End Toggles Checkbox -->
 											</div>
-											<div class="col-md-6">
+											<div  class="col-md-6">
 													<!-- Toggles Checkbox -->
 													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span style="color: #2ecc71">
-																<b class="temaEsquema">DENOMINACIÓN DE ORIGEN</b>
+														<label id="divEsquema6" class="d-flex align-items-center justify-content-between">
+															<span style="height:70px;">
+																<p class="temaEsquema">DENOMINACIÓN DE ORIGEN</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_denominacion_origen" type="checkbox" onclick="validarCheck('check_denominacion_origen', 'divDenominacionOrigen')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_denominacion_origen" type="checkbox" onclick="resaltarEsquema('check_denominacion_origen', 'divEsquema6','p')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -239,8 +241,8 @@ input.invalid {
 
 													<div class="col-md-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
@@ -255,48 +257,50 @@ input.invalid {
 
 													<div class="col-md-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="col-md-12">
-												<div class="row g-mb-20">
-													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-														<label class="pregunta mb-0" for="#firstName">Email *</label>
-													</div>
+											<form action="#">
+												<div class="col-md-12">
 
-													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
-															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="ejemplo@gmail.com">
+													<div class="row g-mb-20">
+														<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+															<label class="pregunta mb-0" for="#firstName">Email *</label>
 														</div>
-													</div>
-												</div>	
-											</div>
-											<div class="col-md-6">
-												<div class="row g-mb-20">
-													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-														<label class="pregunta mb-0" for="#firstName">Teléfono *</label>
-													</div>
 
-													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
-															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+														<div class="col-md-9 align-self-center">
+															<div class="g-pos-rel">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="ejemplo@gmail.com">
+															</div>
 														</div>
-													</div>
-												</div>	
-											</div>
+													</div>	
+												</div>
+												<div class="col-md-6">
+													<div class="row g-mb-20">
+														<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+															<label class="pregunta mb-0" for="#firstName">Teléfono *</label>
+														</div>
+
+														<div class="col-md-9 align-self-center">
+															<div class="g-pos-rel">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aqui">
+															</div>
+														</div>
+													</div>	
+												</div>												
+											</form>
+
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
@@ -304,12 +308,11 @@ input.invalid {
 													</div>
 
 													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<div class="g-pos-rel">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+															<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 														</div>
 													</div>
 												</div>	
@@ -338,7 +341,7 @@ input.invalid {
 																		<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
 																	</span>
 																	<select class="js-select u-select--v2-select w-100" required="required" style="display: none;">
-																		<option>Listado de paises</option>
+																		<option>Selecciona un país</option>
 																		<option selected="selected">México</option>
 																	</select>
 																	<i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
@@ -355,12 +358,11 @@ input.invalid {
 													</div>
 
 													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<div class="g-pos-rel">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+															<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 														</div>
 													</div>
 												</div>
@@ -372,12 +374,11 @@ input.invalid {
 													</div>
 
 													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<div class="g-pos-rel">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+															<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 														</div>
 													</div>
 												</div>	
@@ -389,12 +390,11 @@ input.invalid {
 													</div>
 
 													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<div class="g-pos-rel">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+															<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 														</div>
 													</div>
 												</div>	
@@ -406,12 +406,11 @@ input.invalid {
 													</div>
 
 													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<div class="g-pos-rel">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="number" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Solo números">
+															<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 														</div>
 													</div>
 												</div>	
@@ -424,8 +423,8 @@ input.invalid {
 
 													<div class="col-md-9 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
@@ -462,8 +461,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
@@ -479,8 +478,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
@@ -496,8 +495,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="ejemplo@gmail.com">
@@ -514,8 +513,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
@@ -532,16 +531,16 @@ input.invalid {
 													<div class="col-sm-12 align-self-center">
 															<div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
 																<select class="js-select u-select--v3-select u-sibling w-100" required="required" title="Formas de pago" style="display: none;">
-																	<option value="selectListItem1" data-content='<span class="d-flex align-items-center w-100"><i class="icon-finance-130 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Efectivo</span></span>'>Efectivo
+																	<option value="selectListItem1" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="icon-finance-130 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Efectivo</span></span>'>Efectivo
 																	</option>
-																	<option value="selectListItem2" data-content='<span class="d-flex align-items-center w-100"><i class="icon-finance-139 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Transferencia</span></span>'>Transferencia
+																	<option value="selectListItem2" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="icon-finance-139 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Transferencia</span></span>'>Transferencia
 																	</option>
-																	<option value="selectListItem3" data-content='<span class="d-flex align-items-center w-100"><i class="icon-finance-149 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Cheque</span></span>'>Cheque
+																	<option value="selectListItem3" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="icon-finance-149 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Cheque</span></span>'>Cheque
 																	</option>
 																</select>
 
 																<div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-																	<i class="hs-admin-angle-down"></i>
+																	<i style="color:red" class="hs-admin-angle-down"></i>
 																</div>
 															</div>
 													</div>
@@ -556,8 +555,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
@@ -574,8 +573,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
@@ -591,8 +590,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="inputGroup1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" placeholder="XXXX" data-mask="9999-" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -612,8 +611,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
@@ -629,8 +628,8 @@ input.invalid {
 
 													<div class="col-md-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="calle, numero, CP, Ciudad, Municipio, Estado, Pais"></textarea>
 														</div>
@@ -654,44 +653,6 @@ input.invalid {
 					</div>
 					<!-- termina DATOS DE FACTURACIÓN -->
 
-					<!------------------------ inicia 4.- PRODUCTOS POR CERTIFICAR ------------------------>
-					<div class="tab">
-				     	<div class="card g-brd-gray-light-v7 g-mb-30">
-
-							<div id="datosCliente">
-								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-									<form class="js-validate">
-
-										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
-										  <h2 class="h3 u-heading-v1__title">3.- PRODUCTOS POR CERTIFICAR</h2>
-										</div>
-
-										<div class="row">
-											<div class="col-md-12">
-												<button class="btn u-btn-blue g-mr-10 g-mb-15">
-													<i class="fa fa-plus"></i> Agregar otro
-												</button>
-												<table class="table">
-													<tr>
-														<td>
-															Nombre del producto
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
-														</td>
-													</tr>
-												</table>
-											</div>
-										</div>
-									</form>
-								</div>
-								
-							</div>
-				     	</div>
-					</div>
-					<!-- termina PRODUCTOS POR CERTIFICAR -->
 
 					<!------------------------ inicia 4.- CERTIFICACIONES ANTERIORES ------------------------>
 					<div class="tab">
@@ -741,8 +702,8 @@ input.invalid {
 															</label>
 
 															<div class="g-pos-rel">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																	<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																</span>
 																<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="GLOBALG.A.P NUMBER">
 															</div>
@@ -756,8 +717,8 @@ input.invalid {
 															</label>
 
 															<div class="g-pos-rel">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																	<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																</span>
 																<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="CoC Number">
 															</div>
@@ -782,6 +743,9 @@ input.invalid {
 														<div id="divGLN" style="display:none">
 															<!-- Text Input -->
 															<div class="form-group u-has-success-v1-1 g-mb-20">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
 																<input id="inputGroup2_1" class="form-control form-control-md rounded-0" type="email" placeholder="Ingresa tu número GLN">
 																<small class="form-control-feedback d-block g-bg-primary g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">
 																	Información requerida
@@ -836,6 +800,9 @@ input.invalid {
 													<div id="divSenasica" class="form-group" style="display:none">
 														<!-- Text Input -->
 														<div class="form-group u-has-success-v1-1 g-mb-20">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+															</span>
 															<input id="inputGroup2_1" class="form-control form-control-md rounded-0" type="email" placeholder="Número de registro de SENASICA">
 															<small class="form-control-feedback d-block g-bg-primary g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">
 																Información requerida
@@ -869,6 +836,9 @@ input.invalid {
 													<div id="regMexCalidadSuprema" class="form-group" style="display:none">
 														<!-- Text Input -->
 														<div class="form-group u-has-success-v1-1 g-mb-20">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+															</span>
 															<input id="inputGroup2_1" class="form-control form-control-md rounded-0" type="email" placeholder="Registro de México Calidad Suprema">
 															<small class="form-control-feedback d-block g-bg-primary g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">
 																Información requerida
@@ -901,6 +871,9 @@ input.invalid {
 													<div id="divPrimus" class="form-group" style="display:none">
 														<!-- Text Input -->
 														<div class="form-group u-has-success-v1-1 g-mb-20">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+															</span>
 															<input id="inputGroup2_1" class="form-control form-control-md rounded-0" type="email" placeholder="Número PrimusGSF">
 															<small class="form-control-feedback d-block g-bg-primary g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">
 																Información requerida
@@ -921,8 +894,8 @@ input.invalid {
 													<label class="g-mb-10" for="inputGroup-1_1">Nombre del responsable de la aplicación de la norma de certificación en la entidad legal</label>
 
 													<div class="g-pos-rel">
-														<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-															<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+															<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 														</span>
 														<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 													</div>
@@ -937,8 +910,8 @@ input.invalid {
 													<label class="g-mb-10" for="inputGroup-1_1">Nombre de la persona que realizó la autoevaluación interna en la entidad legal</label>
 
 													<div class="g-pos-rel">
-														<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-															<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+															<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 														</span>
 														<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 													</div>
@@ -990,8 +963,8 @@ input.invalid {
 															</label>
 
 															<div class="g-pos-rel">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																	<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																</span>
 																<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 															</div>
@@ -1010,8 +983,8 @@ input.invalid {
 																		<div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
 																			<input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Desde" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y">
 																			<div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-																				<i class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
-																				<i class="hs-admin-angle-down"></i>
+																				<i style="color:red" class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
+																				<i style="color:red" class="hs-admin-angle-down"></i>
 																			</div>
 																		</div>
 																	</div>
@@ -1023,8 +996,8 @@ input.invalid {
 																		<div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
 																			<input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Hasta" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y">
 																			<div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-																				<i class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
-																				<i class="hs-admin-angle-down"></i>
+																				<i style="color:red" class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
+																				<i style="color:red" class="hs-admin-angle-down"></i>
 																			</div>
 																		</div>
 																	</div>
@@ -1057,119 +1030,81 @@ input.invalid {
 									<form class="js-validate">
 
 										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
-										  <h2 class="h3 u-heading-v1__title">5.- ESQUEMAS DE CERTIFICACIÓN</h2>
+										  <h2 class="h3 u-heading-v1__title">5.- ESQUEMA DE CERTIFICACIÓN</h2>
 										</div>
 
 										<div class="row">
-											<div class="col-md-12">
-												<h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black">Favor de seleccionar el esquema de certificación que está solicitando</h3>
-											</div>
-											<div class="col-md-6">
-												<!-- Toggles based on Checkboxes -->
+											
+											
+											<!--<div class="col-md-6">
+										
 												<div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
 
-													<!-- Toggles Checkbox -->
+												
 													<div class="form-group">
 														<label class="d-flex align-items-center justify-content-between">
 															<span>GLOBALG.A.P IFA V5.1</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" type="checkbox" onclick="validarCheck('check_globalgap_ifa','divGlobalGapIfa')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" type="checkbox" onclick="validarCheck('check_globalgap_ifa','divGlobalGapIfa','')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
 															</div>
 														</label>
 													</div>
-													<!-- End Toggles Checkbox -->
-
-													<!-- Toggles Checkbox -->
+									
 													<div class="form-group">
 														<label class="d-flex align-items-center justify-content-between">
 															<span>GLOBALG.A.P CADENA DE CUSTODIA (CoC)</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" type="checkbox" onclick="validarCheck('check_globalgap_coc','divGlobalGapCoc')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" type="checkbox" onclick="validarCheck('check_globalgap_coc','divGlobalGapCoc','')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
 															</div>
 														</label>
 													</div>
-													<!-- End Toggles Checkbox -->
-
-													<!-- Toggles Checkbox -->
+				
 													<div class="form-group">
 														<label class="d-flex align-items-center justify-content-between">
 															<span>MÉXICO CALIDAD SUPREMA</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_mex_calidad_suprema" type="checkbox" onclick="validarCheck('check_mex_calidad_suprema','divMexCalidadSuprema')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_mex_calidad_suprema" type="checkbox" onclick="validarCheck('check_mex_calidad_suprema','divMexCalidadSuprema','')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
 															</div>
 														</label>
 													</div>
-													<!-- End Toggles Checkbox -->
+	
 												</div>
-												<!-- End Toggles based on Checkboxes -->
-											</div>
 
-											<div class="col-md-6">
-												<!-- Toggles based on Checkboxes -->
-												<div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
+											</div>-->
 
-													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_srrc" type="checkbox" onclick="validarCheck('check_srrc','divSrrc')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-													<!-- End Toggles Checkbox -->
-
-													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>HECHO EN MÉXICO</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_hecho_en_mexico" type="checkbox" onclick="validarCheck('check_hecho_en_mexico','divHechoEnMexico')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-													<!-- End Toggles Checkbox -->
-
-													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>DENOMINACIÓN DE ORIGEN</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_denominacion_origen" type="checkbox" onclick="validarCheck('check_denominacion_origen', 'divDenominacionOrigen')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-													<!-- End Toggles Checkbox -->
-												</div>
-												<!-- End Toggles based on Checkboxes -->
-											</div>
 
 
 
 											<!--------------- inicia sección global gap ifa -------------->
-											<div id="divGlobalGapIfa" class="col-md-12" style="display:none">
+											<div id="divGlobalGapIfa" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
 														<h4 class="nombreEsquema" style="font-size:14px;">GLOBALG.A.P IFA V5.1</h4>
 													</div>
+													<div class="col-md-12" style="margin-bottom:1em;">
+														<p>
+															Ingresa lo(s) producto(s) por certificar
+														</p>
+
+									                    <div class="u-tagsinput--v2--gray g-brd-around g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-6 g-py-5">
+															<div class="form-group g-pos-rel mb-0">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<input type="text" value="" data-role="tagsinput" placeholder="Ingresa los productos">
+															</div>
+									                    </div>
+													</div>
+
 													<div class="col-md-6">
 														<table class="table table-bordered">
 															<tr>
@@ -1230,8 +1165,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="num_productores" name="num_productores" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="int" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1247,8 +1182,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="num_unidades_produccion" name="num_unidades_produccion" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1266,8 +1201,8 @@ input.invalid {
 															</label>
 
 															<div class="g-pos-rel">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																	<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																</span>
 																<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 															</div>
@@ -1280,10 +1215,24 @@ input.invalid {
 
 
 											<!-- inicia mostrar global gap coc -->
-											<div id="divGlobalGapCoc" class="col-md-12" style="display:none">
+											<div id="divGlobalGapCoc" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
 														<h4 class="nombreEsquema" style="font-size:14px;">GLOBALG.A.P CADENA DE CUSTODIA (CoC)</h4>
+													</div>
+													<div class="col-md-12" style="margin-bottom:1em;">
+														<p>
+															Ingresa lo(s) producto(s) por certificar
+														</p>
+
+									                    <div class="u-tagsinput--v2--gray g-brd-around g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-6 g-py-5">
+															<div class="form-group g-pos-rel mb-0">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<input type="text" value="" data-role="tagsinput" placeholder="Ingresa los productos">
+															</div>
+									                    </div>
 													</div>
 													<div class="col-sm-6">
 														<table class="table table-bordered">
@@ -1307,8 +1256,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="realiza_etiquetado" name="realiza_etiquetado" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1324,8 +1273,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="sistema_trazabilidad" name="sistema_trazabilidad" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1361,8 +1310,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="cantidad_estimada_producto" name="cantidad_estimada_producto" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1380,8 +1329,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="num_total_unidades" name="num_total_unidades" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1399,8 +1348,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="num_unidades_produccion_certificar" name="num_unidades_produccion_certificar" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1501,7 +1450,7 @@ input.invalid {
 
 
 											<!-- inicia mostrar mexico calidad suprema -->
-											<div id="divMexCalidadSuprema" class="col-md-12" style="display:none">
+											<div id="divMexCalidadSuprema" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
 														<h4 class="nombreEsquema" style="font-size:14px;">MÉXICO CALIDAD SUPREMA</h4>
@@ -1543,6 +1492,7 @@ input.invalid {
 																	</b>
 																</td>
 															</tr>
+
 															<!--pliego de condiciones -->
 															<tr>
 																<td colspan="2">
@@ -1629,7 +1579,12 @@ input.invalid {
 															<tbody>
 																<tr>
 																	<td>
-																		<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del equipo"></textarea>
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del equipo"></textarea>
+																		</div>
 																	</td>
 																	<td>
 																		<input class="form-control" type="file">
@@ -1658,8 +1613,13 @@ input.invalid {
 
 															</label>
 														</div>
-														<div id="divRequisitosAdicionales" style="display:none;">
-															<textarea id="documento_requisitos_adicionales" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del documento"></textarea>
+														<div id="divRequisitosAdicionales" style="display:none;margin-top:1em;">
+															<div class="form-group g-pos-rel mb-0">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del documento"></textarea>
+															</div>
 
 															<input class="form-control" type="file">
 														</div>
@@ -1692,11 +1652,16 @@ input.invalid {
 														</div>
 
 													</div>
-													<div class="col-sm-12" style="margin-top:1em;">
+													<div class="col-sm-12" style="margin-top:1em;margin-bottom:1em;">
 														<p>
 															Trazabilidad del lote
 														</p>
-														<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Describa la trazabilidad del lote"></textarea>
+														<div class="form-group g-pos-rel mb-0">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+															</span>
+															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Describa la trazabilidad del lote"></textarea>
+														</div>
 													</div>
 
 												</div>
@@ -1813,14 +1778,30 @@ input.invalid {
 															<tbody>
 																<tr>
 																	<td>
-																		<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
+																		</div>
 																	</td>
 																	<td>
-																		<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="País(es) destino"></textarea>
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Pais(es) destino"></textarea>
+																		</div>
 																	</td>
 																	<td>
-																		<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="%">
+																		</div>
+
 																	</td>
 																</tr>
 															</tbody>
@@ -1834,7 +1815,7 @@ input.invalid {
 
 
 											<!-- inicia mostrar hecho en mexico -->
-											<div id="divHechoEnMexico" class="col-md-12" style="display:none">
+											<div id="divHechoEnMexico" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
 														<h4 class="nombreEsquema" style="font-size:14px;">HECHO EN MÉXICO</h4>
@@ -1844,32 +1825,36 @@ input.invalid {
 															<thead>
 																<tr>
 																	<th>
-																		<button class="btn btn-sm btn-success" data-toggle="tooltip" title="Agregar otro producto"><i class="fa fa-plus"></i></button> Producto
+																		<button class="btn btn-sm btn-success" data-toggle="tooltip" title="Agregar otro producto"><i class="fa fa-plus"></i></button> Nombre del producto
+																	</th>
+																	<th style="width:70%">
+																		Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo
 																	</th>
 																</tr>
 															</thead>
 															<tbody>
 																<tr>
 																	<td>
-																		<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
+																		</div>
+																	</td>
+																	<td>
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Descripción"></textarea>
+																		</div>
 																	</td>
 																</tr>
 															</tbody>
 														</table>
 													</div>
 
-													<div class="col-sm-12">
-														<p class="pregunta">
-															Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo.
-														</p>
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
-															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
-														</div>
-													</div>
 												</div>
 											</div>
 											<!-- termina mostrar hecho en mexico -->
@@ -1879,24 +1864,24 @@ input.invalid {
 											</div>
 
 											<!-- inicia mostrar denominación de origen -->
-											<div id="divDenominacionOrigen" class="col-md-12" style="display:none">
+											<div id="divDenominacionOrigen" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
 														<h4 class="nombreEsquema" style="font-size:14px;">DENOMINACIÓN DE ORIGEN</h4>
 													</div>
-													<div class="col-sm-12">
+													<div class="col-sm-12" style="margin-bottom:1em;">
 														<b>
 															Productos
 														</b>
 													</div>
 
-													<div class="col-sm-4">
+													<div class="col-sm-3">
 														<!-- Toggles Checkbox -->
 														<div class="form-group">
-															<label class="d-flex align-items-center justify-content-between">
+															<label id="div_producto_denominacion_1" class="d-flex align-items-center justify-content-between">
 																<span>Café Chiapas</span>
 																<div class="u-check">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
+																	<input id="producto_denominacion_1" class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox" onclick="resaltarEsquema('producto_denominacion_1','div_producto_denominacion_1','span')">
 																	<div class="u-check-icon-radio-v8">
 																		<i class="fa" data-check-icon="&#xf00c"></i>
 																	</div>
@@ -1907,10 +1892,10 @@ input.invalid {
 
 														<!-- Toggles Checkbox -->
 														<div class="form-group">
-															<label class="d-flex align-items-center justify-content-between">
+															<label id="div_producto_denominacion_2" class="d-flex align-items-center justify-content-between">
 																<span>Café Veracruz</span>
 																<div class="u-check">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
+																	<input id="producto_denominacion_2" class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox" onclick="resaltarEsquema('producto_denominacion_2','div_producto_denominacion_2','span')">
 																	<div class="u-check-icon-radio-v8">
 																		<i class="fa" data-check-icon="&#xf00c"></i>
 																	</div>
@@ -1919,13 +1904,13 @@ input.invalid {
 														</div>
 														<!-- End Toggles Checkbox -->
 													</div>
-													<div class="col-sm-4">
+													<div class="col-sm-3">
 														<!-- Toggles Checkbox -->
 														<div class="form-group">
-															<label class="d-flex align-items-center justify-content-between">
+															<label id="div_producto_denominacion_3" class="d-flex align-items-center justify-content-between">
 																<span>Charanda</span>
 																<div class="u-check">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
+																	<input id="producto_denominacion_3" class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox" onclick="resaltarEsquema('producto_denominacion_3','div_producto_denominacion_3','span')">
 																	<div class="u-check-icon-radio-v8">
 																		<i class="fa" data-check-icon="&#xf00c"></i>
 																	</div>
@@ -1937,10 +1922,10 @@ input.invalid {
 
 														<!-- Toggles Checkbox -->
 														<div class="form-group">
-															<label class="d-flex align-items-center justify-content-between">
+															<label id="div_producto_denominacion_4" class="d-flex align-items-center justify-content-between">
 																<span>Mango Ataúlfo</span>
 																<div class="u-check">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
+																	<input id="producto_denominacion_4" class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox" onclick="resaltarEsquema('producto_denominacion_4','div_producto_denominacion_4','span')">
 																	<div class="u-check-icon-radio-v8">
 																		<i class="fa" data-check-icon="&#xf00c"></i>
 																	</div>
@@ -1949,13 +1934,13 @@ input.invalid {
 														</div>
 														<!-- End Toggles Checkbox -->
 													</div>
-													<div class="col-sm-4">
+													<div class="col-sm-3">
 														<!-- Toggles Checkbox -->
 														<div class="form-group">
-															<label class="d-flex align-items-center justify-content-between">
+															<label id="div_producto_denominacion_5" class="d-flex align-items-center justify-content-between">
 																<span>Vainilla de Papantla</span>
 																<div class="u-check">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
+																	<input id="producto_denominacion_5" class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox" onclick="resaltarEsquema('producto_denominacion_5','div_producto_denominacion_5','span')">
 																	<div class="u-check-icon-radio-v8">
 																		<i class="fa" data-check-icon="&#xf00c"></i>
 																	</div>
@@ -1971,11 +1956,10 @@ input.invalid {
 															Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo.
 														</b>
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
 													</div>
 													<div class="col-sm-12" style="margin-top:1em;">
@@ -2014,41 +1998,45 @@ input.invalid {
 													Indicar el idioma en que se realizará la auditoría y el idioma que se utilizará en el informe de auditoría
 												</h4>
 
-												<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory" data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+												<div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0" style="width:50%">
+													<select class="js-select u-select--v3-select u-sibling w-100" required="required" title="Idiomas" style="display: none;">
+														<option value="selectListItem1" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="fa fa-flag u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Español</span></span>'> Español
+														</option>
+														<option value="selectListItem2" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="fa fa-flag u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Ingles</span></span>'> Ingles
+														</option>
+														<option value="selectListItem3" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="fa fa-flag u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Otro</span></span>'> Otro
+														</option>
+													</select>
+
+													<div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+														<i style="color:red" class="hs-admin-angle-down"></i>
+													</div>
+												</div>
 
 											</div>
-											<div class="col-md-12">
-												<table class="table">
-													<thead>
-														<tr>
-															<th colspan="2">
-																USO DE DATOS
-															</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>
-																<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="" type="radio">
-																	<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																		<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																	</div>
-																	<b>SI</b> <span style="padding-left:10px;">El cliente permite el acceso de su nombre de la empresa y dirección al grupo de acceso de datos "Publica".</span>
-																</label>
-															</td>
-															<td>
-																<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="" type="radio">
-																	<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																		<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																	</div>
-																	<b>NO</b> <span style="padding-left:10px;">El cliente no está de acuerdo para conceder acceso de su nombre de la empresa y dirección al grupo de acceso de datos "Publica".</span>
-																</label>
-															</td>
-														</tr>
-													</tbody>
-												</table>
+
+											<div class="col-md-12" style="margin-top:1em;">
+												<p style="font-weight:bold;">
+													USO DE DATOS
+												</p>
+											</div>
+											<div class="col-md-6">
+												<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+													<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="" type="radio">
+													<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+														<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+													</div>
+													<b>SI</b> <span style="padding-left:10px;">El cliente permite el acceso de su nombre de la empresa y dirección al grupo de acceso de datos "Publica".</span>
+												</label>
+											</div>
+											<div class="col-md-6">
+												<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+													<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="" type="radio">
+													<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+														<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+													</div>
+													<b>NO</b> <span style="padding-left:10px;">El cliente no está de acuerdo para conceder acceso de su nombre de la empresa y dirección al grupo de acceso de datos "Publica".</span>
+												</label>
 											</div>
 
 										</div>
@@ -2076,6 +2064,28 @@ input.invalid {
 
 <!-- script validación de preguntas -->
 <script>
+	function resaltarEsquema(id,div,elemento){
+		var id = id;
+		var div = div;
+		var elemento = elemento;
+
+		var valor = $('#'+id).prop('checked');
+		if(valor){
+			document.getElementById(div).setAttribute(
+				//"style", "background: #EDF1F4; transition: background-color 0.5s ease"
+				"style", "border: 1.5px solid #27ae60; transition: border 0.5s ease;"
+			);
+			document.getElementById(div).getElementsByTagName(elemento)[0].setAttribute(
+				"style", "font-weight: bold; color: #27ae60"
+				);
+		}else{
+			document.getElementById(div).setAttribute(
+				"style", "none");
+			document.getElementById(div).getElementsByTagName(elemento)[0].style = "none";
+		}
+		
+
+	}
 
 	function radioCoc(){
 		var valor = $('input[name="radioGlobalCoc"]:checked').val();

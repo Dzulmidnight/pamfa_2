@@ -44,7 +44,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/css/custom.css">
 
 	<link href="<?php echo base_url(); ?>form-wizard/prettify.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="<?php echo base_url();?>admin/assets/vendor/bootstrap-tagsinput/css/bootstrap-tagsinput.css">
 
 </head>
 
