@@ -2845,12 +2845,15 @@ body[class*="u-body--header-side"].u-body--header-side-opened .u-header__overlay
 /* Button Primary */
 .u-btn-primary {
   color: #fff;
-  background-color: #e62154;
+  background-color: #72c02c;
 }
 
 .u-btn-primary:hover, .u-btn-primary.active {
-  border-color: #eb4f77;
-  background-color: #eb4f77;
+/*  border-color: #eb4f77;
+  background-color: #eb4f77;*/
+
+  border-color: #8cd54a;
+  background-color: #8cd54a;
 }
 
 .u-btn-primary:hover, .u-btn-primary:focus, .u-btn-primary.active {
@@ -2858,8 +2861,11 @@ body[class*="u-body--header-side"].u-body--header-side-opened .u-header__overlay
 }
 
 .u-btn-primary.g-btn-hover-reset:hover, .u-btn-primary.g-btn-hover-reset.active {
-  background-color: #e62154;
-  border-color: #e62154;
+  /*background-color: #e62154;
+  border-color: #e62154;*/
+  background-color: #72c02c;
+  border-color: #72c02c;
+  
 }
 
 .u-btn-primary.u-btn-hover-v1-1 {

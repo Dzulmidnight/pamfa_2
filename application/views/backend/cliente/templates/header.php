@@ -44,8 +44,11 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/css/custom.css">
 
 	<link href="<?php echo base_url(); ?>form-wizard/prettify.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo base_url();?>admin/assets/vendor/bootstrap-tagsinput/css/bootstrap-tagsinput.css">
+  	<link rel="stylesheet" href="<?php echo base_url();?>admin/assets/vendor/bootstrap-tagsinput/css/bootstrap-tagsinput.css">
 
+	<link rel="stylesheet" href="<?php echo base_url(); ?>select_picker/dist/picker.min.css">
+
+	<link href="<?php echo base_url(); ?>selectMultiple/multiple-select.css" rel="stylesheet"/>
 </head>
 
 <body>

@@ -1,4 +1,8 @@
 <style>
+#solicitudCertificacion input, #solicitudCertificacion textarea{
+	border-color: #72c02c !important;
+}
+
 
 .tituloPrincipal{
 	font-size: 18px;
@@ -16,7 +20,9 @@
 	display: inline-block;
 }
 /* Style the input fields */
-
+i{
+	font-size: 20px;
+}
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
@@ -30,25 +36,46 @@ input.invalid {
 }
 
 /* Make circles that indicate the steps of the form: */
+.contenedor {
+  display: inline-block;
+  margin: 0 2% 0 2%;
+  text-align: center;
+
+}
 .step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
+  height: 50px;
+  width: 50px;
+  margin: auto;
   background-color: #bbbbbb;
   border: none; 
   border-radius: 50%;
-  display: inline-block;
+  display: block;
   opacity: 0.5;
 }
 
 /* Mark the active step: */
 .step.active {
-  opacity: 1;
+	color: #fff;
+	background-color: #ff6348;
+  	opacity: 1;
+}
+
+.stepHijo{
+	display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.stepHijo i{
+	padding-top: 10px;
+}
+.stepTexto{
+	width: 50px;
 }
 
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  background-color: #4CAF50;
+	color: #ecf0f1;
+ 	background-color: #72c02c;
 }
 
 .pregunta{
@@ -61,12 +88,12 @@ input.invalid {
 
 .nombreEsquema{
 	color: #72c02c;
-	padding-top: 1em;
-	padding-bottom: 1em;
-	border-bottom: 4px solid #72c02c;
-	border-top: 4px solid #72c02c;
+	font-size: 18px;
+	border-bottom: 3px solid #72c02c;
 }
-
+.nombreEsquema img{
+	border: 3px solid #72c02c;
+}
 
 </style>
 
@@ -74,23 +101,87 @@ input.invalid {
 <div id="solicitudCertificacion" class="col g-ml-45 g-ml-0--lg g-pb-65--md">
 	<div class="g-pa-20">
 		<div class="row">
-			<div class="col-md-12">
-			
-				<!-- Circles which indicates the steps of the form: -->
-				<div style="text-align:center;margin-top:40px;">
-					<span class="step" onclick="nextPrev(1)"></span>
-					<span class="step" onclick="nextPrev(1)"></span>
-					<span class="step" onclick="nextPrev(1)"></span>
-					<span class="step" onclick="nextPrev(1)"></span>
-					<span class="step" onclick="nextPrev(1)"></span>
-					<span class="step" onclick="nextPrev(1)"></span>
-				</div>
-				<form id="regForm" action="">
 
+			<!-- Circles which indicates the steps of the form: -->
+
+			<div class="col-md-12 visible-">
+				<div class="text-center" style="margin-bottom:20px;">
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(-1)">
+							<span class="stepHijo">
+								<i class="icon-education-133 u-line-icon-pro"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Esquemas
+						</span>				
+					</span>
+
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(1)">
+							<span class="stepHijo">
+								<i class="icon-education-007 u-line-icon-pro"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Datos cliente
+						</span>				
+					</span>
+
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(1)">
+							<span class="stepHijo">
+								<i class="icon-finance-184 u-line-icon-pro"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Datos facturación
+						</span>				
+					</span>
+
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(1)">
+							<span class="stepHijo">
+								<i class="icon-education-137 u-line-icon-pro"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Certificaciones anteriores
+						</span>				
+					</span>
+
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(1)">
+							<span class="stepHijo">
+								<i class="icon-education-008 u-line-icon-pro"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Certificación
+						</span>				
+					</span>
+
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(1)">
+							<span class="stepHijo">
+								<i class="icon-badge"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Paso final
+						</span>				
+					</span>
+
+				</div>
+			</div>
+
+			<div class="col-md-12">
+
+				<form id="regForm" action="">
 					<!-- One "tab" for each step in the form: -->
 					<!-- inicia 1.- SELECCIONAR EL ESQUEMA DE CERTIFICACIÓN -->
 					<div class="tab">
-				     	<div class="card g-brd-gray-light-v7 g-mb-30">
+				     	<div class="card g-brd-gray-light-v7 g-mb-10">
 							<div id="esquema_certificacion">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
 									<form class="js-validate">
@@ -109,11 +200,11 @@ input.invalid {
 														
 														<label id="divEsquema1" class="d-flex align-items-center justify-content-between" >
 															<span>
-																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/globalgap.jpg'); ?>" alt="" style="width:100px;">
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt="">
 																<p class="temaEsquema">GLOBALG.A.P IFA V5.1</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" type="checkbox" onclick="resaltarEsquema('check_globalgap_ifa','divEsquema1','p')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" type="checkbox" onclick="resaltarEsquema('check_globalgap_ifa','divEsquema1','img')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -127,11 +218,11 @@ input.invalid {
 													<div class="form-group" >
 														<label id="divEsquema2" class="d-flex align-items-center justify-content-between">
 															<span>
-																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/globalgap.jpg'); ?>" alt="" style="width:100px;">
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt="">
 																<p class="temaEsquema">GLOBALG.A.P CADENA DE CUSTODIA (CoC)</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" type="checkbox" onclick="resaltarEsquema('check_globalgap_coc','divEsquema2','p')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" type="checkbox" onclick="resaltarEsquema('check_globalgap_coc','divEsquema2','img')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -145,11 +236,11 @@ input.invalid {
 													<div class="form-group">
 														<label id="divEsquema3" class="d-flex align-items-center justify-content-between">
 															<span>
-																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/mexico_calidad_suprema.jpg'); ?>" alt="" style="width:100px;">
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_mexico_calidad_suprema.jpg" alt="">
 																<p class="temaEsquema">MÉXICO CALIDAD SUPREMA</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_mex_calidad_suprema" type="checkbox" onclick="resaltarEsquema('check_mex_calidad_suprema','divEsquema3','p')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_mex_calidad_suprema" type="checkbox" onclick="resaltarEsquema('check_mex_calidad_suprema','divEsquema3','img')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -163,11 +254,11 @@ input.invalid {
 													<div class="form-group">
 														<label id="divEsquema4" class="d-flex align-items-center justify-content-between">
 															<span>
-																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/senasica.jpg'); ?>" alt="" style="width:100px;">
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_senasica.jpg" alt="">
 																<p class="temaEsquema">SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_srrc" type="checkbox" onclick="resaltarEsquema('check_srrc','divEsquema4','p')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_srrc" type="checkbox" onclick="resaltarEsquema('check_srrc','divEsquema4','img')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -181,11 +272,11 @@ input.invalid {
 													<div class="form-group" >
 														<label id="divEsquema5" class="d-flex align-items-center justify-content-between">
 															<span>
-																<img class="img-fluid img-thumbnail" src="<?php echo base_url('assets/img/esquemas_certificacion/hecho_en_mexico.jpg'); ?>" alt="" style="width:100px;">
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_hecho_en_mexico.jpg" alt="">
 																<p class="temaEsquema">HECHO EN MÉXICO</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_hecho_en_mexico" type="checkbox" onclick="resaltarEsquema('check_hecho_en_mexico','divEsquema5','p')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_hecho_en_mexico" type="checkbox" onclick="resaltarEsquema('check_hecho_en_mexico','divEsquema5','img')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -198,11 +289,12 @@ input.invalid {
 													<!-- Toggles Checkbox -->
 													<div class="form-group">
 														<label id="divEsquema6" class="d-flex align-items-center justify-content-between">
-															<span style="height:70px;">
+															<span style="height:85px;">
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_denominacion_origen.jpg" alt="">
 																<p class="temaEsquema">DENOMINACIÓN DE ORIGEN</p>
 															</span>
 															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_denominacion_origen" type="checkbox" onclick="resaltarEsquema('check_denominacion_origen', 'divEsquema6','p')">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_denominacion_origen" type="checkbox" onclick="resaltarEsquema('check_denominacion_origen', 'divEsquema6','img')">
 																<div class="u-check-icon-radio-v8">
 																	<i class="fa" data-check-icon="&#xf00c"></i>
 																</div>
@@ -223,7 +315,7 @@ input.invalid {
 
 					<!-- inicia 2.- DATOS DEL CLIENTE -->
 					<div class="tab">
-				     	<div class="card g-brd-gray-light-v7 g-mb-30">
+				     	<div class="card g-brd-gray-light-v7 g-mb-10">
 							<div id="datosCliente">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
 									<form class="js-validate">
@@ -443,7 +535,7 @@ input.invalid {
 
 					<!------------------------- inicia 3.- DATOS DE FACTURACIÓN ---------------------->
 					<div class="tab">
-				    	<div class="card g-brd-gray-light-v7 g-mb-30">
+				    	<div class="card g-brd-gray-light-v7 g-mb-10">
 							<div id="datos_facturacion">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
 									<form class="js-validate">
@@ -654,16 +746,16 @@ input.invalid {
 					<!-- termina DATOS DE FACTURACIÓN -->
 
 
-					<!------------------------ inicia 4.- CERTIFICACIONES ANTERIORES ------------------------>
+					<!------------------------ inicia 3.- CERTIFICACIONES ANTERIORES ------------------------>
 					<div class="tab">
-				     	<div class="card g-brd-gray-light-v7 g-mb-30">
+				     	<div class="card g-brd-gray-light-v7 g-mb-10">
 
 							<div id="certificaciones_anteriores">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
 									<form class="js-validate">
 
 										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
-										  <h2 class="h3 u-heading-v1__title">4.- CERTIFICACIONES ANTERIORES</h2>
+										  <h2 class="h3 u-heading-v1__title">3.- CERTIFICACIONES ANTERIORES</h2>
 										</div>
 
 										<!-- relacionados a GLOBALG.A.P -->
@@ -1021,74 +1113,29 @@ input.invalid {
 					</div>
 					<!-- termina CERTIFICACIONES ANTERIORES -->
 
-					<!-- inicia 5.- ESQUEMAS DE CERTIFICACIÓN -->
+					<!-- inicia 4.- ESQUEMAS DE CERTIFICACIÓN -->
 					<div class="tab">
-				     	<div class="card g-brd-gray-light-v7 g-mb-30">
+				     	<div class="card g-brd-gray-light-v7 g-mb-10">
 
 							<div id="datosCliente">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
 									<form class="js-validate">
 
 										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
-										  <h2 class="h3 u-heading-v1__title">5.- ESQUEMA DE CERTIFICACIÓN</h2>
+										  <h2 class="h3 u-heading-v1__title">4.- ESQUEMA DE CERTIFICACIÓN</h2>
 										</div>
 
 										<div class="row">
-											
-											
-											<!--<div class="col-md-6">
-										
-												<div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-
-												
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>GLOBALG.A.P IFA V5.1</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" type="checkbox" onclick="validarCheck('check_globalgap_ifa','divGlobalGapIfa','')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-									
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>GLOBALG.A.P CADENA DE CUSTODIA (CoC)</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" type="checkbox" onclick="validarCheck('check_globalgap_coc','divGlobalGapCoc','')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-				
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>MÉXICO CALIDAD SUPREMA</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_mex_calidad_suprema" type="checkbox" onclick="validarCheck('check_mex_calidad_suprema','divMexCalidadSuprema','')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-	
-												</div>
-
-											</div>-->
-
-
 
 
 											<!--------------- inicia sección global gap ifa -------------->
 											<div id="divGlobalGapIfa" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">GLOBALG.A.P IFA V5.1</h4>
+
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt=""> GLOBALG.A.P IFA V5.1
+														</h4>
 													</div>
 													<div class="col-md-12" style="margin-bottom:1em;">
 														<p>
@@ -1218,7 +1265,10 @@ input.invalid {
 											<div id="divGlobalGapCoc" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">GLOBALG.A.P CADENA DE CUSTODIA (CoC)</h4>
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt="">
+															GLOBALG.A.P CADENA DE CUSTODIA (CoC)
+														</h4>
 													</div>
 													<div class="col-md-12" style="margin-bottom:1em;">
 														<p>
@@ -1453,110 +1503,36 @@ input.invalid {
 											<div id="divMexCalidadSuprema" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">MÉXICO CALIDAD SUPREMA</h4>
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_mexico_calidad_suprema.jpg" alt="">
+															MÉXICO CALIDAD SUPREMA
+														</h4>
 													</div>
-													<div class="col-sm-12">
-														<table class="table table-bordered">
-															<tr>
-																<td colspan="6">
-																	<b>
-																		Alcance de la certificación
-																	</b>
-																</td>
-															</tr>
-															<!-- alcance de la certificación -->
-															<tr>
-																<td colspan="3">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Proceso
-																	</label>
-																</td>
-																<td colspan="3">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Producto
-																	</label>
-																</td>
-															</tr>
-															<tr>
-																<td colspan="6">
-																	<b>
-																		Pliego de condiciones
-																	</b>
-																</td>
-															</tr>
-
-															<!--pliego de condiciones -->
-															<tr>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Aguacate
-																	</label>
-																</td>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Mango
-																	</label>
-																</td>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Limón Persa
-																	</label>
-																</td>
-															</tr>
-															<tr>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Limón Mexicano
-																	</label>
-																</td>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Banano Cavendish
-																	</label>
-																</td>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Platano Dominico
-																	</label>
-																</td>
-															</tr>
-														</table>
+													<div class="col-md-6">
+														<h4>
+															Alcance de la certificación
+														</h4>
+														<select class="selectMultiple" name="alcance_certificación" id="" multiple>
+															<option value="1">Proceso</option>
+															<option value="2">Producto</option>
+														</select>
+													</div>
+													<div class="col-md-6">
+														<h4>
+															Pliego de condiciones
+														</h4>
+														<select class="selectMultiple" name="pliego_condiciones" id="" multiple>
+															<option value="1">Aguacate</option>
+															<option value="2">Limón Mexicano</option>
+															<option value="3">Lmón Persa</option>
+															<option value="4">Mango</option>
+															<option value="5">Banano Cavendish</option>
+															<option value="6">Platano Dominico</option>
+														</select>
 													</div>
 
 													<!-- inicia listado de equipos de verificación -->
-													<div class="col-sm-12">
+													<div class="col-sm-12" style="margin-top:1.5em;">
 														<table class="table table-bordered">
 															<thead>
 																<tr>
@@ -1674,7 +1650,10 @@ input.invalid {
 											<div id="divSrrc" class="col-md-12" style="display:none;margin-top: 1em;">
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)</h4>
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_senasica.jpg" alt="">
+															SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)
+														</h4>
 													</div>
 													<div class="col-sm-12">
 														<table class="table table-bordered">
@@ -1818,7 +1797,10 @@ input.invalid {
 											<div id="divHechoEnMexico" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">HECHO EN MÉXICO</h4>
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_hecho_en_mexico.jpg" alt="">
+															HECHO EN MÉXICO
+														</h4>
 													</div>
 													<div class="col-sm-12">
 														<table class="table table-bordered">
@@ -1859,97 +1841,30 @@ input.invalid {
 											</div>
 											<!-- termina mostrar hecho en mexico -->
 
-											<div class="col-md-12">
-												<hr>
-											</div>
-
 											<!-- inicia mostrar denominación de origen -->
 											<div id="divDenominacionOrigen" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">DENOMINACIÓN DE ORIGEN</h4>
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_denominacion_origen.jpg" alt="">
+															DENOMINACIÓN DE ORIGEN
+														</h4>
 													</div>
 													<div class="col-sm-12" style="margin-bottom:1em;">
-														<b>
+														<b style="margin-bottom:1.5em;">
 															Productos
 														</b>
+
+														<select class="selectMultiple" name="pliego_condiciones" id="" multiple>
+															<option value="1">Aguacate</option>
+															<option value="2">Limón Mexicano</option>
+															<option value="3">Lmón Persa</option>
+															<option value="4">Mango</option>
+															<option value="5">Banano Cavendish</option>
+															<option value="6">Platano Dominico</option>
+														</select>
+
 													</div>
-
-													<div class="col-sm-3">
-														<!-- Toggles Checkbox -->
-														<div class="form-group">
-															<label id="div_producto_denominacion_1" class="d-flex align-items-center justify-content-between">
-																<span>Café Chiapas</span>
-																<div class="u-check">
-																	<input id="producto_denominacion_1" class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox" onclick="resaltarEsquema('producto_denominacion_1','div_producto_denominacion_1','span')">
-																	<div class="u-check-icon-radio-v8">
-																		<i class="fa" data-check-icon="&#xf00c"></i>
-																	</div>
-																</div>
-															</label>
-														</div>
-														<!-- End Toggles Checkbox -->
-
-														<!-- Toggles Checkbox -->
-														<div class="form-group">
-															<label id="div_producto_denominacion_2" class="d-flex align-items-center justify-content-between">
-																<span>Café Veracruz</span>
-																<div class="u-check">
-																	<input id="producto_denominacion_2" class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox" onclick="resaltarEsquema('producto_denominacion_2','div_producto_denominacion_2','span')">
-																	<div class="u-check-icon-radio-v8">
-																		<i class="fa" data-check-icon="&#xf00c"></i>
-																	</div>
-																</div>
-															</label>
-														</div>
-														<!-- End Toggles Checkbox -->
-													</div>
-													<div class="col-sm-3">
-														<!-- Toggles Checkbox -->
-														<div class="form-group">
-															<label id="div_producto_denominacion_3" class="d-flex align-items-center justify-content-between">
-																<span>Charanda</span>
-																<div class="u-check">
-																	<input id="producto_denominacion_3" class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox" onclick="resaltarEsquema('producto_denominacion_3','div_producto_denominacion_3','span')">
-																	<div class="u-check-icon-radio-v8">
-																		<i class="fa" data-check-icon="&#xf00c"></i>
-																	</div>
-																</div>
-															</label>
-														</div>
-														<!-- End Toggles Checkbox -->
-
-
-														<!-- Toggles Checkbox -->
-														<div class="form-group">
-															<label id="div_producto_denominacion_4" class="d-flex align-items-center justify-content-between">
-																<span>Mango Ataúlfo</span>
-																<div class="u-check">
-																	<input id="producto_denominacion_4" class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox" onclick="resaltarEsquema('producto_denominacion_4','div_producto_denominacion_4','span')">
-																	<div class="u-check-icon-radio-v8">
-																		<i class="fa" data-check-icon="&#xf00c"></i>
-																	</div>
-																</div>
-															</label>
-														</div>
-														<!-- End Toggles Checkbox -->
-													</div>
-													<div class="col-sm-3">
-														<!-- Toggles Checkbox -->
-														<div class="form-group">
-															<label id="div_producto_denominacion_5" class="d-flex align-items-center justify-content-between">
-																<span>Vainilla de Papantla</span>
-																<div class="u-check">
-																	<input id="producto_denominacion_5" class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox" onclick="resaltarEsquema('producto_denominacion_5','div_producto_denominacion_5','span')">
-																	<div class="u-check-icon-radio-v8">
-																		<i class="fa" data-check-icon="&#xf00c"></i>
-																	</div>
-																</div>
-															</label>
-														</div>
-														<!-- End Toggles Checkbox -->
-													</div>
-
 
 													<div class="col-sm-12" style="margin-top:1em;">
 														<b>
@@ -2022,7 +1937,7 @@ input.invalid {
 											</div>
 											<div class="col-md-6">
 												<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-													<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="" type="radio">
+													<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="uso_datos" type="radio">
 													<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
 														<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
 													</div>
@@ -2031,7 +1946,7 @@ input.invalid {
 											</div>
 											<div class="col-md-6">
 												<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-													<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="" type="radio">
+													<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="uso_datos" type="radio">
 													<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
 														<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
 													</div>
@@ -2048,10 +1963,18 @@ input.invalid {
 					</div>
 					<!-- termina PASO FINAL -->
 
-					<div style="overflow:auto;">
-						<div style="float:right;">
-							<button class="btn btn-md u-btn-3d u-btn-indigo" type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
-						<button class="btn btn-md u-btn-3d u-btn-teal " type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-6">
+								<button style="width:50%;float:left;" class="btn btn-xl u-btn-orange g-mr-10 g-mb-15" type="button" id="prevBtn" onclick="nextPrev(-1)">
+									<i class="icon-arrow-left-circle"></i> Anterior
+								</button>
+							</div>
+							<div class="col-md-6">
+								<button style="width:50%;float:right" class="btn btn-xl u-btn-primary g-mr-10 g-mb-15" type="button" id="nextBtn" onclick="nextPrev(1)">
+									Siguiente
+								</button>
+							</div>
 						</div>
 					</div>
 
@@ -2071,16 +1994,15 @@ input.invalid {
 
 		var valor = $('#'+id).prop('checked');
 		if(valor){
-			document.getElementById(div).setAttribute(
-				//"style", "background: #EDF1F4; transition: background-color 0.5s ease"
-				"style", "border: 1.5px solid #27ae60; transition: border 0.5s ease;"
-			);
+
 			document.getElementById(div).getElementsByTagName(elemento)[0].setAttribute(
-				"style", "font-weight: bold; color: #27ae60"
+				//"style", "font-weight: bold; color: #27ae60"
+				"style", "border: 2px solid #27ae60;transition: border 0.5s ease;"
 				);
 		}else{
 			document.getElementById(div).setAttribute(
 				"style", "none");
+			document.getElementById(div).getElementsByTagName(elemento)[0].style = "none";
 			document.getElementById(div).getElementsByTagName(elemento)[0].style = "none";
 		}
 		
@@ -2175,9 +2097,9 @@ input.invalid {
 			document.getElementById("prevBtn").style.display = "inline";
 		}
 		if (n == (x.length - 1)) {
-			document.getElementById("nextBtn").innerHTML = "Finalizar solicitud";
+			document.getElementById("nextBtn").innerHTML = "Finalizar solicitud <i class='icon-check'></i>";
 		} else {
-			document.getElementById("nextBtn").innerHTML = "Siguiente";
+			document.getElementById("nextBtn").innerHTML = "Siguiente <i class='icon-arrow-right-circle'></i>";
 		}
 		// ... and run a function that displays the correct step indicator:
 		fixStepIndicator(n)
@@ -2199,6 +2121,7 @@ input.invalid {
 			return false;
 		}
 		// Otherwise, display the correct tab:
+		consoele
 		showTab(currentTab);
 	}
 

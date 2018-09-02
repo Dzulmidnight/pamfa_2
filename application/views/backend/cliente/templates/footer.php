@@ -113,9 +113,18 @@
 
 		<!-- JS Unify -->
 		<script  src="<?php echo base_url(); ?>assets/js/components/hs.masked-input.js"></script>
-        
+       
+		<script src="<?php echo base_url(); ?>selectMultiple/multiple-select.js"></script>
 
-		<!-- JS Plugins Init. -->
+	    <script>
+	        $('.selectMultiple').multipleSelect({
+	        	placeholder: 'Selecciona la(s) opcion(es)',
+	        	width: '100%',
+	        	selectAll: false,
+	        	allSelected: 'Se han seleccionado todos'
+	        });
+	    </script>
+
 		<script >
 		  $(document).on('ready', function () {
 		        // initialization of forms
