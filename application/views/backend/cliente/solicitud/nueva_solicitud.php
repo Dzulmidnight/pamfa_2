@@ -2121,7 +2121,6 @@ input.invalid {
 			return false;
 		}
 		// Otherwise, display the correct tab:
-		consoele
 		showTab(currentTab);
 	}
 
