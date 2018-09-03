@@ -55,7 +55,8 @@
 		</main>
 
 		<!-- JS Global Compulsory -->
-      
+
+
 		<script src="<?php echo base_url(); ?>admin/assets/vendor/jquery/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>admin/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
 
@@ -103,6 +104,7 @@
 		<script src="<?php echo base_url(); ?>admin/assets/js/helpers/hs.focus-state.js"></script>
 		<script src="<?php echo base_url(); ?>admin/assets/js/components/hs.popup.js"></script>
 
+        <script src="<?php echo base_url(); ?>admin/assets/vendor/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
 		<!-- JS Custom -->
 		<script src="<?php echo base_url(); ?>admin/assets/js/custom.js"></script>
 
@@ -111,9 +113,18 @@
 
 		<!-- JS Unify -->
 		<script  src="<?php echo base_url(); ?>assets/js/components/hs.masked-input.js"></script>
-        
+       
+		<script src="<?php echo base_url(); ?>selectMultiple/multiple-select.js"></script>
 
-		<!-- JS Plugins Init. -->
+	    <script>
+	        $('.selectMultiple').multipleSelect({
+	        	placeholder: 'Selecciona la(s) opcion(es)',
+	        	width: '100%',
+	        	selectAll: false,
+	        	allSelected: 'Se han seleccionado todos'
+	        });
+	    </script>
+
 		<script >
 		  $(document).on('ready', function () {
 		        // initialization of forms
@@ -192,6 +203,9 @@
   
       // initialization of custom scrollbar
       $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+
+
+      
     });
   </script>
 

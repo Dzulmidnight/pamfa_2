@@ -1,4 +1,8 @@
 <style>
+#solicitudCertificacion input, #solicitudCertificacion textarea{
+	border-color: #72c02c !important;
+}
+
 
 .tituloPrincipal{
 	font-size: 18px;
@@ -12,9 +16,13 @@
   width: 70%;*/
   min-width: 300px;
 }
-
+.temaEsquema{
+	display: inline-block;
+}
 /* Style the input fields */
-
+i{
+	font-size: 20px;
+}
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
@@ -28,25 +36,46 @@ input.invalid {
 }
 
 /* Make circles that indicate the steps of the form: */
+.contenedor {
+  display: inline-block;
+  margin: 0 2% 0 2%;
+  text-align: center;
+
+}
 .step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
+  height: 50px;
+  width: 50px;
+  margin: auto;
   background-color: #bbbbbb;
   border: none; 
   border-radius: 50%;
-  display: inline-block;
+  display: block;
   opacity: 0.5;
 }
 
 /* Mark the active step: */
 .step.active {
-  opacity: 1;
+	color: #fff;
+	background-color: #ff6348;
+  	opacity: 1;
+}
+
+.stepHijo{
+	display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.stepHijo i{
+	padding-top: 10px;
+}
+.stepTexto{
+	width: 50px;
 }
 
 /* Mark the steps that are finished and valid: */
 .step.finish {
-  background-color: #4CAF50;
+	color: #ecf0f1;
+ 	background-color: #72c02c;
 }
 
 .pregunta{
@@ -59,10 +88,12 @@ input.invalid {
 
 .nombreEsquema{
 	color: #72c02c;
-	border-bottom: 4px solid #72c02c;
-	border-top: 4px solid #72c02c;
+	font-size: 18px;
+	border-bottom: 3px solid #72c02c;
 }
-
+.nombreEsquema img{
+	border: 3px solid #72c02c;
+}
 
 </style>
 
@@ -70,23 +101,221 @@ input.invalid {
 <div id="solicitudCertificacion" class="col g-ml-45 g-ml-0--lg g-pb-65--md">
 	<div class="g-pa-20">
 		<div class="row">
-			<div class="col-md-12">
-			
-				<!-- Circles which indicates the steps of the form: -->
-				<div style="text-align:center;margin-top:40px;">
-					<span class="step" onclick="nextPrev(1)"></span>
-					<span class="step" onclick="nextPrev(1)"></span>
-					<span class="step" onclick="nextPrev(1)"></span>
-					<span class="step" onclick="nextPrev(1)"></span>
-					<span class="step" onclick="nextPrev(1)"></span>
-					<span class="step" onclick="nextPrev(1)"></span>
-				</div>
-				<form id="regForm" action="">
 
+			<!-- Circles which indicates the steps of the form: -->
+
+			<div class="col-md-12 visible-">
+				<div class="text-center" style="margin-bottom:20px;">
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(-1)">
+							<span class="stepHijo">
+								<i class="icon-education-133 u-line-icon-pro"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Esquemas
+						</span>				
+					</span>
+
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(1)">
+							<span class="stepHijo">
+								<i class="icon-education-007 u-line-icon-pro"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Datos cliente
+						</span>				
+					</span>
+
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(1)">
+							<span class="stepHijo">
+								<i class="icon-finance-184 u-line-icon-pro"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Datos facturación
+						</span>				
+					</span>
+
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(1)">
+							<span class="stepHijo">
+								<i class="icon-education-137 u-line-icon-pro"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Certificaciones anteriores
+						</span>				
+					</span>
+
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(1)">
+							<span class="stepHijo">
+								<i class="icon-education-008 u-line-icon-pro"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Certificación
+						</span>				
+					</span>
+
+					<span class="contenedor">
+						<span class="step" onclick="nextPrev(1)">
+							<span class="stepHijo">
+								<i class="icon-badge"></i>
+							</span>
+						</span>
+						<span class="stepTexto">
+							Paso final
+						</span>				
+					</span>
+
+				</div>
+			</div>
+
+			<div class="col-md-12">
+
+				<form id="regForm" action="">
 					<!-- One "tab" for each step in the form: -->
-					<!-- inicia 1.- DATOS DEL CLIENTE -->
+					<!-- inicia 1.- SELECCIONAR EL ESQUEMA DE CERTIFICACIÓN -->
 					<div class="tab">
-				     	<div class="card g-brd-gray-light-v7 g-mb-30">
+				     	<div class="card g-brd-gray-light-v7 g-mb-10">
+							<div id="esquema_certificacion">
+								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+									<form class="js-validate">
+
+										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
+											<h2 class="h3 u-heading-v1__title">ESQUEMA DE CERTIFICACIÓN</h2>
+										</div>
+
+										<div class="row">
+											<div class="col-md-12">
+												<h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black" style="margin-bottom:1em;">Seleccionar el esquema de certificación que está solicitando</h3>
+											</div>
+											<div  class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group">
+														
+														<label id="divEsquema1" class="d-flex align-items-center justify-content-between" >
+															<span>
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt="">
+																<p class="temaEsquema">GLOBALG.A.P IFA V5.1</p>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" type="checkbox" onclick="resaltarEsquema('check_globalgap_ifa','divEsquema1','img')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div  class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group" >
+														<label id="divEsquema2" class="d-flex align-items-center justify-content-between">
+															<span>
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt="">
+																<p class="temaEsquema">GLOBALG.A.P CADENA DE CUSTODIA (CoC)</p>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" type="checkbox" onclick="resaltarEsquema('check_globalgap_coc','divEsquema2','img')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div  class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group">
+														<label id="divEsquema3" class="d-flex align-items-center justify-content-between">
+															<span>
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_mexico_calidad_suprema.jpg" alt="">
+																<p class="temaEsquema">MÉXICO CALIDAD SUPREMA</p>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_mex_calidad_suprema" type="checkbox" onclick="resaltarEsquema('check_mex_calidad_suprema','divEsquema3','img')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div  class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group">
+														<label id="divEsquema4" class="d-flex align-items-center justify-content-between">
+															<span>
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_senasica.jpg" alt="">
+																<p class="temaEsquema">SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)</p>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_srrc" type="checkbox" onclick="resaltarEsquema('check_srrc','divEsquema4','img')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div  class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group" >
+														<label id="divEsquema5" class="d-flex align-items-center justify-content-between">
+															<span>
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_hecho_en_mexico.jpg" alt="">
+																<p class="temaEsquema">HECHO EN MÉXICO</p>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_hecho_en_mexico" type="checkbox" onclick="resaltarEsquema('check_hecho_en_mexico','divEsquema5','img')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+											<div  class="col-md-6">
+													<!-- Toggles Checkbox -->
+													<div class="form-group">
+														<label id="divEsquema6" class="d-flex align-items-center justify-content-between">
+															<span style="height:85px;">
+																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_denominacion_origen.jpg" alt="">
+																<p class="temaEsquema">DENOMINACIÓN DE ORIGEN</p>
+															</span>
+															<div class="u-check">
+																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_denominacion_origen" type="checkbox" onclick="resaltarEsquema('check_denominacion_origen', 'divEsquema6','img')">
+																<div class="u-check-icon-radio-v8">
+																	<i class="fa" data-check-icon="&#xf00c"></i>
+																</div>
+															</div>
+														</label>
+													</div>
+													<!-- End Toggles Checkbox -->
+											</div>
+
+
+										</div>
+									</form>
+								</div>
+							</div>
+				     	</div>
+					</div>
+					<!-- termina SELECCIONAR EL ESQUEMA DE CERTIFICACIÓN -->
+
+					<!-- inicia 2.- DATOS DEL CLIENTE -->
+					<div class="tab">
+				     	<div class="card g-brd-gray-light-v7 g-mb-10">
 							<div id="datosCliente">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
 									<form class="js-validate">
@@ -96,6 +325,7 @@ input.invalid {
 
 										<div class="row">
 											<div class="col-md-6">
+
 												<div class="row g-mb-20">
 													<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
 														<label class="pregunta mb-0" for="#firstName">Nombre de la entidad legal *</label>
@@ -103,8 +333,8 @@ input.invalid {
 
 													<div class="col-md-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
@@ -119,48 +349,50 @@ input.invalid {
 
 													<div class="col-md-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="col-md-12">
-												<div class="row g-mb-20">
-													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-														<label class="pregunta mb-0" for="#firstName">Email *</label>
-													</div>
+											<form action="#">
+												<div class="col-md-12">
 
-													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
-															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="ejemplo@gmail.com">
+													<div class="row g-mb-20">
+														<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+															<label class="pregunta mb-0" for="#firstName">Email *</label>
 														</div>
-													</div>
-												</div>	
-											</div>
-											<div class="col-md-6">
-												<div class="row g-mb-20">
-													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-														<label class="pregunta mb-0" for="#firstName">Teléfono *</label>
-													</div>
 
-													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
-															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+														<div class="col-md-9 align-self-center">
+															<div class="g-pos-rel">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="ejemplo@gmail.com">
+															</div>
 														</div>
-													</div>
-												</div>	
-											</div>
+													</div>	
+												</div>
+												<div class="col-md-6">
+													<div class="row g-mb-20">
+														<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+															<label class="pregunta mb-0" for="#firstName">Teléfono *</label>
+														</div>
+
+														<div class="col-md-9 align-self-center">
+															<div class="g-pos-rel">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aqui">
+															</div>
+														</div>
+													</div>	
+												</div>												
+											</form>
+
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
@@ -168,12 +400,11 @@ input.invalid {
 													</div>
 
 													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<div class="g-pos-rel">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+															<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 														</div>
 													</div>
 												</div>	
@@ -202,7 +433,7 @@ input.invalid {
 																		<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
 																	</span>
 																	<select class="js-select u-select--v2-select w-100" required="required" style="display: none;">
-																		<option>Listado de paises</option>
+																		<option>Selecciona un país</option>
 																		<option selected="selected">México</option>
 																	</select>
 																	<i class="hs-admin-angle-down g-absolute-centered--y g-right-0 g-color-gray-light-v6 ml-auto g-mr-15"></i>
@@ -219,12 +450,11 @@ input.invalid {
 													</div>
 
 													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<div class="g-pos-rel">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+															<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 														</div>
 													</div>
 												</div>
@@ -236,12 +466,11 @@ input.invalid {
 													</div>
 
 													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<div class="g-pos-rel">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+															<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 														</div>
 													</div>
 												</div>	
@@ -253,12 +482,11 @@ input.invalid {
 													</div>
 
 													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<div class="g-pos-rel">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+															<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 														</div>
 													</div>
 												</div>	
@@ -270,12 +498,11 @@ input.invalid {
 													</div>
 
 													<div class="col-md-9 align-self-center">
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<div class="g-pos-rel">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="number" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Solo números">
+															<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 														</div>
 													</div>
 												</div>	
@@ -288,8 +515,8 @@ input.invalid {
 
 													<div class="col-md-9 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
@@ -306,9 +533,9 @@ input.invalid {
 					</div>
 					<!-- termina DATOS DEL CLIENTE -->
 
-					<!------------------------- inicia 2.- DATOS DE FACTURACIÓN ---------------------->
+					<!------------------------- inicia 3.- DATOS DE FACTURACIÓN ---------------------->
 					<div class="tab">
-				    	<div class="card g-brd-gray-light-v7 g-mb-30">
+				    	<div class="card g-brd-gray-light-v7 g-mb-10">
 							<div id="datos_facturacion">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
 									<form class="js-validate">
@@ -326,8 +553,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
@@ -343,8 +570,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
@@ -360,8 +587,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="ejemplo@gmail.com">
@@ -378,8 +605,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
@@ -396,16 +623,16 @@ input.invalid {
 													<div class="col-sm-12 align-self-center">
 															<div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0">
 																<select class="js-select u-select--v3-select u-sibling w-100" required="required" title="Formas de pago" style="display: none;">
-																	<option value="selectListItem1" data-content='<span class="d-flex align-items-center w-100"><i class="icon-finance-130 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Efectivo</span></span>'>Efectivo
+																	<option value="selectListItem1" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="icon-finance-130 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Efectivo</span></span>'>Efectivo
 																	</option>
-																	<option value="selectListItem2" data-content='<span class="d-flex align-items-center w-100"><i class="icon-finance-139 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Transferencia</span></span>'>Transferencia
+																	<option value="selectListItem2" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="icon-finance-139 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Transferencia</span></span>'>Transferencia
 																	</option>
-																	<option value="selectListItem3" data-content='<span class="d-flex align-items-center w-100"><i class="icon-finance-149 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Cheque</span></span>'>Cheque
+																	<option value="selectListItem3" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="icon-finance-149 u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Cheque</span></span>'>Cheque
 																	</option>
 																</select>
 
 																<div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-																	<i class="hs-admin-angle-down"></i>
+																	<i style="color:red" class="hs-admin-angle-down"></i>
 																</div>
 															</div>
 													</div>
@@ -420,8 +647,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
@@ -438,8 +665,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
@@ -455,8 +682,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<input id="inputGroup1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" placeholder="XXXX" data-mask="9999-" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -476,8 +703,8 @@ input.invalid {
 
 													<div class="col-sm-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
@@ -493,8 +720,8 @@ input.invalid {
 
 													<div class="col-md-12 align-self-center">
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
 															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="calle, numero, CP, Ciudad, Municipio, Estado, Pais"></textarea>
 														</div>
@@ -518,55 +745,17 @@ input.invalid {
 					</div>
 					<!-- termina DATOS DE FACTURACIÓN -->
 
-					<!------------------------ inicia 3.- PRODUCTOS POR CERTIFICAR ------------------------>
+
+					<!------------------------ inicia 3.- CERTIFICACIONES ANTERIORES ------------------------>
 					<div class="tab">
-				     	<div class="card g-brd-gray-light-v7 g-mb-30">
-
-							<div id="datosCliente">
-								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-									<form class="js-validate">
-
-										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
-										  <h2 class="h3 u-heading-v1__title">3.- PRODUCTOS POR CERTIFICAR</h2>
-										</div>
-
-										<div class="row">
-											<div class="col-md-12">
-												<button class="btn u-btn-blue g-mr-10 g-mb-15">
-													<i class="fa fa-plus"></i> Agregar otro
-												</button>
-												<table class="table">
-													<tr>
-														<td>
-															Nombre del producto
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
-														</td>
-													</tr>
-												</table>
-											</div>
-										</div>
-									</form>
-								</div>
-								
-							</div>
-				     	</div>
-					</div>
-					<!-- termina PRODUCTOS POR CERTIFICAR -->
-
-					<!------------------------ inicia 4.- CERTIFICACIONES ANTERIORES ------------------------>
-					<div class="tab">
-				     	<div class="card g-brd-gray-light-v7 g-mb-30">
+				     	<div class="card g-brd-gray-light-v7 g-mb-10">
 
 							<div id="certificaciones_anteriores">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
 									<form class="js-validate">
 
 										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
-										  <h2 class="h3 u-heading-v1__title">4.- CERTIFICACIONES ANTERIORES</h2>
+										  <h2 class="h3 u-heading-v1__title">3.- CERTIFICACIONES ANTERIORES</h2>
 										</div>
 
 										<!-- relacionados a GLOBALG.A.P -->
@@ -605,8 +794,8 @@ input.invalid {
 															</label>
 
 															<div class="g-pos-rel">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																	<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																</span>
 																<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="GLOBALG.A.P NUMBER">
 															</div>
@@ -620,8 +809,8 @@ input.invalid {
 															</label>
 
 															<div class="g-pos-rel">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																	<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																</span>
 																<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="CoC Number">
 															</div>
@@ -646,6 +835,9 @@ input.invalid {
 														<div id="divGLN" style="display:none">
 															<!-- Text Input -->
 															<div class="form-group u-has-success-v1-1 g-mb-20">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
 																<input id="inputGroup2_1" class="form-control form-control-md rounded-0" type="email" placeholder="Ingresa tu número GLN">
 																<small class="form-control-feedback d-block g-bg-primary g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">
 																	Información requerida
@@ -700,6 +892,9 @@ input.invalid {
 													<div id="divSenasica" class="form-group" style="display:none">
 														<!-- Text Input -->
 														<div class="form-group u-has-success-v1-1 g-mb-20">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+															</span>
 															<input id="inputGroup2_1" class="form-control form-control-md rounded-0" type="email" placeholder="Número de registro de SENASICA">
 															<small class="form-control-feedback d-block g-bg-primary g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">
 																Información requerida
@@ -733,6 +928,9 @@ input.invalid {
 													<div id="regMexCalidadSuprema" class="form-group" style="display:none">
 														<!-- Text Input -->
 														<div class="form-group u-has-success-v1-1 g-mb-20">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+															</span>
 															<input id="inputGroup2_1" class="form-control form-control-md rounded-0" type="email" placeholder="Registro de México Calidad Suprema">
 															<small class="form-control-feedback d-block g-bg-primary g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">
 																Información requerida
@@ -765,6 +963,9 @@ input.invalid {
 													<div id="divPrimus" class="form-group" style="display:none">
 														<!-- Text Input -->
 														<div class="form-group u-has-success-v1-1 g-mb-20">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+															</span>
 															<input id="inputGroup2_1" class="form-control form-control-md rounded-0" type="email" placeholder="Número PrimusGSF">
 															<small class="form-control-feedback d-block g-bg-primary g-color-white g-font-size-12 g-px-14 g-py-3 mt-0">
 																Información requerida
@@ -785,8 +986,8 @@ input.invalid {
 													<label class="g-mb-10" for="inputGroup-1_1">Nombre del responsable de la aplicación de la norma de certificación en la entidad legal</label>
 
 													<div class="g-pos-rel">
-														<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-															<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+															<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 														</span>
 														<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 													</div>
@@ -801,8 +1002,8 @@ input.invalid {
 													<label class="g-mb-10" for="inputGroup-1_1">Nombre de la persona que realizó la autoevaluación interna en la entidad legal</label>
 
 													<div class="g-pos-rel">
-														<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-															<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+														<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+															<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 														</span>
 														<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 													</div>
@@ -854,8 +1055,8 @@ input.invalid {
 															</label>
 
 															<div class="g-pos-rel">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																	<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																</span>
 																<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 															</div>
@@ -874,8 +1075,8 @@ input.invalid {
 																		<div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
 																			<input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Desde" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y">
 																			<div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-																				<i class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
-																				<i class="hs-admin-angle-down"></i>
+																				<i style="color:red" class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
+																				<i style="color:red" class="hs-admin-angle-down"></i>
 																			</div>
 																		</div>
 																	</div>
@@ -887,8 +1088,8 @@ input.invalid {
 																		<div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
 																			<input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Hasta" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y">
 																			<div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-																				<i class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
-																				<i class="hs-admin-angle-down"></i>
+																				<i style="color:red" class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
+																				<i style="color:red" class="hs-admin-angle-down"></i>
 																			</div>
 																		</div>
 																	</div>
@@ -912,128 +1113,45 @@ input.invalid {
 					</div>
 					<!-- termina CERTIFICACIONES ANTERIORES -->
 
-					<!-- inicia 5.- ESQUEMAS DE CERTIFICACIÓN -->
+					<!-- inicia 4.- ESQUEMAS DE CERTIFICACIÓN -->
 					<div class="tab">
-				     	<div class="card g-brd-gray-light-v7 g-mb-30">
+				     	<div class="card g-brd-gray-light-v7 g-mb-10">
 
 							<div id="datosCliente">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
 									<form class="js-validate">
 
 										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
-										  <h2 class="h3 u-heading-v1__title">5.- ESQUEMAS DE CERTIFICACIÓN</h2>
+										  <h2 class="h3 u-heading-v1__title">4.- ESQUEMA DE CERTIFICACIÓN</h2>
 										</div>
 
 										<div class="row">
-											<div class="col-md-12">
-												<h3 class="d-flex align-self-center text-uppercase g-font-size-12 g-font-size-default--md g-color-black">Favor de seleccionar el esquema de certificación que está solicitando</h3>
-											</div>
-											<div class="col-md-6">
-												<!-- Toggles based on Checkboxes -->
-												<div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-
-													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>GLOBALG.A.P IFA V5.1</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" type="checkbox" onclick="validarCheck('check_globalgap_ifa','divGlobalGapIfa')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-													<!-- End Toggles Checkbox -->
-
-													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>GLOBALG.A.P CADENA DE CUSTODIA (CoC)</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" type="checkbox" onclick="validarCheck('check_globalgap_coc','divGlobalGapCoc')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-													<!-- End Toggles Checkbox -->
-
-													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>MÉXICO CALIDAD SUPREMA</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_mex_calidad_suprema" type="checkbox" onclick="validarCheck('check_mex_calidad_suprema','divMexCalidadSuprema')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-													<!-- End Toggles Checkbox -->
-												</div>
-												<!-- End Toggles based on Checkboxes -->
-											</div>
-
-											<div class="col-md-6">
-												<!-- Toggles based on Checkboxes -->
-												<div class="g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md g-mb-30">
-
-													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_srrc" type="checkbox" onclick="validarCheck('check_srrc','divSrrc')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-													<!-- End Toggles Checkbox -->
-
-													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>HECHO EN MÉXICO</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_hecho_en_mexico" type="checkbox" onclick="validarCheck('check_hecho_en_mexico','divHechoEnMexico')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-													<!-- End Toggles Checkbox -->
-
-													<!-- Toggles Checkbox -->
-													<div class="form-group">
-														<label class="d-flex align-items-center justify-content-between">
-															<span>DENOMINACIÓN DE ORIGEN</span>
-															<div class="u-check">
-																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_denominacion_origen" type="checkbox" onclick="validarCheck('check_denominacion_origen', 'divDenominacionOrigen')">
-																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
-																</div>
-															</div>
-														</label>
-													</div>
-													<!-- End Toggles Checkbox -->
-												</div>
-												<!-- End Toggles based on Checkboxes -->
-											</div>
-
 
 
 											<!--------------- inicia sección global gap ifa -------------->
-											<div id="divGlobalGapIfa" class="col-md-12" style="display:none">
+											<div id="divGlobalGapIfa" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">GLOBALG.A.P IFA V5.1</h4>
+
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt=""> GLOBALG.A.P IFA V5.1
+														</h4>
 													</div>
+													<div class="col-md-12" style="margin-bottom:1em;">
+														<p>
+															Ingresa lo(s) producto(s) por certificar
+														</p>
+
+									                    <div class="u-tagsinput--v2--gray g-brd-around g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-6 g-py-5">
+															<div class="form-group g-pos-rel mb-0">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<input type="text" value="" data-role="tagsinput" placeholder="Ingresa los productos">
+															</div>
+									                    </div>
+													</div>
+
 													<div class="col-md-6">
 														<table class="table table-bordered">
 															<tr>
@@ -1094,8 +1212,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="num_productores" name="num_productores" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="int" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1111,8 +1229,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="num_unidades_produccion" name="num_unidades_produccion" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1130,8 +1248,8 @@ input.invalid {
 															</label>
 
 															<div class="g-pos-rel">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																	<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																</span>
 																<input id="inputGroup-1_1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí">
 															</div>
@@ -1144,10 +1262,27 @@ input.invalid {
 
 
 											<!-- inicia mostrar global gap coc -->
-											<div id="divGlobalGapCoc" class="col-md-12" style="display:none">
+											<div id="divGlobalGapCoc" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">GLOBALG.A.P CADENA DE CUSTODIA (CoC)</h4>
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt="">
+															GLOBALG.A.P CADENA DE CUSTODIA (CoC)
+														</h4>
+													</div>
+													<div class="col-md-12" style="margin-bottom:1em;">
+														<p>
+															Ingresa lo(s) producto(s) por certificar
+														</p>
+
+									                    <div class="u-tagsinput--v2--gray g-brd-around g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-6 g-py-5">
+															<div class="form-group g-pos-rel mb-0">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<input type="text" value="" data-role="tagsinput" placeholder="Ingresa los productos">
+															</div>
+									                    </div>
 													</div>
 													<div class="col-sm-6">
 														<table class="table table-bordered">
@@ -1171,8 +1306,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="realiza_etiquetado" name="realiza_etiquetado" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1188,8 +1323,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="sistema_trazabilidad" name="sistema_trazabilidad" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1225,8 +1360,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="cantidad_estimada_producto" name="cantidad_estimada_producto" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1244,8 +1379,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="num_total_unidades" name="num_total_unidades" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1263,8 +1398,8 @@ input.invalid {
 
 																		<div class="col-md-12 align-self-center">
 																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																					<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 																				</span>
 																				<input id="num_unidades_produccion_certificar" name="num_unidades_produccion_certificar" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
@@ -1365,112 +1500,39 @@ input.invalid {
 
 
 											<!-- inicia mostrar mexico calidad suprema -->
-											<div id="divMexCalidadSuprema" class="col-md-12" style="display:none">
+											<div id="divMexCalidadSuprema" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">MÉXICO CALIDAD SUPREMA</h4>
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_mexico_calidad_suprema.jpg" alt="">
+															MÉXICO CALIDAD SUPREMA
+														</h4>
 													</div>
-													<div class="col-sm-12">
-														<table class="table table-bordered">
-															<tr>
-																<td colspan="6">
-																	<b>
-																		Alcance de la certificación
-																	</b>
-																</td>
-															</tr>
-															<!-- alcance de la certificación -->
-															<tr>
-																<td colspan="3">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Proceso
-																	</label>
-																</td>
-																<td colspan="3">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Producto
-																	</label>
-																</td>
-															</tr>
-															<tr>
-																<td colspan="6">
-																	<b>
-																		Pliego de condiciones
-																	</b>
-																</td>
-															</tr>
-															<!--pliego de condiciones -->
-															<tr>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Aguacate
-																	</label>
-																</td>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Mango
-																	</label>
-																</td>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Limón Persa
-																	</label>
-																</td>
-															</tr>
-															<tr>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Limón Mexicano
-																	</label>
-																</td>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Banano Cavendish
-																	</label>
-																</td>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
-																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
-																		</div>
-																		Platano Dominico
-																	</label>
-																</td>
-															</tr>
-														</table>
+													<div class="col-md-6">
+														<h4>
+															Alcance de la certificación
+														</h4>
+														<select class="selectMultiple" name="alcance_certificación" id="" multiple>
+															<option value="1">Proceso</option>
+															<option value="2">Producto</option>
+														</select>
+													</div>
+													<div class="col-md-6">
+														<h4>
+															Pliego de condiciones
+														</h4>
+														<select class="selectMultiple" name="pliego_condiciones" id="" multiple>
+															<option value="1">Aguacate</option>
+															<option value="2">Limón Mexicano</option>
+															<option value="3">Lmón Persa</option>
+															<option value="4">Mango</option>
+															<option value="5">Banano Cavendish</option>
+															<option value="6">Platano Dominico</option>
+														</select>
 													</div>
 
 													<!-- inicia listado de equipos de verificación -->
-													<div class="col-sm-12">
+													<div class="col-sm-12" style="margin-top:1.5em;">
 														<table class="table table-bordered">
 															<thead>
 																<tr>
@@ -1493,7 +1555,12 @@ input.invalid {
 															<tbody>
 																<tr>
 																	<td>
-																		<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del equipo"></textarea>
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del equipo"></textarea>
+																		</div>
 																	</td>
 																	<td>
 																		<input class="form-control" type="file">
@@ -1522,8 +1589,13 @@ input.invalid {
 
 															</label>
 														</div>
-														<div id="divRequisitosAdicionales" style="display:none;">
-															<textarea id="documento_requisitos_adicionales" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del documento"></textarea>
+														<div id="divRequisitosAdicionales" style="display:none;margin-top:1em;">
+															<div class="form-group g-pos-rel mb-0">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del documento"></textarea>
+															</div>
 
 															<input class="form-control" type="file">
 														</div>
@@ -1556,11 +1628,16 @@ input.invalid {
 														</div>
 
 													</div>
-													<div class="col-sm-12" style="margin-top:1em;">
+													<div class="col-sm-12" style="margin-top:1em;margin-bottom:1em;">
 														<p>
 															Trazabilidad del lote
 														</p>
-														<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Describa la trazabilidad del lote"></textarea>
+														<div class="form-group g-pos-rel mb-0">
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+															</span>
+															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Describa la trazabilidad del lote"></textarea>
+														</div>
 													</div>
 
 												</div>
@@ -1573,7 +1650,10 @@ input.invalid {
 											<div id="divSrrc" class="col-md-12" style="display:none;margin-top: 1em;">
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)</h4>
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_senasica.jpg" alt="">
+															SISTEMA DE REDUCCIÓN DE RIESGOS DE CONTAMINACIÓN (SRRC)
+														</h4>
 													</div>
 													<div class="col-sm-12">
 														<table class="table table-bordered">
@@ -1677,14 +1757,30 @@ input.invalid {
 															<tbody>
 																<tr>
 																	<td>
-																		<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
+																		</div>
 																	</td>
 																	<td>
-																		<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="País(es) destino"></textarea>
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Pais(es) destino"></textarea>
+																		</div>
 																	</td>
 																	<td>
-																		<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
 																data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="%">
+																		</div>
+
 																	</td>
 																</tr>
 															</tbody>
@@ -1698,148 +1794,87 @@ input.invalid {
 
 
 											<!-- inicia mostrar hecho en mexico -->
-											<div id="divHechoEnMexico" class="col-md-12" style="display:none">
+											<div id="divHechoEnMexico" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">HECHO EN MÉXICO</h4>
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_hecho_en_mexico.jpg" alt="">
+															HECHO EN MÉXICO
+														</h4>
 													</div>
 													<div class="col-sm-12">
 														<table class="table table-bordered">
 															<thead>
 																<tr>
 																	<th>
-																		<button class="btn btn-sm btn-success" data-toggle="tooltip" title="Agregar otro producto"><i class="fa fa-plus"></i></button> Producto
+																		<button class="btn btn-sm btn-success" data-toggle="tooltip" title="Agregar otro producto"><i class="fa fa-plus"></i></button> Nombre del producto
+																	</th>
+																	<th style="width:70%">
+																		Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo
 																	</th>
 																</tr>
 															</thead>
 															<tbody>
 																<tr>
 																	<td>
-																		<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
+																		</div>
+																	</td>
+																	<td>
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Descripción"></textarea>
+																		</div>
 																	</td>
 																</tr>
 															</tbody>
 														</table>
 													</div>
 
-													<div class="col-sm-12">
-														<p class="pregunta">
-															Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo.
-														</p>
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
-															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
-														</div>
-													</div>
 												</div>
 											</div>
 											<!-- termina mostrar hecho en mexico -->
 
-											<div class="col-md-12">
-												<hr>
-											</div>
-
 											<!-- inicia mostrar denominación de origen -->
-											<div id="divDenominacionOrigen" class="col-md-12" style="display:none">
+											<div id="divDenominacionOrigen" class="col-md-12" >
 												<div class="row">
 													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">DENOMINACIÓN DE ORIGEN</h4>
+														<h4 class="nombreEsquema" style="font-size:14px;">
+															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_denominacion_origen.jpg" alt="">
+															DENOMINACIÓN DE ORIGEN
+														</h4>
 													</div>
-													<div class="col-sm-12">
-														<b>
+													<div class="col-sm-12" style="margin-bottom:1em;">
+														<b style="margin-bottom:1.5em;">
 															Productos
 														</b>
+
+														<select class="selectMultiple" name="pliego_condiciones" id="" multiple>
+															<option value="1">Aguacate</option>
+															<option value="2">Limón Mexicano</option>
+															<option value="3">Lmón Persa</option>
+															<option value="4">Mango</option>
+															<option value="5">Banano Cavendish</option>
+															<option value="6">Platano Dominico</option>
+														</select>
+
 													</div>
-
-													<div class="col-sm-4">
-														<!-- Toggles Checkbox -->
-														<div class="form-group">
-															<label class="d-flex align-items-center justify-content-between">
-																<span>Café Chiapas</span>
-																<div class="u-check">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
-																	<div class="u-check-icon-radio-v8">
-																		<i class="fa" data-check-icon="&#xf00c"></i>
-																	</div>
-																</div>
-															</label>
-														</div>
-														<!-- End Toggles Checkbox -->
-
-														<!-- Toggles Checkbox -->
-														<div class="form-group">
-															<label class="d-flex align-items-center justify-content-between">
-																<span>Café Veracruz</span>
-																<div class="u-check">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
-																	<div class="u-check-icon-radio-v8">
-																		<i class="fa" data-check-icon="&#xf00c"></i>
-																	</div>
-																</div>
-															</label>
-														</div>
-														<!-- End Toggles Checkbox -->
-													</div>
-													<div class="col-sm-4">
-														<!-- Toggles Checkbox -->
-														<div class="form-group">
-															<label class="d-flex align-items-center justify-content-between">
-																<span>Charanda</span>
-																<div class="u-check">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
-																	<div class="u-check-icon-radio-v8">
-																		<i class="fa" data-check-icon="&#xf00c"></i>
-																	</div>
-																</div>
-															</label>
-														</div>
-														<!-- End Toggles Checkbox -->
-
-
-														<!-- Toggles Checkbox -->
-														<div class="form-group">
-															<label class="d-flex align-items-center justify-content-between">
-																<span>Mango Ataúlfo</span>
-																<div class="u-check">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
-																	<div class="u-check-icon-radio-v8">
-																		<i class="fa" data-check-icon="&#xf00c"></i>
-																	</div>
-																</div>
-															</label>
-														</div>
-														<!-- End Toggles Checkbox -->
-													</div>
-													<div class="col-sm-4">
-														<!-- Toggles Checkbox -->
-														<div class="form-group">
-															<label class="d-flex align-items-center justify-content-between">
-																<span>Vainilla de Papantla</span>
-																<div class="u-check">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" name="radGroup3_1" type="checkbox">
-																	<div class="u-check-icon-radio-v8">
-																		<i class="fa" data-check-icon="&#xf00c"></i>
-																	</div>
-																</div>
-															</label>
-														</div>
-														<!-- End Toggles Checkbox -->
-													</div>
-
 
 													<div class="col-sm-12" style="margin-top:1em;">
 														<b>
 															Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo.
 														</b>
 														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
-																<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
+															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory"
-														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+															<textarea id="inputGroup-1_3" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"></textarea>
 														</div>
 													</div>
 													<div class="col-sm-12" style="margin-top:1em;">
@@ -1878,41 +1913,45 @@ input.invalid {
 													Indicar el idioma en que se realizará la auditoría y el idioma que se utilizará en el informe de auditoría
 												</h4>
 
-												<input id="firstName" name="firstName" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="" required="required" data-msg="This field is mandatory" data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
+												<div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0" style="width:50%">
+													<select class="js-select u-select--v3-select u-sibling w-100" required="required" title="Idiomas" style="display: none;">
+														<option value="selectListItem1" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="fa fa-flag u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Español</span></span>'> Español
+														</option>
+														<option value="selectListItem2" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="fa fa-flag u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Ingles</span></span>'> Ingles
+														</option>
+														<option value="selectListItem3" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="fa fa-flag u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Otro</span></span>'> Otro
+														</option>
+													</select>
+
+													<div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
+														<i style="color:red" class="hs-admin-angle-down"></i>
+													</div>
+												</div>
 
 											</div>
-											<div class="col-md-12">
-												<table class="table">
-													<thead>
-														<tr>
-															<th colspan="2">
-																USO DE DATOS
-															</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>
-																<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="" type="radio">
-																	<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																		<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																	</div>
-																	<b>SI</b> <span style="padding-left:10px;">El cliente permite el acceso de su nombre de la empresa y dirección al grupo de acceso de datos "Publica".</span>
-																</label>
-															</td>
-															<td>
-																<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																	<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="" type="radio">
-																	<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																		<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																	</div>
-																	<b>NO</b> <span style="padding-left:10px;">El cliente no está de acuerdo para conceder acceso de su nombre de la empresa y dirección al grupo de acceso de datos "Publica".</span>
-																</label>
-															</td>
-														</tr>
-													</tbody>
-												</table>
+
+											<div class="col-md-12" style="margin-top:1em;">
+												<p style="font-weight:bold;">
+													USO DE DATOS
+												</p>
+											</div>
+											<div class="col-md-6">
+												<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+													<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="uso_datos" type="radio">
+													<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+														<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+													</div>
+													<b>SI</b> <span style="padding-left:10px;">El cliente permite el acceso de su nombre de la empresa y dirección al grupo de acceso de datos "Publica".</span>
+												</label>
+											</div>
+											<div class="col-md-6">
+												<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+													<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="uso_datos" type="radio">
+													<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+														<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+													</div>
+													<b>NO</b> <span style="padding-left:10px;">El cliente no está de acuerdo para conceder acceso de su nombre de la empresa y dirección al grupo de acceso de datos "Publica".</span>
+												</label>
 											</div>
 
 										</div>
@@ -1924,10 +1963,18 @@ input.invalid {
 					</div>
 					<!-- termina PASO FINAL -->
 
-					<div style="overflow:auto;">
-						<div style="float:right;">
-							<button class="btn btn-md u-btn-3d u-btn-indigo" type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
-						<button class="btn btn-md u-btn-3d u-btn-teal " type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-6">
+								<button style="width:50%;float:left;" class="btn btn-xl u-btn-orange g-mr-10 g-mb-15" type="button" id="prevBtn" onclick="nextPrev(-1)">
+									<i class="icon-arrow-left-circle"></i> Anterior
+								</button>
+							</div>
+							<div class="col-md-6">
+								<button style="width:50%;float:right" class="btn btn-xl u-btn-primary g-mr-10 g-mb-15" type="button" id="nextBtn" onclick="nextPrev(1)">
+									Siguiente
+								</button>
+							</div>
 						</div>
 					</div>
 
@@ -1940,6 +1987,27 @@ input.invalid {
 
 <!-- script validación de preguntas -->
 <script>
+	function resaltarEsquema(id,div,elemento){
+		var id = id;
+		var div = div;
+		var elemento = elemento;
+
+		var valor = $('#'+id).prop('checked');
+		if(valor){
+
+			document.getElementById(div).getElementsByTagName(elemento)[0].setAttribute(
+				//"style", "font-weight: bold; color: #27ae60"
+				"style", "border: 2px solid #27ae60;transition: border 0.5s ease;"
+				);
+		}else{
+			document.getElementById(div).setAttribute(
+				"style", "none");
+			document.getElementById(div).getElementsByTagName(elemento)[0].style = "none";
+			document.getElementById(div).getElementsByTagName(elemento)[0].style = "none";
+		}
+		
+
+	}
 
 	function radioCoc(){
 		var valor = $('input[name="radioGlobalCoc"]:checked').val();
@@ -2029,9 +2097,9 @@ input.invalid {
 			document.getElementById("prevBtn").style.display = "inline";
 		}
 		if (n == (x.length - 1)) {
-			document.getElementById("nextBtn").innerHTML = "Finalizar solicitud";
+			document.getElementById("nextBtn").innerHTML = "Finalizar solicitud <i class='icon-check'></i>";
 		} else {
-			document.getElementById("nextBtn").innerHTML = "Siguiente";
+			document.getElementById("nextBtn").innerHTML = "Siguiente <i class='icon-arrow-right-circle'></i>";
 		}
 		// ... and run a function that displays the correct step indicator:
 		fixStepIndicator(n)
