@@ -54,6 +54,8 @@
 			</div>
 		</main>
 
+		
+
   <!-- JS Global Compulsory -->
   <script src="<?php echo base_url(); ?>admin/assets/vendor/jquery/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>admin/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
@@ -62,8 +64,6 @@
   <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/bootstrap.min.js"></script>
 
   <script src="<?php echo base_url(); ?>assets/vendor/cookiejs/jquery.cookie.js"></script>
-
-
   <!-- JS Plugins Init. -->
   <script src="<?php echo base_url(); ?>assets/vendor/appear.js"></script>
   <script src="<?php echo base_url(); ?>admin/assets/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
@@ -82,6 +82,8 @@
 
   <!-- JS Custom -->
   <script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
+   <script  src="<?php echo base_url(); ?>assets/js/components/hs.modal-window.js"></script>
+
 
   <!-- JS Plugins Init. -->
   <script>
@@ -108,8 +110,13 @@
   
       // initialization of datatables
       $.HSCore.components.HSDatatables.init('.js-datatable');
+
+      $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+
     });
   </script>
+
+
 	</body>
 
 </html>

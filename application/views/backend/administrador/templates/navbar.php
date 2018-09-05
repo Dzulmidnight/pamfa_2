@@ -30,6 +30,66 @@
 		</li>
 		<!-- End Dashboards -->
 
+		<!-- Inicia opción solicitudes -->
+		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu7">
+				<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
+					<i class="fa fa-handshake-o"></i>
+				</span>
+				<span class="media-body align-self-center">Solicitudes</span>
+				<span class="d-flex align-self-center u-side-nav--control-icon">
+					<i class="hs-admin-angle-right"></i>
+				</span>
+				
+				<!-- se muestra en caso de que se tengan solicitudes pendientes -->
+				<span class="d-flex align-self-center">
+					<span class="d-inline-block text-center g-min-width-35 g-bg-lightred-v2 g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1">
+						<i class="fa fa-exclamation-triangle"></i>
+					</span>
+				</span>
+
+				<span class="u-side-nav--has-sub-menu__indicator"></span>
+			</a>
+
+			<ul id="subMenu7" class="u-sidebar-navigation-v1-menu u-side-nav--second-level-menu mb-0">
+
+				<!--<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/administrador/solicitudes/concentradoGeneral'); ?>">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-layout-list-thumb"></i>
+						</span>
+						<span class="media-body align-self-center">General</span>
+						
+					</a>
+				</li>-->
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/administrador/solicitudes/solicitudesPendientes'); ?>">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-layout-list-thumb"></i>
+						</span>
+						<span class="media-body align-self-center">Solicitudes Pendientes</span>
+
+						<!-- se muestra el numero de solicitudes pendientes -->
+						<span class="d-flex align-self-center">
+							<span class="d-inline-block text-center g-min-width-35 g-bg-red g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1">5</span>
+						</span>
+
+					</a>
+				</li>
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/administrador/solicitudes/solicitudes_en_proceso'); ?>">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-layout-list-thumb"></i>
+						</span>
+						<span class="media-body align-self-center">Solicitudes en Proceso</span>
+					</a>
+				</li>
+
+			</ul>
+
+		</li>
+		<!-- Termina opción solicitudes -->
+
 		<!-- Inicia opción usuario -->
 		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
 			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu2">
@@ -192,7 +252,7 @@
 					<ul id="subMenu6Elements" class="u-side-nav--third-level-menu">
 						<!-- Text Inputs -->
 						<li class="u-side-nav--third-level-menu-item">
-							<a class="u-side-nav--third-level-menu-link u-side-nav--hide-on-hidden g-pl-8 g-pr-15 g-py-6" href="../forms/forms-elemets-text-inputs.html">Productos</a>
+							<a class="u-side-nav--third-level-menu-link u-side-nav--hide-on-hidden g-pl-8 g-pr-15 g-py-6" href="<?php echo base_url('backend/administrador/configuracion/catalogoproductos'); ?>">Productos</a>
 						</li>
 						<!-- End Text Inputs -->
 
