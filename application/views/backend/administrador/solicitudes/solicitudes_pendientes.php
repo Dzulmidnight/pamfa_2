@@ -76,7 +76,7 @@
 							</td>
 							<!-- observaciones realizadas -->
 							<td>
-								<a class="nav-link" href="#!">
+								<a class="btn btn-sm u-btn-outline-blue g-mr-10 g-mb-15 nav-link" href="#!">
 									<span class="float-right u-label u-label-num u-label--sm u-label-default g-color-white g-rounded-15 g-ml-5">4</span>
 								    Observaciones
 								</a>
@@ -157,7 +157,7 @@
 							</td>
 							<!-- observaciones realizadas -->
 							<td>
-								<a class="nav-link" href="#!">
+								<a class="btn btn-sm u-btn-outline-blue g-mr-10 g-mb-15 nav-link" href="#!">
 									<span class="float-right u-label u-label-num u-label--sm u-label-default g-color-white g-rounded-15 g-ml-5">4</span>
 								    Observaciones
 								</a>
@@ -174,7 +174,11 @@
 								<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 									<div class="modal-dialog modal-lg" role="document">
 										<div class="modal-content">
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos numquam, facilis impedit nesciunt dolor fuga eum iste vero quia optio nostrum non temporibus cupiditate perferendis, aliquam maiores iusto totam, omnis!
+											<div class="row">
+												<div class="col-md-12">
+													Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, iusto deleniti quae nam veniam numquam! Molestiae perferendis sit accusamus tempore maiores in reiciendis, nihil numquam quis, adipisci expedita quia error!
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
