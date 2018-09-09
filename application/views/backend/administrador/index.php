@@ -5,14 +5,65 @@
 
 
 		<div class="row">
+
 			<div class="col-md-5">
 				<div class="card g-brd-gray-light-v7 g-mb-30">
 					<!-- inicia tabla accesos pendientes -->
 					<div class="g-pa-20">
 
 						<header class="g-mb-20">
-							<h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">Accesos pendientes (Clientes)</h2>
+							<h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">ACCESOS PENDIENTES</h2>
 						</header>
+
+						<table class="table table-striped font-size-12">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Representante</th>
+									<th>Entidad lega</th>
+									<th>Estatus</th>
+									<th>
+										Acciones
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php 
+								for ($i=0; $i < 5; $i++) { 
+								?>
+									<tr>
+										<td>
+											<?= $i; ?>
+										</td>
+										<td>
+											<a href="#">
+												Yasser Martínez
+											</a>
+										</td>
+										<td>
+											Oaxaca
+										</td>
+										<td>
+											<span class="u-label u-label-warning g-color-white">Pendiente</span>
+										</td>
+										<td>
+											<a href="#" style="display:inline-block" data-toggle="tooltip" title="Autorizar">
+												<span class="u-icon-v1 g-bg-primary--hover g-color-white--hover g-mr-5 g-mb-5">
+													<i class="fa fa-check"></i>
+												</span>									
+											</a>
+											<a href="#" style="display:inline-block" data-toggle="tooltip" title="Rechazar">
+												<span class="u-icon-v1 g-bg-red--hover g-color-white--hover g-mr-5 g-mb-5">
+													<i class="fa fa-close"></i>
+												</span>									
+											</a>
+										</td>
+									</tr>
+								<?php
+								}
+								 ?>
+							</tbody>
+						</table>
 
 						<div class="table-responsive g-mb-40">
 							<table class="table table-bordered table-condensed" style="font-size:12px;">
@@ -106,9 +157,6 @@
 										Cliente
 									</th>
 									<th>
-										Solicitud
-									</th>
-									<th>
 										Esquema Solicitado
 									</th>
 									<th>
@@ -123,7 +171,7 @@
 								<tr>
 									<!-- id solicitud -->
 									<td>
-										<a href="#">#1</a>
+										<a href="#!" class="btn btn-xs u-btn-outline-blue g-mr-10 g-mb-15">#1 Consultar</a>
 									</td>
 									<!-- fecha de envio de la solicitud -->
 									<td>
@@ -132,10 +180,6 @@
 									<!-- nombre del cliente -->
 									<td>
 										Cliente de prueba
-									</td>
-									<!-- botón para consultar la solicitud -->
-									<td>
-										<a href="#!" class="btn btn-xs u-btn-outline-blue g-mr-10 g-mb-15">Consultar</a>
 									</td>
 									<!-- esquemas que estan solicitando -->
 									<td>
