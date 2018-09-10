@@ -39,5 +39,5 @@
 
 <body>
 
-	<main class="container-fluid px-0 g-pt-65">
+	<main class="container-fluid px-0 g-pt-65" style="max-width: 1800px;">
 		<div class="row no-gutters g-pos-rel g-overflow-x-hidden">
