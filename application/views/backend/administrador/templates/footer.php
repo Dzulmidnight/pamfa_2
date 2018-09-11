@@ -54,7 +54,7 @@
 			</div>
 		</main>
 
-		
+
 
   <!-- JS Global Compulsory -->
   <script src="<?php echo base_url(); ?>admin/assets/vendor/jquery/jquery.min.js"></script>
@@ -80,38 +80,66 @@
   <script src="<?php echo base_url(); ?>assets/js/helpers/hs.focus-state.js"></script>
   <script src="<?php echo base_url(); ?>admin/assets/js/components/hs.datatables.js"></script>
 
+<!-- JS Implementing Plugins -->
+<script  src="<?php echo base_url(); ?>assets/vendor/slick-carousel/slick/slick.js"></script>
+
+<!-- JS Unify -->
+<script  src="<?php echo base_url(); ?>assets/js/components/hs.carousel.js"></script>
+
   <!-- JS Custom -->
   <script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
    <script  src="<?php echo base_url(); ?>assets/js/components/hs.modal-window.js"></script>
+
+<script>
+	/*$(document).ready(function(){
+	  $('#ultimosPendientes').slick({
+	  	arrows: false,
+	  	dots: false,
+	  	autoplay: true
+	  });
+	});*/
+</script>
 
 
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
-      // initialization of custom select
-      $('.js-select').selectpicker();
-  
-      // initialization of sidebar navigation component
-      $.HSCore.components.HSSideNav.init('.js-side-nav');
-  
-      // initialization of hamburger
-      $.HSCore.helpers.HSHamburgers.init('.hamburger');
-  
-      // initialization of HSDropdown component
-      $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-        dropdownHideOnScroll: false,
-        dropdownType: 'css-animation',
-        dropdownAnimationIn: 'fadeIn',
-        dropdownAnimationOut: 'fadeOut'
-      });
-  
-      // initialization of custom scrollbar
-      $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
-  
-      // initialization of datatables
-      $.HSCore.components.HSDatatables.init('.js-datatable');
 
-      $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+		// initialization of custom select
+		$('.js-select').selectpicker();
+
+		// initialization of sidebar navigation component
+		$.HSCore.components.HSSideNav.init('.js-side-nav');
+
+		// initialization of hamburger
+		$.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+		// initialization of HSDropdown component
+		$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+			dropdownHideOnScroll: false,
+			dropdownType: 'css-animation',
+			dropdownAnimationIn: 'fadeIn',
+			dropdownAnimationOut: 'fadeOut'
+		});
+
+		// initialization of custom scrollbar
+		$.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+
+		// initialization of datatables
+		$.HSCore.components.HSDatatables.init('.js-datatable');
+
+		$.HSCore.components.HSModalWindow.init('[data-modal-target]');
+
+    	// initialization of carousel
+    	$.HSCore.components.HSCarousel.init('.js-carousel');
+
+        $('.js-carousel').mouseover(function(){
+        	$('.js-carousel').slick('slickPause');
+        });
+
+        $('.js-carousel').mouseleave(function(){
+        	$('.js-carousel').slick('slickPlay');
+        });
 
     });
   </script>

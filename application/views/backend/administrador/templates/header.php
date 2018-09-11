@@ -29,15 +29,16 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/vendor/bootstrap-select/css/bootstrap-select.min.css">
 
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/hamburgers/hamburgers.min.css">
-
+  <!-- CSS Implementing Plugins -->
+  <link  rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/slick-carousel/slick/slick.css">
   <!-- CSS Unify -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/css/unify-admin.css">
 
   <!-- CSS Customization -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/css/custom.css">
 </head>
 
 <body>
 
 	<main class="container-fluid px-0 g-pt-65" style="max-width: 1800px;">
-		<div class="row no-gutters g-pos-rel g-overflow-x-hidden">
+    <div class="row no-gutters g-pos-rel g-overflow-x-hidden">
