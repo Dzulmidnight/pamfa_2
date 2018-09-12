@@ -1,5 +1,11 @@
+<style>
+	.wrapper{
+		height: 500px !important;
+	}
+</style>
 <!-- CSS Implementing Plugins -->
 <link  rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/slick-carousel/slick/slick.css">
+
 
 <div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
 	<div class="g-bg-lightblue-v10-opacity-0_5 g-pa-20">
@@ -111,11 +117,30 @@
 										"slidesToShow": 1
 									}
 								}]'>
+
+
+									<!-- contador de solicitudes por esquema -->
+									<div class="js-slide">
+											<div class="g-pa-10">
+												<header class="g-mb-20">
+													<h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
+														SOLICITUDES POR ESQUEMA
+													</h2>
+												</header>
+
+												<div class="">
+													<canvas id="canvasGrafica" width="100%" height="100%"></canvas>
+												</div>
+
+												<!-- termina tabla de solicitudes por revisar -->
+											</div>
+									</div>
+
 									<div class="js-slide">
 										<!-- inicia tabla accesos pendientes -->
 											<div class="g-pa-10">
 												<header class="g-mb-20">
-													<h2 class="g-font-weight-400 g-font-size-16 g-color-black mb-0">
+													<h2 class="g-font-weight-400 g-font-size-16 g-color-orange mb-0">
 														SOLICITUDES PENDIENTES
 													</h2>
 												</header>
@@ -200,6 +225,99 @@
 											</div>
 										<!-- termina tabla accesos pendientes -->
 									</div>
+									
+									<!-- solicitudes en proceso -->
+									<div class="js-slide">
+										<!-- inicia tabla accesos pendientes -->
+											<div class="g-pa-10">
+												<header class="g-mb-20">
+													<h2 class="g-font-weight-400 g-font-size-16 g-color-blue mb-0">
+														SOLICITUDES EN PROCESO
+													</h2>
+												</header>
+												<!-- inicia tabla de solicitudes por revisar -->
+												<div class="table-responsive g-mb-40">
+													<table class="table table-striped g-font-size-12">
+														<thead>
+															<tr>
+																<th>
+																	ID
+																</th>
+																<th>
+																	Fecha
+																</th>
+																<th>
+																	Cliente
+																</th>
+																<th>
+																	Esquema(s)
+																</th>
+																<th>
+																	Estatus
+																</th>
+																<th>
+																	Acciones
+																</th>
+															</tr>
+														</thead>
+														<tbody>
+															<?php 
+															for ($i=0; $i < 5; $i++) { 
+															?>
+																<tr>
+																	<!-- id solicitud -->
+																	<td>
+																		<?= $i; ?>
+																	</td>
+																	<!-- fecha de envio de la solicitud -->
+																	<td>
+																		03/09/2018
+																	</td>
+																	<!-- nombre del cliente -->
+																	<td class="g-pl-0 g-pr-0">
+																		<a href="#">
+																			Cliente de prueba
+																		</a>
+																	</td>
+																	<!-- esquemas que estan solicitando -->
+																	<td>
+																		<a class="g-mb-0" href="#">Global Gap IFA</a>, <a class="g-mb-0" href="#">Global Gap CoC</a>, <a class="g-mb-0" href="#">SRRC</a>
+																	</td>
+																	<!-- estatus general de la solicitud -->
+																	<td>
+																		<span class="u-icon-v1 g-color-blue" data-toggle="tooltip" title="En proceso">
+																			<i class="hs-admin-infinite"></i>
+																		</span>
+																	</td>
+																	<td style="padding-left:0px;padding-right:0px;">
+																		<a href="#" style="display:inline-block" data-toggle="tooltip" title="Consultar solicitud">
+																			<span class="u-icon-v1 u-icon-size--sm g-bg-blue--hover g-color-white--hover ">
+																				<i class="fa fa-search g-color-blue g-color-white--hover"></i>
+																			</span>									
+																		</a>
+																		<a href="#" style="display:inline-block" data-toggle="tooltip" title="Elimnar">
+																			<span class="u-icon-v1 u-icon-size--sm g-bg-red--hover g-color-white--hover ">
+																				<i class="fa fa-trash"></i>
+																			</span>									
+																		</a>
+																	</td>
+																</tr>
+															<?php
+															}
+															 ?>
+														</tbody>
+													</table>							
+												</div>
+
+												<a href="#">
+													<i class="hs-admin-search"></i> Consultar todas las solicitudes
+												</a>
+												<!-- termina tabla de solicitudes por revisar -->
+											</div>
+										<!-- termina tabla accesos pendientes -->
+									</div>
+
+
 
 								</div>
 							</div>
