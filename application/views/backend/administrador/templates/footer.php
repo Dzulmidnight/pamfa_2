@@ -81,14 +81,16 @@
   <script src="<?php echo base_url(); ?>admin/assets/js/components/hs.datatables.js"></script>
 
 <!-- JS Implementing Plugins -->
-<script  src="<?php echo base_url(); ?>assets/vendor/slick-carousel/slick/slick.js"></script>
+	<script  src="<?php echo base_url(); ?>assets/vendor/slick-carousel/slick/slick.js"></script>
 
 <!-- JS Unify -->
-<script  src="<?php echo base_url(); ?>assets/js/components/hs.carousel.js"></script>
+	<script  src="<?php echo base_url(); ?>assets/js/components/hs.carousel.js"></script>
+	<script  src="<?php echo base_url(); ?>assets/js/components/hs.tabs.js"></script>
 
   <!-- JS Custom -->
-  <script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
-   <script  src="<?php echo base_url(); ?>assets/js/components/hs.modal-window.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
+	<script  src="<?php echo base_url(); ?>assets/js/components/hs.modal-window.js"></script>
+
 
 
 
@@ -133,9 +135,11 @@
 
 		$.HSCore.components.HSModalWindow.init('[data-modal-target]');
 
-    	// initialization of carousel
+    	/* initialization of carousel
     	$.HSCore.components.HSCarousel.init('.js-carousel');
+		*/
 
+        /* pauser y continuar ejecución del carousel
         $('.js-carousel').mouseover(function(){
         	$('.js-carousel').slick('slickPause');
         });
@@ -143,50 +147,77 @@
         $('.js-carousel').mouseleave(function(){
         	$('.js-carousel').slick('slickPlay');
         });
+		*/
+
+		$(document).on('ready', function () {
+			// initialization of tabs
+			$.HSCore.components.HSTabs.init('[role="tablist"]');
+		});
+
+		$(window).on('resize', function () {
+			setTimeout(function () {
+				$.HSCore.components.HSTabs.init('[role="tablist"]');
+			}, 200);
+		});
 
     });
-  </script>
 
+</script>
 <!-- declaramos las graficas -->
 <script>
-var grafiva = document.getElementById("canvasGrafica");
+//var grafica = document.getElementById("canvasGrafica");
 
-    var myChart = new Chart(grafiva, {
-        type: 'bar',
-        data: {
-            labels: ["IFA", "CoC", "Calidad Suprema", "SRRC", "Hecho en Mex", "Denominación de origen"],
-            datasets: [{
-                label: '# de Solicitudes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
+var data = {
+	labels: ["IFA", "CoC", "Calidad Suprema", "SRRC", "Hecho en Mex", "Denominación"],
+    datasets: [{
+        label: '# de Solicitudes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+            'rgba(255,99,132,1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+    }]
+
+};
+
+var options = {
+	responsive: true,
+	maintainAspectRatio: false,
+  	scales: {
+	    yAxes: [{
+			stacked: true,
+			gridLines: {
+				display: true,
+				color: "rgba(255,99,132,0.2)"
+			}
+	    }],
+		xAxes: [{
+			gridLines: {
+				display: false
+			}
+		}]
+	}
+};
+
+Chart.Bar('canvasGrafica', {
+	type: 'horizontalBar',
+	options: options,
+	data: data
+});
+
 </script>
 
 	</body>
