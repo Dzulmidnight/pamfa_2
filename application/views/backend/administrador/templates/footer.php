@@ -6,6 +6,9 @@
 		</main>
 		<!-- End MAIN -->
 
+		<!-- JS Propios -->
+		<script src="<?php echo base_url(); ?>assets/js/propias/funciones.js"></script>
+
 
 		<!-- JS Global Compulsory -->
 		<script src="<?php echo base_url(); ?>admin/assets/vendor/jquery/jquery.min.js"></script>
@@ -56,6 +59,9 @@
 
 
 		<script>
+
+
+
 			/*$(document).ready(function(){
 			  $('#ultimosPendientes').slick({
 			  	arrows: false,
