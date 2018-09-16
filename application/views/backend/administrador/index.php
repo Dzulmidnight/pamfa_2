@@ -154,7 +154,7 @@
 				<!-- End Overall Statistics -->
 
 				<!-- Panel Solicitudes y clientes -->
-				<div class="row g-mb-40">
+				<div class="row g-mb-20">
 					<div class="col-lg-6 g-mb-40 g-mb-0--lg">
 						<!-- Ultimas solicitudes registradas -->
 						<div class="card border-0">
@@ -332,7 +332,7 @@
 				<!-- End Panel Solicitudes y clientes -->
 
 				<!-- Paneles Notificaciones y Actividades -->
-				<div class="row g-mb-40">
+				<div class="row g-mb-20">
 					<div class="col-lg-6 g-mb-40 g-mb-0--lg">
 						<!-- Panel de notificaciones -->
 						<div class="card border-0">

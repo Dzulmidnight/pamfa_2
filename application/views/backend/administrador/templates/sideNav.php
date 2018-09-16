@@ -32,23 +32,24 @@
 		<!-- End Dashboards -->
 
 		<!-- Inicia opción solicitudes -->
-		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item">
-			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu7">
+		<li class="u-sidebar-navigation-v1-menu-item u-side-nav--has-sub-menu u-side-nav--top-level-menu-item" >
+			<a class="media u-side-nav--top-level-menu-link u-side-nav--hide-on-hidden g-px-15 g-py-12" href="#!" data-hssm-target="#subMenu7" >
 				<span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
 					<i class="fa fa-handshake-o"></i>
 				</span>
-				<span class="media-body align-self-center">Solicitudes</span>
+				<span class="media-body align-self-center">
+					Solicitudes
+					<i class="fa fa-exclamation-triangle g-color-lightred-v2" style="color:red"></i>
+				</span>
 				<span class="d-flex align-self-center u-side-nav--control-icon">
 					<i class="hs-admin-angle-right"></i>
 				</span>
 				
 				<!-- se muestra en caso de que se tengan solicitudes pendientes -->
-				<span class="d-flex align-self-center">
-					<span class="d-inline-block text-center g-min-width-35 g-bg-lightred-v2 g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1">
-						<i class="fa fa-exclamation-triangle"></i>
-					</span>
-				</span>
+				<!--<span class="d-flex align-self-center">
 
+				</span>
+-->
 				<span class="u-side-nav--has-sub-menu__indicator"></span>
 			</a>
 
@@ -145,6 +146,14 @@
 							<i class="hs-admin-layout-list-thumb"></i>
 						</span>
 						<span class="media-body align-self-center">Listado clientes</span>
+					</a>
+				</li>
+				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/administrador/clientes/clientes/representantes'); ?>">
+						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
+							<i class="hs-admin-layout-list-thumb"></i>
+						</span>
+						<span class="media-body align-self-center">Representantes</span>
 					</a>
 				</li>
 

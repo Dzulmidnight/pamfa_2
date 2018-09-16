@@ -41,27 +41,21 @@
 		<script src="<?php echo base_url(); ?>assets/js/helpers/hs.hamburgers.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/components/hs.dropdown.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/helpers/hs.focus-state.js"></script>
+		<script  src="<?php echo base_url(); ?>assets/js/components/hs.chart.js"></script>
 		<script src="<?php echo base_url(); ?>admin/assets/js/components/hs.datatables.js"></script>
 
 		<!-- JS Implementing Plugins -->
+		<script  src="<?php echo base_url(); ?>assets/vendor/jquery.peity.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
 		<script  src="<?php echo base_url(); ?>assets/vendor/slick-carousel/slick/slick.js"></script>
 		<script src="<?php echo base_url(); ?>assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
-
 
 		<!-- JS Custom -->
 		<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 		<script  src="<?php echo base_url(); ?>assets/js/components/hs.modal-window.js"></script>
 
 
-
-
-
 		<script>
-
-
-
 			/*$(document).ready(function(){
 			  $('#ultimosPendientes').slick({
 			  	arrows: false,
@@ -87,6 +81,9 @@
 
 				// initialization of hamburger
 				$.HSCore.helpers.HSHamburgers.init('.hamburger');
+				
+				// initialization of peity charts
+				$.HSCore.components.HSChart.peity.init($('.js-peity-chart'));
 
 				// initialization of HSDropdown component
 				$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {

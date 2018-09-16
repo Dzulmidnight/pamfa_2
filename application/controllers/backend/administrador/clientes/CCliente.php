@@ -53,11 +53,11 @@ class cCliente extends CI_Controller {
 			$data['consulta_gral'] = $this->mCliente->consulta_gral();
 				$seccion = 'backend/administrador/clientes/listado_clientes';
 			
-
+		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
-		$this->load->view('backend/administrador/templates/topnavigation');
-		$this->load->view('backend/administrador/templates/navbar.php');
-		$this->load->view($seccion, $data);
+		$this->load->view('backend/administrador/templates/sideNav');
+			$this->load->view($seccion, $data);
+		$this->load->view('backend/administrador/templates/pre_footer');
 		$this->load->view('backend/administrador/templates/footer');
 	}
 	
