@@ -18,6 +18,9 @@
 											<th>
 												ID
 											</th>
+											<th>
+												Estatus
+											</th>
 											<th>Nombre</th>
 											<th>Entidad</th>
 											<th>Dirección</th>
@@ -31,15 +34,21 @@
 											<td>
 												#1
 											</td>
+											<!-- Estatus -->
+											<td>
+												<span class="u-label u-label-success g-mr-10 g-mb-15">Activo</span>
+											</td>
 											<!-- Nombre -->
 											<td>
-												<a href="#">
+												<a href="<?php echo base_url('backend/administrador/clientes/clientes/perfilRepresentante'); ?>">
 													<i class="fa fa-search"></i> Yasser Martínez
 												</a>
 											</td>
 											<!-- Entidad -->
 											<td>
-												Inforganic Technologies
+												<a href="#">
+													<i class="fa fa-search"></i> Inforganic Technologies
+												</a>
 											</td>
 											<!-- Dirección -->
 											<td>

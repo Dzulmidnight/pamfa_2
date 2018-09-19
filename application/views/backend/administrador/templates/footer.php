@@ -42,10 +42,12 @@
 		<script src="<?php echo base_url(); ?>assets/js/components/hs.dropdown.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/helpers/hs.focus-state.js"></script>
 		<script  src="<?php echo base_url(); ?>assets/js/components/hs.chart.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/components/hs.chart-pie.js"></script>
 		<script src="<?php echo base_url(); ?>admin/assets/js/components/hs.datatables.js"></script>
 
 		<!-- JS Implementing Plugins -->
 		<script  src="<?php echo base_url(); ?>assets/vendor/jquery.peity.min.js"></script>
+		<script src="<?php echo base_url(); ?>assets/vendor/circles/circles.min.js"></script>
 		<script src="<?php echo base_url(); ?>assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
 		<script  src="<?php echo base_url(); ?>assets/vendor/slick-carousel/slick/slick.js"></script>
 		<script src="<?php echo base_url(); ?>assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -82,6 +84,9 @@
 				// initialization of hamburger
 				$.HSCore.helpers.HSHamburgers.init('.hamburger');
 				
+				// initialization of chart pies
+				var items = $.HSCore.components.HSChartPie.init('.js-pie');
+
 				// initialization of peity charts
 				$.HSCore.components.HSChart.peity.init($('.js-peity-chart'));
 
