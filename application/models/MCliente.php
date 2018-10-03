@@ -164,4 +164,47 @@ public function estatus($e,$id,$fm)
 		
 		
 	}
+
+	public function actualiza_generales_sol($params,$fm)
+	{
+		
+		$campos=array(
+		'nombreLegal'=>$params['nombreLegal'],
+		'nombreRepresentante'=>$params['nombreRepresentante'],
+		'direccion'=>$params['direccion'],
+		'cp'=>$params['cp'],
+		'colonia'=>$params['colonia'],
+		'municipio'=>$params['municipio'],
+		'estado'=>$params['estado'],
+		'pais'=>$params['pais'],
+		//'coordenadas'=>$params['coordenadas'],
+		'email'=>$params['email'],
+		'telefono'=>$params['telefono'],
+		'fax'=>$params['fax'],
+		'fechaModificacion'=>$fm);
+		$this->db->where('id_cliente', $params['idcliente']);
+		$this->db->update('cliente',$campos);
+		
+		
+		
+	}
+	public function actualiza_fiscal_sol($data)
+	{
+		
+		$campos=array('rfc'=>$data['rfc'],
+		'razonSocial'=>$data['razonSocial'],
+		
+		'dirFiscal'=>$data['dirFiscal'],
+		'nombreFactura'=>$data['nombreFactura'],
+		'emailFactura'=>$data['emailFactura'],
+		'telFactura'=>$data['telFactura'],
+		'formaPago'=>$data['formaPago'],
+		'banco'=>$data['banco'],
+		'cdfi'=>$data['cdfi'],
+		'digitosTarjeta'=>$data['digitosTarjeta']);
+		$this->db->where('fk_id_cliente', $data['idcliente']);
+		$this->db->update('datos_fiscales',$campos);
+		
+	
+	}
 }

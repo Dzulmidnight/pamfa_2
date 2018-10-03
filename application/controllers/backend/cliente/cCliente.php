@@ -63,5 +63,22 @@ class cCliente extends CI_Controller {
 			$this->load->view('backend/cliente/index');
 			$this->load->view('backend/cliente/templates/footer');
 	}
+
+	public function generales_sol()
+	{
+		
+		$data=$_POST;
+		$fechaM=time();
+		$this->mCliente->actualiza_generales_sol($data,$fechaM);
+			
+	}
+	public function fiscal_sol()
+	{
+		
+		$data=$_POST;
+		$this->mCliente->actualiza_fiscal_sol($data);
+			
+	}
+	
 	
 }
