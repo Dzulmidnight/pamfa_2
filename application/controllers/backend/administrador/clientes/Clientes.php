@@ -23,10 +23,29 @@ function __construct(){
 				break;
 		}
 
+		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
-		$this->load->view('backend/administrador/templates/topnavigation');
-		$this->load->view('backend/administrador/templates/navbar.php');
-		$this->load->view($seccion, $data);
+		$this->load->view('backend/administrador/templates/sideNav');
+			$this->load->view($seccion, $data);
+		$this->load->view('backend/administrador/templates/pre_footer');
+		$this->load->view('backend/administrador/templates/footer');
+	}
+
+	function representantes(){
+		$this->load->view('backend/administrador/templates/head');
+		$this->load->view('backend/administrador/templates/header');
+		$this->load->view('backend/administrador/templates/sideNav');
+			$this->load->view('backend/administrador/clientes/representantes/representantes');
+		$this->load->view('backend/administrador/templates/pre_footer');
+		$this->load->view('backend/administrador/templates/footer');
+	}
+
+	function perfilRepresentante(){
+		$this->load->view('backend/administrador/templates/head');
+		$this->load->view('backend/administrador/templates/header');
+		$this->load->view('backend/administrador/templates/sideNav');
+			$this->load->view('backend/administrador/clientes/representantes/perfil_representante');
+		$this->load->view('backend/administrador/templates/pre_footer');
 		$this->load->view('backend/administrador/templates/footer');
 	}
 }
