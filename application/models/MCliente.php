@@ -140,6 +140,22 @@ public function consulta_gral()
             return $query->result();
         }
 }
+public function consulta_pendientes()
+
+	{
+		
+		$this->db->select('*');
+		
+		$this->db->from('cliente c');
+		$this->db->where('estatus',0);
+		
+		//$this->db->where('id_cliente',$this->session->userdata('s_idusuario'));
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->result();
+        }
+}
 public function estatus($e,$id,$fm)
 	{
 		if($e=='activar'){
