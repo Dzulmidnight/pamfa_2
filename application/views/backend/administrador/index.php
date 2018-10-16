@@ -161,7 +161,7 @@
 							<!-- Panel Header -->
 							<div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
 								<h3 class="h6 mb-0">
-									<i class="icon-layers g-pos-rel g-top-1 g-mr-5"></i> Solicitudes por revisar <span class="d-inline-block text-center g-min-width-35 g-bg-red g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1">5</span>
+									<i class="icon-layers g-pos-rel g-top-1 g-mr-5"></i> Solicitudes por revisar <span class="d-inline-block text-center g-min-width-35 g-bg-red g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1"><?php echo $consulta_todo;?></span>
 								</h3>
 								<div class="dropdown g-mb-10 g-mb-0--md">
 									<span class="d-block g-color-primary--hover g-cursor-pointer g-mr-minus-5 g-pa-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -184,33 +184,59 @@
 
 							<!-- Panel Body -->
 							<div class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after g-height-400 g-pa-0">
+
+
+								<?php if (isset($consulta_full)) {?>
 								<ul class="list-unstyled">
 									<?php 
-									for ($i=0; $i < 5; $i++) { 
+									foreach($consulta_full as $fila) { 
 									?>
 									<a href="#" id="solicitud<?= $i; ?>" onmouseover="resaltar(this.id, 'li')" onmouseout="normalizar(this.id, 'li')">
 										<li class="media  g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-orange-left rounded g-pa-20 g-mb-10" >
 											<div class="d-flex g-mt-2 g-mr-15">
-												<!--<img class="g-width-40 g-height-40 rounded-circle" src="<?php echo base_url(); ?>assets/img-temp/100x100/img1.jpg" alt="Image Description">-->
-												#ID: <?= $i; ?>
+												
+												 <?php echo "#ID:".$fila->id_solicitud; ?>
 											</div>
 											<div class="media-body">
 												<div class="d-flex justify-content-between">
-													<h5 class="h6 g-font-weight-600 g-color-black">Nom. Entidad legal</h5>
-													<span class="small text-nowrap g-color-blue">dd/mm/yyyy</span>
+													<h5 class="h6 g-font-weight-600 g-color-black"><?php echo $fila->nombreLegal; ?></h5>
+													<span class="small text-nowrap g-color-blue"><?php echo date('d/m/Y',$fila->fecha_envio);?></span>
 												</div>
 												<p>
-													Pais: México, Oaxaca.
+													 <?php echo "Pais: ".$fila->nombre.", ".$fila->estado; ?>
 												</p>
 												<p>
-													Email: soporte@d-spp.org. Tel: 9511999723
+													<?php echo "Email: ".$fila->email.". Tel: ".$fila->telefono; ?> 
 												</p>
-												<span class="u-label u-label--sm g-bg-gray-light-v4 g-color-main g-rounded-20 g-px-10">IFA</span>
+												<?php if ($fila->global_ifa!=null) {
+													?><span class="u-label u-label--sm g-bg-gray-light-v4 g-color-main g-rounded-20 g-px-10">IFA</span><?
+												}?>
+												<?php if ($fila->global_coc!=null) {
+													?>
 												<span class="u-label u-label--sm g-bg-gray-light-v4 g-color-main g-rounded-20 g-px-10">CoC</span>
+												<?
+												}?>
+												<?php if ($fila->srrc!=null) {
+													?>
 												<span class="u-label u-label--sm g-bg-gray-light-v4 g-color-main g-rounded-20 g-px-10">SRRC</span>
+												<?
+												}?>
+												<?php if ($fila->mcs!=null) {
+													?>
 												<span class="u-label u-label--sm g-bg-gray-light-v4 g-color-main g-rounded-20 g-px-10">Méx. Calidad Sup.</span>
+												<?
+												}?>
+												<?php if ($fila->hecho_mexico!=null) {
+													?>
 												<span class="u-label u-label--sm g-bg-gray-light-v4 g-color-main g-rounded-20 g-px-10">Hecho en Mex.</span>
+												<?
+												}?>
+												<?php if ($fila->den_origen!=null) {
+													?>
 												<span class="u-label u-label--sm g-bg-gray-light-v4 g-color-main g-rounded-20 g-px-10">Denominación de Origen</span>
+												<?
+												}?>
+												
 
 											</div>
 										</li>
@@ -226,19 +252,31 @@
 											</div>
 										</li>
 								</ul>
+								<?php } else{?>
+								<ul class="list-unstyled"><strong>Sin Pendientes</strong> 
+								</ul><?php }?>
 							</div>
 							<!-- End Panel Body -->
 						</div>
 						<!-- End Clientes por autorizar -->
 					</div>
 
-					<div class="col-lg-6">
+					<div class="col-lg-6" name="pend" id="pend">
 						<!-- Clientes por autorizar -->
-						<div class="card border-0">
-							<div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
+						<div class="card border-0" >
+							<div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15" >
+								<?php $t=0;
+										if (isset($consulta_gral)) {
+									 foreach($consulta_gral as $f){
+										$t++;
+
+									}} ?>
+
 								<h3 class="h6 mb-0">
-									<i class="icon-directions g-pos-rel g-top-1 g-mr-5"></i> Accesos pendientes <span class="d-inline-block text-center g-min-width-35 g-bg-red g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1">5</span>
+									
+									<i class="icon-directions g-pos-rel g-top-1 g-mr-5"></i> Accesos pendientes <span class="d-inline-block text-center g-min-width-35 g-bg-red g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1"><?php echo $t;?></span>
 								</h3>
+									
 
 								<div class="dropdown g-mb-10 g-mb-0--md">
 									<span class="d-block g-color-primary--hover g-cursor-pointer g-mr-minus-5 g-pa-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -258,11 +296,14 @@
 								</div>
 							</div>
 
-							<div class="js-scrollbar card-block  u-info-v1-1 g-bg-white-gradient-v1--after g-height-400 g-pa-0">
-								<ul class="list-unstyled">
-									<?php 
-									for ($i=0; $i < 5; $i++) { 
-									?>
+							<div class="js-scrollbar card-block  u-info-v1-1 g-bg-white-gradient-v1--after g-height-400 g-pa-0 " >
+								<?php if (isset($consulta_gral)) {?>
+								<ul class="list-unstyled"><?php
+									foreach($consulta_gral as $fila){
+											$id=$fila->id_cliente;
+											$a="activar";
+											$r="rechazo";
+										?>
 										<li class="d-flex justify-content-start g-brd-around g-brd-gray-light-v4 g-pa-20 g-mb-10">
 											<div class="g-mt-2">
 												<span class="u-icon-v3 g-rounded-50x g-mr-15 g-mb-15 g-width-40 g-height-40">
@@ -272,23 +313,23 @@
 											</div>
 											<div class="align-self-center g-px-10">
 												<h5 class="h6 g-font-weight-600 g-color-black g-mb-3">
-													<span class="g-mr-5">Nom clientes</span>
+													<span class="g-mr-5"><? echo $fila->nombreLegal;?></span>
 													<small class="g-font-size-12 g-color-blue">
-														<i class="hs-admin-alarm-clock"></i> dd/mm/aaaa
+														<i class="hs-admin-alarm-clock"></i> <?php echo date('d/m/Y',$fila->fechaAlta);?>
 													</small>
 												</h5>
-												<p class="m-0">Nom. entidad legal</p>
+												<p class="m-0"><? echo $fila->nombreRepresentante;?></p>
 											</div>
 											<!--<div class="align-self-center ml-auto">
 												<span class="u-label u-label--sm g-bg-blue g-rounded-20 g-px-10">$25 / hr</span>
 											</div>-->
 											<div class="align-self-center ml-auto">
-												<a href="#" style="display:inline-block" data-toggle="tooltip" title="Autorizar acceso">
+												<a onclick="pendientes(<?php echo '\''.$a.'\',\''.$id.'\''?>);" name="<? echo "activa".$id;?>" id="<? echo "activa".$id;?>" style="display:inline-block" data-toggle="tooltip" title="Autorizar acceso">
 													<span class="u-icon-v1 u-icon-size--sm g-bg-green--hover g-color-white--hover ">
 														<i class="fa fa-check g-color-green g-color-white--hover"></i>
 													</span>									
 												</a>
-												<a href="#" style="display:inline-block" data-toggle="tooltip" title="Rechazar">
+												<a name="<? echo "rechazo".$id;?>" id="<? echo "rechazo".$id;?>" onclick="pendientes(<?php echo '\''.$r.'\',\''.$id.'\''?>);" style="display:inline-block" data-toggle="tooltip" title="Rechazar">
 													<span class="u-icon-v1 u-icon-size--sm g-bg-red--hover g-color-white--hover ">
 														<i class="fa fa-close"></i>
 													</span>									
@@ -324,6 +365,9 @@
 
 
 								</ul>
+								<?php } else{?>
+								<ul class="list-unstyled"><strong>Sin Pendientes</strong> 
+								</ul><?php }?>
 							</div>
 						</div>
 						<!-- End Clientes por autorizar -->
@@ -536,3 +580,36 @@
 		<canvas id="canvasGrafica"></canvas>
 	</div>
 -->
+<script type="text/javascript">
+	var base_url="<? echo base_url();?>";
+	//var norma="<? $norma;?>";
+
+
+</script>
+
+<script type="text/javascript">
+function pendientes(x,y){
+
+var accion=x;
+var id=y;
+
+	
+
+ $.ajax({  
+                     url:base_url+"backend/administrador/clientes/cCliente/estatus2/"+accion+"/"+id+"", 
+
+
+                     method:"POST",
+                    //data:{idproducto:idproducto,anexo1:anexo1,anexo2:anexo2},
+		            	success: function(data) {
+ 		            			
+		            		$("#pend").load(base_url+'backend/administrador/clientes/cCliente/tabla');
+
+
+		            	}
+		});
+
+
+
+}
+</script>

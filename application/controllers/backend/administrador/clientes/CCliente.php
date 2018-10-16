@@ -60,6 +60,15 @@ class cCliente extends CI_Controller {
 		$this->load->view('backend/administrador/templates/pre_footer');
 		$this->load->view('backend/administrador/templates/footer');
 	}
+	public function estatus2($e,$id)
+	{
+		echo json_encode("jfjksjdbfkjds".$e);
+		
+		$fechaM=time();
+		
+		$this->mCliente->estatus($e,$id,$fechaM);
+			
+	}
 	
 	public function fiscal()
 	{
@@ -72,5 +81,12 @@ class cCliente extends CI_Controller {
 			$this->load->view('backend/cliente/index');
 			$this->load->view('backend/cliente/templates/footer');
 	}
-	
+	Public function tabla()
+	{
+		
+		
+		$data['consulta_gral'] = $this->mCliente->consulta_pendientes();
+		$this->load->view('backend/administrador/pendientes',$data);	
+		//$this->load->view('backend/cliente/solicitud/nueva_solicitud',$data);
+	}
 }

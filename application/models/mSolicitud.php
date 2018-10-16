@@ -96,5 +96,49 @@ $this->db->delete('producto_solicitud');
         }
 		
 	}
+	public function consulta_solicitudes()
+	{
+		
+		$this->db->select('*');
+		
+		$this->db->from('solicitud');
+		$this->db->where('estatus',2);
+		
+		
+		
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->num_rows();
+        }
+		
+	}
+
+	public function consulta_solicitudes_full()
+	{
+		
+		/*$this->db->select('*');
+		
+		$this->db->from('solicitud');
+		$this->db->where('estatus',2);
+		
+		
+		
+	    $query = $this->db->get();
+       
+*/
+
+        $this->db->select('solicitud.id_solicitud,solicitud.global_ifa,solicitud.global_coc,solicitud.hecho_mexico,solicitud.srrc,solicitud.den_origen,solicitud.mcs,solicitud.fecha_envio,cliente.nombreLegal,cliente.estado,cliente.email,cliente.telefono,pais.nombre');    
+$this->db->from('solicitud');
+$this->db->join('cliente', 'solicitud.fk_id_cliente = cliente.id_cliente');
+$this->db->join('pais', 'cliente.pais = pais.id_pais');
+$this->db->where('solicitud.estatus', 2);
+$query = $this->db->get();
+ if($query->num_rows() > 0 )
+        {
+           return $query->result();
+        }
+		
+	}
 	
 }

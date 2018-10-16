@@ -5,6 +5,11 @@ class cLogin extends CI_Controller {
 	function __construct(){
 		parent:: __construct();
 		$this->load->model('mLogin');
+
+		$this->load->model('mSolicitud');
+		$this->load->model('mCliente');
+		
+	
 	}
 	public function index()
 	{
@@ -33,10 +38,13 @@ class cLogin extends CI_Controller {
 			$this->load->view('backend/auditor/templates/footer');	
 		}
 		if($this->session->userdata('s_tipo')=='adminitrador'){
+			$data['consulta_todo'] = $this->mSolicitud->consulta_solicitudes();
+				$data['consulta_full'] = $this->mSolicitud->consulta_solicitudes_full();
+				$data['consulta_gral'] = $this->mCliente->consulta_pendientes();
 			$this->load->view('backend/administrador/templates/head');
 			$this->load->view('backend/administrador/templates/header');
 			$this->load->view('backend/administrador/templates/sideNav');
-				$this->load->view('backend/administrador/templates/index');
+				$this->load->view('backend/administrador/templates/index',$data);
 			$this->load->view('backend/administrador/pre_footer.php');
 			$this->load->view('backend/administrador/templates/footer');
 		}
@@ -70,10 +78,13 @@ class cLogin extends CI_Controller {
 			$this->load->view('backend/auditor/templates/footer');	
 		}
 		if($this->session->userdata('s_tipo')=='administrador'){
+			$data['consulta_todo'] = $this->mSolicitud->consulta_solicitudes();
+				$data['consulta_full'] = $this->mSolicitud->consulta_solicitudes_full();
+				$data['consulta_gral'] = $this->mCliente->consulta_pendientes();
 			$this->load->view('backend/administrador/templates/head');
 			$this->load->view('backend/administrador/templates/header');
 			$this->load->view('backend/administrador/templates/sideNav');
-				$this->load->view('backend/administrador/index');
+				$this->load->view('backend/administrador/index',$data);
 			$this->load->view('backend/administrador/templates/pre_footer');
 			$this->load->view('backend/administrador/templates/footer');
 		}
