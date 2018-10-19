@@ -33,7 +33,11 @@ class mCliente extends CI_Model {
 		
 		$campos2=array('fk_id_cliente'=>$this->db->insert_id());
 		
-		$this->db->insert('datos_fiscales',$campos2);
+		if($this->db->insert('datos_fiscales',$campos2)){
+			$this->session->set_flashdata('success', "correcto");
+		}else{
+			$this->session->set_flashdata('success', "error");
+		}
 		
 	}
 	public function actualiza_generales($params,$fm)

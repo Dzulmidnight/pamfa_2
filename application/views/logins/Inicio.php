@@ -1,9 +1,26 @@
+<?php
+$resultado = $this->session->flashdata('success');
+
+if(!empty($resultado) && $resultado == 'correcto'){
+?>
+	<script>
+		 mensaje();
+	</script>
+<?php
+}else if($resultado == 'error'){
+	echo 'ERROR';
+}
+ ?>
 
 <!-- Promo Block -->
 <section class="container-fluid g-px-0">
 	<div class="row no-gutters">
 
 		<div class="col-md-6 order-md-2 g-bg-white">
+			<button type="button">
+				asdf
+			</button>
+
 			<div class="g-pa-15x">
 				<div class="g-mb-50">
 					<div class="col-sm-12">
@@ -75,7 +92,7 @@
 			<div class="g-pa-50">
 				<!-- Form -->
 				<form  id="frmIngresar" class="g-py-15" action="<? echo base_url();?>cLogin/ingresar" method="post">
-					<h2 id="tipoUsuario" class="h3 g-color-white mb-4">CLIENT</h2>
+					<h2 id="tipoUsuario" class="h3 g-color-white mb-4">CLIENTE</h2>
 					<div class="mb-4">
 						<div class="input-group">
 							<div class="input-group-prepend">
@@ -164,7 +181,7 @@
 				<!-- End Form -->
 
 				<!-- Form nuevo registro -->
-				<form id="frmNuevoRegistro" class="g-py-15 g-bg-white g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" style="display:none"  action="<? echo base_url();?>cCliente/guardar" method="post">
+				<form id="frmNuevoRegistro" class="g-py-15 g-bg-white g-brd-around g-brd-gray-light-v4 g-pa-30 g-mb-30" style="display:none"  action="<? echo base_url();?>backend/cliente/Ccliente/guardar" method="post">
 					<h2 id="tipoUsuario" class="h3 g-color-dark mb-4">REGISTRARSE COMO NUEVO CLIENTE</h2>
 					<div class="row">
 						<!-- INFORMACIÓN DEL USUARIO -->
@@ -173,7 +190,7 @@
 								<label class="g-mb-10" for="username">Usuario *</label>
 								<input id="username" name="username" class="form-control form-control-md rounded-0" type="text" placeholder="Nombre de usuario" required>
 								<small class="form-text text-muted g-font-size-default g-mt-10">Usuario que usara para ingresar a su cuenta.</small>
-							</div>							
+							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group g-mb-20">
@@ -241,14 +258,10 @@
 						<div class="col-sm-6">
 							<div class="form-group g-mb-20">
 								<label class="g-mb-10" for="pais">País *</label>
-								<select class="form-control form-control-md rounded-0" name="pais" id="pais" required>
-
-
-
-									
-									 <?php foreach($pais as $fila2){?>
-                                                    	<option value="<?php echo $fila2->id_pais;?>" ><?php echo $fila2->nombre;?></option>
-                                                        <?php }?>
+								<select class="form-control form-control-md rounded-0" name="pais" id="pais" required>									
+									<?php foreach($pais as $fila2){?>
+										<option value="<?php echo $fila2->id_pais;?>" ><?php echo $fila2->nombre;?></option>
+									<?php }?>
 								</select>
 							</div>
 						</div>

@@ -1,20 +1,18 @@
 <?php
-class cCliente extends CI_Controller {
+class Ccliente extends CI_Controller {
 
 	
 	function __construct(){
 		parent:: __construct();
 		$this->load->model('mCliente');
+		$this->load->model('mPais');
 	}
 	public function index()
 	{
 		//$this->load->view('backend/cliente/usuario/datos_generales');
 	}
 	public function guardar()
-	{
-		echo "entra a uardar";
-				
-
+	{			
 		$params['username']=$this->input->post('username');
 		$params['password']=$this->input->post('password');
 		$params['nombreLegal']=$this->input->post('nombreLegal');
@@ -35,9 +33,12 @@ class cCliente extends CI_Controller {
 		
 		//echo json_encode($params);
 		$this->mCliente->guardar($params);
-			$this->load->view('templates/header');
-		$this->load->view('logins/inicio');
-			$this->load->view('templates/footer');
+
+
+
+		$this->load->view('templates/header');
+				$this->load->view('logins/inicio');
+		$this->load->view('templates/footer');
 	}
 	public function generales()
 	{

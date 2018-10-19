@@ -34,6 +34,10 @@
 
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
+
+	<!-- sweet alert -->
+	<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+	
 </head>
 
 <style>

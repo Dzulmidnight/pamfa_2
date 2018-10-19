@@ -176,6 +176,18 @@
 		}
 	</script>
 
+	<!-- SWEET ALERT -->
+	<script>
+		function mensaje(){
+			swal({
+			  title: 'Error!',
+			  text: 'Do you want to continue',
+			  type: 'error',
+			  confirmButtonText: 'Cool'
+			})
+		}
+
+	</script>
 
 	<!-- JS Global Compulsory -->
 	<script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
