@@ -86,29 +86,27 @@ class cDen_origen extends CI_Controller {
 		
 		//$docs=$this->load->database('docs',true);
 
-		$fecha=time();
-$uploaddir = "".$fecha;
-//$uploadfile = $uploaddir . basename($_FILES['archivo']['name']);
-$name=basename($_FILES["file1"]["name"]);
+		
 
-$fileName = $uploaddir.$name; // The file name
+
 $fileTmpLoc = $_FILES["file1"]["tmp_name"]; // File in the PHP tmp folder
-$fileType = $_FILES["file1"]["type"]; // The type of file it is
-$fileSize = $_FILES["file1"]["size"]; // File size in bytes
-$fileErrorMsg = $_FILES["file1"]["error"]; // 0 for false... and 1 for true
+
 if (!$fileTmpLoc) { // if file not chosen
     echo "ERROR: Por favor seleccione un archivo.";
     exit();
 }
 
  $dossier ="docs_solicitud/den_origen/";
-             $fichier = basename($_FILES['file1']['name']);
+             $fichier = $_POST['fecha'].basename($_FILES['file1']['name']);
              if(move_uploaded_file($_FILES['file1']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
              {
 
 //if(move_uploaded_file($fileTmpLoc,base_url()."$fileName")){
    $data=$_POST;
    $data['url']=$dossier.$fichier;
+
+
+   $data['id']=$this->session->userdata('s_idusuario');
 		//$fechaM=time();
 		$this->mDen_origen->subir_archivo($data);
 	

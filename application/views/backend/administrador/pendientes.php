@@ -1,3 +1,14 @@
+<style>
+	.chart-container {
+		position: relative;
+		margin: auto;
+		height: 400px;
+		width: 400px;
+
+	}
+</style>
+<!-- CSS Implementing Plugins -->
+<link  rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/slick-carousel/slick/slick.css">
 
 <div class="card border-0" >
 							<div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15" >

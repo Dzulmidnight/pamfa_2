@@ -16,10 +16,11 @@
 				$data['consulta_todo'] = $this->mSolicitud->consulta_solicitudes();
 				$data['consulta_full'] = $this->mSolicitud->consulta_solicitudes_full();
 				$data['consulta_gral'] = $this->mCliente->consulta_pendientes();
+
 				
 			$this->load->view('backend/administrador/templates/head');
 			$this->load->view('backend/administrador/templates/header');
-			$this->load->view('backend/administrador/templates/sideNav');
+			$this->load->view('backend/administrador/templates/sideNav',$data);
 				$this->load->view('backend/administrador/index',$data);
 			$this->load->view('backend/administrador/templates/pre_footer.php');
 			$this->load->view('backend/administrador/templates/footer');

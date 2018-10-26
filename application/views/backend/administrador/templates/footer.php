@@ -56,6 +56,27 @@
 		<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 		<script  src="<?php echo base_url(); ?>assets/js/components/hs.modal-window.js"></script>
 
+<?/*solicitud admin*/?>
+  <script src="<?php echo base_url(); ?>admin/assets/vendor/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
+<script src="<?php echo base_url(); ?>selectMultiple/multiple-select.js"></script>
+
+	    <script>
+	        $('.selectMultiple').multipleSelect({
+	        	placeholder: 'Selecciona la(s) opcion(es)',
+	        	width: '100%',
+	        	selectAll: false,
+	        	allSelected: 'Se han seleccionado todos'
+	        });
+	    </script>
+		
+
+
+
+
+	
+
+
+
 
 		<script>
 			/*$(document).ready(function(){
@@ -212,6 +233,8 @@
 		});
 
 		</script>
+
+
 
 	</body>
 

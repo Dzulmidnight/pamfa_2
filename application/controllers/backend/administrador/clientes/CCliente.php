@@ -89,4 +89,22 @@ class cCliente extends CI_Controller {
 		$this->load->view('backend/administrador/pendientes',$data);	
 		//$this->load->view('backend/cliente/solicitud/nueva_solicitud',$data);
 	}
+
+
+	////////////admn
+	public function generales_sol()
+	{
+		
+		$data=$_POST;
+		$fechaM=time();
+		$this->mCliente->actualiza_generales_sol($data,$fechaM);
+			
+	}
+	public function fiscal_sol()
+	{
+		
+		$data=$_POST;
+		$this->mCliente->actualiza_fiscal_sol($data);
+			
+	}
 }

@@ -5,10 +5,12 @@ class Clientes extends CI_Controller{
 function __construct(){
 		parent:: __construct();
 		$this->load->model('mCliente');
+		$this->load->model('mSolicitud');
 	}
 	function index($seccion = null){
 
 		$data['seccion'] = $seccion;
+		$data['consulta_todo']= $this->mSolicitud->consulta_solicitudes();
 
 		switch ($seccion) {
 			case 'datos_fiscales':
@@ -25,7 +27,7 @@ function __construct(){
 
 		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
-		$this->load->view('backend/administrador/templates/sideNav');
+		$this->load->view('backend/administrador/templates/sideNav',$data);
 			$this->load->view($seccion, $data);
 		$this->load->view('backend/administrador/templates/pre_footer');
 		$this->load->view('backend/administrador/templates/footer');
