@@ -113,6 +113,21 @@ class mCliente extends CI_Model {
         }
 		
 	}
+	public function consulta_datos_gral_admin($id)
+	{
+		
+		$this->db->select('*');
+		
+		$this->db->from('cliente c');
+		
+		$this->db->where('id_cliente',$id);
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->result();
+        }
+		
+	}
 	public function consulta_fiscal()
 	{
 		
@@ -121,6 +136,21 @@ class mCliente extends CI_Model {
 		$this->db->from('datos_fiscales c');
 		
 		$this->db->where('fk_id_cliente',$this->session->userdata('s_idusuario'));
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->result();
+        }
+		
+	}
+	public function consulta_fiscal_admin($id)
+	{
+		
+		$this->db->select('*');
+		
+		$this->db->from('datos_fiscales c');
+		
+		$this->db->where('fk_id_cliente',$id);
 	    $query = $this->db->get();
         if($query->num_rows() > 0 )
         {
@@ -208,6 +238,7 @@ public function estatus($e,$id,$fm)
 		
 		
 	}
+	
 	public function actualiza_fiscal_sol($data)
 	{
 		

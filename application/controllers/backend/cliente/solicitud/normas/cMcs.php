@@ -122,7 +122,7 @@ if (file_exists($f2)) {
 	{
 		
 		$data=$_POST;
-		$fecha=time();
+		
 
 
 
@@ -131,6 +131,7 @@ if(isset($_FILES["file2"]))
 {
 $_FILES["file2"]=$_FILES["file2"];
  $data['anexo']=2;
+ $fileTmpLoc = $_FILES["file2"]["tmp_name"]; // File in the PHP tmp folder
 }
 
 if(isset($_FILES["file3"]))
@@ -138,21 +139,18 @@ if(isset($_FILES["file3"]))
 {
 $_FILES["file2"]=$_FILES["file3"];
 $data['anexo']=3;
+$fileTmpLoc = $_FILES["file3"]["tmp_name"]; // File in the PHP tmp folder
 }
-$name=basename($_FILES["file2"]["name"]);
 
-$fileName = $uploaddir.$name; // The file name
-$fileTmpLoc = $_FILES["file2"]["tmp_name"]; // File in the PHP tmp folder
-$fileType = $_FILES["file2"]["type"]; // The type of file it is
-$fileSize = $_FILES["file2"]["size"]; // File size in bytes
-$fileErrorMsg = $_FILES["file2"]["error"]; // 0 for false... and 1 for true
+
+
 if (!$fileTmpLoc) { // if file not chosen
     echo "ERROR: Por favor seleccione un archivo.";
     exit();
 }
 
  $dossier ="docs_solicitud/mexcalsup/";
-             $fichier = $fecha.basename($_FILES['file2']['name']);
+             $fichier = $_POST['fecha'].basename($_FILES['file2']['name']);
             
              if(move_uploaded_file($_FILES['file2']['tmp_name'], $dossier . $fichier)) //Si 
              {
@@ -181,16 +179,16 @@ if (!$fileTmpLoc) { // if file not chosen
 
 	public function subir_archivo2()
 	{
-		$fecha=time();
+		
 		$dos=0;
 		
 		if(isset($_FILES["file5"])&& isset($_FILES["file6"]))
 			{
 				$dos=1;
 				$dossier ="docs_solicitud/mexcalsup/";
-             $fichier = $fecha.basename($_FILES['file5']['name']);
+             $fichier = $_POST['fecha'].basename($_FILES['file5']['name']);
              //$dossier2 ="docs_solicitud/mexcalsup/";
-             $fichier2 = $fecha.basename($_FILES['file6']['name']);
+             $fichier2 = $_POST['fecha'].basename($_FILES['file6']['name']);
             $b=0;
              if(move_uploaded_file($_FILES['file5']['tmp_name'], $dossier . $fichier)) //Si 
              {
@@ -237,7 +235,7 @@ if (!$fileTmpLoc) { // if file not chosen
     				exit();
 					}
 			$dossier ="docs_solicitud/mexcalsup/";
-             $fichier = $fecha.basename($_FILES['file5']['name']);
+             $fichier = $_POST['fecha'].basename($_FILES['file5']['name']);
             
              if(move_uploaded_file($_FILES['file5']['tmp_name'], $dossier . $fichier)) //Si 
              {
@@ -270,7 +268,7 @@ if(isset($_FILES["file6"])&& $_FILES["file6"]["tmp_name"]!=NULL && $dos==0)
     				exit();
 					}
 			$dossier ="docs_solicitud/mexcalsup/";
-             $fichier =$fecha.basename($_FILES['file6']['name']);
+             $fichier =$_POST['fecha'].basename($_FILES['file6']['name']);
             
              if(move_uploaded_file($_FILES['file6']['tmp_name'], $dossier . $fichier)) //Si 
              {

@@ -1790,6 +1790,9 @@ foreach($consulta_productos as $fila)
 													</div>
 
 												</div>
+												<?php $fecha=time();?>
+												
+												<input id="fecha_mcs" name="fecha_mcs" type="hidden" value="<? echo $fecha;?>"/>
 											</form>
 											</div>
 										
@@ -2162,6 +2165,9 @@ foreach($consulta_mex as $fila)
                
 													</div>
 												</div>
+												<?php $fechado=time();?>
+												
+												<input id="fecha_do" name="fecha_do" type="hidden" value="<? echo $fechado;?>"/>
 											</form>
 											</div>
 										
@@ -2298,7 +2304,8 @@ var valor = $('#'+id).prop('checked');
 		            	success: function() { 
 		            		
 		            		 //activo.innerHTML = "";	
-		            		$("input[name$='MEX_producto']").val("");
+		            		document.getElementById("mex_producto").value = "";
+		            			document.getElementById("descripcion").value = "";
 		            	$("#tabla2").load(base_url+'backend/cliente/solicitud/normas/cMexico/tabla');	                       }
 		});
 }else{
@@ -3168,7 +3175,8 @@ function agregar(){
 		            	success: function(data) { 
 		            		
 		            		 //activo.innerHTML = "";	
-		            		$("input[name$='MEX_producto']").val("");
+		            		document.getElementById("mex_producto").value = "";
+		            			document.getElementById("descripcion").value = "";
 		            	$("#tabla2").load(base_url+'backend/cliente/solicitud/normas/cMexico/tabla');	                       }
 		});
 
@@ -3222,7 +3230,7 @@ function agregar2(){
 		            	success: function(data) { 
 		            		
 		            		 //activo.innerHTML = "";	
-		            		//$("input[name$='MEX_producto']").val("");
+		            		//$("input[name$='mex_producto']").val("");
 		            	$("#tabla3").load(base_url+'backend/cliente/solicitud/normas/cProducto_srrc/tabla');	                       }
 		});
 
@@ -3275,6 +3283,7 @@ function uploadFile(al){
   formdata.append("file1", file);
   //formdata.append("a", al);
   //formdata.append("nombre",valorname);
+   formdata.append("fecha",$("#fecha_do").val());
 
 
   var ajax = new XMLHttpRequest();
@@ -3305,7 +3314,7 @@ function completeHandler(event){
   _("progressBar").value = 0;
    document.getElementById("aux2").style.display = "block";
 	//document.getElementById("aux2").value = document.getElementById("file1").files[0].name;
-	document.getElementById("aux2").href =base_url+"docs_solicitud/den_origen/"+document.getElementById("file1").files[0].name;
+	document.getElementById("aux2").href =base_url+"docs_solicitud/den_origen/"+document.getElementById("fecha_do").value+document.getElementById("file1").files[0].name;
 				
   // document.getElementById("aux2").value = "Ver actual";
   //location.reload(true);
@@ -3340,6 +3349,7 @@ var cont=3;
    var formdata = new FormData();
   formdata.append("file"+cont, file);
   formdata.append("documento1",$("#documento1").val());
+  formdata.append("fecha",$("#fecha_mcs").val());
   
 
   if( al== 3){
@@ -3381,7 +3391,7 @@ function completeHandler2(event){
   _("progressBar2").value = 0;
    document.getElementById("aux_mex2").style.display = "block";
 	
-	document.getElementById("aux_mex2").href =base_url+"docs_solicitud/mexcalsup/"+document.getElementById("file2").files[0].name;
+	document.getElementById("aux_mex2").href =base_url+"docs_solicitud/mexcalsup/"+document.getElementById("fecha_do").value+document.getElementById("file2").files[0].name;
 				
  
 
@@ -3416,7 +3426,7 @@ function completeHandler3(event){
   _("progressBar3").value = 0;
    document.getElementById("aux_mex3").style.display = "block";
 	
-	document.getElementById("aux_mex3").href =base_url+"docs_solicitud/mexcalsup/"+document.getElementById("file3").files[0].name;
+	document.getElementById("aux_mex3").href =base_url+"docs_solicitud/mexcalsup/"+document.getElementById("fecha_mcs").value+document.getElementById("file3").files[0].name;
 				
  
 
@@ -3449,7 +3459,7 @@ function uploadFile3(){
 	
 	formdata.append("file6", file2);
 	formdata.append("equipo",equipo);
-	
+	formdata.append("fecha",$("#fecha_mcs").val());
 	
 	//formdata.append("e",equipo);
 	var ajax = new XMLHttpRequest();

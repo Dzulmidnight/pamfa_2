@@ -73,7 +73,7 @@
 
 						<!-- se muestra el numero de solicitudes pendientes -->
 						<span class="d-flex align-self-center">
-							<span class="d-inline-block text-center g-min-width-35 g-bg-red g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1">5</span>
+							<span class="d-inline-block text-center g-min-width-35 g-bg-red g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1"><?php echo $consulta_todo;?></span>
 						</span>
 
 					</a>

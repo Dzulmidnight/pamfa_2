@@ -68,7 +68,7 @@ class mDen_origen extends CI_Model {
 		
 		
 		
-		$this->db->where('fk_id_solicitud',17);
+		$this->db->where('fk_id_solicitud',$params['id']);
 		$this->db->update('den_origen_solicitud',$campos);
 		
 	}
