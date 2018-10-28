@@ -98,7 +98,7 @@ input.invalid {
 </style>
 
 
-<div id="solicitudCertificacion" class="col g-ml-45 g-ml-0--lg g-pb-65--md">
+<div id="solicitudCertificacion">
 	<div class="g-pa-20">
 		<div class="row">
 
@@ -902,7 +902,7 @@ input.invalid {
 															<span class="btn btn-md btn-block u-btn-outline-lightgray g-color-white--checked g-bg-primary--checked rounded-0">SI</span>
 														</label>
 														<label class="u-check">
-															<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="certificacionSenasica" id="certificacionSenasica2" type="radio" value="NO" onclick="validarRadios(' type="radio" value="NO" onclick="validarRadios('certificacionSenasica', 'divSenasica')" value="<?php echo $consulta_cert->preg4;?>">
+															<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="certificacionSenasica" id="certificacionSenasica2" type="radio" onclick="validarRadios('certificacionSenasica', 'divSenasica')" value="<?php echo $consulta_cert->preg4;?>">
 															<span class="btn btn-md btn-block u-btn-outline-lightgray g-color-white--checked g-bg-primary--checked g-brd-left-none--md rounded-0">NO</span>
 
 														</label>
@@ -1070,7 +1070,7 @@ input.invalid {
 													<div class="col-sm-6">
 														<!-- Input -->
 														<div class="form-group g-mb-30">
-															<label class="g-mb-10" for="inputGroup-1_1">
+															<label class="g-mb-10 g-mt-20" for="inputGroup-1_1">
 																Nombre del Organismo
 															</label>
 
@@ -1087,31 +1087,20 @@ input.invalid {
 													<!-- periodo de la certificación -->
 													<div class="col-sm-6">
 														<!-- Select Date Range -->
-														<div class="form-group mb-0">
-															<label class="g-mb-10">Periodo del certificado</label>
+														<div class="form-group mb-30">
+															<label class="g-mb-10 g-mt-20">Periodo del certificado</label>
 															<div class="row">
 																<div class="col-xl-6 g-mb-40 g-mb-0--xl">
 																	<div class="form-group mb-0 g-max-width-400">
-																		<div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
-																			<input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Desde" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y"  name="fecha_inicio" id="fecha_inicio" value="<?php echo $consulta_cert->fecha_inicio;?>">
-																			<div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-																				<i style="color:red" class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
-																				<i style="color:red" class="hs-admin-angle-down"></i>
-																			</div>
-																		</div>
+																		<input type="date" id="fecha_inicio" class="form-control" name="fecha_inicio" value="<?php echo $consulta_cert->fecha_inicio;?>" placeholder="dd/mm/aaaa">
 																	</div>
 																</div>
 
 																<div class="col-xl-6">
 																	<!-- Datepicker -->
 																	<div class="form-group mb-0 g-max-width-400">
-																		<div id="datepickerWrapper" class="u-datepicker-right u-datepicker--v3 g-pos-rel w-100 g-cursor-pointer g-brd-around g-brd-gray-light-v7 g-rounded-4">
-																			<input class="js-range-datepicker g-bg-transparent g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-pr-80 g-pl-15 g-py-9" type="text" placeholder="Hasta" data-rp-wrapper="#datepickerWrapper" data-rp-date-format="d/m/Y" value="<?php echo $consulta_cert->preg1;?>" id="fecha_fin" name="fecha_fin">
-																			<div class="d-flex align-items-center g-absolute-centered--y g-right-0 g-color-gray-light-v6 g-color-lightblue-v9--sibling-opened g-mr-15">
-																				<i style="color:red" class="hs-admin-calendar g-font-size-18 g-mr-10"></i>
-																				<i style="color:red" class="hs-admin-angle-down"></i>
-																			</div>
-																		</div>
+																		<input type="date" class="form-control" id="fecha_fin" name="fecha_fin" placeholder="d/m/Y" value="<?php echo $consulta_cert->preg1;?>">
+																
 																	</div>
 																	<!-- End Datepicker -->
 																</div>
@@ -1153,382 +1142,375 @@ input.invalid {
 											
 											<div id="divGlobalGapIfa" class="col-md-12" style="display: none"  >
 												<form class="js-validate" id="global_ifa" name="global_ifa" >
-												<div class="row">
-													<div class="col-sm-12">
-															
-														<h4 class="nombreEsquema" style="font-size:14px;">
-															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt=""> GLOBALG.A.P IFA V5.1
-														</h4>
-													</div>
-													<div class="col-md-12" style="margin-bottom:1em;">
-														<p>
-															Ingresa lo(s) producto(s) por certificar
-														</p>
+													<div class="row">
+														<div class="col-sm-12">	
+															<h4 class="nombreEsquema" style="font-size:14px;">
+																<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt=""> GLOBALG.A.P IFA V5.1
+															</h4>
+														</div>
 
-									                    <div class="u-tagsinput--v2--gray g-brd-around g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-6 g-py-5">
-															<div class="form-group g-pos-rel mb-0">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																</span>
-																<input type="text" value="<?php if (isset($consulta_ifa)) { echo $consulta_ifa->productos;}?>" data-role="tagsinput" placeholder="Ingresa los productos" id="productos" name="productos">
+														<div class="col-sm-12">
+															<div class="form-group g-mb-30">
+																<label class="g-mb-10" for="inputGroup-1_1">
+																	Ingresa los productos por certificar
+																</label>
+
+																<div class="g-pos-rel">
+												                    <div class="u-tagsinput--v2--gray g-brd-around g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-6 g-py-5">
+																		<div class="form-group g-pos-rel mb-0">
+																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																			</span>
+																			<input type="text" class="form-control" value="<?php if (isset($consulta_ifa)) { echo $consulta_ifa->productos;}?>" data-role="tagsinput" placeholder="Ingresa los productos" id="productos" name="productos">
+																		</div>
+												                    </div>
+																</div>
 															</div>
-									                    </div>
-													</div>
+														</div>
 
-													<div class="col-md-6">
-														<table class="table table-bordered">
-															<tr>
-																<td colspan="3">
-																	Opción 1: Productor individual
-																</td>
-															</tr>
-															<tr class="text-justify">
-																<td>
-																	<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalIfa"  id="radioGlobalIfa1" type="radio" value="productor_individual" onclick="grupoProductores()">
-																		<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																			<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																		</div>
-																		Productor individual
-																	</label>
-																</td>
-																<td>
-																	<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalIfa" id="radioGlobalIfa2"type="radio" value="productor_individual_con_sistema" onclick="grupoProductores()">
-																		<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																			<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																		</div>
-																		Productor individual con explotaciones múltiples con sistema de Gestión de calidad
-																	</label>
-																</td>
-																<td>
-																	<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalIfa" id="radioGlobalIfa3" type="radio" value="productor_individual_sin_sistema" onclick="grupoProductores()">
-																		<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																			<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																		</div>
-																		Productor individual con Explotaciones múltiples sin Sistema de Gestión de Calidad.
-																	</label>
-																</td>
-															</tr>
-														</table>
-													</div>
-													<div class="col-md-6">
-														<table class="table table-bordered">
-															<tr>
-																<td colspan="2">
-																	<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalIfa" id="radioGlobalIfa4" type="radio" onclick="grupoProductores()" value="grupo_productores">
-																		<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																			<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																		</div>
-																		Opcíon 2: Grupo de productores
-																	</label>
-																</td>
-															</tr>
-															<tr class="text-justify">
-																<td>
-																	<div class="row g-mb-20">
-																		<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-																			<label class="pregunta mb-0" for="#num_productores">Número de productores a certificar</label>
-																		</div>
+														<div class="col-md-6">
+															<table class="table table-bordered">
+																<tr>
+																	<td colspan="3">
+																		Opción 1: Productor individual
+																	</td>
+																</tr>
+																<tr class="text-justify">
+																	<td>
+																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalIfa"  id="radioGlobalIfa1" type="radio" value="productor_individual" onclick="grupoProductores()">
+																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																			</div>
+																			Productor individual
+																		</label>
+																	</td>
+																	<td>
+																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalIfa" id="radioGlobalIfa2"type="radio" value="productor_individual_con_sistema" onclick="grupoProductores()">
+																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																			</div>
+																			Productor individual con explotaciones múltiples con sistema de Gestión de calidad
+																		</label>
+																	</td>
+																	<td>
+																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalIfa" id="radioGlobalIfa3" type="radio" value="productor_individual_sin_sistema" onclick="grupoProductores()">
+																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																			</div>
+																			Productor individual con Explotaciones múltiples sin Sistema de Gestión de Calidad.
+																		</label>
+																	</td>
+																</tr>
+															</table>
+														</div>
+														<div class="col-md-6">
+															<table class="table table-bordered">
+																<tr>
+																	<td colspan="2">
+																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalIfa" id="radioGlobalIfa4" type="radio" onclick="grupoProductores()" value="grupo_productores">
+																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																			</div>
+																			Opcíon 2: Grupo de productores
+																		</label>
+																	</td>
+																</tr>
+																<tr class="text-justify">
+																	<td>
+																		<div class="row g-mb-20">
+																			<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+																				<label class="pregunta mb-0" for="#num_productores">Número de productores a certificar</label>
+																			</div>
 
-																		<div class="col-md-12 align-self-center">
-																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																				</span>
-																				<input id="num_productores" name="num_productores" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="int"  required="required" data-msg="This field is mandatory"
-																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" value="<?php if (isset($consulta_ifa)) {echo $consulta_ifa->num_productores;}?>">
+																			<div class="col-md-12 align-self-center">
+																				<div class="form-group g-pos-rel mb-0">
+																					<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																						<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																					</span>
+																					<input id="num_productores" name="num_productores" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="int"  required="required" data-msg="This field is mandatory"
+																				data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" value="<?php if (isset($consulta_ifa)) {echo $consulta_ifa->num_productores;}?>">
+																				</div>
 																			</div>
 																		</div>
-																	</div>
-																</td>
-																<td>
-																	<div class="row g-mb-20">
-																		<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-																			<label class="pregunta mb-0" for="#num_unidades_produccion">Número de unidades de producción a certificar</label>
-																		</div>
+																	</td>
+																	<td>
+																		<div class="row g-mb-20">
+																			<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+																				<label class="pregunta mb-0" for="#num_unidades_produccion">Número de unidades de producción a certificar</label>
+																			</div>
 
-																		<div class="col-md-12 align-self-center">
-																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																				</span>
-																				<input id="num_unidades_produccion" name="num_unidades_produccion"  class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" required="required" data-msg="This field is mandatory"
-																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" value="<?php if (isset($consulta_ifa)) { echo $consulta_ifa->num_unidades_prod;}?>">
+																			<div class="col-md-12 align-self-center">
+																				<div class="form-group g-pos-rel mb-0">
+																					<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																						<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																					</span>
+																					<input id="num_unidades_produccion" name="num_unidades_produccion"  class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" required="required" data-msg="This field is mandatory"
+																				data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" value="<?php if (isset($consulta_ifa)) { echo $consulta_ifa->num_unidades_prod;}?>">
+																				</div>
 																			</div>
 																		</div>
-																	</div>
-																</td>
-															</tr>
-														</table>
-													</div>
-													<div class="col-sm-12">
-														<div class="form-group g-mb-30">
-															<label class="g-mb-10" for="inputGroup-1_1">
-																Número de unidades de manipulación de productos a certificar
-															</label>
+																	</td>
+																</tr>
+															</table>
+														</div>
+														<div class="col-sm-12">
+															<div class="form-group g-mb-30">
+																<label class="g-mb-10" for="inputGroup-1_1">
+																	Número de unidades de manipulación de productos a certificar
+																</label>
 
-															<div class="g-pos-rel">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																</span>
-																<input id="num_unidades_manipulacion" name="num_unidades_manipulacion" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí" value="<?php if (isset($consulta_ifa)) { echo $consulta_ifa->num_unidades_manip;}?>" >
+																<div class="g-pos-rel">
+																	<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																		<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																	</span>
+																	<input id="num_unidades_manipulacion" name="num_unidades_manipulacion" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí" value="<?php if (isset($consulta_ifa)) { echo $consulta_ifa->num_unidades_manip;}?>" >
+																</div>
 															</div>
 														</div>
 													</div>
-												
-												</div>
-												
-											</form>
-
+												</form>
 											</div>
-										
 											<!------------- termina sección global gap ifa -------------->
 
-
-
 											<!-- inicia mostrar global gap coc -->
-											
 											<div id="divGlobalGapCoc" class="col-md-12" style="display: none" >
 												<form class="js-validate" id="global_coc" name="global_coc">
-												
-												
-												<div class="row">
-													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">
-															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt="">
-															GLOBALG.A.P CADENA DE CUSTODIA (CoC)
-														</h4>
-													</div>
-													<div class="col-md-12" style="margin-bottom:1em;">
-														<p>
-															Ingresa lo(s) producto(s) por certificar
-														</p>
+													<div class="row">
+														<div class="col-sm-12">
+															<h4 class="nombreEsquema" style="font-size:14px;">
+																<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt="">
+																GLOBALG.A.P CADENA DE CUSTODIA (CoC)
+															</h4>
+														</div>
+														<div class="col-md-12" style="margin-bottom:1em;">
+															<p>
+																Ingresa lo(s) producto(s) por certificar
+															</p>
 
-									                    <div class="u-tagsinput--v2--gray g-brd-around g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-6 g-py-5">
-															<div class="form-group g-pos-rel mb-0">
-																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																</span>
-																<input type="text"  data-role="tagsinput" placeholder="Ingresa los productos" id="productos_coc" name="productos_coc"  value="<?php if (isset($consulta_coc)) {echo $consulta_coc->productos;}?>">
-															</div>
-									                    </div>
-													</div>
-													<div class="col-sm-6">
-														<table class="table table-bordered">
-															<tr>
-																<td colspan="3">
-																	<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalCoc" type="radio" onclick="radioCoc()" value="explotacion_individual"  id="radioGlobalCoc1">
-																		<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																			<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																		</div>
-																		Opción 1, Explotación individual
-																	</label>
-																</td>
-															</tr>
-															<tr class="text-justify">
-																<td>
-																	<div class="row g-mb-20">
-																		<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-																			<label class="pregunta mb-0" for="#realiza_etiquetado">¿La empresa realiza el etiquetado?</label>
-																		</div>
+										                    <div class="u-tagsinput--v2--gray g-brd-around g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-6 g-py-5">
+																<div class="form-group g-pos-rel mb-0">
+																	<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																		<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																	</span>
+																	<input type="text"  data-role="tagsinput" placeholder="Ingresa los productos" id="productos_coc" name="productos_coc"  value="<?php if (isset($consulta_coc)) {echo $consulta_coc->productos;}?>">
+																</div>
+										                    </div>
+														</div>
+														<div class="col-sm-6">
+															<table class="table table-bordered">
+																<tr>
+																	<td colspan="3">
+																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalCoc" type="radio" onclick="radioCoc()" value="explotacion_individual"  id="radioGlobalCoc1">
+																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																			</div>
+																			Opción 1, Explotación individual
+																		</label>
+																	</td>
+																</tr>
+																<tr class="text-justify">
+																	<td>
+																		<div class="row g-mb-20">
+																			<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+																				<label class="pregunta mb-0" for="#realiza_etiquetado">¿La empresa realiza el etiquetado?</label>
+																			</div>
 
-																		<div class="col-md-12 align-self-center">
-																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																				</span>
-																				<input id="op1_preg1" name="op1_preg1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<?php if (isset($consulta_coc)) {echo $consulta_coc->op1_preg1;}?>" required="required" data-msg="This field is mandatory"
-																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+																			<div class="col-md-12 align-self-center">
+																				<div class="form-group g-pos-rel mb-0">
+																					<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																						<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																					</span>
+																					<input id="op1_preg1" name="op1_preg1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<?php if (isset($consulta_coc)) {echo $consulta_coc->op1_preg1;}?>" required="required" data-msg="This field is mandatory"
+																				data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+																				</div>
 																			</div>
 																		</div>
-																	</div>
-																</td>
-																<td>
-																	<div class="row g-mb-20">
-																		<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-																			<label class="pregunta mb-0" for="#sistema_trazabilidad">¿Cuenta con un sistema de trazabilidad?</label>
-																		</div>
+																	</td>
+																	<td>
+																		<div class="row g-mb-20">
+																			<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+																				<label class="pregunta mb-0" for="#sistema_trazabilidad">¿Cuenta con un sistema de trazabilidad?</label>
+																			</div>
 
-																		<div class="col-md-12 align-self-center">
-																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																				</span>
-																				<input id="op1_preg2" name="op1_preg2" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<?php if (isset($consulta_coc)) {echo $consulta_coc->op1_preg2;}?>" required="required" data-msg="This field is mandatory"
-																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+																			<div class="col-md-12 align-self-center">
+																				<div class="form-group g-pos-rel mb-0">
+																					<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																						<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																					</span>
+																					<input id="op1_preg2" name="op1_preg2" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<?php if (isset($consulta_coc)) {echo $consulta_coc->op1_preg2;}?>" required="required" data-msg="This field is mandatory"
+																				data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+																				</div>
 																			</div>
 																		</div>
-																	</div>
-																</td>
+																	</td>
 
-															</tr>
-														</table>
-													</div>
-													<div class="col-sm-6">
-														<table class="table table-bordered">
-															<tr>
-																<td colspan="3">
-																	<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalCoc" type="radio" onclick="radioCoc()" value="explotacion_multiple"  id="radioGlobalCoc2">
-																		<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																			<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																</tr>
+															</table>
+														</div>
+														<div class="col-sm-6">
+															<table class="table table-bordered">
+																<tr>
+																	<td colspan="3">
+																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radioGlobalCoc" type="radio" onclick="radioCoc()" value="explotacion_multiple"  id="radioGlobalCoc2">
+																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																			</div>
+																			Opción 1, Explotación Multiple
+																		</label>
+																	</td>
+																</tr>
+																<tr class="text-justify">
+																	<td>
+																		<div class="row g-mb-20">
+																			<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+																				<label class="pregunta mb-0" for="#cantidad_estimada_producto">
+																					Cantidad estimada de producto certificado (Voluntario) en toneladas anual
+																				</label>
+																			</div>
+
+																			<div class="col-md-12 align-self-center">
+																				<div class="form-group g-pos-rel mb-0">
+																					<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																						<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																					</span>
+																					<input id="op2_preg1" name="op2_preg1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<?php if (isset($consulta_coc)) { echo $consulta_coc->op2_preg1;}?>" required="required" data-msg="This field is mandatory"
+																				data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+																				</div>
+																			</div>
 																		</div>
-																		Opción 1, Explotación Multiple
-																	</label>
-																</td>
-															</tr>
-															<tr class="text-justify">
-																<td>
-																	<div class="row g-mb-20">
-																		<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-																			<label class="pregunta mb-0" for="#cantidad_estimada_producto">
-																				Cantidad estimada de producto certificado (Voluntario) en toneladas anual
+																	</td>
+																	<td>
+																		<div class="row g-mb-20">
+																			<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+																				<label class="pregunta mb-0" for="#num_total_unidades">
+																					Número total de unidades de producción: ranchos, huertos o invernaderos
+																				</label>
+																			</div>
+
+																			<div class="col-md-12 align-self-center">
+																				<div class="form-group g-pos-rel mb-0">
+																					<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																						<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																					</span>
+																					<input id="op2_preg2" name="op2_preg2" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<?php if (isset($consulta_coc)) {echo $consulta_coc->op2_preg2;}?>" required="required" data-msg="This field is mandatory"
+																				data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+																				</div>
+																			</div>
+																		</div>
+																	</td>
+																	<td>
+																		<div class="row g-mb-20">
+																			<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+																				<label class="pregunta mb-0" for="#num_unidades_produccion_certificar">
+																					Número de unidades de producción a certificar
+																				</label>
+																			</div>
+
+																			<div class="col-md-12 align-self-center">
+																				<div class="form-group g-pos-rel mb-0">
+																					<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																						<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																					</span>
+																					<input id="op2_preg3" name="op2_preg3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<?php if (isset($consulta_coc)) { echo $consulta_coc->op2_preg3;}?>"required="required" data-msg="This field is mandatory"
+																				data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+																				</div>
+																			</div>
+																		</div>
+																	</td>
+																</tr>
+															</table>
+														</div>
+
+														<div class="col-md-12">
+															<table class="table table-bordered">
+																<thead>
+																	<tr>
+																		<th colspan="3">
+																			Declaración sobre producción paralela (PP) y propiedad paralela (PO), seleccione SI o NO, se detallara la información en el anexo CER.RG.01
+																		</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>
+																			¿El producto se vende antes de la cosecha?
+																		</td>
+																		<td>
+																			<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																				<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg1" id="coc_preg1" type="radio" value="SI">
+																				<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																					<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked" ></i>
+																				</div>
+																				SI
 																			</label>
-																		</div>
-
-																		<div class="col-md-12 align-self-center">
-																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																				</span>
-																				<input id="op2_preg1" name="op2_preg1" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<?php if (isset($consulta_coc)) { echo $consulta_coc->op2_preg1;}?>" required="required" data-msg="This field is mandatory"
-																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-																			</div>
-																		</div>
-																	</div>
-																</td>
-																<td>
-																	<div class="row g-mb-20">
-																		<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-																			<label class="pregunta mb-0" for="#num_total_unidades">
-																				Número total de unidades de producción: ranchos, huertos o invernaderos
+																		</td>
+																		<td>
+																			<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																				<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg1" id="coc_preg1_2" type="radio" value="NO">
+																				<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																					<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																				</div>
+																				NO
 																			</label>
-																		</div>
-
-																		<div class="col-md-12 align-self-center">
-																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																				</span>
-																				<input id="op2_preg2" name="op2_preg2" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<?php if (isset($consulta_coc)) {echo $consulta_coc->op2_preg2;}?>" required="required" data-msg="This field is mandatory"
-																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-																			</div>
-																		</div>
-																	</div>
-																</td>
-																<td>
-																	<div class="row g-mb-20">
-																		<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-																			<label class="pregunta mb-0" for="#num_unidades_produccion_certificar">
-																				Número de unidades de producción a certificar
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			¿La entidad legal realiza la producción de producto certificado y no certificado, es decir, producción paralela (PP)?
+																		</td>
+																		<td>
+																			<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																				<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg2" id="coc_preg2" type="radio" value="SI">
+																				<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																					<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																				</div>
+																				SI
 																			</label>
-																		</div>
-
-																		<div class="col-md-12 align-self-center">
-																			<div class="form-group g-pos-rel mb-0">
-																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																				</span>
-																				<input id="op2_preg3" name="op2_preg3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<?php if (isset($consulta_coc)) { echo $consulta_coc->op2_preg3;}?>"required="required" data-msg="This field is mandatory"
-																			data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
-																			</div>
-																		</div>
-																	</div>
-																</td>
-															</tr>
-														</table>
+																		</td>
+																		<td>
+																			<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																				<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg2" id="coc_preg2_2" type="radio" value="NO">
+																				<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																					<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																				</div>
+																				NO
+																			</label>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			¿La entidad legal que produce el producto, compra el mismo produco a otros proveedores, es decir, propiedad paralela (PO)?
+																		</td>
+																		<td>
+																			<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																				<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg3" id="coc_preg3" type="radio" value="SI">
+																				<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																					<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																				</div>
+																				SI
+																			</label>
+																		</td>
+																		<td>
+																			<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
+																				<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg3" id="coc_preg3_2" type="radio" value="NO">
+																				<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
+																					<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
+																				</div>
+																				NO
+																			</label>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
 													</div>
-
-													<div class="col-md-12">
-														<table class="table table-bordered">
-															<thead>
-																<tr>
-																	<th colspan="3">
-																		Declaración sobre producción paralela (PP) y propiedad paralela (PO), seleccione SI o NO, se detallara la información en el anexo CER.RG.01
-																	</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td>
-																		¿El producto se vende antes de la cosecha?
-																	</td>
-																	<td>
-																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg1" id="coc_preg1" type="radio" value="SI">
-																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked" ></i>
-																			</div>
-																			SI
-																		</label>
-																	</td>
-																	<td>
-																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg1" id="coc_preg1_2" type="radio" value="NO">
-																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																			</div>
-																			NO
-																		</label>
-																	</td>
-																</tr>
-																<tr>
-																	<td>
-																		¿La entidad legal realiza la producción de producto certificado y no certificado, es decir, producción paralela (PP)?
-																	</td>
-																	<td>
-																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg2" id="coc_preg2" type="radio" value="SI">
-																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																			</div>
-																			SI
-																		</label>
-																	</td>
-																	<td>
-																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg2" id="coc_preg2_2" type="radio" value="NO">
-																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																			</div>
-																			NO
-																		</label>
-																	</td>
-																</tr>
-																<tr>
-																	<td>
-																		¿La entidad legal que produce el producto, compra el mismo produco a otros proveedores, es decir, propiedad paralela (PO)?
-																	</td>
-																	<td>
-																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg3" id="coc_preg3" type="radio" value="SI">
-																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																			</div>
-																			SI
-																		</label>
-																	</td>
-																	<td>
-																		<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-																			<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="coc_preg3" id="coc_preg3_2" type="radio" value="NO">
-																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
-																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
-																			</div>
-																			NO
-																		</label>
-																	</td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-												
-											</form>
-											
+												</form>
 											</div>
 										
 											<!-- termina mostrar global gap coc -->
@@ -1952,227 +1934,188 @@ foreach($consulta_productos as $fila)
 												
 											</div>
 											<div  id="tabla3" name="tabla3">
-												
-
 												<?  if (isset($consulta_srrc2)) {?>
-
-										<table id="pro" name="pro" >
-											<thead >
-												<tr>
-													<th >
-														Producto
-													</th>								
-													<th >
-														País
-													</th>	
-													<th >								Porcentaje
-													</th>	
-												</tr>
-											</thead>		
-										<tbody><?								# code...
-																	
-										foreach($consulta_srrc2 as $fila)
-															{
-																?>
-												<tr >
-													<td >					
-														<? echo $fila->producto_srrc;?>
-																				
-													</td>
-													<td >
-														<? echo $fila->pais_srrc;?>
-													</td>
-													<td >	
-														<? echo $fila->porcentaje;?>
-													</td>	
-													<td>
-														<button class="btn u-btn-red g-mr-10 g-mb-15" type="button" onclick="<?php echo "quitar2(".$fila->id_producto_srrc.")"?>" >									
-															<i class="fa fa-minus" ></i> Eliminar<?php echo $fila->id_producto_srrc;?>
-														</button>
-													</td>
-												</tr>
-							                 <? }}?>
-										</tbody>
-									</table>
+													<table class="table table-striped" id="pro" name="pro">
+														<thead>
+															<tr>
+																<th>Producto</th>
+																<th>País</th>
+																<th>Porcentaje</th>
+															</tr>
+														</thead>
+														<tbody>
+															<?php foreach($consulta_srrc2 as $fila): ?>
+																<tr>
+																	<td>					
+																		<? echo $fila->producto_srrc;?>
+																								
+																	</td>
+																	<td >
+																		<? echo $fila->pais_srrc;?>
+																	</td>
+																	<td >	
+																		<? echo $fila->porcentaje;?>
+																	</td>	
+																	<td>
+																		<button class="btn u-btn-red g-mr-10 g-mb-15" type="button" onclick="<?php echo "quitar2(".$fila->id_producto_srrc.")"?>" >									
+																			<i class="fa fa-minus" ></i> Eliminar<?php echo $fila->id_producto_srrc;?>
+																		</button>
+																	</td>
+																</tr>
+															<?php endforeach; ?>
+														</tbody>
+													</table>
+												<?php 
+												}
+												 ?>
 											</div>
-										
 											<!-- inicia mostrar hecho en mexico -->
 											
-											<div id="divHechoEnMexico" class="col-md-12" style="display: none;"  >
-												
+											<div id="divHechoEnMexico" class="col-md-12" style="display: none;">
 												<form class="js-validate" id="mexico" name="mexico">
-												<div class="row">
-													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">
-															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_hecho_en_mexico.jpg" alt="">
-															HECHO EN MÉXICO
-														</h4>
+													<div class="row">
+														<div class="col-sm-12">
+															<h4 class="nombreEsquema" style="font-size:14px;">
+																<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_hecho_en_mexico.jpg" alt="">
+																HECHO EN MÉXICO
+															</h4>
+														</div>
+														<div class="col-sm-12">
+															<table class="table table-bordered">
+																<thead>
+																	<tr>
+																		<th>
+																			<button class="btn btn-sm btn-success" data-toggle="tooltip" title="Agregar otro producto" type="button" onclick="agregar()" >
+																				<i class="fa fa-plus"></i> Agregar producto
+																			</button>
+																		</th>
+																		<th style="width:70%">
+																			Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo
+																		</th>
+																	</tr>
+																</thead>
+																<tbody>
+																	<tr>
+																		<td>
+																			<div class="form-group g-pos-rel mb-0">
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																				</span>
+																				<textarea id="mex_producto" name="mex_producto" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
+																			</div>
+																		</td>
+																		<td>
+																			<div class="form-group g-pos-rel mb-0">
+																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																					<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																				</span>
+																				<textarea id="descripcion" name="descripcion" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Descripción"></textarea>
+																			</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
 													</div>
-													<div class="col-sm-12">
-														<table class="table table-bordered">
+												</form>
+											</div>
+
+											<div class="col-lg-12" id="tabla2" name="tabla2">
+												<? if (isset($consulta_mex)) {?>
+														<table class="table table-striped">
 															<thead>
 																<tr>
+																	<th>Producto</th>
+																	<th>Descripción</th>
 																	<th>
-																		<button class="btn btn-sm btn-success" data-toggle="tooltip" title="Agregar otro producto" type="button" onclick="agregar()" ><i class="fa fa-plus"></i></button> Agregar producto
-																	</th>
-																	<th style="width:70%">
-																		Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo
+																		...
 																	</th>
 																</tr>
 															</thead>
 															<tbody>
-																<tr>
-																	<td>
-																		<div class="form-group g-pos-rel mb-0">
-																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																			</span>
-																			<textarea id="mex_producto" name="mex_producto" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Nombre del producto"></textarea>
-																		</div>
-																	</td>
-																	<td>
-																		<div class="form-group g-pos-rel mb-0">
-																			<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																				<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-																			</span>
-																			<textarea id="descripcion" name="descripcion" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Descripción"></textarea>
-																		</div>
-																	</td>
-																</tr>
+																<?php foreach($consulta_mex as $fila): ?>
+																	<tr>
+																		<td>
+																			<? echo $fila->mex_producto;?>
+																		</td>
+																		<td>
+																			<? echo $fila->descripcion;?>
+																		</td>
+																		<td>
+																			<button class="btn u-btn-red g-mr-10 g-mb-15" type="button" onclick="<?php echo "quitar(".$fila->id_hecho_mexico.")"?>" >
+																				<i class="fa fa-trash" ></i> Eliminar
+																			</button>
+																		</td>
+																	</tr>
+																<?php endforeach; ?>
 															</tbody>
 														</table>
-													</div>
-
-												</div>
-											</form>
-										
+												<?php }?>
 											</div>
-												<div  id="tabla2" name="tabla2" >
-											<? if (isset($consulta_mex)) {?>
-											<table id="pro" name="pro" >
-							<thead >
-								<tr>
-									<th >
-										Producto
-									</th>
-								
-								
-									<th >
-										Descripción
-									</th>	
-								</tr>
-							</thead>
-							
-							<!-- información de la tabla -->
-							<tbody><?
-								# code...
-							
-foreach($consulta_mex as $fila)
-					{
-						//$id=$fila->id_producto_solicitud;?>
-								<!-- inicia TR información cliente -->
-								<tr >
-									
-									<td >
-										
-											<? echo $fila->mex_producto;?>
-										
-									</td>
-									<td >
-										
-											<? echo $fila->descripcion;?>
-										
-									</td>
-
-									
-									<td>
-										<button class="btn u-btn-red g-mr-10 g-mb-15" type="button" onclick="<?php echo "quitar(".$fila->id_hecho_mexico.")"?>" >
-													<i class="fa fa-minus" ></i> Eliminar<?php echo $fila->id_hecho_mexico;?>
-												</button>
-									</td>
-									
-									
-								</tr>
-                              
-								
-									
-                                  <? }?>
-							</tbody>
-						</table>
-						<?php }?>
-										</div>
-										
 											<!-- termina mostrar hecho en mexico -->
 
 											<!-- inicia mostrar denominación de origen -->
-											
 											<div id="divDenominacionOrigen" class="col-md-12" style="display: none;" >
 												<form id="den_origen" name="den_origen">
-												<div class="row">
-													<div class="col-sm-12">
-														<h4 class="nombreEsquema" style="font-size:14px;">
-															<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_denominacion_origen.jpg" alt="">
-															DENOMINACIÓN DE ORIGEN
-														</h4>
-													</div>
-													<div class="col-sm-12" style="margin-bottom:1em;">
-														<b style="margin-bottom:1.5em;">
-															Productos
-														</b>
-												<?php 
-												$bden=0;
-												if(isset($consulta_den_origen)){$bden=1;}?>
-														<select class="selectMultiple" name="pliego_condiciones" id="pliego_condiciones" multiple>
-															
-															<option <?php if ($bden==1 &&strpos($consulta_den_origen->productos,'Chiapas')!==false){?>selected="selected"<? }?> value="Chiapas">Café Chiapas</option>
-															<option <?php if ($bden==1 &&strpos($consulta_den_origen->productos,'Veracruz')!==false){?>selected="selected"<? }?> value="Veracruz">Café Veracruz</option>
-															<option <?php if ($bden==1 &&strpos($consulta_den_origen->productos,'Charanda')!==false){?>selected="selected"<? }?> value="Charanda">Charanda</option>
-															<option <?php if ($bden==1 &&strpos($consulta_den_origen->productos,'Ataulfo')!==false){?>selected="selected"<? }?> value="Ataulfo">Mango Ataulfo</option>
-															<option <?php if ($bden==1 &&strpos($consulta_den_origen->productos,'Vainilla')!==false){?>selected="selected"<? }?> value="Vainilla">Vainilla de Papantla</option>
-														</select>
-
-													</div>
-
-													<div class="col-sm-12" style="margin-top:1em;">
-														<b>
-															Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo.
-														</b>
-														<div class="form-group g-pos-rel mb-0">
-															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
-																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
-															</span>
-															<textarea id="descripcion_den"  name="descripcion_den" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"><?php if ($bden==1) {echo $consulta_den_origen->descripcion;}?></textarea>
+													<div class="row">
+														<div class="col-sm-12">
+															<h4 class="nombreEsquema" style="font-size:14px;">
+																<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_denominacion_origen.jpg" alt="">
+																DENOMINACIÓN DE ORIGEN
+															</h4>
 														</div>
-													</div>
-												</form>
-												<form id="upload_form" enctype="multipart/form-data" method="post"  >
-													<div class="col-sm-12" style="margin-top:1em;">
-														<b>Anexo</b>
-														<p>
-															Constancia expedida por órgano competente que acredite que el establecimiento donde se realiza la actividad del solicitante, se encuentra dentro del territorio señalado en la declaración correspondiente (original o copia certificada).
-														</p>
-														 <input type="file" name="file1" id="file1" class="form-control">
-														 <br>
-														 <input type="button " class="btn btn-info" value="Enviar" onClick="uploadFile(1)" id="aux">
-														<a id="aux2"  target="_blank"  class="btn btn-info" <?php if(isset($consulta_den_origen) && $consulta_den_origen->anexo!=NULL)
-														{?> href="<?php echo base_url().$consulta_den_origen->anexo?>" style="display: block;" <? }?> style="display: none;">Ver actual</a>
+														<div class="col-sm-12" style="margin-bottom:1em;">
+															<b style="margin-bottom:1.5em;">
+																Productos
+															</b>
+															<?php 
+																$bden=0;
+																if(isset($consulta_den_origen)){
+																	$bden=1;
+																}
+															?>
+															<select class="selectMultiple" name="pliego_condiciones" id="pliego_condiciones" multiple>
+																<option <?php if ($bden==1 &&strpos($consulta_den_origen->productos,'Chiapas')!==false){?>selected="selected"<? }?> value="Chiapas">Café Chiapas</option>
+																<option <?php if ($bden==1 &&strpos($consulta_den_origen->productos,'Veracruz')!==false){?>selected="selected"<? }?> value="Veracruz">Café Veracruz</option>
+																<option <?php if ($bden==1 &&strpos($consulta_den_origen->productos,'Charanda')!==false){?>selected="selected"<? }?> value="Charanda">Charanda</option>
+																<option <?php if ($bden==1 &&strpos($consulta_den_origen->productos,'Ataulfo')!==false){?>selected="selected"<? }?> value="Ataulfo">Mango Ataulfo</option>
+																<option <?php if ($bden==1 &&strpos($consulta_den_origen->productos,'Vainilla')!==false){?>selected="selected"<? }?> value="Vainilla">Vainilla de Papantla</option>
+															</select>
+														</div>
 
-
-															
-															
-															
-                    										<progress class="form-control" id="progressBar" value="0" max="100"  style="width:300px;"></progress>
-                    										<h3 id="status"></h3>
-               
-													</div>
-												</div>
-												<?php $fechado=time();?>
+														<div class="col-sm-12" style="margin-top:1em;">
+															<b>
+																Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo.
+															</b>
+															<div class="form-group g-pos-rel mb-0">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
+																</span>
+																<textarea id="descripcion_den"  name="descripcion_den" class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"><?php if ($bden==1) {echo $consulta_den_origen->descripcion;}?></textarea>
+															</div>
+														</div>
+													</form>
+													<form id="upload_form" enctype="multipart/form-data" method="post"  >
+														<div class="col-sm-12" style="margin-top:1em;">
+															<b>Anexo</b>
+															<p>
+																Constancia expedida por órgano competente que acredite que el establecimiento donde se realiza la actividad del solicitante, se encuentra dentro del territorio señalado en la declaración correspondiente (original o copia certificada).
+															</p>
+															<input type="file" name="file1" id="file1" class="form-control">
+															<br>
+															<input type="button " class="btn btn-info" value="Enviar" onClick="uploadFile(1)" id="aux">
+															<a id="aux2"  target="_blank"  class="btn btn-info" <?php if(isset($consulta_den_origen) && $consulta_den_origen->anexo!=NULL)
+															{?> href="<?php echo base_url().$consulta_den_origen->anexo?>" style="display: block;" <? }?> style="display: none;">Ver actual</a>
+	                    									<progress class="form-control" id="progressBar" value="0" max="100"  style="width:300px;"></progress>
+	                    									<h3 id="status"></h3>
+														</div>
+													
+														<?php $fechado=time();?>
 												
-												<input id="fecha_do" name="fecha_do" type="hidden" value="<? echo $fechado;?>"/>
-											</form>
+														<input id="fecha_do" name="fecha_do" type="hidden" value="<? echo $fechado;?>"/>
+													</form>
+												</div>
 											</div>
-										
-
 											<!-- termina mostrar denominación de origen -->
 										</div>
 									
@@ -2202,11 +2145,7 @@ foreach($consulta_mex as $fila)
 													
 												<div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0" style="width:50%">
 													<select class="js-select u-select--v3-select u-sibling w-100" required="required" name="idiomas" id="idiomas" title="Idiomas" style="display: none;">
-														
-
-
-
-														<option <?php if (isset($idiomas) && $idiomas=='español'){?>selected="selected"<? }?> value="español" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="fa fa-flag u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Español</span></span>'> Español
+														<option <?php if (isset($idiomas) && $idiomas=='español'){?>selected="selected"<? }?> value="español" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="fa fa-flag u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Español</span></span>'> <img src="<?php echo base_url('assets/img/flags/Spain.png'); ?>" alt=""> Español
 														</option>
 														<option <?php if (isset($idiomas) &&$idiomas=='ingles'){?>selected="selected"<? }?> value="ingles" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="fa fa-flag u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Ingles</span></span>'> Ingles
 														</option>
@@ -2831,9 +2770,9 @@ function validarRadios(ck,nombre,div){
 			document.getElementById("prevBtn").style.display = "inline";
 		}
 		if (n == (x.length-1 )) {
-			document.getElementById("nextBtn").innerHTML = "Finalizar solicitud <i class='icon-check'></i>"+n;
+			document.getElementById("nextBtn").innerHTML = "Finalizar solicitud <i class='icon-check'></i>";
 		} else {
-			document.getElementById("nextBtn").innerHTML = "Siguiente <i class='icon-arrow-right-circle'></i>"+n;
+			document.getElementById("nextBtn").innerHTML = "Siguiente <i class='icon-arrow-right-circle'></i>";
 		}
 		// ... and run a function that displays the correct step indicator:
 		fixStepIndicator(n)
@@ -2950,7 +2889,7 @@ else if(n==4){
 	
     var dataString = $('#certificacion').serialize();
 
-    alert(dataString);
+    //alert(dataString);
     if(dataString.length>9){
  
  $.ajax({  

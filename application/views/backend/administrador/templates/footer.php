@@ -35,7 +35,8 @@
 		<script src="<?php echo base_url(); ?>assets/js/components/hs.rating.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/components/hs.scrollbar.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/components/hs.go-to.js"></script>
-
+  		<script src="<?php echo base_url(); ?>admin/assets/js/components/hs.range-datepicker.js"></script>
+  		<script src="<?php echo base_url(); ?>admin/assets/js/components/hs.datepicker.js"></script>
 		<!-- JS Unify -->
 		<script src="<?php echo base_url(); ?>admin/assets/js/components/hs.side-nav.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/helpers/hs.hamburgers.js"></script>
@@ -54,7 +55,8 @@
 
 		<!-- JS Custom -->
 		<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
-		<script  src="<?php echo base_url(); ?>assets/js/components/hs.modal-window.js"></script>
+		<script  src="<?php echo base_url(); ?>admin/assets/vendor/custombox/custombox.min.js"></script>
+		<script  src="<?php echo base_url(); ?>admin/assets/js/components/hs.modal-window.js"></script>
 
 <?/*solicitud admin*/?>
   <script src="<?php echo base_url(); ?>admin/assets/vendor/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
@@ -68,36 +70,31 @@
 	        	allSelected: 'Se han seleccionado todos'
 	        });
 	    </script>
-		
-
-
-
-
-	
-
-
-
-
-		<script>
-			/*$(document).ready(function(){
-			  $('#ultimosPendientes').slick({
-			  	arrows: false,
-			  	dots: false,
-			  	autoplay: true
-			  });
-			});*/
-		</script>
-
 
 		  <!-- JS Plugins Init. -->
 		  <script>
 		    $(document).on('ready', function () {
-
 		        // initialization of go to
 		        $.HSCore.components.HSGoTo.init('.js-go-to');
 
 				// initialization of custom select
 				$('.js-select').selectpicker();
+
+				// initialization of range datepicker
+				$.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker, #rangeDatepicker2, #rangeDatepicker3');
+
+				// initialization of datepicker
+				$.HSCore.components.HSDatepicker.init('#datepicker', {
+					dayNamesMin: [
+						'DO',
+						'LU',
+						'MA',
+						'MI',
+						'JU',
+						'VI',
+						'SA'
+					]
+				});
 
 				// initialization of sidebar navigation component
 				$.HSCore.components.HSSideNav.init('.js-side-nav');
@@ -130,24 +127,22 @@
 		        // initialization of counters
 		        var counters = $.HSCore.components.HSCounter.init('[class*="js-counter"]');
 
-		    	/* initialization of carousel
-		    	$.HSCore.components.HSCarousel.init('.js-carousel');
-				*/
 
-		        /* pauser y continuar ejecución del carousel
-		        $('.js-carousel').mouseover(function(){
-		        	$('.js-carousel').slick('slickPause');
-		        });
+				$('.js-select').on('shown.bs.select', function (e) {
+					$(this).addClass('opened');
+				});
 
-		        $('.js-carousel').mouseleave(function(){
-		        	$('.js-carousel').slick('slickPlay');
-		        });
-				*/
+				$('.js-select').on('hidden.bs.select', function (e) {
+					$(this).removeClass('opened');
+				});
 
-		        // initialization of HSScrollBar component
-		        $.HSCore.components.HSScrollBar.init( $('.js-scrollbar') );
+				// initialization of range datepicker
+				/*$.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
+				// initialization of HSScrollBar component
+					$.HSCore.components.HSScrollBar.init( $('.js-scrollbar') );
 
-		    });
+				});*/
+			});
 
 			$(window).on('load', function () {
 				// initialization of header

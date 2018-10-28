@@ -1,5 +1,8 @@
 <div class="g-pa-20">
 	<div class="row">
+		<div class="col-lg-12">
+
+		</div>
 		<!-- inicia col-md-12 -->
 		<div class="col-lg-12">
 
@@ -14,22 +17,7 @@
 										<i class="icon-layers g-pos-rel g-top-1 g-mr-5"></i> Solicitudes pendientes
 									</h3>
 								</div>
-								<div class="col-md-12">
-									<!-- Border Alert -->
-									<div class="alert fade show g-brd-around g-brd-gray-light-v3 rounded-0" role="alert">
-										<div class="media">
-											<div class="d-flex g-mr-10">
-												<span class="u-icon-v3 u-icon-size--sm g-bg-blue g-color-white g-rounded-50x">
-													<i class="et-icon-lightbulb"></i>
-												</span>
-											</div>
-											<div class="media-body">
-												<p class="m-0 g-font-size-14">Se necesita cargar y enviar una cotización</p>
-											</div>
-										</div>
-									</div>
-									<!-- End Border Alert -->
-								</div>
+
 							</div>
 							
 							<div class="dropdown g-mb-10 g-mb-0--md">
@@ -97,7 +85,7 @@
 										<!-- nombre del cliente -->
 										<td>
 											<a href="#">
-												<i class="icon-magnifier"></i> <?php echo  $fila->nombreLegal?>
+												<i class="icon-magnifier"></i> <?php echo  $fila->nombreLegal ?>
 											</a>
 										</td>
 										<!-- esquema que esta solicitando -->
@@ -145,19 +133,57 @@
 										<!-- botón para cargar la cotización -->
 										<td>
 											<!-- Large modal -->
-											<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">
+											<a href="<?php echo base_url('backend/administrador/cotizaciones/main'); ?>" class="btn btn-primary">
 												Cargar cotización
-											</button>
-											
-											<!-- modal cotización -->
-											<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-												<div class="modal-dialog modal-lg" role="document">
-													<div class="modal-content">
-														Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos numquam, facilis impedit nesciunt dolor fuga eum iste vero quia optio nostrum non temporibus cupiditate perferendis, aliquam maiores iusto totam, omnis!
+											</a>
+											<!--<button type="button" class="btn btn-primary" data-modal-target="#modal1" data-modal-effect="fadein">
+												Cargar cotización
+											</button>-->
+
+											<!-- Modal Cotización -->
+											<!--<div id="modal1" class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+												<button type="button" class="close" onclick="Custombox.modal.close();">
+													<i class="hs-icon hs-icon-close"></i>
+												</button>
+												<h4 class="g-mb-20">
+													<div class="text-left">
+														Cotización Nº: <?= '<span class="g-color-green">CTZ'.$fila->id_solicitud.'</span>' ?>
 													</div>
+												</h4>
+												
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group g-mb-30">
+															<label class="g-mb-10" for="inputGroup-1_3">Fecha</label>
+
+															<div class="g-pos-rel">
+																<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="date" placeholder="dd/mm/aaaa">
+															</div>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group g-mb-30">
+															<label class="g-mb-10" for="inputGroup-1_3">Cliente</label>
+
+															<div class="g-pos-rel">
+																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
+																	<i class="hs-admin-pencil g-absolute-centered g-font-size-16 g-color-gray-light-v6"></i>
+																</span>
+																<input id="inputGroup-1_3" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Cliente" value="<?= $fila->nombreLegal ?>">
+															</div>
+														</div>
+													</div>
+
 												</div>
-											</div>
-											<!-- End modal cotización -->
+												<p>
+													
+												</p>
+												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
+												specimen book.</p>
+												<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+												recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+											</div>-->
+											<!-- End Modal Cotización -->
 
 										</td>
 										<!-- acciones -->
@@ -170,7 +196,7 @@
 												<div id="dropDown2" class="u-shadow-v31 g-pos-abs g-right-0 g-z-index-2 g-bg-white" aria-labelledby="dropDown2Invoker">
 													<ul class="list-unstyled g-nowrap mb-0">
 														<li>
-															<a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14" href="#!">
+															<a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14" href="<?php echo base_url('backend/administrador/solicitud/solicitudes/nueva_solicitud/'.$fila->id_solicitud.'/'.$fila->fk_id_cliente.''); ?>">
 															<i class="icon-magnifier g-font-size-18 g-color-gray-light-v6 g-mr-10 g-mr-15--md"></i>
 															Consultar<br>solicitud
 															</a>
@@ -198,6 +224,7 @@
 									
 								</tbody>
 							</table>
+
 						</div>
 						<!-- End Panel body -->
 					</div>

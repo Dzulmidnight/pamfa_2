@@ -95,12 +95,12 @@ $idsol="";
 			$data['idiomas']=$data2['sol']->idiomas;
 			$data['uso_datos']=$data2['sol']->uso_datos;
 			$data['consulta_todo'] = $this->mSolicitud->consulta_solicitudes();
-		//$this->load->view('backend/cliente/solicitud/global_ifa',$data,$norma);	
+		//$this->load->view('backend/cliente/solicitud/global_ifa',$data,$norma);
+
 		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
-		
 		$this->load->view('backend/administrador/templates/sideNav',$data);
-		$this->load->view('backend/administrador/solicitud/nueva_solicitud',$data);
+			$this->load->view('backend/administrador/solicitud/nueva_solicitud',$data);
 		$this->load->view('backend/administrador/templates/pre_footer');
 		$this->load->view('backend/administrador/templates/footer');
 

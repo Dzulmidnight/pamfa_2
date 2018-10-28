@@ -324,12 +324,12 @@
 												<span class="u-label u-label--sm g-bg-blue g-rounded-20 g-px-10">$25 / hr</span>
 											</div>-->
 											<div class="align-self-center ml-auto">
-												<a onclick="pendientes(<?php echo '\''.$a.'\',\''.$id.'\''?>);" name="<? echo "activa".$id;?>" id="<? echo "activa".$id;?>" style="display:inline-block" data-toggle="tooltip" title="Autorizar acceso">
+												<a onclick="pendientes(<?php echo '\''.$a.'\',\''.$id.'\''?>);" name="<?php echo "activa".$id;?>" id="<?php echo "activa".$id;?>" style="display:inline-block" data-toggle="tooltip" title="Autorizar acceso">
 													<span class="u-icon-v1 u-icon-size--sm g-bg-green--hover g-color-white--hover ">
 														<i class="fa fa-check g-color-green g-color-white--hover"></i>
 													</span>									
 												</a>
-												<a name="<? echo "rechazo".$id;?>" id="<? echo "rechazo".$id;?>" onclick="pendientes(<?php echo '\''.$r.'\',\''.$id.'\''?>);" style="display:inline-block" data-toggle="tooltip" title="Rechazar">
+												<a name="<?php echo "rechazo".$id;?>" id="<? echo "rechazo".$id;?>" onclick="pendientes(<?php echo '\''.$r.'\',\''.$id.'\''?>);" style="display:inline-block" data-toggle="tooltip" title="Rechazar">
 													<span class="u-icon-v1 u-icon-size--sm g-bg-red--hover g-color-white--hover ">
 														<i class="fa fa-close"></i>
 													</span>									

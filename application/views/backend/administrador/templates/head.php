@@ -23,13 +23,16 @@
 			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/icon-hs/style.css">
 
 			<link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/vendor/hs-admin-icons/hs-admin-icons.css">
-			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/animate.css">
+			<link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/vendor/animate.css">
 			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css">
 			<link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/vendor/bootstrap-select/css/bootstrap-select.min.css">
+  			<link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/vendor/flatpickr/dist/css/flatpickr.min.css">
+
 
 			<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/hamburgers/hamburgers.min.css">
 			<!-- CSS Implementing Plugins -->
 			<link  rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/slick-carousel/slick/slick.css">
+			<link  rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/vendor/custombox/custombox.min.css">
 			<!-- CSS Unify -->
 			<link rel="stylesheet" href="<?php echo base_url(); ?>admin/assets/css/unify-admin.css">
 

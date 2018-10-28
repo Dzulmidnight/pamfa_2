@@ -17,10 +17,6 @@ if(!empty($resultado) && $resultado == 'correcto'){
 	<div class="row no-gutters">
 
 		<div class="col-md-6 order-md-2 g-bg-white">
-			<button type="button">
-				asdf
-			</button>
-
 			<div class="g-pa-15x">
 				<div class="g-mb-50">
 					<div class="col-sm-12">
