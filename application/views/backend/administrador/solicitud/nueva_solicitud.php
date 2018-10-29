@@ -47,7 +47,7 @@ input.invalid {
   width: 50px;
   margin: auto;
   background-color: #bbbbbb;
-  border: none; 
+  border: none;
   border-radius: 50%;
   display: block;
   opacity: 0.5;
@@ -97,6 +97,9 @@ input.invalid {
 
 </style>
 
+<a class='flotante btn u-btn-blue' href='#' data-modal-target="#modal1" data-modal-effect="fadein">
+	<i class="et-icon-chat"></i> Observaciones
+</a>
 
 <div id="solicitudCertificacion">
 	<div class="g-pa-20">
@@ -114,7 +117,7 @@ input.invalid {
 						</span>
 						<span class="stepTexto">
 							Esquemas
-						</span>				
+						</span>
 					</span>
 
 					<span class="contenedor">
@@ -125,7 +128,7 @@ input.invalid {
 						</span>
 						<span class="stepTexto">
 							Datos cliente
-						</span>				
+						</span>
 					</span>
 
 					<span class="contenedor">
@@ -136,7 +139,7 @@ input.invalid {
 						</span>
 						<span class="stepTexto">
 							Datos facturación
-						</span>				
+						</span>
 					</span>
 
 					<span class="contenedor">
@@ -147,7 +150,7 @@ input.invalid {
 						</span>
 						<span class="stepTexto">
 							Certificaciones anteriores
-						</span>				
+						</span>
 					</span>
 
 					<span class="contenedor">
@@ -158,7 +161,7 @@ input.invalid {
 						</span>
 						<span class="stepTexto">
 							Certificación
-						</span>				
+						</span>
 					</span>
 
 					<span class="contenedor">
@@ -169,7 +172,7 @@ input.invalid {
 						</span>
 						<span class="stepTexto">
 							Paso final
-						</span>				
+						</span>
 					</span>
 
 				</div>
@@ -177,14 +180,14 @@ input.invalid {
 
 			<div class="col-md-12">
 
-				
+
 					<!-- One "tab" for each step in the form: -->
 					<!-- inicia 1.- SELECCIONAR EL ESQUEMA DE CERTIFICACIÓN -->
 					<div class="tab">
 				     	<div class="card g-brd-gray-light-v7 g-mb-10">
 							<div id="esquema_certificacion">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-									
+
 
 										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
 											<h2 class="h3 u-heading-v1__title">ESQUEMA DE CERTIFICACIÓN</h2>
@@ -197,7 +200,7 @@ input.invalid {
 											<div  class="col-md-6">
 													<!-- Toggles Checkbox -->
 													<div class="form-group">
-														
+
 														<label id="divEsquema1" class="d-flex align-items-center justify-content-between" >
 															<span>
 																<img class="img-fluid img-thumbnail" src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt="">
@@ -206,7 +209,7 @@ input.invalid {
 															<div class="u-check">
 																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_ifa" name="check_globalgap_ifa" type="checkbox" onclick="resaltarEsquema('check_globalgap_ifa','divEsquema1','img','cGlobal_ifa','GlobalGapIfa',<?php echo $ids;?>)">
 																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
+																	<i class="fa" data-check-icon=""></i>
 																</div>
 															</div>
 														</label>
@@ -224,7 +227,7 @@ input.invalid {
 															<div class="u-check">
 																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_globalgap_coc" name="check_globalgap_coc" type="checkbox" onclick="resaltarEsquema('check_globalgap_coc','divEsquema2','img','cGlobal_coc','GlobalGapCoc',<?php echo $ids;?>)">
 																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
+																	<i class="fa" data-check-icon=""></i>
 																</div>
 															</div>
 														</label>
@@ -244,7 +247,7 @@ input.invalid {
 
 																resaltarEsquema('check_mex_calidad_suprema','divEsquema3','img','cMcs','MexCalidadSuprema',<?php echo $ids;?>)">
 																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
+																	<i class="fa" data-check-icon=""></i>
 																</div>
 															</div>
 														</label>
@@ -262,7 +265,7 @@ input.invalid {
 															<div class="u-check">
 																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_srrc" type="checkbox" onclick="resaltarEsquema('check_srrc','divEsquema4','img','cSrrc','Srrc',<?php echo $ids;?>)">
 																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
+																	<i class="fa" data-check-icon=""></i>
 																</div>
 															</div>
 														</label>
@@ -280,9 +283,9 @@ input.invalid {
 															<div class="u-check">
 																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_hecho_en_mexico" name="check_hecho_en_mexico" type="checkbox" onclick="resaltarEsquema('check_hecho_en_mexico','divEsquema5','img','cMexico','HechoEnMexico',<?php echo $ids;?>)">
 
-			
+
 																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
+																	<i class="fa" data-check-icon=""></i>
 																</div>
 															</div>
 														</label>
@@ -300,7 +303,7 @@ input.invalid {
 															<div class="u-check">
 																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-right-0" id="check_denominacion_origen" type="checkbox" onclick="resaltarEsquema('check_denominacion_origen','divEsquema6','img','cDen_origen','DenominacionOrigen',<?php echo $ids;?>)">
 																<div class="u-check-icon-radio-v8">
-																	<i class="fa" data-check-icon="&#xf00c"></i>
+																	<i class="fa" data-check-icon=""></i>
 																</div>
 															</div>
 														</label>
@@ -310,7 +313,7 @@ input.invalid {
 
 
 										</div>
-									
+
 								</div>
 							</div>
 				     	</div>
@@ -365,7 +368,7 @@ input.invalid {
 													</div>
 												</div>
 											</div>
-											
+
 												<div class="col-md-12">
 
 													<div class="row g-mb-20">
@@ -381,7 +384,7 @@ input.invalid {
 																<input id="email" name="email" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="ejemplo@gmail.com" alue="<? echo $fila->email;?>"  required="required" >
 															</div>
 														</div>
-													</div>	
+													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="row g-mb-20">
@@ -397,9 +400,9 @@ input.invalid {
 																<input id="telefono" name="telefono" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aqui" value="<? echo $fila->telefono;?>"  required="required" >
 															</div>
 														</div>
-													</div>	
-												</div>												
-										
+													</div>
+												</div>
+
 
 											<div class="col-md-6">
 												<div class="row g-mb-20">
@@ -415,7 +418,7 @@ input.invalid {
 															<input   class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí" value="<?php echo $fila->fax;?>" id="fax" name="fax">
 														</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 										</div>
 
@@ -445,9 +448,9 @@ input.invalid {
                                                     	<option <?php if ($fila->pais==$fila2->id_pais) {?> selected
                                                     		<?                                                   	} ?> value="<?php echo $fila2->id_pais;?>" ><?php echo $fila2->nombre;?></option>
                                                         <?php }?>
-                                                    
+
 																	</select>
-																		
+
 
 
 
@@ -489,7 +492,7 @@ input.invalid {
 															<input  class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí" value="<? echo $fila->municipio;?>"  required="required" id="municipio" name="municipio">
 														</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="row g-mb-20">
@@ -505,7 +508,7 @@ input.invalid {
 															<input id="colonia" name="colonia" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí"  required="required" value="<? echo $fila->colonia;?>" >
 														</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="row g-mb-20">
@@ -521,7 +524,7 @@ input.invalid {
 															<input  class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí"  required="required" value="<? echo $fila->cp;?>" id="cp" name="cp">
 														</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="row g-mb-20">
@@ -544,7 +547,7 @@ input.invalid {
 											<?php }?>
 									</form>
 								</div>
-								
+
 							</div>
 				     	</div>
 					</div>
@@ -578,7 +581,7 @@ input.invalid {
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
 														</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="row g-mb-20">
@@ -594,7 +597,7 @@ input.invalid {
 															<textarea id="razonSocial" name="razonSocial"  class="form-control form-control-md u-textarea-expandable g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-resize-none g-overflow-hidden" rows="3" placeholder="Escribe aquí"><? echo $fila->razonSocial;?></textarea>
 														</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 
 											<div class="col-md-6">
@@ -612,7 +615,7 @@ input.invalid {
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="ejemplo@gmail.com">
 														</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 
 											<div class="col-md-6">
@@ -630,7 +633,7 @@ input.invalid {
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
 														</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="row g-mb-20">
@@ -654,7 +657,7 @@ input.invalid {
 																</div>
 															</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 
 											<div class="col-md-6">
@@ -672,7 +675,7 @@ input.invalid {
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
 														</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 
 											<div class="col-md-6">
@@ -690,7 +693,7 @@ input.invalid {
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
 														</div>
 													</div>
-												</div>	
+												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="row g-mb-20">
@@ -710,7 +713,7 @@ input.invalid {
 													</div>
 
 
-												</div>	
+												</div>
 											</div>
 
 											<div class="col-md-6">
@@ -780,7 +783,7 @@ input.invalid {
 
 										<!-- relacionados a GLOBALG.A.P -->
 										<div class="row">
-											
+
 											<!-- inicia certificación GLOBALGAP -->
 											<div class="col-md-12">
 												<div class="mb-10">
@@ -799,7 +802,7 @@ input.invalid {
 
 														</label>
 													</div>
-												</div>													
+												</div>
 											</div>
 
 											<!-- inicia sub preguntas GLOBALGAP -->
@@ -847,7 +850,7 @@ input.invalid {
 															<label class="u-check g-pl-25">
 																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="certificacionGLN" id="certificacionGLN" type="radio" onclick="validarRadios('certificacionGLN', 'divGLN')" value="SI">
 																<div class="u-check-icon-font g-absolute-centered--y g-left-0">
-																<i class="fa" data-check-icon="&#xf192" data-uncheck-icon="&#xf1db"></i>
+																<i class="fa" data-check-icon="" data-uncheck-icon=""></i>
 																</div>
 																SI
 															</label>
@@ -870,12 +873,12 @@ input.invalid {
 															<label class="u-check g-pl-25">
 																<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="certificacionGLN" id="certificacionGLN2" type="radio" onclick="validarRadios('certificacionGLN', 'divGLN')" value="NO">
 																<div class="u-check-icon-font g-absolute-centered--y g-left-0">
-																<i class="fa" data-check-icon="&#xf192" data-uncheck-icon="&#xf1db"></i>
+																<i class="fa" data-check-icon="" data-uncheck-icon=""></i>
 																</div>
 																NO
 															</label>
 														</div>
-													</div>	
+													</div>
 												</div>
 											</div>
 											<!-- terminan sub-preguntas GLOBALGAP -->
@@ -885,7 +888,7 @@ input.invalid {
 											</div>
 
 										</div>
-										
+
 										<!-- inicia sección OTRAS CERTIFICACIONES -->
 										<div class="row">
 
@@ -959,7 +962,7 @@ input.invalid {
 														<!-- End Text Input -->
 													</div>
 											</div>
-											
+
 											<!-- inicia registro PRIMUSGSF -->
 											<div class="col-md-4">
 												<div class="mb-10">
@@ -1009,12 +1012,12 @@ input.invalid {
 														<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
 															<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 														</span>
-														<input id="preg7" name="preg7" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí" value="<?php echo $consulta_cert->preg7;?>">
+														<input id="preg7" name="preg7" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí" value="<?= $consulta_cert->preg7 ?>">
 													</div>
 												</div>
 												<!-- End Input -->
 											</div>
-											
+
 											<!-- nombre responsable autoevaluación -->
 											<div class="col-md-6">
 												<!-- Input -->
@@ -1037,10 +1040,10 @@ input.invalid {
 
 										</div>
 										<!-- termina sección OTRAS CERTIFICACIONES -->
-										
+
 										<!-- inicia sección OTRO ORGANISMO DE CERTIFICACIÓN -->
 										<div class="row">
-											
+
 											<!-- pregunta otro organismo de certificación -->
 											<div class="col-md-12">
 												<div class="mb-10">
@@ -1059,7 +1062,7 @@ input.invalid {
 
 														</label>
 													</div>
-												</div>													
+												</div>
 											</div>
 
 											<!-- inicia registrar otro organismo de certificación -->
@@ -1081,7 +1084,7 @@ input.invalid {
 																<input  id="organismo" name="organismo" class="form-control form-control-md g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-14 g-py-10" type="text" placeholder="Escribe aquí" value="<?php echo $consulta_cert->organismo;?>">
 															</div>
 														</div>
-														<!-- End Input -->		
+														<!-- End Input -->
 													</div>
 
 													<!-- periodo de la certificación -->
@@ -1100,7 +1103,7 @@ input.invalid {
 																	<!-- Datepicker -->
 																	<div class="form-group mb-0 g-max-width-400">
 																		<input type="date" class="form-control" id="fecha_fin" name="fecha_fin" placeholder="d/m/Y" value="<?php echo $consulta_cert->preg1;?>">
-																
+
 																	</div>
 																	<!-- End Datepicker -->
 																</div>
@@ -1115,7 +1118,7 @@ input.invalid {
 
 										</div>
 										<!-- termina sección OTRO ORGANISMO DE CERTIFICACIÓN -->
-										
+
 									</form>
 								</div>
 							</div>
@@ -1129,7 +1132,7 @@ input.invalid {
 
 							<div id="datosCliente">
 								<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-								
+
 
 										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
 										  <h2 class="h3 u-heading-v1__title">4.- ESQUEMA DE CERTIFICACIÓN</h2>
@@ -1139,11 +1142,11 @@ input.invalid {
 
 
 											<!--------------- inicia sección global gap ifa -------------->
-											
+
 											<div id="divGlobalGapIfa" class="col-md-12" style="display: none"  >
 												<form class="js-validate" id="global_ifa" name="global_ifa" >
 													<div class="row">
-														<div class="col-sm-12">	
+														<div class="col-sm-12">
 															<h4 class="nombreEsquema" style="font-size:14px;">
 																<img src="<?php echo base_url(); ?>assets/img/esquemas_certificacion/esquema_global_gap.jpg" alt=""> GLOBALG.A.P IFA V5.1
 															</h4>
@@ -1512,13 +1515,13 @@ input.invalid {
 													</div>
 												</form>
 											</div>
-										
+
 											<!-- termina mostrar global gap coc -->
-											
+
 
 
 											<!-- inicia mostrar mexico calidad suprema -->
-											
+
 											<div id="divMexCalidadSuprema" class="col-md-12" style="display: none"  >
 												<form id="mcs">
 												<div class="row">
@@ -1535,7 +1538,7 @@ input.invalid {
 														<h4>
 															Alcance de la certificación
 														</h4>
-														
+
 														<select class="selectMultiple" name="alcance_certificacion" id="alcance_certificacion" multiple>
 															<option <?php if($bmex==1 &&strpos($consulta_mexcalsup->alcance,'proceso')!==false){?>selected="selected"<? }?>value="proceso">Proceso</option>
 															<option <?php if($bmex==1 &&strpos($consulta_mexcalsup->alcance,'producto')!==false){?>selected="selected"<? }?>value="producto">Producto</option>
@@ -1590,28 +1593,28 @@ input.invalid {
 																	</td>
 																	<td>
 																		<input type="file" name="file5_mex" id="file5_mex" class="form-control">
-														 
-														
-														
 
 
-															
-															
+
+
+
+
+
                     										<progress class="form-control" id="progressBar5" value="0" max="100"  style="width:300px;"></progress>
                     										<h3 id="status5"></h3>
 																	</td>
 																	<td>
 																		<input type="file" name="file6_mex" id="file6_mex" class="form-control">
-														
-														
 
 
-															
-															
+
+
+
+
                     										<progress class="form-control" id="progressBar5" value="0" max="100"  style="width:300px;"></progress>
                     										<h3 id="status5"></h3>
 																	</td>
-																</tr>																
+																</tr>
 															</tbody>
 														</table>
 													</div>
@@ -1624,59 +1627,59 @@ input.invalid {
 									<th >
 										Equipo
 									</th>
-								
-								
+
+
 									<th >
 										Anexo1
-									</th>	
+									</th>
 									<th >
 										Anexo2
-									</th>	
+									</th>
 								</tr>
 							</thead>
-							
+
 							<!-- información de la tabla -->
 							<tbody><?								# code...
-							
+
 foreach($consulta_productos as $fila)
 					{
 						//$id=$fila->id_producto_solicitud;?>
 								<!-- inicia TR información cliente -->
 								<tr >
-									
+
 									<td >
-										
+
 											<? echo $fila->equipo;?>
-										
+
 									</td>
 									<td >
-										
+
 											<a id="aux2"  target="_blank"  class="btn btn-info" <?php if(isset($fila) && $fila->anexo1!=NULL)
 														{?> href="<?php echo base_url().$fila->anexo1?>" style="display: block;" <? }?> style="display: none;">Ver </a>
-										
+
 									</td>
 									<td >
-										
+
 											<a id="aux2"  target="_blank"  class="btn btn-info" <?php if(isset($fila) && $fila->anexo2!=NULL)
 														{?> href="<?php echo base_url().$fila->anexo2?>" style="display: block;" <? }?> style="display: none;">Ver </a>
-										
+
 									</td>
 
-									
+
 									<td>
 										<button class="btn u-btn-red g-mr-10 g-mb-15" type="button" onclick="quitar3(<?php echo '\''.$fila->id_mexcalsup_producto.'\',\''.$fila->anexo1.'\',\''.$fila->anexo2.'\'' ?> ) ;" >
 
-											 
+
 
 													<i class="fa fa-minus" ></i> Eliminar<?php echo $fila->id_mexcalsup_producto;?>
 												</button>
 									</td>
-									
-									
+
+
 								</tr>
-                              
-								
-									
+
+
+
                                   <? }}?>
 							</tbody>
 						</table>
@@ -1716,8 +1719,8 @@ foreach($consulta_productos as $fila)
 														{ if ($consulta_mexcalsup->anexo1!=NULL){?> href="<?php echo base_url().$consulta_mexcalsup->anexo1?>" style="display: block;" <? }}?> style="display: none;">Ver actual</a>
 
 
-															
-															
+
+
                     										<progress class="form-control" id="progressBar2" value="0" max="100"  style="width:300px;"></progress>
                     										<h3 id="status2"></h3>
 														</div>
@@ -1749,8 +1752,8 @@ foreach($consulta_productos as $fila)
 														{ if ($consulta_mexcalsup->anexo2!=NULL){?> href="<?php echo base_url().$consulta_mexcalsup->anexo2?>" style="display: block;" <? }}?> style="display: none;">Ver actual</a>
 
 
-															
-															
+
+
                     										<progress class="form-control" id="progressBar3" value="0" max="100"  style="width:300px;"></progress>
                     										<h3 id="status3"></h3>
 
@@ -1774,19 +1777,19 @@ foreach($consulta_productos as $fila)
 
 												</div>
 												<?php $fecha=time();?>
-												
+
 												<input id="fecha_mcs" name="fecha_mcs" type="hidden" value="<? echo $fecha;?>"/>
 											</form>
 											</div>
-										
+
 											<!-- termina mostrar mexico calidad suprema -->
 
 
 
 											<!-- inicia mostrar sistema de reducción de riesgos -->
-											
+
 											<div id="divSrrc" class="col-md-12" style="display: none; margin-top: 1em;">
-												
+
 												<form class="js-validate" id="fsrrc" name="fsrrc">
 												<div class="row">
 													<div class="col-sm-12">
@@ -1802,7 +1805,7 @@ foreach($consulta_productos as $fila)
 																	<label class="form-check-inline u-check g-pl-25">
 																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" id="area1" name="area1" value="1">
 																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
+																			<i class="fa" data-check-icon=""></i>
 																		</div>
 																		Áreas integrales con aplicación de sistema completo
 																	</label>
@@ -1811,7 +1814,7 @@ foreach($consulta_productos as $fila)
 																	<label class="form-check-inline u-check g-pl-25">
 																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" id="area2" name="area2" value="1">
 																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
+																			<i class="fa" data-check-icon=""></i>
 																		</div>
 																		Áreas integrales con aplicación de BUMA
 																	</label>
@@ -1822,7 +1825,7 @@ foreach($consulta_productos as $fila)
 																	<label class="form-check-inline u-check g-pl-25">
 																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" id="seccion1" name="seccion1" value="1">
 																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
+																			<i class="fa" data-check-icon=""></i>
 																		</div>
 																		Sección campo
 																	</label>
@@ -1831,7 +1834,7 @@ foreach($consulta_productos as $fila)
 																	<label class="form-check-inline u-check g-pl-25">
 																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" id="seccion2" name="seccion2" value="1">
 																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
+																			<i class="fa" data-check-icon=""></i>
 																		</div>
 																		Sección empaque
 																	</label>
@@ -1840,7 +1843,7 @@ foreach($consulta_productos as $fila)
 																	<label class="form-check-inline u-check g-pl-25">
 																		<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" id="seccion3" name="seccion3" value="1">
 																		<div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
-																			<i class="fa" data-check-icon="&#xf00c"></i>
+																			<i class="fa" data-check-icon=""></i>
 																		</div>
 																		Cuadrilla de cosecha
 																	</label>
@@ -1929,9 +1932,9 @@ foreach($consulta_productos as $fila)
 														</table>
 													</form>
 													</div>
-														
+
 												</div>
-												
+
 											</div>
 											<div  id="tabla3" name="tabla3">
 												<?  if (isset($consulta_srrc2)) {?>
@@ -1946,18 +1949,18 @@ foreach($consulta_productos as $fila)
 														<tbody>
 															<?php foreach($consulta_srrc2 as $fila): ?>
 																<tr>
-																	<td>					
+																	<td>
 																		<? echo $fila->producto_srrc;?>
-																								
+
 																	</td>
 																	<td >
 																		<? echo $fila->pais_srrc;?>
 																	</td>
-																	<td >	
+																	<td >
 																		<? echo $fila->porcentaje;?>
-																	</td>	
+																	</td>
 																	<td>
-																		<button class="btn u-btn-red g-mr-10 g-mb-15" type="button" onclick="<?php echo "quitar2(".$fila->id_producto_srrc.")"?>" >									
+																		<button class="btn u-btn-red g-mr-10 g-mb-15" type="button" onclick="<?php echo "quitar2(".$fila->id_producto_srrc.")"?>" >
 																			<i class="fa fa-minus" ></i> Eliminar<?php echo $fila->id_producto_srrc;?>
 																		</button>
 																	</td>
@@ -1965,12 +1968,12 @@ foreach($consulta_productos as $fila)
 															<?php endforeach; ?>
 														</tbody>
 													</table>
-												<?php 
+												<?php
 												}
 												 ?>
 											</div>
 											<!-- inicia mostrar hecho en mexico -->
-											
+
 											<div id="divHechoEnMexico" class="col-md-12" style="display: none;">
 												<form class="js-validate" id="mexico" name="mexico">
 													<div class="row">
@@ -2068,7 +2071,7 @@ foreach($consulta_productos as $fila)
 															<b style="margin-bottom:1.5em;">
 																Productos
 															</b>
-															<?php 
+															<?php
 																$bden=0;
 																if(isset($consulta_den_origen)){
 																	$bden=1;
@@ -2109,18 +2112,18 @@ foreach($consulta_productos as $fila)
 	                    									<progress class="form-control" id="progressBar" value="0" max="100"  style="width:300px;"></progress>
 	                    									<h3 id="status"></h3>
 														</div>
-													
+
 														<?php $fechado=time();?>
-												
+
 														<input id="fecha_do" name="fecha_do" type="hidden" value="<? echo $fechado;?>"/>
 													</form>
 												</div>
 											</div>
 											<!-- termina mostrar denominación de origen -->
 										</div>
-									
+
 								</div>
-								
+
 							</div>
 				     	</div>
 					</div>
@@ -2142,7 +2145,7 @@ foreach($consulta_productos as $fila)
 												<h4 style="font-size: 16px;">
 													Indicar el idioma en que se realizará la auditoría y el idioma que se utilizará en el informe de auditoría
 												</h4>
-													
+
 												<div class="form-group u-select--v3 g-pos-rel g-brd-gray-light-v7 g-rounded-4 mb-0" style="width:50%">
 													<select class="js-select u-select--v3-select u-sibling w-100" required="required" name="idiomas" id="idiomas" title="Idiomas" style="display: none;">
 														<option <?php if (isset($idiomas) && $idiomas=='español'){?>selected="selected"<? }?> value="español" data-content='<span class="d-flex align-items-center w-100"><i style="color:green" class="fa fa-flag u-line-icon-pro g-font-size-18 g-mr-15"></i><span>Español</span></span>'> <img src="<?php echo base_url('assets/img/flags/Spain.png'); ?>" alt=""> Español
@@ -2186,7 +2189,7 @@ foreach($consulta_productos as $fila)
 
 										</div>
 									</form>
-								</div>	
+								</div>
 							</div>
 				     	</div>
 
@@ -2210,7 +2213,7 @@ foreach($consulta_productos as $fila)
 
 
 
-				
+
 
 			</div>
 		</div>
@@ -2238,14 +2241,14 @@ if (id=='check_hecho_en_mexico') {
 var valor = $('#'+id).prop('checked');
 		if(valor){
 			document.getElementById('div'+d).style.display = 'block';
-	$.ajax({  
-                     url:base_url+"backend/administrador/solicitud/Solicitudes/ingresa_norma/"+ids+"/"+c+"/1",  
+	$.ajax({
+                     url:base_url+"backend/administrador/solicitud/Solicitudes/ingresa_norma/"+ids+"/"+c+"/1",
 
                      method:"POST",
-                    
-		            	success: function() { 
-		            		
-		            		 //activo.innerHTML = "";	
+
+		            	success: function() {
+
+		            		 //activo.innerHTML = "";
 		            		document.getElementById("mex_producto").value = "";
 		            			document.getElementById("descripcion").value = "";
 
@@ -2253,27 +2256,27 @@ var valor = $('#'+id).prop('checked');
 		});
 }else{
 
-				$.ajax({  
-                     url:base_url+"backend/administrador/solicitud/Solicitudes/ingresa_norma/"+ids+"/"+c+"/ ", 
+				$.ajax({
+                     url:base_url+"backend/administrador/solicitud/Solicitudes/ingresa_norma/"+ids+"/"+c+"/ ",
 
                      method:"POST",
                     //data:dataString,
-		            	success: function() { 
-		            		
+		            	success: function() {
+
 		                       }
 					});
-            	$.ajax({  
+            	$.ajax({
                     url:base_url+"backend/administrador/solicitud/normas/"+c+"/eliminar/"+ids+"",
 
                      method:"POST",
                     //data:dataString,
-		            	success: function() { 
+		            	success: function() {
 		            		document.getElementById('divHechoEnMexico').style.display = 'none';
 		            		document.getElementById('tabla2').style.display = 'none';
 		                       }
 					});
 
-           
+
 			document.getElementById(div).setAttribute(
 				"style", "none");
 			document.getElementById(div).getElementsByTagName(elemento)[0].style = "none";
@@ -2290,12 +2293,12 @@ else{
 				"style", "border: 2px solid #27ae60;transition: border 0.5s ease;"
 				);
 			//
-			 $.ajax({  
-                     
-		            	success: function() { 
-		            			
+			 $.ajax({
+
+		            	success: function() {
+
 		            		$("#div"+d).load(base_url+"backend/administrador/solicitud/normas/"+c+"/div/"+ids+"");
-		            			                       
+
 
 		            	}
 		});
@@ -2306,67 +2309,67 @@ else{
 		            		}
 
 
-			 $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/Solicitudes/ingresa_norma/"+ids+"/"+c+"/1", 
+			 $.ajax({
+                     url:base_url+"backend/administrador/solicitud/Solicitudes/ingresa_norma/"+ids+"/"+c+"/1",
 
                      method:"POST",
                     //data:dataString,
-		            	success: function() { 
-		            		
+		            	success: function() {
+
 		                       }
 		});
-        	  $.ajax({  
+        	  $.ajax({
                     url:base_url+"backend/administrador/solicitud/normas/"+c+"/guardar/"+ids+"",
 
                      method:"POST",
                     //data:dataString,
-		            	success: function() { 
-		            		
+		            	success: function() {
+
 		                       }
 		});
-        	 
+
         	  	if (id=='check_hecho_en_mexico' ) {
 
-        	$.ajax({  
-                    
-		            	success: function() { 
+        	$.ajax({
+
+		            	success: function() {
 		            		$("#div"+d).load(base_url+'backend/administrador/solicitud/normas/'+c+'/div/'+ids+'');
-		            		
+
 		                       }
 		});
 
         }
         	if (id=='check_srrc') {
 
-        	$.ajax({  
-                    
-		            	success: function() { 
+        	$.ajax({
+
+		            	success: function() {
 
 		            		$("#tabla3").load(base_url+'backend/administrador/solicitud/normas/cProducto_srrc/div/'+ids+'');
 		            		$("#divSrrc").load(base_url+'backend/administrador/solicitud/normas/cSrrc/div/'+ids+'');
-		            		
+
 		                       }
 		});
 
         }
 		}else{
-			
+
 			//$('#global_ifa')[0].reset();
-			 $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/Solicitudes/ingresa_norma/"+ids+"/"+c+"/ ",  
+			 $.ajax({
+                     url:base_url+"backend/administrador/solicitud/Solicitudes/ingresa_norma/"+ids+"/"+c+"/ ",
 
                      method:"POST",
                     //data:dataString,
-		            	success: function() { 
-		            		
+		            	success: function() {
+
 		                       }
 		});
-            $.ajax({  
+            $.ajax({
                     url:base_url+"backend/administrador/solicitud/normas/"+c+"/eliminar/"+ids+"",
 
                      method:"POST",
                     //data:dataString,
-		            	success: function() { 
+		            	success: function() {
 		            		//$('#num_productores').val("");
 		            		//$('#global_ifa')[0].reset();
 		            		document.getElementById('global_ifa').reset();
@@ -2379,19 +2382,19 @@ else{
 		                       }
 		});
 
-          
+
 			document.getElementById(div).setAttribute(
 				"style", "none");
 			document.getElementById(div).getElementsByTagName(elemento)[0].style = "none";
 			document.getElementById(div).getElementsByTagName(elemento)[0].style = "none";
 		}
-		
+
 
 	}
 }
 </script>
 <script type="text/javascript">
-	
+
 	<?php if(isset($norma_ifa) || isset($norma_coc) || isset($norma_mex) || isset($norma_srrc) || isset($norma_origen)  || isset($norma_mexcalsup))
 	{
 		if ((isset($norma_ifa)) && $norma_ifa!=NULL&& $norma_ifa==='ifa'){?>
@@ -2400,7 +2403,7 @@ else{
 var ck= "<?php echo $consulta_ifa->opcion;?>";
 
 
-<?} 
+<?}
 
  if((isset($norma_coc)) && $norma_coc!=NULL && $norma_coc==='coc'){?>
 	var val2= "coc";
@@ -2437,7 +2440,7 @@ if((isset($norma_mexcalsup)) && $norma_mexcalsup!=NULL && $norma_mexcalsup==='me
 
 var m1= "<?php echo $consulta_mexcalsup->anexo1?>";
 	var m2= "<?php echo  $consulta_mexcalsup->anexo2?>";
-	
+
 
 <? }
 }
@@ -2452,7 +2455,7 @@ var ck2= "11";
 <? }?>
 </script>
 <script type="text/javascript">
-	
+
 
 
 if( (typeof val !== 'undefined')&& (val==="ifa")){
@@ -2463,10 +2466,10 @@ if( (typeof val !== 'undefined')&& (val==="ifa")){
 	var c=document.getElementById('check_globalgap_ifa');
 			c.checked=true;
 
-	
+
 	if (ck=="productor_individual" || ck=="productor_individual_sin_sistema" ||ck=="productor_individual_con_sistema" )
 		{
-			
+
 				if (ck=="productor_individual" )
 				{
 
@@ -2487,21 +2490,21 @@ if( (typeof val !== 'undefined')&& (val==="ifa")){
 				}
 			document.getElementById('num_productores').disabled = true;
 			document.getElementById('num_unidades_produccion').disabled = true;
-			
+
 		}
 
 
 		if(ck=="grupo_productores")
 		{
-			
+
 				var c4=document.getElementById('radioGlobalIfa4');
 				c4.checked=true;
 				document.getElementById('num_productores').disabled = false;
 				document.getElementById('num_unidades_produccion').disabled = false;
-			
+
 		}
 				document.getElementById('divGlobalGapIfa').style.display = 'block';
-					
+
 	}
 
 	if((typeof val2 !== 'undefined')&& (val2==="coc")){
@@ -2522,11 +2525,11 @@ if( (typeof val !== 'undefined')&& (val==="ifa")){
 				c4.checked=true;
 
 				}
-	
+
 		if (p1==='SI'){
 		var c4=document.getElementById('coc_preg1');
 		c4.checked=true;
-		
+
 		}
 		if (p1==='NO'){
 			var c4=document.getElementById('coc_preg1_2');
@@ -2535,7 +2538,7 @@ if( (typeof val !== 'undefined')&& (val==="ifa")){
 		if (p2==='SI'){
 		var c4=document.getElementById('coc_preg2');
 		c4.checked=true;
-		
+
 		}
 		if (p2==='NO'){
 			var c4=document.getElementById('coc_preg2_2');
@@ -2544,7 +2547,7 @@ if( (typeof val !== 'undefined')&& (val==="ifa")){
 		if (p3==='SI'){
 		var c4=document.getElementById('coc_preg3');
 		c4.checked=true;
-		
+
 		}
 		if (p3==='NO'){
 			var c4=document.getElementById('coc_preg3_2');
@@ -2554,7 +2557,7 @@ if( (typeof val !== 'undefined')&& (val==="ifa")){
 				document.getElementById('divGlobalGapCoc').style.display = 'block';
 
 
-					
+
 	}
 
 	if((typeof val3 !== 'undefined')&& (val3==="mexico")){
@@ -2562,7 +2565,7 @@ if( (typeof val !== 'undefined')&& (val==="ifa")){
 				c.checked=true;
 				document.getElementById('divHechoEnMexico').style.display = 'block';
 
-					
+
 	}
 	if((typeof val4 !== 'undefined')&& (val4==="srrc")){
 		var c=document.getElementById('check_srrc');
@@ -2590,14 +2593,14 @@ if( (typeof val !== 'undefined')&& (val==="ifa")){
 			var t5=document.getElementById('seccion3');
 		t5.checked=true;
 		}
-					
+
 	}
 	if((typeof val5 !== 'undefined')&& (val5==="origen")){
 		var c=document.getElementById('check_denominacion_origen');
 				c.checked=true;
 				document.getElementById('divDenominacionOrigen').style.display = 'block';
 
-					
+
 	}
 if((typeof val6 !== 'undefined')&& (val6==="mcs")){
 		var c=document.getElementById('check_mex_calidad_suprema');
@@ -2619,13 +2622,13 @@ if((typeof val6 !== 'undefined')&& (val6==="mcs")){
 			var t2=document.getElementById('muestreo_clientes2');
 		t2.checked=true;
 		}
-		
-					
+
+
 	}
 
 </script>
 <script type="text/javascript">
-	
+
 	var chek1= "<?php echo $consulta_cert->preg1?>";
 	var chek2= "<?php echo $consulta_cert->preg2?>";
 	var chek3= "<?php echo $consulta_cert->preg3?>";
@@ -2633,22 +2636,22 @@ if((typeof val6 !== 'undefined')&& (val6==="mcs")){
 	var chek5= "<?php echo $consulta_cert->preg5?>";
 	var chek6= "<?php echo $consulta_cert->preg6?>";
 	var chek7= "<?php echo $consulta_cert->organismo?>";
-	
+
 	if (chek1!=="" || chek2!=="" || chek3!=="")
 	{
-		
+
 		validarRadios(chek1,'certificacionGlobalGAP','numerosGlobalGAP');
-				
+
 			validarRadios(chek3,'certificacionGLN','divGLN');
-	
-		
-	
+
+
+
 	}
 	validarRadios(chek4,'certificacionSenasica', 'divSenasica');
-				
+
 			validarRadios(chek5,'radioMexCalidadSuprema', 'regMexCalidadSuprema');
 			validarRadios(chek6,'certificacionPrimus', 'divPrimus');
-				
+
 			validarRadios(chek7,'otroOrganismo', 'divOrganismoCertificacion')
 
 
@@ -2658,7 +2661,7 @@ function validarRadios(ck,nombre,div){
 		var nombre = nombre;
 		var div = div;
 
-		
+
 
 		if (ck!==""){
 		var c4=document.getElementById(nombre);
@@ -2672,12 +2675,12 @@ function validarRadios(ck,nombre,div){
 			var c4=document.getElementById(nombre+"2");
 		c4.checked=true;
 		}
-		
+
 
 
 	}
-		
-	
+
+
 </script>
 
 <script type="text/javascript">
@@ -2725,7 +2728,7 @@ function validarRadios(ck,nombre,div){
 
 		var valor = $('#'+id).prop('checked');
 
-		console.log(valor); 
+		console.log(valor);
 		if(valor){
 			document.getElementById(div2).style.display = 'block';
 		}else{
@@ -2793,11 +2796,11 @@ function validarRadios(ck,nombre,div){
 			//...the form gets submitted:
 			//document.getElementById("regForm").submit();
 			var formdata3 = new FormData();
- 
+
 formdata3.append('uso_datos',$('input[name=uso_datos]:checked').val());
 formdata3.append('idiomas',$('#idiomas').val());
 
-    
+
 		$.ajax({
 			type:'POST',
 			url:base_url+"backend/administrador/solicitud/solicitudes/actualizar_final/"+idsolicitud,
@@ -2855,49 +2858,49 @@ formdata3.append('idiomas',$('#idiomas').val());
 function cambiar(n){
 
 	if(n==2){
-  
+
     var dataString = $('#gen').serialize();
-   
- 
- $.ajax({  
-                     url:base_url+"backend/administrador/clientes/cCliente/generales_sol/",  
+
+
+ $.ajax({
+                     url:base_url+"backend/administrador/clientes/cCliente/generales_sol/",
                      method:"POST",
                     data:dataString,
-		            	success: function(data) { 
-		            		
+		            	success: function(data) {
+
 		                       }
 		});
 }
 else if(n==3){
 
     var dataString = $('#fis').serialize();
-    
- 
- $.ajax({  
-                     url:base_url+"backend/administrador/clientes/cCliente/fiscal_sol",  
+
+
+ $.ajax({
+                     url:base_url+"backend/administrador/clientes/cCliente/fiscal_sol",
                      method:"POST",
                     data:dataString,
-		            	success: function(data) { 
-		            		
+		            	success: function(data) {
+
 		                       }
 		});
 }
 
 else if(n==4){
 
-	
-	
+
+
     var dataString = $('#certificacion').serialize();
 
     //alert(dataString);
     if(dataString.length>9){
- 
- $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/cCert_anterior_sol/guardar_c/"+idsolicitud, 
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/cCert_anterior_sol/guardar_c/"+idsolicitud,
 
                      method:"POST",
                     data:dataString,
-		            	success: function(dataString) { 
+		            	success: function(dataString) {
 		            		                       }
 		});
 
@@ -2906,20 +2909,20 @@ else if(n==4){
 else if(n==5){
 
 if($('#check_globalgap_ifa').prop('checked') ) {
-    
+
 
 
 
 var formdata = new FormData($('#global_ifa')[0]);
- 
+
 formdata.append('opcion',$('input[name=radioGlobalIfa]:checked').val());
 formdata.append('productos',$('#productos').val());
 formdata.append('num_productores',$('#num_productores').val());
 formdata.append('num_unidades_prod',$('#num_unidades_produccion').val());
 formdata.append('num_unidades_manip',$('#num_unidades_manipulacion').val());
- 
-    
-    
+
+
+
 		$.ajax({
 			type:'POST',
 			url:base_url+"backend/administrador/solicitud/normas/cGlobal_ifa/actualizar/"+idsolicitud,
@@ -2929,7 +2932,7 @@ formdata.append('num_unidades_manip',$('#num_unidades_manipulacion').val());
         	contentType: false,
         	processData: false,
 			success:function(data){
-				
+
 		                       }
 
 		});
@@ -2939,12 +2942,12 @@ formdata.append('num_unidades_manip',$('#num_unidades_manipulacion').val());
 
 
 if($('#check_globalgap_coc').prop('checked') ) {
-   
+
 
 
 
 var formdata2 = new FormData($('#global_coc')[0]);
- 
+
 formdata2.append('opcion',$('input[name=radioGlobalCoc]:checked').val());
 formdata2.append('productos',$('#productos_coc').val());
 formdata2.append('op1_preg1',$('#op1_preg1').val());
@@ -2959,7 +2962,7 @@ formdata2.append('coc_preg3',$('input[name=coc_preg3]:checked').val());
 
 
 
-    
+
 		$.ajax({
 			type:'POST',
 			url:base_url+"backend/administrador/solicitud/normas/cGlobal_coc/actualizar/"+idsolicitud,
@@ -2968,7 +2971,7 @@ formdata2.append('coc_preg3',$('input[name=coc_preg3]:checked').val());
 			cache: false,
         	contentType: false,
         	processData: false,
-			
+
 			success:function(data){
 		                       }
 		});
@@ -2982,23 +2985,23 @@ if($('#check_srrc').prop('checked') ) {
 
      var dataString = $('#fsrrc').serialize();
 
-    
-    
- 
- $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/normas/cSrrc/actualizar/"+idsolicitud, 
+
+
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/normas/cSrrc/actualizar/"+idsolicitud,
 
                      method:"POST",
                     data:dataString,
-		            	success: function(data) { 
-		            		
+		            	success: function(data) {
+
 		                       }
 		});
 
 }
 
 if($('#check_denominacion_origen').prop('checked') ) {
-    
+
 var valor="";
 	 var porNombre13=document.getElementById("pliego_condiciones");
             for(var i=0;i<porNombre13.length;i++)
@@ -3014,15 +3017,15 @@ var valor="";
 var d=$('#descripcion_den').val()
 
     var formdata = new FormData($('#den_origen')[0]);
- 
+
 formdata.append('pliego_condiciones',pliegos);
 formdata.append('descripcion_den',$('#descripcion_den').val());
 
-    
-    
- 
- $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/normas/cDen_origen/actualizar/"+idsolicitud, 
+
+
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/normas/cDen_origen/actualizar/"+idsolicitud,
 
                      method:"POST",
                      data: formdata,
@@ -3030,15 +3033,15 @@ formdata.append('descripcion_den',$('#descripcion_den').val());
 			cache: false,
         	contentType: false,
         	processData: false,
-			
-		            	success: function(data) { 
-		            		
+
+		            	success: function(data) {
+
 		                       }
 		});
 
 }
 if($('#check_mex_calidad_suprema').prop('checked') ) {
-   
+
 var valor="";
 	 var porNombre13=document.getElementById("pliego_condiciones_mcs");
             for(var i=0;i<porNombre13.length;i++)
@@ -3066,16 +3069,16 @@ var valor="";
 
 
     var formdata = new FormData($('#mcs')[0]);
- 
+
 formdata.append('pliego_condiciones_mcs',pliegos);
 formdata.append('alcance_certificacion',$('#alcance_certificacion').val());
 formdata.append('trazabilidad',$('#trazabilidad_mcs').val());
 
-    
-    
- 
- $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/normas/cMcs/actualizar/"+idsolicitud, 
+
+
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/normas/cMcs/actualizar/"+idsolicitud,
 
                      method:"POST",
                      data: formdata,
@@ -3083,9 +3086,9 @@ formdata.append('trazabilidad',$('#trazabilidad_mcs').val());
 			cache: false,
         	contentType: false,
         	processData: false,
-			
-		            	success: function(data) { 
-		            		
+
+		            	success: function(data) {
+
 		                       }
 		});
 
@@ -3104,17 +3107,17 @@ formdata.append('trazabilidad',$('#trazabilidad_mcs').val());
 <script type="text/javascript">
 function agregar(){
 	var dataString = $('#mexico').serialize();
- 
- $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/normas/cMexico/guardar/"+idsolicitud, 
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/normas/cMexico/guardar/"+idsolicitud,
 
                      method:"POST",
                     data:dataString,
-		            	success: function(data) { 
-		            		
-		            		 //activo.innerHTML = "";	
+		            	success: function(data) {
+
+		            		 //activo.innerHTML = "";
 		            		//$("input[name$='mex_producto']").val("");
-		            		
+
 		            		document.getElementById("mex_producto").value = "";
 		            			document.getElementById("descripcion").value = "";
 		            	$("#tabla2").load(base_url+'backend/administrador/solicitud/normas/cMexico/tabla/'+idsolicitud+'');	                       }
@@ -3127,15 +3130,15 @@ function agregar(){
 function quitar(x){
 
 var idproducto=x;
-	
 
- $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/normas/cMexico/eliminar/", 
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/normas/cMexico/eliminar/",
 
                      method:"POST",
                     data:{idproducto:idproducto},
-		            	success: function(data) { 
-		            			
+		            	success: function(data) {
+
 		            		$("#tabla2").load(base_url+'backend/administrador/solicitud/normas/cMexico/tabla/'+idsolicitud+'');	                       }
 		});
 
@@ -3148,22 +3151,22 @@ var idproducto=x;
 <script type="text/javascript">
 function agregar2(){
 
-	
+
 
 	var dataString = $('#prod_srrc').serialize();
 	//var activo = document.activeElement.producto;
 
-    
+
    // if(dataString.length>9){
- 
- $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/normas/cProducto_srrc/guardar/"+idsolicitud, 
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/normas/cProducto_srrc/guardar/"+idsolicitud,
 
                      method:"POST",
                     data:dataString,
-		            	success: function(data) { 
-		            		
-		            		 //activo.innerHTML = "";	
+		            	success: function(data) {
+
+		            		 //activo.innerHTML = "";
 		            		//$("input[name$='mex_producto']").val("");
 		            		document.getElementById("producto_srrc").value = "";
 		            			document.getElementById("pais_srrc").value = "";
@@ -3171,11 +3174,11 @@ function agregar2(){
 		            	$("#tabla3").load(base_url+'backend/administrador/solicitud/normas/cProducto_srrc/tabla/'+idsolicitud+'');	                       }
 		});
 
-   
+
 
 //}
 
- 
+
 
 }
 </script>
@@ -3184,15 +3187,15 @@ function agregar2(){
 function quitar2(x){
 
 var idproducto=x;
-	
 
- $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/normas/cProducto_srrc/eliminar/"+idsolicitud, 
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/normas/cProducto_srrc/eliminar/"+idsolicitud,
 
                      method:"POST",
                     data:{idproducto:idproducto},
-		            	success: function(data) { 
-		            			
+		            	success: function(data) {
+
 		            		$("#tabla3").load(base_url+'backend/administrador/solicitud/normas/cProducto_srrc/tabla/'+idsolicitud+'');
 
 
@@ -3205,7 +3208,7 @@ var idproducto=x;
 </script>
 
 <script >
-	
+
 
 	<? echo '
   var valorname;
@@ -3229,12 +3232,12 @@ function uploadFile(al){
   ajax.addEventListener("error", errorHandler, false);
   ajax.addEventListener("abort", abortHandler, false);
   ajax.open("POST", base_url+"backend/administrador/solicitud/normas/cDen_origen/subir_archivo/"+idsolicitud+"");
-  
+
   ajax.send(formdata);
-  
+
 }
 function progressHandler(event){
-  
+
   //_("loaded_n_total").innerHTML = "Uploaded "+(event.loaded/1024)+" Kb of "+ event.total;
   if(event.loaded==event.total){
   //_("loaded_n_total").innerHTML = "Subiendo "+(event.loaded/1024)+" Kb ";
@@ -3243,7 +3246,7 @@ function progressHandler(event){
   var percent = (event.loaded / event.total) * 100;
   _("progressBar").value = Math.round(percent);
   _("status").innerHTML ="Cargando "+ Math.round(percent)+"% ... Espere";
- 
+
 
 }
 function completeHandler(event){
@@ -3252,7 +3255,7 @@ function completeHandler(event){
    document.getElementById("aux2").style.display = "block";
 	//document.getElementById("aux2").value = document.getElementById("file1").files[0].name;
 	document.getElementById("aux2").href =base_url+"docs_solicitud/den_origen/"+document.getElementById("fecha_do").value+document.getElementById("file1").files[0].name;
-				
+
   // document.getElementById("aux2").value = "Ver actual";
   //location.reload(true);
 }
@@ -3265,7 +3268,7 @@ function abortHandler(event){
 </script>
 
 <script >
-	
+
 
 	<? echo '
   var valorname;
@@ -3287,11 +3290,11 @@ var cont=3;
   formdata.append("file"+cont, file);
   formdata.append("documento1",$("#documento1").val());
    formdata.append("fecha",$("#fecha_mcs").val());
-  
+
 
   if( al== 3){
 var ajax = new XMLHttpRequest();
-  
+
   ajax.upload.addEventListener("progress", progressHandler3, false);
   ajax.addEventListener("load", completeHandler3, false);
   ajax.addEventListener("error", errorHandler3, false);
@@ -3301,7 +3304,7 @@ var ajax = new XMLHttpRequest();
   }
    if( al== 2){
 var ajax = new XMLHttpRequest();
-  
+
   ajax.upload.addEventListener("progress", progressHandler2, false);
   ajax.addEventListener("load", completeHandler2, false);
   ajax.addEventListener("error", errorHandler2, false);
@@ -3309,28 +3312,28 @@ var ajax = new XMLHttpRequest();
   ajax.open("POST", base_url+"backend/administrador/solicitud/normas/cMcs/subir_archivo/"+idsolicitud+"");
   ajax.send(formdata);
   }
-  
-  
+
+
 }
 function progressHandler2(event){
-  
+
  if(event.loaded==event.total){
- 
+
   }
   var percent = (event.loaded / event.total) * 100;
   _("progressBar2").value = Math.round(percent);
   _("status2").innerHTML ="Cargando "+ Math.round(percent)+"% ... Espere";
- 
+
 
 }
 function completeHandler2(event){
   _("status2").innerHTML = event.target.responseText;
   _("progressBar2").value = 0;
    document.getElementById("aux_mex2").style.display = "block";
-	
+
 	document.getElementById("aux_mex2").href =base_url+"docs_solicitud/mexcalsup/"+document.getElementById("fecha_mcs").value+document.getElementById("file2").files[0].name;
-				
- 
+
+
 
 }
 function errorHandler2(event){
@@ -3342,33 +3345,33 @@ function abortHandler2(event){
 </script>
 
 <script >
-	
+
 
 	<? echo '
-  
+
 
 function progressHandler3(event){
-  
+
  if(event.loaded==event.total){
- 
+
   }
   var percent = (event.loaded / event.total) * 100;
   _("progressBar3").value = Math.round(percent);
   _("status3").innerHTML ="Cargando "+ Math.round(percent)+"% ... Espere";
- 
+
 
 }
 function completeHandler3(event){
   _("status3").innerHTML = event.target.responseText;
   _("progressBar3").value = 0;
    document.getElementById("aux_mex3").style.display = "block";
-	
-	
+
+
 	document.getElementById("aux_mex3").href =base_url+"docs_solicitud/mexcalsup/"+document.getElementById("fecha_mcs").value+document.getElementById("file3").files[0].name;
-				
- 
-				
- 
+
+
+
+
 
 }
 function errorHandler3(event){
@@ -3390,18 +3393,18 @@ function _(el){
 }
 function uploadFile3(){
 	var equipo=document.getElementById("equipom").value;
-	
+
 	var file = _("file5_mex").files[0];
-	
+
 	var file2 = _("file6_mex").files[0];
 	var formdata = new FormData();
 	formdata.append("file5", file);
-	
+
 	formdata.append("file6", file2);
 	formdata.append("equipo",equipo);
 	formdata.append("fecha",$("#fecha_mcs").val());
-	
-	
+
+
 	//formdata.append("e",equipo);
 	var ajax = new XMLHttpRequest();
 	ajax.upload.addEventListener("progress", progressHandler5, false);
@@ -3409,30 +3412,30 @@ function uploadFile3(){
 	ajax.addEventListener("error", errorHandler5, false);
 	ajax.addEventListener("abort", abortHandler5, false);
 	ajax.open("POST", base_url+"backend/administrador/solicitud/normas/cMcs/subir_archivo2/"+idsolicitud+"");
-  
-	
+
+
 	ajax.send(formdata);
-	
+
 }function progressHandler5(event){
-	
-	
-	
+
+
+
 	if(event.loaded==event.total){
-	
+
 	}
 	var percent = (event.loaded / event.total) * 100;
 
 	_("status5").innerHTML ="Cargando "+ Math.round(percent)+"% ... Espere";
 }
 function completeHandler5(event){
-	
+
 	 //var ruta = $("#rutax").val();
 	_("status5").innerHTML = event.target.responseText;
-	
+
 	 //document.getElementById("upload_formx").reset();
-	// $("#tabla_ajax_mex").load(ruta); 
+	// $("#tabla_ajax_mex").load(ruta);
 	$("#tabla_mexcalsup").load(base_url+"backend/administrador/solicitud/normas/cMcs/tabla/"+idsolicitud+"");
-	
+
 }
 function errorHandler5(event){
 	_("status5").innerHTML = "Falla en Envio";
@@ -3448,15 +3451,15 @@ function quitar3(x,y,z){
 var idproducto=x;
 var anexo1=y;
 var anexo2=z;
-	
 
- $.ajax({  
-                     url:base_url+"backend/administrador/solicitud/normas/cMcs/eliminar_equipo", 
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/normas/cMcs/eliminar_equipo",
 
                      method:"POST",
                     data:{idproducto:idproducto,anexo1:anexo1,anexo2:anexo2},
 		            	success: function(data) {
- 		            			
+
 		            		$("#tabla_mexcalsup").load(base_url+'backend/administrador/solicitud/normas/cMcs/tabla/'+idsolicitud+'');
 
 

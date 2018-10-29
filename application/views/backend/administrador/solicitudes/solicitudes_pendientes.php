@@ -19,7 +19,7 @@
 								</div>
 
 							</div>
-							
+
 							<div class="dropdown g-mb-10 g-mb-0--md">
 								<span class="d-block g-color-primary--hover g-cursor-pointer g-mr-minus-5 g-pa-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<i class="icon-options-vertical g-pos-rel g-top-1"></i>
@@ -65,7 +65,7 @@
 											Cotización
 										</th>
 										<th>
-											Acciones
+											...
 										</th>
 									</tr>
 								</thead>
@@ -90,7 +90,7 @@
 										</td>
 										<!-- esquema que esta solicitando -->
 										<td>
-											
+
 												<?php if ($fila->global_ifa!=null) {
 													?><span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">IFA</span><?
 												}?>
@@ -129,7 +129,7 @@
 											    Observaciones
 											</a>
 										</td>
-										
+
 										<!-- botón para cargar la cotización -->
 										<td>
 											<!-- Large modal -->
@@ -150,7 +150,7 @@
 														Cotización Nº: <?= '<span class="g-color-green">CTZ'.$fila->id_solicitud.'</span>' ?>
 													</div>
 												</h4>
-												
+
 												<div class="row">
 													<div class="col-md-6">
 														<div class="form-group g-mb-30">
@@ -176,7 +176,7 @@
 
 												</div>
 												<p>
-													
+
 												</p>
 												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
 												specimen book.</p>
@@ -189,11 +189,11 @@
 										<!-- acciones -->
 										<td>
 											<div class="g-pos-rel g-top-3 d-inline-block">
-												<a id="dropDown2Invoker" class="u-link-v5 g-line-height-0 g-font-size-24 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" aria-controls="dropDown2" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#dropDown2">
+												<a id="dropDown2Invoker" class="u-link-v5 g-line-height-0 g-font-size-24 g-color-gray-light-v6 g-color-lightblue-v3--hover" href="#!" aria-controls="dropDown2" aria-haspopup="true" aria-expanded="false" data-dropdown-event="click" data-dropdown-target="#dropDown<?= $fila->id_solicitud ?>">
 													<i class="hs-admin-more-alt"></i>
 												</a>
 
-												<div id="dropDown2" class="u-shadow-v31 g-pos-abs g-right-0 g-z-index-2 g-bg-white" aria-labelledby="dropDown2Invoker">
+												<div id="dropDown<?= $fila->id_solicitud ?>" class="u-shadow-v31 g-pos-abs g-right-0 g-z-index-2 g-bg-white" aria-labelledby="dropDown2Invoker">
 													<ul class="list-unstyled g-nowrap mb-0">
 														<li>
 															<a class="d-flex align-items-center u-link-v5 g-bg-gray-light-v8--hover g-font-size-12 g-font-size-default--md g-color-gray-dark-v6 g-px-25 g-py-14" href="<?php echo base_url('backend/administrador/solicitud/solicitudes/nueva_solicitud/'.$fila->id_solicitud.'/'.$fila->fk_id_cliente.''); ?>">
@@ -218,10 +218,10 @@
 											</div>
 										</td>
 									</tr>
-									
+
 									<?php }?>
-										
-									
+
+
 								</tbody>
 							</table>
 

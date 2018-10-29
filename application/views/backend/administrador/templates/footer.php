@@ -101,7 +101,7 @@
 
 				// initialization of hamburger
 				$.HSCore.helpers.HSHamburgers.init('.hamburger');
-				
+
 				// initialization of chart pies
 				var items = $.HSCore.components.HSChartPie.init('.js-pie');
 
@@ -228,7 +228,15 @@
 		});
 
 		</script>
-
+		<style>
+			.flotante {
+				z-index: 1;
+				display:scroll;
+				position:fixed;
+				bottom:320px;
+				right:0px;
+			}
+		</style>
 
 
 	</body>

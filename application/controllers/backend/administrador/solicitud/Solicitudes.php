@@ -1,8 +1,8 @@
 <?php
-	
+
 class Solicitudes extends CI_Controller{
 
-	
+
 	function __construct(){
 		parent:: __construct();
 		$this->load->model('mCliente');
@@ -53,19 +53,19 @@ $idsol="";
 			$norma_srrc=$data2['sol']->srrc;
 			$norma_origen=$data2['sol']->den_origen;
 			$norma_mcs=$data2['sol']->mcs;
-			
+
 
 			$this->mCert_anterior_sol->guardar($idsol);
 		}
-		
+
 		$data['ids']=$idsol;
 
 		$data['consulta_datos_gral'] = $this->mCliente->consulta_datos_gral_admin($cliente);
 			$data['pais'] = $this->mPais->paises();
 			$data['consulta_fiscal'] = $this->mCliente->consulta_fiscal_admin($cliente);
-			
+
 			$data['consulta_cert'] = $this->mCert_anterior_sol->consulta_cert($idsol);
-			
+
 			if($norma_ifa!=NULL){
 				$data['consulta_ifa'] = $this->mGlobal_ifa->consulta_ifa($idsol);
 				$data['norma_ifa']='ifa';
@@ -100,18 +100,19 @@ $idsol="";
 		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
 		$this->load->view('backend/administrador/templates/sideNav',$data);
+			$this->load->view('backend/administrador/solicitudes/observaciones');
 			$this->load->view('backend/administrador/solicitud/nueva_solicitud',$data);
 		$this->load->view('backend/administrador/templates/pre_footer');
 		$this->load->view('backend/administrador/templates/footer');
 
-		
+
 	}
 
 	public function ingresa_norma($id,$x,$y)
 	{
-		
 
-		
+
+
 			$idsol=$id;
 		$data=$_POST;
 
@@ -127,41 +128,41 @@ $idsol="";
 		}
 		if($x=='cSrrc'){
 			$x="srrc";
-			
+
 		}
 		if($x=='cDen_origen'){
 			$x="den_origen";
-			
+
 		}
 		if($x=='cMcs'){
 			$x="mcs";
-			
+
 		}
-		
+
 		$this->mSolicitud->actualiza_norma($x,$y,$idsol);
 
 
-			
+
 	}
 	public function ver($x)
 	{
 		$data2['sol']= $this->mSolicitud->consulta();
 
-		
+
 			$idsol=$data2['sol']->id_solicitud;
-		
-		
+
+
 		$data['consulta_ifa2'] = $this->mGlobal_ifa->consulta_ifa($idsol);
-			
+
 	}
 	public function actualizar_final($id)
 	{
 		$data=$_POST;
-		
-		
-		
+
+
+
 		$this->mSolicitud->actualiza_final($data,$id);
-		
-			
+
+
 	}
 }

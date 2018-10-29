@@ -13,7 +13,7 @@
 
 
 
-	
+
 
 		<!-- Copyright Footer -->
 		<footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-20">
@@ -95,7 +95,7 @@
 
 				break;
 			}
-				
+
 		}
 		function recuperarPassword(estado){
 			var estado = estado;
@@ -119,7 +119,7 @@
 					document.getElementById('recuperarPassword').style.display = 'none';
 					document.getElementById('frmIngresar').style.display = 'none';
 				break;
-				case 'ocultar': 
+				case 'ocultar':
 					document.getElementById('frmNuevoRegistro').style.display = 'none';
 					document.getElementById('frmNuevoRegistro').reset();
 					document.getElementById('recuperarPassword').style.display = 'none';
@@ -172,7 +172,7 @@
 				}
 			}
 
-		
+
 		}
 	</script>
 
@@ -180,15 +180,17 @@
 	<script>
 		function mensaje(){
 			swal({
-			  title: 'Error!',
-			  text: 'Do you want to continue',
-			  type: 'error',
-			  confirmButtonText: 'Cool'
+			  title: 'Registro correcto',
+			  text: 'Su información ha sido enviada a los administradores, una vez validada nos pondremos en contacto.',
+			  type: 'success',
+			  confirmButtonText: 'Entendido'
 			})
 		}
 
 	</script>
 
+	<!-- sweet alert -->
+	<script src="<?php echo base_url(); ?>/assets/js/sweetalert2.all.min.js"></script>
 	<!-- JS Global Compulsory -->
 	<script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
