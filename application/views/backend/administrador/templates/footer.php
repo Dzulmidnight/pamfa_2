@@ -45,6 +45,9 @@
 		<script  src="<?php echo base_url(); ?>assets/js/components/hs.chart.js"></script>
 		<script src="<?php echo base_url(); ?>assets/js/components/hs.chart-pie.js"></script>
 		<script src="<?php echo base_url(); ?>admin/assets/js/components/hs.datatables.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/components/hs.step-form.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/components/hs.validation.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/components/hs.go-to.js"></script>
 
 		<!-- JS Implementing Plugins -->
 		<script  src="<?php echo base_url(); ?>assets/vendor/jquery.peity.min.js"></script>
@@ -52,7 +55,7 @@
 		<script src="<?php echo base_url(); ?>assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
 		<script  src="<?php echo base_url(); ?>assets/vendor/slick-carousel/slick/slick.js"></script>
 		<script src="<?php echo base_url(); ?>assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-
+		<script src="<?php echo base_url(); ?>assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
 		<!-- JS Custom -->
 		<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
 		<script  src="<?php echo base_url(); ?>admin/assets/vendor/custombox/custombox.min.js"></script>
@@ -135,6 +138,8 @@
 				$('.js-select').on('hidden.bs.select', function (e) {
 					$(this).removeClass('opened');
 				});
+
+				$.HSCore.components.HSStepForm.init('.js-step-form');
 
 				// initialization of range datepicker
 				/*$.HSCore.components.HSRangeDatepicker.init('.js-range-datepicker');
@@ -237,6 +242,17 @@
 				right:0px;
 			}
 		</style>
+
+		<script>
+			function addObservacion(seccion, id){
+				console.log('SECCIÓN: '+seccion+' ID: '+id);
+				$('#modal1').modal('show');
+				document.getElementById('seccion_observacion').value = seccion;
+				document.getElementById('id_pregunta_observacion').value = id;
+				document.getElementById('spanSeccion').innerHTML = seccion;
+				//document.getElementById('descripcion_observacion').innerHTML = 'Prueba de la descripción';
+			}
+		</script>
 
 
 	</body>

@@ -96,10 +96,10 @@ input.invalid {
 }
 
 </style>
-
+<!--
 <a class='flotante btn u-btn-blue' href='#' data-modal-target="#modal1" data-modal-effect="fadein">
 	<i class="et-icon-chat"></i> Observaciones
-</a>
+</a>-->
 
 <div id="solicitudCertificacion">
 	<div class="g-pa-20">
@@ -339,6 +339,9 @@ input.invalid {
 
 												<div class="row g-mb-20">
 													<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('DATOS DEL CLIENTE','nombreLegal')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#nombreLegal">Nombre de la entidad legal *</label>
 													</div>
 
@@ -355,6 +358,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('DATOS DEL CLIENTE','nombreRepresentante')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#nombreRepresentante">Nombre del representante legal *</label>
 													</div>
 
@@ -569,6 +575,10 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('DATOS DE FACTURACION','rfc')">
+															<i class="fa fa-close"></i>
+														</button>
+
 														<label class="pregunta mb-0" for="#rfc">R.F.C *</label>
 													</div>
 
@@ -586,6 +596,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('DATOS DE FACTURACION','razonSocial')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#razonSocial">Razón social *</label>
 													</div>
 
