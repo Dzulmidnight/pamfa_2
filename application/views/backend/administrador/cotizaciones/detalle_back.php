@@ -52,7 +52,7 @@
                   <!-- Item-->
                   <tr class="g-brd-bottom g-brd-gray-light-v3">
                     <td class="text-left g-py-25">
-                      <img class="d-inline-block g-width-100 mr-4" src="<?php echo base_url(); ?>assets/img-temp/150x150/img6.jpg" alt="Image Description">
+                      <img class="d-inline-block g-width-100 mr-4" src="assets/img-temp/150x150/img6.jpg" alt="Image Description">
                       <div class="d-inline-block align-middle">
                         <h4 class="h6 g-color-black">Sneaker</h4>
                         <ul class="list-unstyled g-color-gray-dark-v4 g-font-size-12 g-line-height-1_6 mb-0">
@@ -84,7 +84,7 @@
                   <!-- Item-->
                   <tr class="g-brd-bottom g-brd-gray-light-v3">
                     <td class="text-left g-py-25">
-                      <img class="d-inline-block g-width-100 mr-4" src="<?php echo base_url(); ?>assets/img-temp/150x150/img3.jpg" alt="Image Description">
+                      <img class="d-inline-block g-width-100 mr-4" src="assets/img-temp/150x150/img3.jpg" alt="Image Description">
                       <div class="d-inline-block align-middle">
                         <h4 class="h6 g-color-black">Chukka Shoes</h4>
                         <ul class="list-unstyled g-color-gray-dark-v4 g-font-size-12 g-line-height-1_6 mb-0">
@@ -116,7 +116,7 @@
                   <!-- Item-->
                   <tr>
                     <td class="text-left g-pt-25">
-                      <img class="d-inline-block g-width-100 mr-4" src="<?php echo base_url(); ?>assets/img-temp/150x150/img7.jpg" alt="Image Description">
+                      <img class="d-inline-block g-width-100 mr-4" src="assets/img-temp/150x150/img7.jpg" alt="Image Description">
                       <div class="d-inline-block align-middle">
                         <h4 class="h6 g-color-black">Desk Clock</h4>
                         <ul class="list-unstyled g-color-gray-dark-v4 g-font-size-12 g-line-height-1_6 mb-0">
@@ -610,7 +610,7 @@
                     <ul class="list-unstyled mb-3">
                       <!-- Product -->
                       <li class="d-flex justify-content-start">
-                        <img class="g-width-100 g-height-100 mr-3" src="<?php echo base_url(); ?>assets/img-temp/150x150/img6.jpg" alt="Image Description">
+                        <img class="g-width-100 g-height-100 mr-3" src="assets/img-temp/150x150/img6.jpg" alt="Image Description">
                         <div class="d-block">
                           <h4 class="h6 g-color-black">Sneaker</h4>
                           <ul class="list-unstyled g-color-gray-dark-v4 g-font-size-12 g-line-height-1_4 mb-1">
@@ -625,7 +625,7 @@
 
                       <!-- Product -->
                       <li class="d-flex justify-content-start g-brd-top g-brd-gray-light-v3 pt-4 mt-4">
-                        <img class="g-width-100 g-height-100 mr-3" src="<?php echo base_url(); ?>assets/img-temp/150x150/img3.jpg" alt="Image Description">
+                        <img class="g-width-100 g-height-100 mr-3" src="assets/img-temp/150x150/img3.jpg" alt="Image Description">
                         <div class="d-block">
                           <h4 class="h6 g-color-black">Chukka Shoes</h4>
                           <ul class="list-unstyled g-color-gray-dark-v4 g-font-size-12 g-line-height-1_4 mb-1">
@@ -640,7 +640,7 @@
 
                       <!-- Product -->
                       <li class="d-flex justify-content-start g-brd-top g-brd-gray-light-v3 pt-4 mt-4">
-                        <img class="g-width-100 g-height-100 mr-3" src="<?php echo base_url(); ?>assets/img-temp/150x150/img7.jpg" alt="Image Description">
+                        <img class="g-width-100 g-height-100 mr-3" src="assets/img-temp/150x150/img7.jpg" alt="Image Description">
                         <div class="d-block">
                           <h4 class="h6 g-color-black">Desk Clock</h4>
                           <ul class="list-unstyled g-color-gray-dark-v4 g-font-size-12 g-line-height-1_4 mb-1">
@@ -683,20 +683,20 @@
                 <label class="form-check-inline u-check d-block u-link-v5 g-color-gray-dark-v4 g-color-primary--hover g-pl-30">
                   <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radInline1_1" type="radio">
                     <span class="d-block u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
-                      <i class="fa" data-check-icon=""></i>
+                      <i class="fa" data-check-icon="&#xf00c"></i>
                     </span>
                     Pay with
-                  <img class="g-width-70 ml-2" src="<?php echo base_url(); ?>assets/img-temp/200x55/img1.jpg" alt="Image Description">
+                  <img class="g-width-70 ml-2" src="assets/img-temp/200x55/img1.jpg" alt="Image Description">
                 </label>
               </li>
               <li class="my-3">
                 <label class="form-check-inline u-check d-block u-link-v5 g-color-gray-dark-v4 g-color-primary--hover g-pl-30">
                   <input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radInline1_1" type="radio" checked>
                     <span class="d-block u-check-icon-checkbox-v4 g-absolute-centered--y g-left-0">
-                      <i class="fa" data-check-icon=""></i>
+                      <i class="fa" data-check-icon="&#xf00c"></i>
                     </span>
                     Pay with Credit Card
-                  <img class="g-width-50 ml-2" src="<?php echo base_url(); ?>assets/img-temp/200x55/img2.jpg" alt="Image Description">
+                  <img class="g-width-50 ml-2" src="assets/img-temp/200x55/img2.jpg" alt="Image Description">
                 </label>
               </li>
             </ul>
@@ -791,7 +791,7 @@
                     <ul class="list-unstyled mb-3">
                       <!-- Product -->
                       <li class="d-flex justify-content-start">
-                        <img class="g-width-100 g-height-100 mr-3" src="<?php echo base_url(); ?>assets/img-temp/150x150/img6.jpg" alt="Image Description">
+                        <img class="g-width-100 g-height-100 mr-3" src="assets/img-temp/150x150/img6.jpg" alt="Image Description">
                         <div class="d-block">
                           <h4 class="h6 g-color-black">Sneaker</h4>
                           <ul class="list-unstyled g-color-gray-dark-v4 g-font-size-12 g-line-height-1_4 mb-1">
@@ -806,7 +806,7 @@
 
                       <!-- Product -->
                       <li class="d-flex justify-content-start g-brd-top g-brd-gray-light-v3 pt-4 mt-4">
-                        <img class="g-width-100 g-height-100 mr-3" src="<?php echo base_url(); ?>assets/img-temp/150x150/img3.jpg" alt="Image Description">
+                        <img class="g-width-100 g-height-100 mr-3" src="assets/img-temp/150x150/img3.jpg" alt="Image Description">
                         <div class="d-block">
                           <h4 class="h6 g-color-black">Chukka Shoes</h4>
                           <ul class="list-unstyled g-color-gray-dark-v4 g-font-size-12 g-line-height-1_4 mb-1">
@@ -821,7 +821,7 @@
 
                       <!-- Product -->
                       <li class="d-flex justify-content-start g-brd-top g-brd-gray-light-v3 pt-4 mt-4">
-                        <img class="g-width-100 g-height-100 mr-3" src="<?php echo base_url(); ?>assets/img-temp/150x150/img7.jpg" alt="Image Description">
+                        <img class="g-width-100 g-height-100 mr-3" src="assets/img-temp/150x150/img7.jpg" alt="Image Description">
                         <div class="d-block">
                           <h4 class="h6 g-color-black">Desk Clock</h4>
                           <ul class="list-unstyled g-color-gray-dark-v4 g-font-size-12 g-line-height-1_4 mb-1">
