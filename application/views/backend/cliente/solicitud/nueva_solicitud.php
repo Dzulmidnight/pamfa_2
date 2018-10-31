@@ -547,7 +547,9 @@ input.invalid {
 								
 							</div>
 				     	</div>
+
 					</div>
+
 					<!-- termina DATOS DEL CLIENTE -->
 
 					<!------------------------- inicia 3.- DATOS DE FACTURACIÓN ---------------------->
@@ -1585,7 +1587,7 @@ input.invalid {
 																	<th>
 																		 <? $n1=1;
 		 																	$n2=2;?>
-																		<button class="btn btn-sm btn-success" data-toggle="tooltip" title="Agregar otro equipo" type="button" onClick="uploadFile3()  ; " ><i class="fa fa-plus"></i></button> Equipo
+																		<button class="btn btn-sm btn-success" data-toggle="tooltip" title="Agregar otro equipo" type="button" onClick="uploadFile3()" ><i class="fa fa-plus"></i></button> Equipo
 																	</th>
 																	<th>
 																		Copia de los certificados de calibración
@@ -2192,8 +2194,73 @@ foreach($consulta_mex as $fila)
 										<div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-20">
 										  <h2 class="h3 u-heading-v1__title">6.- PASO FINAL</h2>
 										</div>
+											<div class="row">
 
-										<div class="row">
+											<div class="col-md-6">
+										
+
+											<h4 style="font-size: 16px;">
+													<strong>Anexo producción</strong>
+													Descargar y realizar el llenado del anexo CER.RG.01, posteriormente cargar el archivo
+												</h4>
+												<a id="ejemplo"  target="_blank"  class="btn btn-info"  href="<?php echo base_url()."docs_solicitud/anexos/produccion.xlsx"?>" style="display: block;" >Descargar original</a>
+						<form name="importar" id="importar" enctype="multipart/form-data" >
+						  <div class="col-xs-4">
+						    <div class="form-group">
+						      <input type="file" class="form-control" data-buttonText="Seleccione archivo" name="excel_file" id="excel_file">
+						    </div>
+						  </div>
+						  <progress class="form-control" id="progressBar22" value="0" max="100"  style="width:300px;"></progress>
+						  <div class="col-xs-1">
+						   <button class="btn u-btn-red " type="button"  onClick="ex(1)"  >
+													<i class="fa fa-minus" ></i> subir
+												</button>
+						  </div>
+						  
+                    										<h3 id="status22"></h3>
+                    	<a id="aux22"  target="_blank"  class="btn btn-info" <?php if(isset($anexo_p)  && $anexo_p !=NULL)
+														{?> href="<?php echo base_url().$anexo_p?>" style="display: block;" <? }else {?>style="display: none;"<?}?>>Ver actual</a>
+																	
+						  <input type="hidden" value="upload" name="action" id="action" />
+						  <input type="hidden" value="usuarios" name="mod" id="mod">
+						  <input type="hidden" value="masiva" name="acc" id="acc">
+						  
+						</form>
+										
+									</div>
+									<div class="col-md-6">
+										
+
+											<h4 style="font-size: 16px;">
+													<strong>Anexo producción</strong>
+													Descargar y realizar el llenado del anexo CER.RG.01, posteriormente cargar el archivo
+												</h4>
+												<a id="ejemplo"  target="_blank"  class="btn btn-info"  href="<?php echo base_url()."docs_solicitud/anexos/manipulacion.xlsx"?>" style="display: block;" >Descargar original</a>
+						<form name="importar" id="importar" enctype="multipart/form-data" >
+						  <div class="col-xs-4">
+						    <div class="form-group">
+						      <input type="file" class="form-control" data-buttonText="Seleccione archivo" name="excel_file2" id="excel_file2">
+						    </div>
+						  </div>
+						  <progress class="form-control" id="progressBar23" value="0" max="100"  style="width:300px;"></progress>
+						  <div class="col-xs-1">
+						   <button class="btn u-btn-red " type="button"  onClick="ex(2)"  >
+													<i class="fa fa-minus" ></i> subir
+												</button>
+						  </div>
+						  
+                    										<h3 id="status23"></h3>
+                    	<a id="aux23"  target="_blank"  class="btn btn-info" <?php if(isset($anexo_m)  && $anexo_m !=NULL)
+														{?> href="<?php echo base_url().$anexo_m?>" style="display: block;" <? }else {?>style="display: none;"<?}?> >Ver actual</a>
+																	
+						  <input type="hidden" value="upload" name="action" id="action" />
+						  <input type="hidden" value="usuarios" name="mod" id="mod">
+						  <input type="hidden" value="masiva" name="acc" id="acc">
+						  
+						</form>
+										
+									</div>
+
 											<div class="col-md-12">
 												<h4 style="font-size: 16px;">
 													Indicar el idioma en que se realizará la auditoría y el idioma que se utilizará en el informe de auditoría
@@ -2245,6 +2312,9 @@ foreach($consulta_mex as $fila)
 											</div>
 
 										</div>
+										<?php $fecha_anexos=time();?>
+												
+												<input id="fecha_anexos" name="fecha_anexos" type="hidden" value="<? echo $fecha_anexos;?>"/>
 									</form>
 								</div>	
 							</div>
@@ -3525,4 +3595,119 @@ var anexo2=z;
 
 
 }
+</script>
+
+<script >
+	
+
+	<? echo '
+  var valorname;
+function _(el){
+  return document.getElementById(el);
+}
+function ex(al){
+
+	if( al== 1){
+  var file = _("excel_file").files[0];
+}
+if( al== 2){
+  var file = _("excel_file2").files[0];
+}
+  //alert(file.name+" | "+file.size+" | "+file.type);
+  //var b=11;
+  var formdata = new FormData();
+  formdata.append("excel1", file);
+  
+   
+    formdata.append("action",$("#action").val());
+     formdata.append("mod",$("#mod").val());
+     formdata.append("acc",$("#acc").val());
+       formdata.append("fecha",$("#fecha_anexos").val());
+       formdata.append("tipo",al);
+     
+
+   
+
+if( al== 1){
+  var ajax = new XMLHttpRequest();
+  ajax.upload.addEventListener("progress", progressHandler22, false);
+  ajax.addEventListener("load", completeHandler22, false);
+  ajax.addEventListener("error", errorHandler22, false);
+  ajax.addEventListener("abort", abortHandler22, false);
+  ajax.open("POST", base_url+"backend/cliente/solicitud/cExcel/guardar");
+  
+  ajax.send(formdata);
+  }
+  if( al== 2){
+  var ajax = new XMLHttpRequest();
+  ajax.upload.addEventListener("progress", progressHandler23, false);
+  ajax.addEventListener("load", completeHandler23, false);
+  ajax.addEventListener("error", errorHandler23, false);
+  ajax.addEventListener("abort", abortHandler23, false);
+  ajax.open("POST", base_url+"backend/cliente/solicitud/cExcel/guardar");
+  
+  ajax.send(formdata);
+  }
+}
+function progressHandler22(event){
+  
+  //_("loaded_n_total").innerHTML = "Uploaded "+(event.loaded/1024)+" Kb of "+ event.total;
+  if(event.loaded==event.total){
+  //_("loaded_n_total").innerHTML = "Subiendo "+(event.loaded/1024)+" Kb ";
+//
+  }
+  var percent = (event.loaded / event.total) * 100;
+  _("progressBar22").value = Math.round(percent);
+  _("status22").innerHTML ="Cargando "+ Math.round(percent)+"% ... Espere";
+ 
+
+}
+function completeHandler22(event){
+  _("status22").innerHTML = event.target.responseText;
+  _("progressBar22").value = 0;
+   document.getElementById("aux22").style.display = "block";
+	//document.getElementById("aux22").value = document.getElementById("file1").files[0].name;
+	document.getElementById("aux22").href =base_url+"docs_solicitud/anexos/produccion/"+document.getElementById("fecha_anexos").value+document.getElementById("excel_file").files[0].name;
+				
+   //document.getElementById("aux22").value = "Ver actual";
+  //location.reload(true);
+}
+function errorHandler22(event){
+  _("status22").innerHTML = "Falla en Envio";
+}
+function abortHandler22(event){
+  _("status22").innerHTML = "Envio Abortado";
+}
+
+function progressHandler23(event){
+  
+  //_("loaded_n_total").innerHTML = "Uploaded "+(event.loaded/1024)+" Kb of "+ event.total;
+  if(event.loaded==event.total){
+  //_("loaded_n_total").innerHTML = "Subiendo "+(event.loaded/1024)+" Kb ";
+//
+  }
+  var percent = (event.loaded / event.total) * 100;
+  _("progressBar23").value = Math.round(percent);
+  _("status23").innerHTML ="Cargando "+ Math.round(percent)+"% ... Espere";
+ 
+
+}
+function completeHandler23(event){
+  _("status23").innerHTML = event.target.responseText;
+  _("progressBar23").value = 0;
+   document.getElementById("aux23").style.display = "block";
+	//document.getElementById("aux23").value = document.getElementById("file1").files[0].name;
+	document.getElementById("aux23").href =base_url+"docs_solicitud/anexos/produccion/"+document.getElementById("fecha_anexos").value+document.getElementById("excel_file2").files[0].name;
+				
+   //document.getElementById("aux23").value = "Ver actual";
+  //location.reload(true);
+}
+function errorHandler23(event){
+  _("status23").innerHTML = "Falla en Envio";
+}
+function abortHandler23(event){
+  _("status23").innerHTML = "Envio Abortado";
+}
+
+';?>
 </script>

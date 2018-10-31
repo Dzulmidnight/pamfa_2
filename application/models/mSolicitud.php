@@ -52,6 +52,26 @@ class mSolicitud extends CI_Model {
 		
 		
 	}
+	public function actualiza_anexo($params,$id)
+	{
+		
+		if ($params['tipo']==1) {
+			$campos=array(
+		'anexo_p'=>$params['url']);
+		}
+		if ($params['tipo']==2) {
+			$campos=array(
+		'anexo_m'=>$params['url']);
+		}
+
+
+		
+		$this->db->where('id_solicitud',$id);
+		$this->db->update('solicitud',$campos);
+		
+		
+		
+	}
 	public function eliminar($params)
 	{
 		

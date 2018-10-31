@@ -16,6 +16,7 @@ class Solicitudes extends CI_Controller{
 		$this->load->model('mSrrc');
 		$this->load->model('mDen_origen');
 		$this->load->model('mMcs');
+		$this->load->model('mAnexo');
 	}
 
 	function nueva_solicitud(){
@@ -39,6 +40,8 @@ $idsol="";
 			$norma_srrc=$data2['sol']->srrc;
 			$norma_origen=$data2['sol']->den_origen;
 			$norma_mcs=$data2['sol']->mcs;
+			$anexo_m=$data2['sol']->anexo_m;
+			$anexo_p=$data2['sol']->anexo_p;
 
 		}
 
@@ -53,6 +56,8 @@ $idsol="";
 			$norma_srrc=$data2['sol']->srrc;
 			$norma_origen=$data2['sol']->den_origen;
 			$norma_mcs=$data2['sol']->mcs;
+			$anexo_m=$data2['sol']->anexo_m;
+			$anexo_p=$data2['sol']->anexo_p;
 			
 
 			$this->mCert_anterior_sol->guardar($idsol);
@@ -92,8 +97,12 @@ $idsol="";
 				$data['consulta_productos'] = $this->mMcs->consulta_productos($idsol);
 				$data['norma_mexcalsup']='mexcalsup';
 			}
+
+			//$data['consulta_anexos_p'] = $this->mAnexo->consulta($idsol);
 			$data['idiomas']=$data2['sol']->idiomas;
 			$data['uso_datos']=$data2['sol']->uso_datos;
+			$data['anexo_p']=$anexo_p;
+			$data['anexo_m']=$anexo_m;
 		//$this->load->view('backend/cliente/solicitud/global_ifa',$data,$norma);	
 		$this->load->view('backend/cliente/templates/header');
 		$this->load->view('backend/cliente/templates/topnavigation');
