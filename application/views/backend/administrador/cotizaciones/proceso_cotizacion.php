@@ -16,7 +16,7 @@
 						<div class="g-mb-100">
 							<!-- Titulo de los pasos -->
 							<ul id="stepFormProgress" class="js-step-progress row justify-content-center list-inline text-center g-font-size-17 mb-0">
-								<li class="col-3 list-inline-item g-mb-20 g-mb-0--sm">
+								<li class="col-2 list-inline-item g-mb-20 g-mb-0--sm">
 									<span class="d-block u-icon-v2 u-icon-size--sm g-rounded-50x g-brd-primary g-color-primary g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
 										<i class="g-font-style-normal g-font-weight-700 g-hide-check">1</i>
 										<i class="fa fa-check g-show-check"></i>
@@ -24,7 +24,7 @@
 									<h4 class="g-font-size-16 text-uppercase mb-0">Verificación datos</h4>
 								</li>
 
-								<li class="col-3 list-inline-item g-mb-20 g-mb-0--sm">
+								<li class="col-2 list-inline-item g-mb-20 g-mb-0--sm">
 									<span class="d-block u-icon-v2 u-icon-size--sm g-rounded-50x g-brd-gray-light-v2 g-color-gray-dark-v5 g-brd-primary--active g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
 										<i class="g-font-style-normal g-font-weight-700 g-hide-check">2</i>
 										<i class="fa fa-check g-show-check"></i>
@@ -32,13 +32,21 @@
 									<h4 class="g-font-size-16 text-uppercase mb-0">Condiciones internas</h4>
 								</li>
 
-								<li class="col-3 list-inline-item">
+								<li class="col-2 list-inline-item">
 									<span class="d-block u-icon-v2 u-icon-size--sm g-rounded-50x g-brd-gray-light-v2 g-color-gray-dark-v5 g-brd-primary--active g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
 										<i class="g-font-style-normal g-font-weight-700 g-hide-check">3</i>
 										<i class="fa fa-check g-show-check"></i>
 									</span>
 									<h4 class="g-font-size-16 text-uppercase mb-0">Desición</h4>
 								</li>
+								<li class="col-2 list-inline-item">
+									<span class="d-block u-icon-v2 u-icon-size--sm g-rounded-50x g-brd-gray-light-v2 g-color-gray-dark-v5 g-brd-primary--active g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
+										<i class="g-font-style-normal g-font-weight-700 g-hide-check">4</i>
+										<i class="fa fa-check g-show-check"></i>
+									</span>
+									<h4 class="g-font-size-16 text-uppercase mb-0">Verificación de pago</h4>
+								</li>
+
 							</ul>
 							<!-- End Titulo de los pasos -->
 						</div>
@@ -83,7 +91,7 @@
 															<div class="form-group">
 																<div class="u-input-group-v1">
 																	<textarea id="message" class="form-control form-control-md rounded-0 g-resize-none" name="message" rows="2"></textarea>
-																	<label for="message "><i class="hs-admin-pencil"></i> <span class="text-muted">Observación</span></label>
+																	
 																</div>
 															</div>
 														</td>
@@ -315,12 +323,20 @@
 													<?= date('d/m/Y', time()) ?>
 												</span>
 											</div>
-											<div class="d-flex justify-content-between">
+											<div class="d-flex justify-content-between mb-2">
 												<span class="g-color-black">Cliente</span>
 												<span class="g-color-black g-font-weight-300">
 													Nombre del cliente
 												</span>
 											</div>
+											<div class="d-flex justify-content-between">
+												<span class="g-color-black">Esquemas</span>
+												<span class="g-color-black g-font-weight-300">
+													Global GAP, Hecho en México
+												</span>
+											</div>
+
+
 										</div>
 										<!-- End Summary -->
 
@@ -337,6 +353,12 @@
 							<!-- Verificación Condiciones internas -->
 							<div id="step2">
 								<div class="row">
+									<div class="col-md-12">
+										<button style="width:20%" class="btn btn-block u-btn-bluegray g-font-size-13 text-uppercase g-py-15 mb-45" type="button" data-next-step="#step1">
+											<i class="icon-arrow-left"></i> Paso anterior
+										</button>
+									</div>
+
 									<div class="col-md-8 g-mb-30">
 										<h4>
 											Una vez verificados los puntos anteriores, PAMFA deberá verificar las siguientes condiciones internas.
@@ -469,12 +491,19 @@
 													<?= date('d/m/Y', time()) ?>
 												</span>
 											</div>
-											<div class="d-flex justify-content-between">
+											<div class="d-flex justify-content-between mb-2">
 												<span class="g-color-black">Cliente</span>
 												<span class="g-color-black g-font-weight-300">
 													Nombre del cliente
 												</span>
 											</div>
+											<div class="d-flex justify-content-between">
+												<span class="g-color-black">Esquemas</span>
+												<span class="g-color-black g-font-weight-300">
+													Global GAP, Hecho en México
+												</span>
+											</div>
+
 										</div>
 										<!-- End Resumen -->
 										<button class="btn btn-block u-btn-primary g-font-size-13 text-uppercase g-py-15 mb-45" type="button" data-next-step="#step3">
@@ -489,6 +518,19 @@
 							<!-- Desición y cotización -->
 							<div id="step3">
 								<div class="row">
+									<div class="col-md-12">
+										<div class="float-left">
+											<button class="btn btn-block u-btn-bluegray g-font-size-13 text-uppercase g-py-15 mb-45" type="button" data-next-step="#step2">
+												<i class="icon-arrow-left"></i> Paso anterior
+											</button>											
+										</div>
+										<div class="float-right">
+											<button class="btn btn-block u-btn-primary g-font-size-13 text-uppercase g-py-15 mb-45" type="button" data-next-step="#step4">
+												Verificación de pago <i class="icon-arrow-right"></i>
+											</button>
+										</div>
+									</div>
+		
 									<div class="col-md-12">
 										<h5>
 											Basado en los puntos anteriores, por favor seleccione si se puede o no otorgar el servicio.
@@ -525,7 +567,7 @@
 
 												<div class="dropdown g-mb-10 g-mb-0--md">
 													<a href="#" class="btn u-btn-primary g-mr-10" onclick="procesoFinalizado()">
-														<i class="hs-admin-printer"></i> Enviar
+														<i class="hs-admin-check-box"></i> Aprobar envio
 													</a>
 													<a href="#" class="btn u-btn-bluegray g-mr-10">
 														<i class="hs-admin-printer"></i> Imprimir
@@ -556,7 +598,10 @@
 											<div class="card-block u-info-v1-1 g-bg-white-gradient-v1--after g-pa-20">
 												<div>
 							            			<!-- Info cotización -->
-							            			<div class="h1 text-left">Cotización <span class="g-color-green">#CTZ19</span> </div>
+							            			<div class="h1 text-left">
+							            				Cotización <span class="g-color-green">#CTZ19</span>
+							            				<span class="h2 float-right">Fecha de emisión: <?= date('d/m/Y', time())?></span>
+							            			</div>
 							            			<hr>
 													<div class="row">
 										                <!-- Info empresa -->
@@ -581,15 +626,15 @@
 										                        <i class="icon-phone"></i> (000) 000-0000
 										                    </address>
 										                </div>
-											                <!-- END Info cliente -->
-															<!-- Total cotización -->
-															<div class="h1 col-lg-4 text-right g-color-blue">
-																<p class="text-muted h5">
-																	Total
-																</p>
-																$41,520.00
-															</div>
-															<!-- End Total cotización -->
+											            <!-- END Info cliente -->
+														<!-- Total cotización -->
+														<div class="h1 col-lg-4 text-right g-color-blue">
+															<p class="text-muted h5">
+																Total
+															</p>
+															$41,520.00
+														</div>
+														<!-- End Total cotización -->
 											        </div>
 							            			<!-- END Info cotización -->
 													<hr>
@@ -683,6 +728,32 @@
 															Esta cotización está realizada en MXN pero, los costos posteriores a 30 días pueden variar en realización a la fluctuación del dólar y/o euro de acuerdo al esquema.
 														</li>
 													</ul>
+													<hr>
+													<b class="text-muted">Nota</b>
+													<ul class="text-muted text-justify">
+														<li>
+															La cuota anual cubre los gastos para el registro en la base de datos GlobalG.A.P.  El cliente debe informar a VERIFICACION Y CERTIFICACION PAMFA  sobre cualquier GGN, LGN o Numero CoC existente o caducado, y sobre cualquier actividad previa de verificación/inspección/auditoria o certificación/aprobación en su organización, incluyendo resultados. Su no comunicación redundará un costo extra  de 100 € (Euros), para un productor individual bajo la opción 1; y de 500 € (Euros), para un grupo de productores bajo la opción 2, sobre la tarifa de registro.
+														</li>
+														<li>
+															“No tiene un costo adicional la emisión del certificado" y se emitirá cuando se haya dado cumplimiento con los requisitos de la certificación.
+														</li>
+														<li>
+															SRRC - VERIFICACION Y CERTIFICACION PAMFA A.C. emitirá el dictamen de verificación e informe de evaluación de la conformidad, la dependencia  en este momento es quien decide sobre la certificación.
+														</li>
+													</ul>
+													<hr>
+													<b>DATOS BANCARIOS</b>
+													<p>
+														VERIFICACION Y CERTIFICACION PAMFA A.C.
+														<br>
+														BANCO: BANBAJIO
+														<br>
+														CUENTA: 19005552
+														<br>
+														CLABE: 03 05 28 90 00 1114 8626
+														<br>
+														REFERENCIA: ORGANISMO DE CERTIFICACIÓN.
+													</p>
 
 							            		<!-- Footer -->
 							            		<!--<hr class="hidden-print">-->
@@ -712,7 +783,7 @@
 
 												<div class="dropdown g-mb-10 g-mb-0--md">
 													<a href="#" class="btn u-btn-primary g-mr-10" onclick="procesoFinalizado()">
-														<i class="hs-admin-check"></i> Enviar
+														<i class="hs-admin-check-box"></i> Aprobar envio
 													</a>
 													<a href="#" class="btn u-btn-bluegray g-mr-10">
 														<i class="hs-admin-printer"></i> Imprimir
@@ -870,6 +941,110 @@
 								</div>
 							</div>
 							<!-- End Desición y cotización -->
+
+							<!-- Verificación del pago -->
+							<div id="step4" class="">
+								<div class="row">
+									<div class="col-md-12">						
+										<button style="width:20%" class="btn btn-block  u-btn-bluegray g-font-size-13 text-uppercase g-py-15  mb-45" type="button" data-next-step="#step3">
+											<i class="icon-arrow-left"></i> Paso anterior
+										</button>
+									</div>
+									<div class="col-md-12">
+										<div class=" g-bg-gray-light-v5 g-pa-20 g-pb-20 mb-4">
+											<h3>
+												<span>Verificación del pago</span>
+												<span class="float-right">Resumen</span>
+											</h3>
+										</div>
+									</div>
+					                <!-- Info cliente -->
+					                <div class="col-lg-4">
+					                    <p class="h2">Cliente</p>
+					                    <p class="h4">Nombre del cliente</p>
+					                    <address>
+					                        Dirección
+					                        <br>
+					                        Ciudad
+					                        <br>
+					                        Codigo postal
+					                        <br>
+					                        <i class="icon-phone"></i> (000) 000-0000
+					                        <br>
+					                        <i class="icon-education-166 u-line-icon-pro"></i> ejemplo@gmail.com
+					                    </address>
+					                </div>
+						            <!-- END Info cliente -->
+
+					                <!-- Esquemas de certificación -->
+					                <div class="col-lg-4">
+					                    <p class="h2">Cotización</p>
+					                    <p class="h5">
+					                    	Emisión: <span class="g-color-red"><?= date('d/m/Y', time()) ?></span>
+					                    </p>
+					                    <p class="h5">
+					                    	Total: <span class="g-color-blue">$41,520.00</span>
+					                    </p>
+					                	<hr class="g-pb-0 g-mb-0">
+					                    <p class="h2">Esquemas</p>
+					                    	<i class="et-icon-document"></i> Nombre esquema
+					                    	<br>
+					                    	<i class="et-icon-document"></i> Nombre esquema
+					                    	<br>
+					                    	<i class="et-icon-document"></i> Nombre esquema
+					                    	<br>
+					                    </p>
+					                </div>
+						            <!-- END Esquemas de certificación -->
+
+					                <!-- Resumen cotización -->
+					                <div class="col-lg-4">
+					                    <p class="h2">Comprobante pago</p>
+
+					                    <div class="row">
+											<div class="col-sm-12">
+							                    <p style="background: #e74c3c; color:white" class="g-pa-10">
+							                    	<i class="hs-admin-close"></i> No disponible
+							                    </p>
+
+							                    <p style="background: #e67e22; color:white" class="g-pa-10">
+							                    	<i class="icon-exclamation"></i> En espera
+							                    </p>
+											</div>
+
+											<!-- Aprobación de comprobante -->
+											<div class="col-sm-12 g-mb-10">
+							                    <button class="btn u-btn-primary" style="width:100%">
+							                    	<i class="hs-admin-download"></i> Descargar
+							                    </button>	
+											</div>
+											<div class="col-sm-6">
+												<label class="u-check" style="width:100%">
+													<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn2_4" type="radio" required data-msg="This field is mandatory" data-error-class="u-has-error-v1" data-success-class="u-has-success-v1" onclick="aprobarCotizacion('si')">
+													<span class="btn btn-md btn-block u-btn-outline-lightgray g-color-white--checked g-bg-primary--checked g-brd-left-none--md rounded-0">
+														<i class="hs-admin-check"></i> Aprobar
+													</span>
+												</label>	
+											</div>
+											<div class="col-sm-6">
+												<label class="u-check" style="width:100%">
+													<input class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn2_4" type="radio" required data-msg="This field is mandatory" data-error-class="u-has-error-v1" data-success-class="u-has-success-v1" onclick="aprobarCotizacion('no')">
+													<span class="btn btn-md btn-block u-btn-outline-lightgray g-color-white--checked g-bg-primary--checked g-brd-left-none--md rounded-0">
+														<i class="hs-admin-close"></i> Rechazar
+													</span>
+												</label>	
+											</div>
+											<!-- End Aprobación de comprobante -->
+					                    </div>
+										
+
+					                </div>
+						            <!-- END Resumen cotización -->
+
+
+								</div>
+							</div>
+							<!-- End Verificación del pago -->
 					    </div>
 				  	</form>
 				</div>
@@ -890,6 +1065,42 @@
 			document.getElementById('rechazarServicio').style.display = 'block';
 		}
 	}
+
+	function addCargo() {
+		var tabla = document.getElementById("tablaCotizacion");
+		var numFilas = tabla.rows.length;
+		var filaActual = numFilas - 3;
+
+		var row = tabla.insertRow(filaActual);
+		var celda1 = row.insertCell(0);
+    var celda2 = row.insertCell(1);
+		var celda3 = row.insertCell(2);
+		var celda4 = row.insertCell(3);
+		var celda5 = row.insertCell(4);
+
+		celda1.innerHTML = "<button type='button' onclick='guardarFila("+filaActual+")' class='btn u-btn-blue'><i class='hs-admin-save'></i></button><button type='button' onclick='eliminarFila(this)' class='btn u-btn-red'><i class='hs-admin-close'></i></button>";
+
+		celda2.innerHTML = "<input class='form-control' type='text' name='' value='Concepto'>";
+		celda2.innerHTML += "<textarea class='form-control' name='name' placeholder='Detalles del concepto'></textarea>";
+
+		celda3.innerHTML = "<input class='form-control' type='number' id='costo_unitario"+filaActual+"' min='0' step='0.01' placeholder='Costo unitario'>";
+		celda4.innerHTML = "<input class='form-control' type='number' id='cantidad"+filaActual+"' min='0' placeholder='Cantidad'>";
+		celda5.innerHTML = "<div class='text-right'>$<span id='total_final"+filaActual+"'></span></div>";
+	}
+
+	function eliminarFila(fila){
+		var index = fila.parentNode.parentNode.rowIndex;
+		document.getElementById("tablaCotizacion").deleteRow(index);
+	}
+	function guardarFila(fila){
+		var costo = document.getElementById('costo_unitario'+fila).value;
+		var cantidad = document.getElementById('cantidad'+fila).value;
+
+		var total = costo * cantidad;
+
+		document.getElementById('total_final'+fila).innerHTML = Intl.NumberFormat().format(total);
+	}
+
 	function procesoFinalizado(){
 		swal({
 			title: "Proceso finalizado",
@@ -900,6 +1111,24 @@
 			window.location.href = "<?php echo base_url('backend/administrador/solicitudes/solicitudesPendientes'); ?>";
 		})
 
+	}
+	function aprobarCotizacion(desicion){
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover this imaginary file!",
+			icon: "warning",
+			buttons: true,
+			dangerMode: true,
+		})
+		.then((willDelete) => {
+			if (willDelete) {
+				swal("Poof! Your imaginary file has been deleted!", {
+				  icon: "success",
+				});
+			} else {
+				swal("Your imaginary file is safe!");
+			}
+		});
 	}
 
 </script>

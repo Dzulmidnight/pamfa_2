@@ -65,6 +65,9 @@
 											Cotización
 										</th>
 										<th>
+											Contrato
+										</th>
+										<th>
 											...
 										</th>
 									</tr>
@@ -134,7 +137,7 @@
 										<td>
 											<!-- Large modal -->
 											<a href="<?php echo base_url('backend/administrador/cotizaciones/main'); ?>" class="btn btn-primary">
-												Cargar cotización
+												En proceso
 											</a>
 											<!--<button type="button" class="btn btn-primary" data-modal-target="#modal1" data-modal-effect="fadein">
 												Cargar cotización
@@ -184,6 +187,13 @@
 												recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 											</div>-->
 											<!-- End Modal Cotización -->
+
+										</td>
+										<!-- Contrato y pago del servicio -->
+										<td>
+											<a href="<?php echo base_url('backend/administrador/contratos/main_contratos/detalleContrato/18'); ?>" class="btn u-btn-primary">
+												En espera
+											</a>
 
 										</td>
 										<!-- acciones -->
