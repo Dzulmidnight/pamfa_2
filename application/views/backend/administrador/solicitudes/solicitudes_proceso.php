@@ -8,13 +8,13 @@
 
 			<div class="row g-mb-0">
 				<div class="col-md-12 g-mb-0 g-mn-0--md">
-					<div class="card border-0 rounded-0 g-mb-50">
+					<div class="card border-0 rounded-0 g-mb-50 g-pa-10">
 						<!-- Panel Header -->
 						<div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
 							<div class="row">
 								<div class="col-md-12">
 									<h3 class="h6 mb-0">
-										<i class="icon-layers g-pos-rel g-top-1 g-mr-5"></i> Solicitudes pendientes
+										<i class="icon-layers g-pos-rel g-top-1 g-mr-5"></i> Solicitudes en Proceso
 									</h3>
 								</div>
 
@@ -45,25 +45,21 @@
 							<thead>
 								<tr>
 									<th>
-										#ID
-									</th>
-									<th>
-										Fecha
+										#ID Solicitud
 									</th>
 									<th>
 										Cliente
 									</th>
 									<th>
-										Esquema
+										Esquema(s)
 									</th>
 									<th>
-										Observaciones
+										Progreso
 									</th>
 									<th>
-										Cotización
-									</th>
-									<th>
-										Contrato
+										<a href="#" data-toggle="tooltip" title="Etapa actual">
+											<i class="icon-exclamation"></i> Etapa
+										</a>
 									</th>
 									<th>
 										...
@@ -71,18 +67,20 @@
 								</tr>
 							</thead>
 							<tbody>
-								<?php 
-									for ($i=1; $i < 5; $i++) { 
+								<?php
+									for ($i=1; $i < 5; $i++) {
 									?>
 										<tr>
 											<td>
 												<a  class="btn btn-sm btn-info" href="#">
 													<?php echo "#".$i." Consultar"?>
 												</a>
+												<br>
+												<span class="text-muted">
+													<i class="icon-clock"></i> <?= date('d/m/Y', time()) ?>
+												</span>
 											</td>
-											<td>
-												<?= date('d/m/Y', time()) ?>
-											</td>
+
 											<td>
 												<a href="#">
 													<i class="icon-magnifier"></i> Nombre del cliente
@@ -94,28 +92,22 @@
 												<span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">Esquema</span>
 											</td>
 
-											<!-- observaciones realizadas -->
-											<td>
-												<a class="btn btn-sm u-btn-outline-blue g-mr-10 g-mb-15 nav-link" href="#!">
-													<span class="float-right u-label u-label-num u-label--sm u-label-default g-color-white g-rounded-15 g-ml-5">4</span>
-												    Observaciones
+
+											<!-- Barra de progreso -->
+											<td style="width: 20%" data-toggle="tooltip" title="Detalle del proceso">
+												<a href="<?php echo base_url('backend/administrador/certificacion/ProcesosCertificacion'); ?>" >
+													<div class="progress g-height-10 rounded-0 g-overflow-visible g-mb-20">
+														<div class="progress-bar g-pos-rel" role="progressbar" style="width: 64%;background: #e6a821" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100">
+															<div class="text-center u-progress__pointer-v1 g-font-size-11 g-color-white g-bg-lightbrown g-rounded-50x">64%</div>
+														</div>
+													</div>
 												</a>
 											</td>
 
-											<!-- botón para cargar la cotización -->
 											<td>
-												<!-- Large modal -->
-												<a href="<?php echo base_url('backend/administrador/cotizaciones/main'); ?>" class="btn btn-primary">
-													En proceso
-												</a>
+												<i class="fa fa-gear"></i> Etapa 5
 											</td>
-											<!-- Contrato y pago del servicio -->
-											<td>
-												<a href="<?php echo base_url('backend/administrador/contratos/main_contratos/detalleContrato/18'); ?>" class="btn u-btn-primary">
-													En espera
-												</a>
-
-											</td>
+											
 											<!-- acciones -->
 											<td>
 												<div class="g-pos-rel g-top-3 d-inline-block">
