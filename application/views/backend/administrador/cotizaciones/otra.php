@@ -48,33 +48,33 @@
 					<!-- Panel Body -->
 					<div class="card-block u-info-v1-1 g-bg-white-gradient-v1--after g-pa-20">
 						<div>
-	            <!-- Info cotización -->
-	            <div class="h1 text-left">Cotización <span class="g-color-green">#CTZ19</span> </div>
-	            <hr>
+	            			<!-- Info cotización -->
+	            			<div class="h1 text-left">Cotización <span class="g-color-green">#CTZ19</span> </div>
+	            			<hr>
 							<div class="row">
-	                <!-- Info empresa -->
-	                <div class="col-lg-4 text-left">
-	                    <p class="h2">PAMFA A.C.</p>
-	                    <address>
-	                        Calle José Zamora N°48, Col. Emiliano Zapata,<br>
-	                        Uruapan, Mich<br>
-	                        CP: 60180 <br>
-	                        <i class="icon-phone"></i> (452) 50 20 849 / 452 5251-772
-	                    </address>
-	                </div>
-	                <!-- END Info empresa -->
+				                <!-- Info empresa -->
+				                <div class="col-lg-4 text-left">
+				                    <p class="h2">PAMFA A.C.</p>
+				                    <address>
+				                        Calle José Zamora N°48, Col. Emiliano Zapata,<br>
+				                        Uruapan, Mich<br>
+				                        CP: 60180 <br>
+				                        <i class="icon-phone"></i> (452) 50 20 849 / 452 5251-772
+				                    </address>
+				                </div>
+				                <!-- END Info empresa -->
 
-	                <!-- Info cliente -->
-	                <div class="col-lg-4 text-right">
-	                    <p class="h2">Cliente</p>
-	                    <address>
-	                        Dirección<br>
-	                        Ciudad<br>
-	                        Codigo postal<br>
-	                        <i class="icon-phone"></i> (000) 000-0000
-	                    </address>
-	                </div>
-	                <!-- END Info cliente -->
+				                <!-- Info cliente -->
+				                <div class="col-lg-4 text-right">
+				                    <p class="h2">Cliente</p>
+				                    <address>
+				                        Dirección<br>
+				                        Ciudad<br>
+				                        Codigo postal<br>
+				                        <i class="icon-phone"></i> (000) 000-0000
+				                    </address>
+				                </div>
+					                <!-- END Info cliente -->
 									<!-- Total cotización -->
 									<div class="h1 col-lg-4 text-right g-color-blue">
 										<p class="text-muted h5">
@@ -83,72 +83,71 @@
 										$41,520.00
 									</div>
 									<!-- End Total cotización -->
-	            </div>
-	            <!-- END Info cotización -->
+					        </div>
+	            			<!-- END Info cotización -->
 							<hr>
 							<div class="col-lg-12 g-mb-20">
 								<b>
 									El siguiente presupuesto tiene una vigencia de 30 días naturales posteriores a la fecha de emisión.
 								</b>
 							</div>
-	            <!-- Table -->
-
-	            <div class="">
+	            			<!-- Table -->
+				            <div class="">
 								<button type="button" class="btn u-btn-primary" name="button" onclick="addCargo()">
 									<i class="hs-admin-plus"></i> Agregar cargo
 								</button>
-	                <table id="tablaCotizacion" class="table table-bordered table-hover">
-	                    <thead>
-	                        <tr>
-	                            <th class="text-center" style="width: 50px;">#</th>
-	                            <th>Concepto(esquema)</th>
-	                            <th class="text-right" style="width: 120px;">Costo Unitario</th>
-															<th class="text-center" style="width: 100px;">Cantidad</th>
-	                            <th class="text-right" style="width: 120px;">Total</th>
-	                        </tr>
-	                    </thead>
-	                    <tbody>
-													<?php
-													for ($i=1; $i <= 3; $i++) {
-													?>
-														<tr>
-		                            <td class="text-center">
-																	<button type="button" class="btn u-btn-primary" name="button">
-																		<i class="hs-admin-pencil"></i> <?= $i ?>
-																	</button>
-																</td>
-		                            <td>
-		                                <p class="font-w600 push-10">Global GAP</p>
-		                                <div class="text-muted">
-		                                	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		                                </div>
-		                            </td>
-		                            <td class="text-right">$ 25.000,00</td>
-																<td class="text-center">
-		                            	<span class="u-label g-rounded-20 g-px-15 g-bg-primary g-mr-10 g-mb-15">1</span>
-		                            </td>
-																<td class="text-right">$ 25.000,00</td>
-		                        </tr>
-													<?php
-													}
-													 ?>
+				                <table id="tablaCotizacion" class="table table-bordered table-hover">
+				                    <thead>
+				                        <tr>
+				                            <th class="text-center" style="width: 50px;">#</th>
+				                            <th>Concepto(esquema)</th>
+				                            <th class="text-right" style="width: 120px;">Costo Unitario</th>
+																		<th class="text-center" style="width: 100px;">Cantidad</th>
+				                            <th class="text-right" style="width: 120px;">Total</th>
+				                        </tr>
+				                    </thead>
+				                    <tbody>
+										<?php
+										for ($i=1; $i <= 3; $i++) {
+										?>
+											<tr>
+												<td class="text-center">
+													<button type="button" class="btn u-btn-primary" name="button">
+														<i class="hs-admin-pencil"></i> <?= $i ?>
+													</button>
+												</td>
+												<td>
+													<p class="font-w600 push-10">Global GAP</p>
+													<div class="text-muted">
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+													</div>
+												</td>
+												<td class="text-right">$ 25.000,00</td>
+												<td class="text-center">
+													<span class="u-label g-rounded-20 g-px-15 g-bg-primary g-mr-10 g-mb-15">1</span>
+												</td>
+												<td class="text-right">$ 25.000,00</td>
+											</tr>
+										<?php
+										}
+										?>
 
-	                        <tr>
-	                            <td colspan="4" class="font-w600 text-right">Subtotal</td>
-	                            <td class="text-right">$ 27.500,00</td>
-	                        </tr>
-	                        <tr>
-	                            <td colspan="4" class="font-w600 text-right">I.V.A</td>
-	                            <td class="text-right">16%</td>
-	                        </tr>
-	                        <tr class="active">
-	                            <td colspan="4" class="font-w700 text-uppercase text-right">Total</td>
-	                            <td class="font-w700 text-right">$ 33.000,00</td>
-	                        </tr>
-	                    </tbody>
-	                </table>
-	            </div>
-	            <!-- END Table -->
+										<tr>
+											<td colspan="4" class="font-w600 text-right">Subtotal</td>
+											<td class="text-right">$ 27.500,00</td>
+										</tr>
+										<tr>
+											<td colspan="4" class="font-w600 text-right">I.V.A</td>
+											<td class="text-right">16%</td>
+										</tr>
+										<tr class="active">
+											<td colspan="4" class="font-w700 text-uppercase text-right">Total</td>
+											<td class="font-w700 text-right">$ 33.000,00</td>
+										</tr>
+				                    </tbody>
+				                </table>
+				            </div>
+				            <!-- END Table -->
 							<hr>
 							<b class="text-muted">Especificaciones</b>
 							<ul class="text-muted text-justify">
@@ -178,11 +177,11 @@
 								</li>
 							</ul>
 
-	            <!-- Footer -->
-	            <!--<hr class="hidden-print">-->
-	            <!--<p class="text-muted text-center"><small>Thank you very much for doing business with us. We look forward to working with you again!</small></p>-->
-	            <!-- END Footer -->
-	        </div>
+	            		<!-- Footer -->
+	            		<!--<hr class="hidden-print">-->
+	            		<!--<p class="text-muted text-center"><small>Thank you very much for doing business with us. We look forward to working with you again!</small></p>-->
+	            		<!-- END Footer -->
+	        			</div>
 					</div>
 					<!-- End Panel Body -->
 				</div>

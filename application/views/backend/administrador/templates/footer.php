@@ -9,7 +9,6 @@
 		<!-- JS Propios -->
 		<script src="<?php echo base_url(); ?>assets/js/propias/funciones.js"></script>
 
-
 		<!-- JS Global Compulsory -->
 		<script src="<?php echo base_url(); ?>admin/assets/vendor/jquery/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>admin/assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
@@ -253,7 +252,6 @@
 				//document.getElementById('descripcion_observacion').innerHTML = 'Prueba de la descripción';
 			}
 		</script>
-
 
 	</body>
 

@@ -79,7 +79,7 @@
 					</a>
 				</li>
 				<li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
-					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/administrador/solicitudes/solicitudes_en_proceso'); ?>">
+					<a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12" href="<?php echo base_url('backend/administrador/solicitudes/solicitudesProceso'); ?>">
 						<span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
 							<i class="hs-admin-layout-list-thumb"></i>
 						</span>

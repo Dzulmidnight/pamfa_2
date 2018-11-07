@@ -41,7 +41,7 @@
 
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 			<link href="<?php echo base_url(); ?>selectMultiple/multiple-select.css" rel="stylesheet"/>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		</head>
 
 		<body>
