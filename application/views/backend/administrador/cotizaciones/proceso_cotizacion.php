@@ -121,7 +121,7 @@
 															<div class="form-group">
 																<div class="u-input-group-v1">
 																	<textarea id="message" class="form-control form-control-md rounded-0 g-resize-none" name="message" rows="2"></textarea>
-																	<label for="message "><i class="hs-admin-pencil"></i> <span class="text-muted">Observación</span></label>
+																	
 																</div>
 															</div>
 														</td>
@@ -151,7 +151,7 @@
 															<div class="form-group">
 																<div class="u-input-group-v1">
 																	<textarea id="message" class="form-control form-control-md rounded-0 g-resize-none" name="message" rows="2"></textarea>
-																	<label for="message "><i class="hs-admin-pencil"></i> <span class="text-muted">Observación</span></label>
+																	
 																</div>
 															</div>
 														</td>
@@ -181,7 +181,7 @@
 															<div class="form-group">
 																<div class="u-input-group-v1">
 																	<textarea id="message" class="form-control form-control-md rounded-0 g-resize-none" name="message" rows="2"></textarea>
-																	<label for="message "><i class="hs-admin-pencil"></i> <span class="text-muted">Observación</span></label>
+																	
 																</div>
 															</div>
 														</td>
@@ -211,7 +211,7 @@
 															<div class="form-group">
 																<div class="u-input-group-v1">
 																	<textarea id="message" class="form-control form-control-md rounded-0 g-resize-none" name="message" rows="2"></textarea>
-																	<label for="message "><i class="hs-admin-pencil"></i> <span class="text-muted">Observación</span></label>
+																	
 																</div>
 															</div>
 														</td>
@@ -241,7 +241,7 @@
 															<div class="form-group">
 																<div class="u-input-group-v1">
 																	<textarea id="message" class="form-control form-control-md rounded-0 g-resize-none" name="message" rows="2"></textarea>
-																	<label for="message "><i class="hs-admin-pencil"></i> <span class="text-muted">Observación</span></label>
+																	
 																</div>
 															</div>
 														</td>
@@ -271,7 +271,7 @@
 															<div class="form-group">
 																<div class="u-input-group-v1">
 																	<textarea id="message" class="form-control form-control-md rounded-0 g-resize-none" name="message" rows="2"></textarea>
-																	<label for="message "><i class="hs-admin-pencil"></i> <span class="text-muted">Observación</span></label>
+																	
 																</div>
 															</div>
 														</td>
@@ -301,7 +301,7 @@
 															<div class="form-group">
 																<div class="u-input-group-v1">
 																	<textarea id="message" class="form-control form-control-md rounded-0 g-resize-none" name="message" rows="2"></textarea>
-																	<label for="message "><i class="hs-admin-pencil"></i> <span class="text-muted">Observación</span></label>
+																	
 																</div>
 															</div>
 														</td>
