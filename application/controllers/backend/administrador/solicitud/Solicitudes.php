@@ -16,6 +16,9 @@ class Solicitudes extends CI_Controller{
 		$this->load->model('mSrrc');
 		$this->load->model('mDen_origen');
 		$this->load->model('mMcs');
+		$this->load->model('mObservacion');
+		$this->load->model('mSeccion');
+		$this->load->model('mNorma');
 	}
 
 	function nueva_solicitud($id,$cliente){
@@ -39,6 +42,9 @@ $idsol="";
 			$norma_srrc=$data2['sol']->srrc;
 			$norma_origen=$data2['sol']->den_origen;
 			$norma_mcs=$data2['sol']->mcs;
+				$anexo_m=$data2['sol']->anexo_m;
+			$anexo_p=$data2['sol']->anexo_p;
+			
 
 		}
 
@@ -53,6 +59,9 @@ $idsol="";
 			$norma_srrc=$data2['sol']->srrc;
 			$norma_origen=$data2['sol']->den_origen;
 			$norma_mcs=$data2['sol']->mcs;
+				$anexo_m=$data2['sol']->anexo_m;
+			$anexo_p=$data2['sol']->anexo_p;
+			
 
 
 			$this->mCert_anterior_sol->guardar($idsol);
@@ -95,15 +104,22 @@ $idsol="";
 			$data['idiomas']=$data2['sol']->idiomas;
 			$data['uso_datos']=$data2['sol']->uso_datos;
 			$data['consulta_todo'] = $this->mSolicitud->consulta_solicitudes();
+			$data['anexo_p']=$anexo_p;
+			$data['anexo_m']=$anexo_m;
+
 		//$this->load->view('backend/cliente/solicitud/global_ifa',$data,$norma);
 
 		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
 		$this->load->view('backend/administrador/templates/sideNav',$data);
-			$this->load->view('backend/administrador/solicitudes/observaciones');
-			$this->load->view('backend/administrador/solicitud/nueva_solicitud',$data);
+		$data['observaciones'] = $this->mObservacion->consulta_obs($idsol);
+		$data['seccion']= $this->mSeccion->consulta();
+		$data['norma_comp']= $this->mNorma->consulta();
+		$this->load->view('backend/administrador/solicitud/nueva_solicitud',$data);
+			$this->load->view('backend/administrador/solicitudes/observaciones',$data);
+			
 		$this->load->view('backend/administrador/templates/pre_footer');
-		$this->load->view('backend/administrador/templates/footer');
+		$this->load->view('backend/administrador/templates/footer',$data);
 
 
 	}

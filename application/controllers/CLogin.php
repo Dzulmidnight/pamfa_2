@@ -47,6 +47,7 @@ class cLogin extends CI_Controller {
 			$this->load->view('backend/administrador/templates/sideNav',$data);
 				$this->load->view('backend/administrador/index',$data);
 			$this->load->view('backend/administrador/templates/pre_footer');
+			
 			$this->load->view('backend/administrador/templates/footer');
 		}
 			
