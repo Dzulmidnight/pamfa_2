@@ -1,3 +1,13 @@
+<div class="g-pa-20">
+    <div class="row g-mb-0">
+      <div class="col-md-12">
+        <button class="btn u-btn-bluegray" onclick="history.back(-1)">
+          <i class="glyph-icon icon-arrow-left"></i> Regresar
+        </button>
+      </div>
+    </div>
+  </div>
+
 <div class="container g-pt-100 g-pb-70">
   <form class="js-validate js-step-form" data-progress-id="#stepFormProgress" data-steps-id="#stepFormSteps">
     <div class="g-mb-100">

@@ -33,6 +33,15 @@ function __construct(){
 		$this->load->view('backend/administrador/templates/footer');
 	}
 
+	function detalleCliente(){
+		$this->load->view('backend/administrador/templates/head');
+		$this->load->view('backend/administrador/templates/header');
+		$this->load->view('backend/administrador/templates/sideNav');
+			$this->load->view('backend/administrador/clientes/detalle_cliente');
+		$this->load->view('backend/administrador/templates/pre_footer');
+		$this->load->view('backend/administrador/templates/footer');
+	}
+
 	function representantes(){
 		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
