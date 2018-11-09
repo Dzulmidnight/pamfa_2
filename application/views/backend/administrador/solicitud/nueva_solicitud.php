@@ -339,7 +339,16 @@ input.invalid {
 
 												<div class="row g-mb-20">
 													<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('DATOS DEL CLIENTE','nombreLegal')">
+														<?php $sec1="";foreach($seccion as $fila2)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
+
+								if ($fila2->id_seccion==1) {
+									$sec1=$fila2->descripcion;
+									break;
+								}
+							}?>
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','nombreLegal')">
 															<i class="fa fa-close"></i>
 														</button>
 														<label class="pregunta mb-0" for="#nombreLegal">Nombre de la entidad legal *</label>
@@ -358,7 +367,7 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
-														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('DATOS DEL CLIENTE','nombreRepresentante')">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','nombreRepresentante')">
 															<i class="fa fa-close"></i>
 														</button>
 														<label class="pregunta mb-0" for="#nombreRepresentante">Nombre del representante legal *</label>
@@ -379,6 +388,9 @@ input.invalid {
 
 													<div class="row g-mb-20">
 														<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+															<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','email')">
+															<i class="fa fa-close"></i>
+														</button>
 															<label class="pregunta mb-0" for="#email">Email *</label>
 														</div>
 
@@ -395,6 +407,9 @@ input.invalid {
 												<div class="col-md-6">
 													<div class="row g-mb-20">
 														<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+															<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','telefono')">
+															<i class="fa fa-close"></i>
+														</button>
 															<label class="pregunta mb-0" for="#telefono">Teléfono *</label>
 														</div>
 
@@ -413,6 +428,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','fax')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#fax">Fax</label>
 													</div>
 
@@ -439,6 +457,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','pais')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#pais">País *</label>
 													</div>
 
@@ -471,6 +492,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','estado')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#estado">Estado *</label>
 													</div>
 
@@ -487,6 +511,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','municipio')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#municipio">Municipio *</label>
 													</div>
 
@@ -503,6 +530,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','colonia')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#colonia">Colonia *</label>
 													</div>
 
@@ -519,6 +549,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','cp')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#cp">Codigo Postal</label>
 													</div>
 
@@ -535,6 +568,9 @@ input.invalid {
 											<div class="col-md-12">
 												<div class="row g-mb-20">
 													<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('1','<?php echo $sec1;?>','direccion')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#direccion">Dirección *</label>
 													</div>
 
@@ -560,6 +596,15 @@ input.invalid {
 					<!-- termina DATOS DEL CLIENTE -->
 
 					<!------------------------- inicia 3.- DATOS DE FACTURACIÓN ---------------------->
+					<?php $sec2="";foreach($seccion as $fila2)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
+
+								if ($fila2->id_seccion==2) {
+									$sec2=$fila2->descripcion;
+									break;
+								}
+							}?>
 					<div class="tab">
 				    	<div class="card g-brd-gray-light-v7 g-mb-10">
 							<div id="datos_facturacion">
@@ -575,7 +620,7 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
-														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('DATOS DE FACTURACION','rfc')">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','rfc')">
 															<i class="fa fa-close"></i>
 														</button>
 
@@ -587,7 +632,7 @@ input.invalid {
 															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
 																<i class="icon-pencil g-absolute-centered g-font-size-16 g-color-red"></i>
 															</span>
-															<input id="rfc" name="rfc" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" vvalue="<? echo $fila->rfc;?>" required="required" data-msg="This field is mandatory"
+															<input id="rfc" name="rfc" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<? echo $fila->rfc;?>" required="required" data-msg="This field is mandatory"
 														data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true" placeholder="Escribe aquí">
 														</div>
 													</div>
@@ -596,7 +641,7 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
-														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('DATOS DE FACTURACION','razonSocial')">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','razonSocial')">
 															<i class="fa fa-close"></i>
 														</button>
 														<label class="pregunta mb-0" for="#razonSocial">Razón social *</label>
@@ -616,6 +661,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','emailFactura')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#emailFactura">Correo electrónico para envío de la factura</label>
 													</div>
 
@@ -634,6 +682,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','nombreFactura')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#nombreFactura">Nombre de contacto para facturación</label>
 													</div>
 
@@ -651,6 +702,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','formaPago')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#formaPago">Forma de pago</label>
 													</div>
 
@@ -676,6 +730,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','telFactura')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#telFactura">Teléfono del contacto para facturación</label>
 													</div>
 
@@ -694,6 +751,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','banco')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#banco">Banco donde se realizó el pago</label>
 													</div>
 
@@ -711,6 +771,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','digitosTarjeta')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#digitosTarjeta">Ultimos 4 digitos del número de cuenta de la cual se realiza el pago</label>
 													</div>
 
@@ -732,6 +795,9 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','cdfi')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#cdfi">Indicar el uso del CFDI</label>
 													</div>
 
@@ -749,6 +815,9 @@ input.invalid {
 											<div class="col-md-12">
 												<div class="row g-mb-20">
 													<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','dirFiscal')">
+															<i class="fa fa-close"></i>
+														</button>
 														<label class="pregunta mb-0" for="#dirFiscal">Dirección en el R.F.C de la entidad legal</label>
 													</div>
 
@@ -783,6 +852,15 @@ input.invalid {
 
 
 					<!------------------------ inicia 3.- CERTIFICACIONES ANTERIORES ------------------------>
+					<?php $sec3="";foreach($seccion as $fila2)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
+
+								if ($fila2->id_seccion==3) {
+									$sec3=$fila2->descripcion;
+									break;
+								}
+							}?>
 					<div class="tab">
 				     	<div class="card g-brd-gray-light-v7 g-mb-10">
 
@@ -800,7 +878,11 @@ input.invalid {
 											<!-- inicia certificación GLOBALGAP -->
 											<div class="col-md-12">
 												<div class="mb-10">
+
 													<h4 class="g-font-weight-500 g-font-size-14 g-font-size-22--md g-color-black g-mb-10">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('3','<?php echo $sec3;?>','cert_ant1')">
+															<i class="fa fa-close"></i>
+														</button>
 														¿Ha estado certificado con GLOBALG.A.P anteriormente?
 													</h4>
 
@@ -909,7 +991,9 @@ input.invalid {
 											<div class="col-md-4 g-mb-10">
 												<div class="mb-10">
 													<h4 class="g-font-weight-500 g-font-size-14 g-font-size-22--md g-color-black g-mb-10">
-														¿Se encuentra registrado ante SENASICA?
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('3','<?php echo $sec3;?>','cert_ant2')">
+															<i class="fa fa-close"></i>
+														</button>¿Se encuentra registrado ante SENASICA?
 													</h4>
 
 													<div id="registroSenasica" class="btn-group justified-content">
@@ -945,7 +1029,9 @@ input.invalid {
 											<div class="col-md-4 g-mb-10">
 												<div class="mb-10">
 													<h4 class="g-font-weight-500 g-font-size-14 g-font-size-22--md g-color-black g-mb-10">
-														¿Cuenta con registro de México Calidad Suprema?
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('3','<?php echo $sec3;?>','cert_ant3')">
+															<i class="fa fa-close"></i>
+														</button>¿Cuenta con registro de México Calidad Suprema?
 													</h4>
 
 													<div id="radioMexCalidadSuprema" class="btn-group justified-content">
@@ -980,7 +1066,9 @@ input.invalid {
 											<div class="col-md-4">
 												<div class="mb-10">
 													<h4 class="g-font-weight-500 g-font-size-14 g-font-size-22--md g-color-black g-mb-10">
-														¿Ha estado certificado bajo el esquema PrimusGSF?
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('3','<?php echo $sec3;?>','cert_ant4')">
+															<i class="fa fa-close"></i>
+														</button>¿Ha estado certificado bajo el esquema PrimusGSF?
 													</h4>
 
 													<div id="radioCertificacionGlobaGAP" class="btn-group justified-content">
@@ -1019,6 +1107,9 @@ input.invalid {
 											<div class="col-md-6">
 												<!-- Input -->
 												<div class="form-group g-mb-30">
+													<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('3','<?php echo $sec3;?>','cert_ant5')">
+															<i class="fa fa-close"></i>
+														</button>
 													<label class="g-mb-10" for="preg7">Nombre del responsable de la aplicación de la norma de certificación en la entidad legal</label>
 
 													<div class="g-pos-rel">
@@ -1035,6 +1126,9 @@ input.invalid {
 											<div class="col-md-6">
 												<!-- Input -->
 												<div class="form-group g-mb-30">
+													<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('3','<?php echo $sec3;?>','cert_ant6')">
+															<i class="fa fa-close"></i>
+														</button>
 													<label class="g-mb-10" for="preg8">Nombre de la persona que realizó la autoevaluación interna en la entidad legal</label>
 
 													<div class="g-pos-rel">
@@ -1061,6 +1155,9 @@ input.invalid {
 											<div class="col-md-12">
 												<div class="mb-10">
 													<h4 class="g-font-weight-500 g-font-size-14 g-font-size-22--md g-color-black g-mb-10">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('3','<?php echo $sec3;?>','cert_ant7')">
+															<i class="fa fa-close"></i>
+														</button>
 														¿Ha estado certificado anteriormente con otro organismo de certificación?
 													</h4>
 
@@ -1140,6 +1237,24 @@ input.invalid {
 					<!-- termina CERTIFICACIONES ANTERIORES -->
 
 					<!-- inicia 4.- ESQUEMAS DE CERTIFICACIÓN -->
+					<?php $sec4="";foreach($seccion as $fila2)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
+
+								if ($fila2->id_seccion==4) {
+									$sec4=$fila2->descripcion;
+									break;
+								}
+							}?>
+							<?php $n1="";foreach($norma_comp as $fila3)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
+
+								if ($fila3->id_norma==1) {
+									$n1=$fila3->descripcion;
+									break;
+								}
+							}?>
 					<div class="tab">
 				     	<div class="card g-brd-gray-light-v7 g-mb-10">
 
@@ -1167,6 +1282,9 @@ input.invalid {
 
 														<div class="col-sm-12">
 															<div class="form-group g-mb-30">
+																<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','1','<?php echo $n1;?>','productos')">
+															<i class="fa fa-close"></i>
+														</button>
 																<label class="g-mb-10" for="inputGroup-1_1">
 																	Ingresa los productos por certificar
 																</label>
@@ -1188,6 +1306,9 @@ input.invalid {
 															<table class="table table-bordered">
 																<tr>
 																	<td colspan="3">
+																		<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','1','<?php echo $n1;?>','opcion1')">
+															<i class="fa fa-close"></i>
+														</button>
 																		Opción 1: Productor individual
 																	</td>
 																</tr>
@@ -1231,6 +1352,9 @@ input.invalid {
 																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
 																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
 																			</div>
+																			<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','1','<?php echo $n1;?>','opcion2')">
+															<i class="fa fa-close"></i>
+														</button>
 																			Opcíon 2: Grupo de productores
 																		</label>
 																	</td>
@@ -1239,6 +1363,7 @@ input.invalid {
 																	<td>
 																		<div class="row g-mb-20">
 																			<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+
 																				<label class="pregunta mb-0" for="#num_productores">Número de productores a certificar</label>
 																			</div>
 
@@ -1256,6 +1381,7 @@ input.invalid {
 																	<td>
 																		<div class="row g-mb-20">
 																			<div class="col-md-12 align-self-center g-mb-5 g-mb-0--md">
+
 																				<label class="pregunta mb-0" for="#num_unidades_produccion">Número de unidades de producción a certificar</label>
 																			</div>
 
@@ -1275,7 +1401,10 @@ input.invalid {
 														</div>
 														<div class="col-sm-12">
 															<div class="form-group g-mb-30">
-																<label class="g-mb-10" for="inputGroup-1_1">
+																<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','1','<?php echo $n1;?>','num_unidades_manipulacion')">
+															<i class="fa fa-close"></i>
+														</button>
+																<label class="g-mb-10" for="num_unidades_manipulacion">
 																	Número de unidades de manipulación de productos a certificar
 																</label>
 
@@ -1293,6 +1422,16 @@ input.invalid {
 											<!------------- termina sección global gap ifa -------------->
 
 											<!-- inicia mostrar global gap coc -->
+
+											<?php $n2="";foreach($norma_comp as $fila3)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
+
+								if ($fila3->id_norma==2) {
+									$n2=$fila3->descripcion;
+									break;
+								}
+							}?>
 											<div id="divGlobalGapCoc" class="col-md-12" style="display: none" >
 												<form class="js-validate" id="global_coc" name="global_coc">
 													<div class="row">
@@ -1303,8 +1442,11 @@ input.invalid {
 															</h4>
 														</div>
 														<div class="col-md-12" style="margin-bottom:1em;">
+
 															<p>
-																Ingresa lo(s) producto(s) por certificar
+																<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','2','<?php echo $n2;?>','productos_coc')">
+															<i class="fa fa-close"></i>
+														</button>Ingresa lo(s) producto(s) por certificar
 															</p>
 
 										                    <div class="u-tagsinput--v2--gray g-brd-around g-brd-gray-light-v7 g-brd-gray-light-v3--focus g-rounded-4 g-px-6 g-py-5">
@@ -1325,7 +1467,9 @@ input.invalid {
 																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
 																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
 																			</div>
-																			Opción 1, Explotación individual
+																			<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','2','<?php echo $n2;?>','individual')">
+															<i class="fa fa-close"></i>
+														</button>Opción 1, Explotación individual
 																		</label>
 																	</td>
 																</tr>
@@ -1377,7 +1521,9 @@ input.invalid {
 																			<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
 																				<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
 																			</div>
-																			Opción 1, Explotación Multiple
+																			<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','2','<?php echo $n2;?>','multiple')">
+															<i class="fa fa-close"></i>
+														</button>Opción 1, Explotación Multiple
 																		</label>
 																	</td>
 																</tr>
@@ -1448,6 +1594,9 @@ input.invalid {
 																<thead>
 																	<tr>
 																		<th colspan="3">
+																			<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','2','<?php echo $n2;?>','paralela')">
+															<i class="fa fa-close"></i>
+														</button>
 																			Declaración sobre producción paralela (PP) y propiedad paralela (PO), seleccione SI o NO, se detallara la información en el anexo CER.RG.01
 																		</th>
 																	</tr>
@@ -1531,10 +1680,16 @@ input.invalid {
 
 											<!-- termina mostrar global gap coc -->
 
-
-
 											<!-- inicia mostrar mexico calidad suprema -->
+											<?php $n3="";foreach($norma_comp as $fila3)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
 
+								if ($fila3->id_norma==3) {
+									$n3=$fila3->descripcion;
+									break;
+								}
+							}?>
 											<div id="divMexCalidadSuprema" class="col-md-12" style="display: none"  >
 												<form id="mcs">
 												<div class="row">
@@ -1549,7 +1704,9 @@ input.invalid {
 												if(isset($consulta_mexcalsup)){$bmex=1;}?>
 													<div class="col-md-6">
 														<h4>
-															Alcance de la certificación
+															<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','3','<?php echo $n3;?>','alcance')">
+															<i class="fa fa-close"></i>
+														</button>Alcance de la certificación
 														</h4>
 
 														<select class="selectMultiple" name="alcance_certificacion" id="alcance_certificacion" multiple>
@@ -1559,7 +1716,9 @@ input.invalid {
 													</div>
 													<div class="col-md-6">
 														<h4>
-															Pliego de condiciones
+															<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','3','<?php echo $n3;?>','pliego')">
+															<i class="fa fa-close"></i>
+														</button>Pliego de condiciones
 														</h4>
 														<select class="selectMultiple" name="pliego_condiciones_mcs" id="pliego_condiciones_mcs" multiple>
 															<option <?php if($bmex==1 &&strpos($consulta_mexcalsup->productos,'Aguacate')!==false){?>selected="selected"<? }?>value="Aguacate">Aguacate</option>
@@ -1577,7 +1736,9 @@ input.invalid {
 															<thead>
 																<tr>
 																	<th colspan="3">
-																		Enliste los equipos de medición utilizados para el pliego de condición solicitado
+																		<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','3','<?php echo $n3;?>','equipos')">
+															<i class="fa fa-close"></i>
+														</button>Enliste los equipos de medición utilizados para el pliego de condición solicitado
 																	</th>
 																</tr>
 																<tr>
@@ -1700,7 +1861,9 @@ foreach($consulta_productos as $fila)
 													<!-- termina listado de equipos de verficación -->
 													<div class="col-sm-6">
 														<p class="pregunta">
-															¿Requiere la evaluación de requisitos adicionales solicitado por su cliente?
+															<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','3','<?php echo $n3;?>','evaluacion')">
+															<i class="fa fa-close"></i>
+														</button>¿Requiere la evaluación de requisitos adicionales solicitado por su cliente?
 														</p>
 
 														<div id="radioCertificacionGlobaGAP" class="btn-group justified-content">
@@ -1740,7 +1903,9 @@ foreach($consulta_productos as $fila)
 													</div>
 													<div class="col-sm-6">
 														<p class="pregunta">
-															¿Tiene un acuerdo de muestreo con sus clientes?
+															<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','3','<?php echo $n3;?>','muestreo')">
+															<i class="fa fa-close"></i>
+														</button>¿Tiene un acuerdo de muestreo con sus clientes?
 														</p>
 
 														<div id="radioCertificacionGlobaGAP" class="btn-group justified-content">
@@ -1778,7 +1943,9 @@ foreach($consulta_productos as $fila)
 													</div>
 													<div class="col-sm-12" style="margin-top:1em;margin-bottom:1em;">
 														<p>
-															Trazabilidad del lote
+															<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','3','<?php echo $n3;?>','trazabilidad')">
+															<i class="fa fa-close"></i>
+														</button>Trazabilidad del lote
 														</p>
 														<div class="form-group g-pos-rel mb-0">
 															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
@@ -1796,11 +1963,17 @@ foreach($consulta_productos as $fila)
 											</div>
 
 											<!-- termina mostrar mexico calidad suprema -->
-
-
-
 											<!-- inicia mostrar sistema de reducción de riesgos -->
+											<?php $n4="";foreach($norma_comp as $fila3)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
 
+								if ($fila3->id_norma==4) {
+									$n4=$fila3->descripcion;
+									break;
+								}
+							}?>
+											
 											<div id="divSrrc" class="col-md-12" style="display: none; margin-top: 1em;">
 
 												<form class="js-validate" id="fsrrc" name="fsrrc">
@@ -1812,6 +1985,11 @@ foreach($consulta_productos as $fila)
 														</h4>
 													</div>
 													<div class="col-sm-12">
+														<p>
+																<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','4','<?php echo $n4;?>','alcance_srrc')">
+															<i class="fa fa-close"></i>
+														</button>Seleccione alcance
+															</p>
 														<table class="table table-bordered">
 															<tr>
 																<td colspan="2">
@@ -1867,7 +2045,9 @@ foreach($consulta_productos as $fila)
 
 													<div class="col-sm-6">
 														<p class="pregunta">
-															Número de unidades de producción / huertos o invernaderos
+															<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','4','<?php echo $n4;?>','num_unidades')">
+															<i class="fa fa-close"></i>
+														</button>Número de unidades de producción / huertos o invernaderos
 														</p>
 														<div class="form-group g-pos-rel mb-0">
 															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
@@ -1879,7 +2059,9 @@ foreach($consulta_productos as $fila)
 													</div>
 													<div class="col-sm-6">
 														<p class="pregunta">
-															Número de productores del área integral
+															<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','4','<?php echo $n4;?>','num_prod_integral')">
+															<i class="fa fa-close"></i>
+														</button>Número de productores del área integral
 														</p>
 														<div class="form-group g-pos-rel mb-0">
 															<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
@@ -1896,7 +2078,9 @@ foreach($consulta_productos as $fila)
 															<thead>
 																<tr>
 																	<th colspan="3">
-																		Información sobre comercialización de producto
+																		<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','4','<?php echo $n4;?>','comercializacion_srrc')">
+															<i class="fa fa-close"></i>
+														</button>Información sobre comercialización de producto
 																	</th>
 																</tr>
 																<tr>
@@ -1986,7 +2170,15 @@ foreach($consulta_productos as $fila)
 												 ?>
 											</div>
 											<!-- inicia mostrar hecho en mexico -->
+											<?php $n5="";foreach($norma_comp as $fila3)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
 
+								if ($fila3->id_norma==5) {
+									$n5=$fila3->descripcion;
+									break;
+								}
+							}?>
 											<div id="divHechoEnMexico" class="col-md-12" style="display: none;">
 												<form class="js-validate" id="mexico" name="mexico">
 													<div class="row">
@@ -1999,7 +2191,9 @@ foreach($consulta_productos as $fila)
 														<div class="col-sm-12">
 															<table class="table table-bordered">
 																<thead>
-																	<tr>
+																	<tr><th><button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','5','<?php echo $n5;?>','producto_mexico')">
+															<i class="fa fa-close"></i>
+														</button></th>
 																		<th>
 																			<button class="btn btn-sm btn-success" data-toggle="tooltip" title="Agregar otro producto" type="button" onclick="agregar()" >
 																				<i class="fa fa-plus"></i> Agregar producto
@@ -2011,7 +2205,7 @@ foreach($consulta_productos as $fila)
 																	</tr>
 																</thead>
 																<tbody>
-																	<tr>
+																	<tr><td></td>
 																		<td>
 																			<div class="form-group g-pos-rel mb-0">
 																				<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
@@ -2071,6 +2265,15 @@ foreach($consulta_productos as $fila)
 											<!-- termina mostrar hecho en mexico -->
 
 											<!-- inicia mostrar denominación de origen -->
+												<?php $n6="";foreach($norma_comp as $fila3)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
+
+								if ($fila3->id_norma==6) {
+									$n6=$fila3->descripcion;
+									break;
+								}
+							}?>
 											<div id="divDenominacionOrigen" class="col-md-12" style="display: none;" >
 												<form id="den_origen" name="den_origen">
 													<div class="row">
@@ -2082,7 +2285,9 @@ foreach($consulta_productos as $fila)
 														</div>
 														<div class="col-sm-12" style="margin-bottom:1em;">
 															<b style="margin-bottom:1.5em;">
-																Productos
+																<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','6','<?php echo $n6;?>','producto_den')">
+															<i class="fa fa-close"></i>
+														</button>Productos
 															</b>
 															<?php
 																$bden=0;
@@ -2101,7 +2306,9 @@ foreach($consulta_productos as $fila)
 
 														<div class="col-sm-12" style="margin-top:1em;">
 															<b>
-																Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo.
+																<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','6','<?php echo $n6;?>','descripcion_den')">
+															<i class="fa fa-close"></i>
+														</button>Descripción del producto que ostentará el logotipo y, en su caso la forma en que los insumos o partes mexicanas se utilizan en el proceso productivo.
 															</b>
 															<div class="form-group g-pos-rel mb-0">
 																<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-50 h-100">
@@ -2113,7 +2320,9 @@ foreach($consulta_productos as $fila)
 													</form>
 													<form id="upload_form" enctype="multipart/form-data" method="post"  >
 														<div class="col-sm-12" style="margin-top:1em;">
-															<b>Anexo</b>
+															<b><button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','6','<?php echo $n6;?>','anexo_den')">
+															<i class="fa fa-close"></i>
+														</button>Anexo</b>
 															<p>
 																Constancia expedida por órgano competente que acredite que el establecimiento donde se realiza la actividad del solicitante, se encuentra dentro del territorio señalado en la declaración correspondiente (original o copia certificada).
 															</p>
@@ -2143,6 +2352,15 @@ foreach($consulta_productos as $fila)
 					<!-- termina ESQUEMAS DE CERTIFICACIÓN -->
 
 					<!-- inicia 6.- PASO FINAL -->
+					<?php $sec6="";foreach($seccion as $fila2)
+							{
+								//echo $fila2->id_seccion."---".$fila->seccion;
+
+								if ($fila2->id_seccion==6) {
+									$sec6=$fila2->descripcion;
+									break;
+								}
+							}?>
 					<div class="tab">
 				     	<div class="card g-brd-gray-light-v7 g-mb-30">
 							<div id="pasoFinal">
@@ -2160,6 +2378,9 @@ foreach($consulta_productos as $fila)
 										
 
 											<h4 style="font-size: 16px;">
+													<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('6','<?php echo $sec6;?>','p_fina1')">
+															<i class="fa fa-close"></i>
+														</button>
 													<strong>Anexo producción</strong>
 													Descargar y realizar el llenado del anexo CER.RG.01, posteriormente cargar el archivo
 												</h4>
@@ -2192,6 +2413,9 @@ foreach($consulta_productos as $fila)
 										
 
 											<h4 style="font-size: 16px;">
+												<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('6','<?php echo $sec6;?>','p_fina2')">
+															<i class="fa fa-close"></i>
+														</button>
 													<strong>Anexo producción</strong>
 													Descargar y realizar el llenado del anexo CER.RG.01, posteriormente cargar el archivo
 												</h4>
@@ -2221,7 +2445,11 @@ foreach($consulta_productos as $fila)
 										
 									</div>
 											<div class="col-md-12">
+												<br><br>
 												<h4 style="font-size: 16px;">
+													<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('6','<?php echo $sec6;?>','p_fina3')">
+															<i class="fa fa-close"></i>
+														</button>
 													Indicar el idioma en que se realizará la auditoría y el idioma que se utilizará en el informe de auditoría
 												</h4>
 
@@ -2244,7 +2472,9 @@ foreach($consulta_productos as $fila)
 
 											<div class="col-md-12" style="margin-top:1em;">
 												<p style="font-weight:bold;">
-													USO DE DATOS
+													<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('6','<?php echo $sec6;?>','p_fina4')">
+															<i class="fa fa-close"></i>
+														</button>USO DE DATOS
 												</p>
 											</div>
 											<div class="col-md-6">
@@ -2267,6 +2497,9 @@ foreach($consulta_productos as $fila)
 											</div>
 
 										</div>
+									<?php $fecha_anexos=time();?>
+												
+												<input id="fecha_anexos" name="fecha_anexos" type="hidden" value="<? echo $fecha_anexos;?>"/>
 									</form>
 								</div>
 							</div>
@@ -3588,7 +3821,7 @@ if( al== 1){
   ajax.addEventListener("load", completeHandler22, false);
   ajax.addEventListener("error", errorHandler22, false);
   ajax.addEventListener("abort", abortHandler22, false);
-  ajax.open("POST", base_url+"backend/cliente/solicitud/cExcel/guardar");
+    ajax.open("POST", base_url+"backend/administrador/solicitud/cExcel/guardar/"+idsolicitud);
   
   ajax.send(formdata);
   }
