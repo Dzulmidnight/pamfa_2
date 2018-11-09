@@ -25,11 +25,29 @@ class mObservacion extends CI_Model {
 		
 	
 	}
-	public function actualizar($params)
+	public function consulta_totales()
 	{
 		
+		$this->db->select('DISTINCT(fk_id_solicitud),COUNT(id_observacion) as tot');
+		
+		$this->db->from('observacion_solicitud');
+		$this->db->group_by('fk_id_solicitud');
+		
+		
+		
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->result();
+        }
+		
+	}
+	public function actualizar($params)
+	{
+		$t=time();
 		$campos=array(
-		'estatus'=>1);
+		'estatus'=>1,
+		'fecha_rev'=>$t);
 		$this->db->where('id_observacion', $params['idobs']);
 		$this->db->update('observacion_solicitud',$campos);
 		

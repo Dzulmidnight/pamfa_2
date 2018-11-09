@@ -1,5 +1,6 @@
 <!-- Modal Observaciones -->
 
+	
 
 
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -91,10 +92,12 @@
 						<!-- End Chat. Message Area. Messages. -->
 
 		
-								
+							
 						<footer class="g-bg-gray-light-v8 g-px-15 g-px-30--lg g-py-10 g-py-25--lg">
 							
-							
+							<?php if ($this->uri->segment(4)=="solicitudes") {
+	# code...
+?>	
 							<p>Sección: <span id="sp"></span></p>
 							<p> <span id="norma"></span></p>
 
@@ -129,7 +132,9 @@
 								<input type="hidden" class="form-control" id="idnorma" name="idnorma" value="">
 								<input type="text" readonly=""  class="form-control" id="id_pregunta_observacion" name="id_pregunta_observacion" value="">
 							</form>
+							<? }?>
 						</footer>
+					
 					</div>
 					<!-- End Area de observaciones. -->
 				</div>
@@ -141,5 +146,129 @@
     </div>
   </div>
 </div>
+
+<?php if ($this->uri->segment(4)=="solicitudespendientes") {
+	# code...
+?>
+		<!-- JS Global Compulsory -->
+		<script src="<?php echo base_url(); ?>admin/assets/vendor/jquery/jquery.min.js"></script>
+		
+		<script src="<?php echo base_url(); ?>assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+		
+
+		<!-- JS Unify -->
+		<script src="<?php echo base_url(); ?>assets/js/hs.core.js"></script>
+		
+		<script src="<?php echo base_url(); ?>assets/js/components/hs.scrollbar.js"></script>
+		
+  		
+		<!-- JS Unify -->
+		
+		
+		<script src="<?php echo base_url(); ?>assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+		<?php }?>
 <!-- End Modal Observaciones -->
+<script type="text/javascript">
+	var base_url="<? echo base_url();?>";
+	var idsolicitud="<? echo $ids;?>";
+	//var norma="<? $norma;?>";
+
+
+</script>
+<script type="text/javascript">
+function guardar_ob(){
+
+
+
+	var dataString = $('#obser').serialize();
+	//var activo = document.activeElement.producto;
+
+
+   // if(dataString.length>9){
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/cObservacion/guardar/"+idsolicitud,
+
+                     method:"POST",
+                    data:dataString,
+		            	success: function(data) {
+
+		            		
+		            		document.getElementById("descripcion_observacion").value = "";
+		            			
+		            	$("#obs_total").load(base_url+'backend/administrador/solicitud/cObservacion/tabla/'+idsolicitud+'');	                      
+		            	 }
+		});
+
+
+
+//}
+
+
+
+
+}
+</script>
+
+<script type="text/javascript">
+function quitar_ob(x){
+
+var idobs=x;
+
+
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/cObservacion/eliminar",
+
+                     method:"POST",
+                    data:{idobs:idobs},
+		            	success: function(data) {
+
+		            		$("#obs_total").load(base_url+'backend/administrador/solicitud/cObservacion/tabla/'+idsolicitud+'');
+
+
+		            	}
+		});
+
+
+
+}
+</script>
+
+<script type="text/javascript">
+function actualiza_ob(x){
+
+var idobs=x;
+
+
+
+ $.ajax({
+                     url:base_url+"backend/administrador/solicitud/cObservacion/actualizar",
+
+                     method:"POST",
+                    data:{idobs:idobs},
+		            	success: function(data) {
+
+		            		$("#obs_total").load(base_url+'backend/administrador/solicitud/cObservacion/tabla/'+idsolicitud+'');
+
+
+		            	}
+		});
+
+
+
+}
+</script>
+<script type="text/javascript">
+$.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+					dropdownHideOnScroll: false,
+					dropdownType: 'css-animation',
+					dropdownAnimationIn: 'fadeIn',
+					dropdownAnimationOut: 'fadeOut'
+				});
+
+				// initialization of custom scrollbar
+				$.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+				</script>
 

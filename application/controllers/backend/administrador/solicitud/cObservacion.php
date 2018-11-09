@@ -27,6 +27,7 @@ class cObservacion extends CI_Controller {
 		
 			
 	}
+	
 	public function eliminar()
 	{
 		$data=$_POST;

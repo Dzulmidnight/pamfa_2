@@ -242,16 +242,55 @@
 			}
 		</style>
 
-		<script>
-			function addObservacion(seccion, id){
+		
+									<script>  
+								
+			function addObservacion(seccion,d,id){
+				
 				console.log('SECCIÓN: '+seccion+' ID: '+id);
-				$('#modal1').modal('show');
+				
 				document.getElementById('seccion_observacion').value = seccion;
 				document.getElementById('id_pregunta_observacion').value = id;
-				document.getElementById('spanSeccion').innerHTML = seccion;
-				//document.getElementById('descripcion_observacion').innerHTML = 'Prueba de la descripción';
+				document.getElementById('norma').value = "";
+				//document.getElementById('spanSeccion').innerHTML = seccion;
+				document.getElementById("sp").innerHTML = d;
+				document.getElementById("norma").innerHTML = "";
+				$('#modal1').modal('show');
+				
+								
+								
 			}
-		</script>
+			
+</script>
+<script>  
+								
+			function addObservacion2(seccion,d,idnorma,norma,id){
+				
+				console.log('SECCIÓN: '+seccion+' ID: '+id);
+				
+				document.getElementById('seccion_observacion').value = seccion;
+				document.getElementById('id_pregunta_observacion').value = id;
+				//document.getElementById('spanSeccion').innerHTML = seccion;
+				
+				document.getElementById('idnorma').value = idnorma;
+				//document.getElementById('spanSeccion').innerHTML = seccion;
+				document.getElementById("sp").innerHTML = d;
+				document.getElementById("norma").innerHTML = "Norma: "+norma;
+				$('#modal1').modal('show');
+				
+								
+								
+			}
+			
+</script>
+
+
+
+
+
+
+
+
 
 	</body>
 

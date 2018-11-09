@@ -1,3 +1,4 @@
+
 <div class="g-pa-20">
 	<div class="row">
 		<div class="col-lg-12">
@@ -73,7 +74,16 @@
 									</tr>
 								</thead>
 								<tbody>
-									<?php foreach($consulta_solicitudes as $fila){?>
+									<?php foreach($consulta_solicitudes as $fila){
+										$total=0;
+											foreach($consulta_totales as $fila_ob){
+
+												if($fila_ob->fk_id_solicitud==$fila->id_solicitud){
+													$total=$fila_ob->tot;
+												}
+											}
+
+										?>
 									<tr>
 										<!-- id de la solicitud -->
 										<td>
@@ -127,8 +137,10 @@
 
 										<!-- observaciones realizadas -->
 										<td>
-											<a class="btn btn-sm u-btn-outline-blue g-mr-10 g-mb-15 nav-link" href="#!">
-												<span class="float-right u-label u-label-num u-label--sm u-label-default g-color-white g-rounded-15 g-ml-5">4</span>
+
+											
+											<a class="btn btn-sm u-btn-outline-blue g-mr-10 g-mb-15 nav-link"  onclick="llamar_modal(<?php echo $fila->id_solicitud;?>)">
+												<span class="float-right u-label u-label-num u-label--sm u-label-default g-color-white g-rounded-15 g-ml-5"><?php echo $total;?></span>
 											    Observaciones
 											</a>
 										</td>
@@ -245,3 +257,23 @@
 		<!-- termina col-md-12 -->
 	</div>
 </div>
+<div id="x" >
+  </div>
+<script type="text/javascript">
+	function llamar_modal(id)
+	{
+		$.ajax({
+			type:"post",
+			url: "<?php echo base_url('backend/administrador/solicitudes/solicitudesPendientes/obser/'); ?>",
+			data:{id:id},
+			success:function(data){
+				//alert(data);
+				$('#x').html(data);
+				$('#modal1').modal();
+			}
+
+		});
+	}
+
+
+</script>

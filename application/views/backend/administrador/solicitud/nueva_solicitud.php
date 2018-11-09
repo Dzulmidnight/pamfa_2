@@ -730,7 +730,7 @@ input.invalid {
 											<div class="col-md-6">
 												<div class="row g-mb-20">
 													<div class="col-sm-12 align-self-center g-mb-5 g-mb-0--md">
-														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>',telFactura')">
+														<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('2','<?php echo $sec2;?>','telFactura')">
 															<i class="fa fa-close"></i>
 														</button>
 														<label class="pregunta mb-0" for="#telFactura">Teléfono del contacto para facturación</label>
@@ -1126,7 +1126,7 @@ input.invalid {
 											<div class="col-md-6">
 												<!-- Input -->
 												<div class="form-group g-mb-30">
-													<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('3','<?php echo $sec3;?>','cert_ant6)">
+													<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion('3','<?php echo $sec3;?>','cert_ant6')">
 															<i class="fa fa-close"></i>
 														</button>
 													<label class="g-mb-10" for="preg8">Nombre de la persona que realizó la autoevaluación interna en la entidad legal</label>
@@ -1401,7 +1401,7 @@ input.invalid {
 														</div>
 														<div class="col-sm-12">
 															<div class="form-group g-mb-30">
-																<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','<?php echo $n1;?>','1','num_unidades_manipulacion')">
+																<button type="button" class="btn btn-xs u-btn-orange" name="button" onclick="addObservacion2('4','<?php echo $sec4;?>','1','<?php echo $n1;?>','num_unidades_manipulacion')">
 															<i class="fa fa-close"></i>
 														</button>
 																<label class="g-mb-10" for="num_unidades_manipulacion">
@@ -3897,88 +3897,4 @@ function abortHandler23(event){
 }
 
 ';?>
-</script>
-<script type="text/javascript">
-function guardar_ob(){
-
-
-
-	var dataString = $('#obser').serialize();
-	//var activo = document.activeElement.producto;
-
-
-   // if(dataString.length>9){
-
- $.ajax({
-                     url:base_url+"backend/administrador/solicitud/cObservacion/guardar/"+idsolicitud,
-
-                     method:"POST",
-                    data:dataString,
-		            	success: function(data) {
-
-		            		
-		            		document.getElementById("descripcion_observacion").value = "";
-		            			
-		            	$("#obs_total").load(base_url+'backend/administrador/solicitud/cObservacion/tabla/'+idsolicitud+'');	                      
-		            	 }
-		});
-
-
-
-//}
-
-
-
-
-}
-</script>
-
-<script type="text/javascript">
-function quitar_ob(x){
-
-var idobs=x;
-
-
-
- $.ajax({
-                     url:base_url+"backend/administrador/solicitud/cObservacion/eliminar",
-
-                     method:"POST",
-                    data:{idobs:idobs},
-		            	success: function(data) {
-
-		            		$("#obs_total").load(base_url+'backend/administrador/solicitud/cObservacion/tabla/'+idsolicitud+'');
-
-
-		            	}
-		});
-
-
-
-}
-</script>
-
-<script type="text/javascript">
-function actualiza_ob(x){
-
-var idobs=x;
-
-
-
- $.ajax({
-                     url:base_url+"backend/administrador/solicitud/cObservacion/actualizar",
-
-                     method:"POST",
-                    data:{idobs:idobs},
-		            	success: function(data) {
-
-		            		$("#obs_total").load(base_url+'backend/administrador/solicitud/cObservacion/tabla/'+idsolicitud+'');
-
-
-		            	}
-		});
-
-
-
-}
 </script>
