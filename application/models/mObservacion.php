@@ -29,8 +29,10 @@ class mObservacion extends CI_Model {
 	{
 		
 		$this->db->select('DISTINCT(fk_id_solicitud),COUNT(id_observacion) as tot');
+
 		
 		$this->db->from('observacion_solicitud');
+		$this->db->where('estatus', 0);
 		$this->db->group_by('fk_id_solicitud');
 		
 		

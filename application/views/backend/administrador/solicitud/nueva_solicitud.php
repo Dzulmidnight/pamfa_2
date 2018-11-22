@@ -2488,7 +2488,7 @@ foreach($consulta_productos as $fila)
 											</div>
 											<div class="col-md-6">
 												<label class="form-check-inline u-check g-pl-25 ml-0 g-mr-25">
-													<input <?php if (isset($uso_datos) && $uso_datos=='no'){?> checked="true"<? }?> class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" value="no" name="uso_datos" name="uso_dato2" type="radio">
+													<input <?php if (isset($uso_datos) && $uso_datos=='no'){?> checked="true"<? }?> class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" value="no" name="uso_datos" id="uso_dato2" type="radio">
 													<div class="u-check-icon-radio-v4 g-absolute-centered--y g-left-0 g-width-18 g-height-18">
 														<i class="g-absolute-centered d-block g-width-10 g-height-10 g-bg-primary--checked"></i>
 													</div>

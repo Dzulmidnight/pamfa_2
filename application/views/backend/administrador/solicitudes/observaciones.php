@@ -3,7 +3,7 @@
 	
 
 
-<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" data-backdrop="static" data-keyboard="false"  id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -249,8 +249,12 @@ var idobs=x;
                      method:"POST",
                     data:{idobs:idobs},
 		            	success: function(data) {
+		            		
 
 		            		$("#obs_total").load(base_url+'backend/administrador/solicitud/cObservacion/tabla/'+idsolicitud+'');
+		            		$("#ob").html(data);
+
+		            		$(".modal-backdrop").remove();
 
 
 		            	}
