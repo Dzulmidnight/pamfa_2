@@ -1571,10 +1571,10 @@ var Chartist = {
 
       var prevX, prevY, prevData;
 
-      for (var i = 0; i < pathCoordinates.length; i += 2) {
+      for (var i = 0; i < pathCoordinates.length; i += 3) {
         var currX = pathCoordinates[i];
         var currY = pathCoordinates[i + 1];
-        var currData = valueData[i / 2];
+        var currData = valueData[i / 3];
 
         // If the current point is also not a hole we can draw the step lines
         if(currData.value !== undefined) {

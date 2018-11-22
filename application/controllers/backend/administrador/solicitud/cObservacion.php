@@ -7,6 +7,9 @@ class cObservacion extends CI_Controller {
 		$this->load->model('mObservacion');
 		$this->load->model('mSolicitud');
 		$this->load->model('mSeccion');
+
+		
+	
 		
 	}
 	public function index()
@@ -39,6 +42,15 @@ class cObservacion extends CI_Controller {
 	{
 		$data=$_POST;
 		$this->mObservacion->actualizar($data);
+
+		$data2['consulta_solicitudes']= $this->mSolicitud->consulta_solicitudes_full();
+		$data2['consulta_todo']= $this->mSolicitud->consulta_solicitudes();
+		$data2['consulta_totales']= $this->mObservacion->consulta_totales();
+			
+
+				$data['vistaOb'] = $this->load->view('backend/administrador/solicitudes/solicitudes_pendientes',$data2,true);
+			echo $data['vistaOb'];
+			
 			
 	}
 	

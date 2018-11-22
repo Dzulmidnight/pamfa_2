@@ -76,12 +76,16 @@
 								<tbody>
 									<?php foreach($consulta_solicitudes as $fila){
 										$total=0;
+										if (isset($consulta_totales)) {
 											foreach($consulta_totales as $fila_ob){
 
 												if($fila_ob->fk_id_solicitud==$fila->id_solicitud){
 													$total=$fila_ob->tot;
 												}
 											}
+											# code...
+										}
+											
 
 										?>
 									<tr>
@@ -148,9 +152,12 @@
 										<!-- botón para cargar la cotización -->
 										<td>
 											<!-- Large modal -->
-											<a href="<?php echo base_url('backend/administrador/cotizaciones/main'); ?>" class="btn btn-primary">
+											<?php if ($total==0) {?>
+												<a  href="<?php echo base_url('backend/administrador/cotizaciones/main/inicio/'.$fila->id_solicitud.''); ?>" class="btn btn-primary">
 												En proceso
-											</a>
+											</a><?php
+											}?>
+											
 											<!--<button type="button" class="btn btn-primary" data-modal-target="#modal1" data-modal-effect="fadein">
 												Cargar cotización
 											</button>-->
@@ -203,7 +210,8 @@
 										</td>
 										<!-- Contrato y pago del servicio -->
 										<td>
-											<a href="<?php echo base_url('backend/administrador/contratos/main_contratos/detalleContrato/18'); ?>" class="btn u-btn-primary">
+											
+											<a href="<?php echo base_url('backend/administrador/contratos/main_contratos/detalleContrato//'.$fila->id_solicitud.''); ?>" class="btn u-btn-primary">
 												En espera
 											</a>
 

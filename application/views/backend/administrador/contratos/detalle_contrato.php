@@ -57,6 +57,7 @@
 								<!-- End Panel Header -->
 								<!-- End Panel Header -->
 								<!-- Panel Body -->
+								<?php foreach ($consulta_sol_id as $fila) {?>
 								<div class="card-block u-info-v1-1 g-bg-white-gradient-v1--after g-pa-20 js-custom-scroll g-height-50vh--lg">
 									<div>
 				            			<!-- Info cotización -->
@@ -83,6 +84,8 @@
 												</td>
 											</tr>
 				            			</table>
+				            			
+				            				
 
 										<div class="row text-justify">
 							                <!-- Fecha del contrato -->
@@ -95,7 +98,7 @@
 							                    	<u>Datos del cliente</u>
 							                    </p>
 							                    <p class="text-justify">
-													Contrato de prestación de servicios de certificación de producto que en los términos establecidos por la ley, celebran por una parte VERIFICACIÓN Y CERTIFICACIÓN PAMFA A.C.  representada por la Ing. Marisela Farías López que en lo sucesivo se denominará para efectos de este contrato “El organismo de certificación” y por otra parte el cliente <span class="g-color-blue">Nombre del cliente</span> representada en este acto por <span class="g-color-blue">Nombre del representante</span> a quien en lo sucesivo se denominará “el cliente”. 
+													Contrato de prestación de servicios de certificación de producto que en los términos establecidos por la ley, celebran por una parte VERIFICACIÓN Y CERTIFICACIÓN PAMFA A.C.  representada por la Ing. Marisela Farías López que en lo sucesivo se denominará para efectos de este contrato “El organismo de certificación” y por otra parte el cliente <span class="g-color-blue"><?php echo $fila->nombreLegal; ?></span> representada en este acto por <span class="g-color-blue"><?php echo $fila->nombreRepresentante; ?></span> a quien en lo sucesivo se denominará “el cliente”. 
 							                    </p>
 							                </div>
 											
@@ -115,7 +118,7 @@
 							                		<li>
 							                			<ul>
 							                				<li>
-							                					a)	Que es su deseo celebrar este Contrato con EL CONTRATANTE DEL SERVICIO en virtud de la capacidad técnica, profesional y económica, así como los conocimientos, la experiencia, el personal y los elementos materiales necesarios, por parte de esta última, para prestar a favor de <span class="g-color-blue">Nombre del cliente</span> los servicios objeto de este instrumento.
+							                					a)	Que es su deseo celebrar este Contrato con EL CONTRATANTE DEL SERVICIO en virtud de la capacidad técnica, profesional y económica, así como los conocimientos, la experiencia, el personal y los elementos materiales necesarios, por parte de esta última, para prestar a favor de <span class="g-color-blue"><?php echo $fila->nombreLegal; ?></span> los servicios objeto de este instrumento.
 							                				</li>
 							                				<li>
 							                					b)	Declaran ambas partes, a través de sus representantes, que se reconocen mutuamente lo manifestado en las declaraciones precedentes y que es su voluntad celebrar el presente contrato remitiéndose al efecto a lo dispuesto en las siguientes:
@@ -127,26 +130,26 @@
 
 							                			<table class="table table-bordered">
 							                				<tr>
-							                					<td class="g-bg-green g-color-white">
+							                					<td <?php if ($fila->global_ifa!=null){?>class="g-bg-green g-color-white" <?php }?>>
 							                						GlobalG.A.P. IFA.
 							                					</td>
-							                					<td>
+							                					<td <?php if ($fila->global_coc!=null){?>class="g-bg-green g-color-white" <?php }?>>
 							                						GlobalG.A.P. Cadena de Custodia.
 							                					</td>
 							                				</tr>
 							                				<tr>
-							                					<td>
+							                					<td <?php if ($fila->mcs!=null){?>class="g-bg-green g-color-white" <?php }?>>
 							                						Pliego de condiciones "México Calidad Suprema".
 							                					</td>
-							                					<td class="g-bg-green g-color-white">
+							                					<td <?php if ($fila->srrc!=null){?>class="g-bg-green g-color-white" <?php }?>>
 							                						SRRC / SENASICA.
 							                					</td>
 							                				</tr>
 							                				<tr>
-							                					<td>
+							                					<td <?php if ($fila->hecho_mexico!=null){?>class="g-bg-green g-color-white" <?php }?>>
 							                						Hecho en México.
 							                					</td>
-							                					<td>
+							                					<td <?php if ($fila->den_origen!=null){?>class="g-bg-green g-color-white" <?php }?>>
 							                						Denominación de origen.
 							                					</td>
 							                				</tr>
@@ -407,6 +410,7 @@
 										
 				        			</div>
 								</div>
+							<?php }?>
 								<!-- End Panel Body -->
 							</div>
 						</div>

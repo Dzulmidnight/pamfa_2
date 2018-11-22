@@ -17,7 +17,9 @@
 			$this->load->view('backend/administrador/templates/head');
 			$this->load->view('backend/administrador/templates/header');
 			$this->load->view('backend/administrador/templates/sideNav',$data);
-				$this->load->view('backend/administrador/solicitudes/solicitudes_pendientes',$data);
+			$data['vistaOb'] = $this->load->view('backend/administrador/solicitudes/solicitudes_pendientes',$data,true);
+			$this->load->view('backend/administrador/solicitudes/vob',$data);
+				
 			$this->load->view('backend/administrador/templates/pre_footer');
 			$this->load->view('backend/administrador/templates/footer');
 		}
