@@ -8,6 +8,14 @@ class cCorreo extends CI_Controller {
     $this->load->model('mRechazo_servicio');
     $this->load->model('mCotizacion');
        $this->load->model('mPago');
+       $this->load->model('mGlobal_ifa');
+    $this->load->model('mProducto_srrc');
+    $this->load->model('mGlobal_coc');
+    $this->load->model('mMcs');
+    $this->load->model('mDen_origen');
+    $this->load->model('mMexico');
+    $this->load->model('mSrrc');
+    $this->load->model('mContrato');
     }
     public function enviar($id) {
       //////////pdf///////
@@ -27,7 +35,12 @@ $data['consulta_sol_id']= $this->mSolicitud->consulta_solicitudes_full_id($id);
 
  $filename = $data['consulta_rechazo']->fk_id_admin."_".$data['consulta_rechazo']->fecha;
  $f=date('d/m/Y',$data['consulta_rechazo']->fecha);
-}else{
+ $pdfFilePath = "cotizacion/$filename.pdf";
+}
+
+
+       if(isset($_POST['op1'])&&$_POST['op1']==2)
+       {
 
       
 $data['consulta_sol_id']= $this->mSolicitud->consulta_solicitudes_full_id($id);
@@ -40,9 +53,73 @@ $data['consulta_sol_id']= $this->mSolicitud->consulta_solicitudes_full_id($id);
 
   $filename = $data['consulta_pago']->fk_id_admin."_".$data['consulta_pago']->fecha;
  $f=date('d/m/Y',$data['consulta_pago']->fecha);
-}
+
   
 $pdfFilePath = "docs_rechazo/$filename.pdf";
+}
+
+else
+      {
+
+
+         $data['consulta_contrato']= $this->mContrato->consulta_contrato($id);
+
+          $data['id_contrato'] = $id;
+         $data['consulta_sol_id']= $this->mSolicitud->consulta_solicitudes_full_id($id);
+
+
+            foreach ($data['consulta_sol_id'] as $f) 
+            {
+      
+                if($f->global_ifa!=null)
+                  {
+                  $data['consulta_ifa']= $this->mGlobal_ifa->consulta_ifa($id);
+
+                  }
+                  if($f->global_coc!=null)
+                  {
+                  $data['consulta_coc']= $this->mGlobal_coc->consulta_coc($id);
+
+                  }
+                  if($f->mcs!=null)
+                  {
+                  $data['consulta_mcs']= $this->mMcs->consulta_mexcalsup($id);
+
+                  }
+                  if($f->srrc!=null)
+                  {
+                  $data['consulta_srrc']= $this->mProducto_srrc->consulta_srrc($id);
+                  $data['consulta_srrc2']= $this->mSrrc->consulta_srrc($id);
+
+                  }
+                  if($f->hecho_mexico!=null)
+                  {
+                  $data['consulta_mex']= $this->mMexico->consulta_mex($id);
+
+                  }
+                  if($f->den_origen!=null)
+                  {
+                  $data['consulta_origen']= $this->mDen_origen->consulta_origen($id);
+
+                   }    
+
+           }
+          $this->load->view('backend/administrador/templates/head');
+          $html = $this->load->view('backend/administrador/contratos/contrato_pdf', $data, true); // render the view into HTML
+
+          $this->load->view('backend/administrador/templates/footer');   
+
+          $filename = $data['consulta_contrato']->fk_id_admin."_".$data['consulta_contrato']->fecha;
+          $f=date('d/m/Y',$data['consulta_contrato']->fecha);
+     
+  
+          $pdfFilePath = "contrato/$filename.pdf";
+      }
+
+
+
+
+
 
 $data['page_title'] = 'Hello world'; // pass data to the view
 
