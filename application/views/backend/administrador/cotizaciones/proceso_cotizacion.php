@@ -34,8 +34,8 @@
 									<span class="d-block u-icon-v2 u-icon-size--sm g-rounded-50x g-brd-gray-light-v2 g-color-gray-dark-v5 g-brd-primary--active g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
 										<?php if (!isset($consulta_condicion)) {?> 
 										 <i class="g-font-style-normal g-font-weight-700 g-hide-check">2</i>
-										<i class="fa fa-check g-show-check"></i> 
-											
+										<i class="fa fa-check g-show-check"></i>
+ 											
 										<?php } else {?><i class="fa fa-check "></i> <?}?>
 									</span>
 									<h4 class="g-font-size-16 text-uppercase mb-0">Condiciones internas</h4>
@@ -714,7 +714,7 @@
 												</div>
 
 												<div class="dropdown g-mb-10 g-mb-0--md">
-													<button type="button" <?php if (isset($consulta_pago)) {?>disabled="" <?php }else {?> disabled=""<?php }?> class="btn u-btn-primary g-mr-10" onclick="procesoFinalizado2()" name="envio_cotizacion" id="envio_cotizacion">
+													<button type="button" <?php if (isset($consulta_pago)) {?>disabled="" <?php }else {?> <?php }?> class="btn u-btn-primary g-mr-10" onclick="procesoFinalizado2()" name="envio_cotizacion" id="envio_cotizacion">
 														<i class="hs-admin-check-box"></i> Aprobar envi
 													</button>
 													<a href="#" class="btn u-btn-bluegray g-mr-10">
@@ -1653,7 +1653,7 @@
 		
 			
 			 var con=document.getElementById("pre_total"+i).value;
-			 alert(con);
+			 
 			if (con!=='') 
 			{
 				t1=t1+1;
@@ -1661,7 +1661,7 @@
 			
 			}	
 		}
-		alert(numF+"--+--"+t1);
+		
 		if (numF==t1) {
 			document.getElementById("envio_cotizacion").disabled=false;
 
@@ -1708,7 +1708,6 @@
 			}	
 		}
 
-		alert(numF+"----"+t1);
 		if (numF==t1) {
 			document.getElementById("envio_cotizacion").disabled=false;
 
@@ -1778,7 +1777,7 @@ $.ajax({
                       data:{op1:op1},
                      
 		            	success: function(data) {
-		            		alert("lfkgvnl");
+		            	
 		            		
 		                       }
 		});
@@ -1886,6 +1885,7 @@ swal({
 })
 .then((value) => {
   //swal(`You typed: ${value}`);
+   if (value) {
   var text=value;
   $.ajax({
  	type:'POST',
@@ -1896,6 +1896,7 @@ swal({
 		            		
 		                       }
 		});
+}
 });
 
 	}
@@ -2044,7 +2045,7 @@ var tabla = document.getElementById("tablaCotizacion");
 		
 			
 			 var con=document.getElementById("pre_total"+i).value;
-			 alert(con);
+			 a
 			if (con!=="") 
 			{
 				t1=t1+1;
@@ -2053,7 +2054,7 @@ var tabla = document.getElementById("tablaCotizacion");
 			}	
 		}
 		
-		alert(numFilas+"=="+t1);
+		
 		if (numFilas==t1) {
 			document.getElementById("envio_cotizacion").disabled=false;
 
@@ -2182,7 +2183,7 @@ function abortHandler(event){
 			
 		}
 		totall=parseInt(t1)+parseInt(t2);
-		alert(totall);
+		
 		if (totall==4) {
 			 document.getElementById("e2").disabled=false;
 

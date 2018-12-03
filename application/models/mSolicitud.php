@@ -216,10 +216,11 @@ $query = $this->db->get();
 	{
 		
 		
-        $this->db->select('solicitud.id_solicitud,solicitud.fk_id_cliente,solicitud.fecha,solicitud.global_ifa,solicitud.global_coc,solicitud.hecho_mexico,solicitud.srrc,solicitud.den_origen,solicitud.mcs,solicitud.fecha_envio,cliente.nombreLegal,cliente.nombreRepresentante,cliente.estado,cliente.email,cliente.telefono,cliente.cp,cliente.direccion,cliente.colonia,cliente.municipio,cliente.estado,pais.nombre');    
+        $this->db->select('solicitud.id_solicitud,solicitud.fk_id_cliente,solicitud.fecha,solicitud.global_ifa,solicitud.global_coc,solicitud.hecho_mexico,solicitud.srrc,solicitud.den_origen,solicitud.mcs,solicitud.fecha_envio,cliente.nombreLegal,cliente.nombreRepresentante,cliente.estado,datos_fiscales.rfc,cliente.email,cliente.telefono,cliente.cp,cliente.direccion,cliente.colonia,cliente.municipio,cliente.estado,pais.nombre');    
 $this->db->from('solicitud');
 $this->db->join('cliente', 'solicitud.fk_id_cliente = cliente.id_cliente');
 $this->db->join('pais', 'cliente.pais = pais.id_pais');
+$this->db->join('datos_fiscales', 'cliente.id_cliente = datos_fiscales.fk_id_cliente');
 $this->db->where('solicitud.id_solicitud', $id);
 $query = $this->db->get();
  if($query->num_rows() > 0 )
