@@ -24,6 +24,20 @@ class mPago extends CI_Model {
 		
 	
 	}
+	public function consulta_todo()
+	{
+		
+		$this->db->select('*');
+		$this->db->from('cotizacion_pago');
+		//$this->db->where('id_cotizacion', $id);
+
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->result();
+        }
+		
+	}
 	public function consulta_totales($id)
 	{
 		

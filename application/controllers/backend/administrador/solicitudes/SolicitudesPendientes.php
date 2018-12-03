@@ -6,6 +6,8 @@
 		$this->load->model('mSolicitud');
 		$this->load->model('mObservacion');
 		$this->load->model('mSeccion');
+		$this->load->model('mCotizacion');
+		$this->load->model('mPago');
 	}
 
 		function index(){
@@ -14,6 +16,8 @@
 		$data['consulta_solicitudes']= $this->mSolicitud->consulta_solicitudes_full();
 		$data['consulta_todo']= $this->mSolicitud->consulta_solicitudes();
 		$data['consulta_totales']= $this->mObservacion->consulta_totales();
+		$data['consulta_pago']= $this->mPago->consulta_todo();
+
 			$this->load->view('backend/administrador/templates/head');
 			$this->load->view('backend/administrador/templates/header');
 			$this->load->view('backend/administrador/templates/sideNav',$data);
@@ -33,4 +37,6 @@ public function obser()
 		echo $modal;
 		
 	}
+
+
 	}

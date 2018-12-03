@@ -86,6 +86,19 @@
 											# code...
 										}
 											
+									$contrato=0;
+										if (isset($consulta_pago)) {
+											foreach($consulta_pago as $fila_pag){
+
+												if($fila_pag->fk_id_solicitud==$fila->id_solicitud){
+													if($fila_pag->estatus=="aprobada")
+													{
+													$contrato=1;
+													}
+												}
+											}
+											# code...
+										}
 
 										?>
 									<tr>
@@ -210,10 +223,11 @@
 										</td>
 										<!-- Contrato y pago del servicio -->
 										<td>
-											
+											<?php if ($contrato==1) {?>
 											<a href="<?php echo base_url('backend/administrador/contratos/main_contratos/detalleContrato//'.$fila->id_solicitud.''); ?>" class="btn u-btn-primary">
-												En espera
+												En espera 
 											</a>
+										<?php }?>
 
 										</td>
 										<!-- acciones -->
