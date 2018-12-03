@@ -98,6 +98,7 @@ class mCotizacion extends CI_Model {
         }
 		
 	}
+	
 	public function actualizar($params)
 	{
 		
