@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://localhost/pamfa_2';
-$config['base_url'] = 'http://pamfa.net/version2/';
+//$config['base_url'] = 'http://pamfa.net/version2/';
 
 /*
 |--------------------------------------------------------------------------
