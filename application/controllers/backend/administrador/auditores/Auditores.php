@@ -1,6 +1,6 @@
 <?php
 	
-class Auditores extends CI_Controller{
+class Auditores extends MY_Controller{
 
 function __construct(){
 		parent:: __construct();

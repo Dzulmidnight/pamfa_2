@@ -52,6 +52,34 @@ class mSolicitud extends CI_Model {
 		
 		
 	}
+	public function actualiza_contrato($id)
+	{
+		
+		
+
+
+		$campos=array(
+		'estatus'=>3);
+		$this->db->where('id_solicitud',$id);
+		$this->db->update('solicitud',$campos);
+		
+		
+		
+	}
+	public function actualiza_cotizacion($id)
+	{
+		
+		
+
+
+		$campos=array(
+		'estatus'=>2);
+		$this->db->where('id_solicitud',$id);
+		$this->db->update('solicitud',$campos);
+		
+		
+		
+	}
 	public function actualiza_anexo($params,$id)
 	{
 		
@@ -157,6 +185,7 @@ $this->db->delete('producto_solicitud');
 		
 		$this->db->from('solicitud');
 		$this->db->where('estatus',2);
+		$this->db->or_where('estatus',1);
 		
 		
 		
@@ -184,6 +213,23 @@ $this->db->delete('producto_solicitud');
         }
 		
 	}
+	public function consulta_solicitudes3()
+	{
+		
+		$this->db->select('*');
+		
+		$this->db->from('solicitud');
+		$this->db->where('estatus',1);
+		
+		
+		
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->num_rows();
+        }
+		
+	}
 
 	public function consulta_solicitudes_full()
 	{
@@ -204,6 +250,7 @@ $this->db->from('solicitud');
 $this->db->join('cliente', 'solicitud.fk_id_cliente = cliente.id_cliente');
 $this->db->join('pais', 'cliente.pais = pais.id_pais');
 $this->db->where('solicitud.estatus', 2);
+$this->db->or_where('solicitud.estatus', 1);
 $query = $this->db->get();
  if($query->num_rows() > 0 )
         {
@@ -229,5 +276,53 @@ $query = $this->db->get();
         }
 		
 	}
+
+
+
+	public function consulta_solicitudes_full2()
+	{
+		
+		/*$this->db->select('*');
+		
+		$this->db->from('solicitud');
+		$this->db->where('estatus',2);
+		
+		
+		
+	    $query = $this->db->get();
+       
+*/
+
+        $this->db->select('solicitud.id_solicitud,solicitud.fk_id_cliente,solicitud.fecha,solicitud.global_ifa,solicitud.global_coc,solicitud.hecho_mexico,solicitud.srrc,solicitud.den_origen,solicitud.mcs,solicitud.fecha_envio,cliente.nombreLegal,cliente.estado,cliente.email,cliente.telefono,pais.nombre');    
+$this->db->from('solicitud');
+$this->db->join('cliente', 'solicitud.fk_id_cliente = cliente.id_cliente');
+$this->db->join('pais', 'cliente.pais = pais.id_pais');
+$this->db->where('solicitud.estatus', 1);
+$query = $this->db->get();
+ if($query->num_rows() > 0 )
+        {
+           return $query->result();
+        }
+		
+	}
+	public function consulta_solicitudes_full4()
+	{
+		
+		
+
+        $this->db->select('solicitud.id_solicitud,solicitud.fk_id_cliente,solicitud.fecha,solicitud.global_ifa,solicitud.global_coc,solicitud.hecho_mexico,solicitud.srrc,solicitud.den_origen,solicitud.mcs,solicitud.fecha_envio,cliente.nombreLegal,cliente.estado,cliente.email,cliente.telefono,pais.nombre');    
+$this->db->from('solicitud');
+$this->db->join('cliente', 'solicitud.fk_id_cliente = cliente.id_cliente');
+$this->db->join('pais', 'cliente.pais = pais.id_pais');
+$this->db->where('solicitud.estatus', 3);
+
+$query = $this->db->get();
+ if($query->num_rows() > 0 )
+        {
+           return $query->result();
+        }
+		
+	}
+	
 	
 }

@@ -1,5 +1,5 @@
 <?php
-class cDen_origen extends CI_Controller {
+class cDen_origen extends MY_Controller {
 
 	
 	function __construct(){

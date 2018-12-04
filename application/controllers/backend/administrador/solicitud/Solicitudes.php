@@ -1,6 +1,6 @@
 <?php
 
-class Solicitudes extends CI_Controller{
+class Solicitudes extends MY_Controller{
 
 
 	function __construct(){
@@ -21,7 +21,9 @@ class Solicitudes extends CI_Controller{
 		$this->load->model('mNorma');
 	}
 
-	function nueva_solicitud($id,$cliente){
+	 function nueva_solicitud($id,$cliente){
+
+		if($this->session->userdata('s_tipo')=='administrador'){
 
 
 $idsol="";
@@ -120,11 +122,17 @@ $idsol="";
 			
 		$this->load->view('backend/administrador/templates/pre_footer');
 		$this->load->view('backend/administrador/templates/footer',$data);
+}
+		else{
+			//echo "datos incorrectos";
+			$this->load->view('templates/header');
+				$this->load->view('logins/inicio');
+			$this->load->view('templates/footer');}
+		}
 
+	
 
-	}
-
-	public function ingresa_norma($id,$x,$y)
+	 private function ingresa_norma($id,$x,$y)
 	{
 
 
@@ -160,7 +168,7 @@ $idsol="";
 
 
 	}
-	public function ver($x)
+	 private function ver($x)
 	{
 		$data2['sol']= $this->mSolicitud->consulta();
 
@@ -171,7 +179,7 @@ $idsol="";
 		$data['consulta_ifa2'] = $this->mGlobal_ifa->consulta_ifa($idsol);
 
 	}
-	public function actualizar_final($id)
+	private  function actualizar_final($id)
 	{
 		$data=$_POST;
 

@@ -1,5 +1,5 @@
 <?php
-class cCondicion extends CI_Controller {
+class cCondicion extends MY_Controller {
 
 	
 	function __construct(){

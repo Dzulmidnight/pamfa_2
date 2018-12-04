@@ -1,5 +1,5 @@
 <?php
-class cGlobal_ifa extends CI_Controller {
+class cGlobal_ifa extends MY_Controller {
 
 	
 	function __construct(){

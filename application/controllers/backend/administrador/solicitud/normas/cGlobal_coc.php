@@ -1,5 +1,5 @@
 <?php
-class cGlobal_coc extends CI_Controller {
+class cGlobal_coc extends MY_Controller {
 
 	
 	function __construct(){

@@ -1,6 +1,6 @@
 <?php
 	
-class Clientes extends CI_Controller{
+class Clientes extends MY_Controller{
 
 function __construct(){
 		parent:: __construct();
@@ -34,27 +34,30 @@ function __construct(){
 	}
 
 	function detalleCliente(){
+		$data['consulta_todo']= $this->mSolicitud->consulta_solicitudes();
 		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
-		$this->load->view('backend/administrador/templates/sideNav');
+	$this->load->view('backend/administrador/templates/sideNav',$data);
 			$this->load->view('backend/administrador/clientes/detalle_cliente');
 		$this->load->view('backend/administrador/templates/pre_footer');
 		$this->load->view('backend/administrador/templates/footer');
 	}
 
 	function representantes(){
+		$data['consulta_todo']= $this->mSolicitud->consulta_solicitudes();
 		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
-		$this->load->view('backend/administrador/templates/sideNav');
+		$this->load->view('backend/administrador/templates/sideNav',$data);
 			$this->load->view('backend/administrador/clientes/representantes/representantes');
 		$this->load->view('backend/administrador/templates/pre_footer');
 		$this->load->view('backend/administrador/templates/footer');
 	}
 
 	function perfilRepresentante(){
+		$data['consulta_todo']= $this->mSolicitud->consulta_solicitudes();
 		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
-		$this->load->view('backend/administrador/templates/sideNav');
+		$this->load->view('backend/administrador/templates/sideNav',$data);
 			$this->load->view('backend/administrador/clientes/representantes/perfil_representante');
 		$this->load->view('backend/administrador/templates/pre_footer');
 		$this->load->view('backend/administrador/templates/footer');

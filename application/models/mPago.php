@@ -126,6 +126,19 @@ class mPago extends CI_Model {
 		
 	
 	}
+	public function url_cotizacion($url,$id)
+	{
+		
+			
+		$campos=array(
+			
+		'url_cotizacion'=>$url);
+		$this->db->where('fk_id_solicitud', $id);
+		
+		$this->db->update('cotizacion_pago',$campos);
+		
+	
+	}
 	
 	
 	public function subir_archivo($params)
@@ -133,7 +146,7 @@ class mPago extends CI_Model {
 		
 		$campos=array(
 			
-		'url'=>$params['url'],
+		'url_pago'=>$params['url'],
 		'estatus'=>"espera");
 		
 		

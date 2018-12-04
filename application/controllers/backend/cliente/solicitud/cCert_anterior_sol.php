@@ -1,5 +1,5 @@
 <?php
-class cCert_anterior_sol extends CI_Controller {
+class cCert_anterior_sol extends MY_Controller {
 
 	
 	function __construct(){

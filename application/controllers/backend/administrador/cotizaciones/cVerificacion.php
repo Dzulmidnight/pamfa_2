@@ -1,5 +1,5 @@
 <?php
-class cVerificacion extends CI_Controller {
+class cVerificacion extends MY_Controller {
 
 	
 	function __construct(){

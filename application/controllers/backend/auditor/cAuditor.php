@@ -1,5 +1,5 @@
 <?php
-class cAuditor extends CI_Controller {
+class cAuditor extends MY_Controller{
 
 	
 	function __construct(){

@@ -67,29 +67,56 @@
 								</tr>
 							</thead>
 							<tbody>
-								<?php
-									for ($i=1; $i < 5; $i++) {
+								
+									<?php foreach($consulta_solicitudes4 as $fila){
+										
+										
 									?>
 										<tr>
 											<td>
-												<a  class="btn btn-sm btn-info" href="#">
-													<?php echo "#".$i." Consultar"?>
-												</a>
+												<a  class="btn btn-sm btn-info" href="<?php echo base_url('backend/administrador/solicitud/solicitudes/nueva_solicitud/'.$fila->id_solicitud.'/'.$fila->fk_id_cliente.''); ?>">
+												<?php echo "# ". $fila->id_solicitud." Consultar"?>
+											</a>
 												<br>
 												<span class="text-muted">
-													<i class="icon-clock"></i> <?= date('d/m/Y', time()) ?>
+													<i class="icon-clock"><?php echo date('d/m/Y',$fila->fecha);?>
 												</span>
 											</td>
 
 											<td>
 												<a href="#">
-													<i class="icon-magnifier"></i> Nombre del cliente
+													<i class="icon-magnifier"></i> <?php echo  $fila->nombreLegal ?>
 												</a>
 											</td>
 											<td>
-												<span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">Esquema</span>
-												<span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">Esquema</span>
-												<span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">Esquema</span>
+												<?php if ($fila->global_ifa!=null) {
+													?><span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">IFA</span><?
+												}?>
+												<?php if ($fila->global_coc!=null) {
+													?>
+												<span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">CoC</span>
+												<?
+												}?>
+												<?php if ($fila->srrc!=null) {
+													?>
+												<span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">SRRC</span>
+												<?
+												}?>
+												<?php if ($fila->mcs!=null) {
+													?>
+												<span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">Méx. Calidad Sup.</span>
+												<?
+												}?>
+												<?php if ($fila->hecho_mexico!=null) {
+													?>
+												<span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">Hecho en Mex.</span>
+												<?
+												}?>
+												<?php if ($fila->den_origen!=null) {
+													?>
+												<span class="u-label g-bg-primary g-rounded-20 g-px-15 g-mr-10 g-mb-15">Denominación de Origen</span>
+												<?
+												}?>
 											</td>
 
 

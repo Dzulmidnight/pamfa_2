@@ -1,5 +1,5 @@
 <?php
-class cCotizacion extends CI_Controller {
+class cCotizacion extends MY_Controller {
 
 	
 	function __construct(){

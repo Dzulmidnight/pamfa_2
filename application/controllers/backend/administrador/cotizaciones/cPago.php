@@ -1,5 +1,5 @@
 <?php
-class cPago extends CI_Controller {
+class cPago extends MY_Controller {
 
 	
 	function __construct(){
@@ -34,8 +34,8 @@ class cPago extends CI_Controller {
 	{
 		
 		
-		$data['idsolicitud']=$_POST['idsolicitud'];
-		$data['estatus']=$_POST['estatus'];
+		$data['idsolicitud']=$this->input->post('idsolicitud');
+		$data['estatus']=$this->input->post('estatus');
 
 		if($_POST['text']!=NULL){
 			$data['razon']=$_POST['text'];
@@ -46,6 +46,8 @@ class cPago extends CI_Controller {
 
 		
 		$this->mPago->actualizar($data);
+		//$this->mSolicitud->actualiza_contrato($this->input->post('idsolicitud'));
+		$this->mSolicitud->actualiza_cotizacion($this->input->post('idsolicitud'));
 			
 	}
 	Public function tabla($indice)

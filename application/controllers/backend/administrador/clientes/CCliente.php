@@ -1,5 +1,5 @@
 <?php
-class cCliente extends CI_Controller {
+class cCliente extends MY_Controller {
 
 	
 	function __construct(){

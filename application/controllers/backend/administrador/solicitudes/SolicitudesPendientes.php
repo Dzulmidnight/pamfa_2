@@ -1,5 +1,5 @@
 <?php
-	class SolicitudesPendientes extends CI_Controller{
+	class SolicitudesPendientes extends MY_Controller{
 		function __construct(){
 		parent:: __construct();
 
@@ -12,7 +12,7 @@
 
 		function index(){
 
-
+is_logged_in();
 		$data['consulta_solicitudes']= $this->mSolicitud->consulta_solicitudes_full();
 		$data['consulta_todo']= $this->mSolicitud->consulta_solicitudes();
 		$data['consulta_totales']= $this->mObservacion->consulta_totales();

@@ -1,6 +1,6 @@
 <?php
 	
-class CatalogoProductos extends CI_Controller{
+class CatalogoProductos extends MY_Controller{
 
 function __construct(){
 		parent:: __construct();
