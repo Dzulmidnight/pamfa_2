@@ -103,11 +103,12 @@ $idsol="";
 			$data['uso_datos']=$data2['sol']->uso_datos;
 			$data['anexo_p']=$anexo_p;
 			$data['anexo_m']=$anexo_m;
-		//$this->load->view('backend/cliente/solicitud/global_ifa',$data,$norma);	
+		//$this->load->view('backend/cliente/solicitud/global_ifa',$data,$norma);
+		$this->load->view('backend/cliente/templates/head');	
 		$this->load->view('backend/cliente/templates/header');
-		$this->load->view('backend/cliente/templates/topnavigation');
-		$this->load->view('backend/cliente/templates/navbar.php');
-		$this->load->view('backend/cliente/solicitud/nueva_solicitud',$data);
+		$this->load->view('backend/cliente/templates/sideNav');
+			$this->load->view('backend/cliente/solicitud/nueva_solicitud',$data);
+		$this->load->view('backend/cliente/templates/pre_footer');
 		$this->load->view('backend/cliente/templates/footer');
 	}
 

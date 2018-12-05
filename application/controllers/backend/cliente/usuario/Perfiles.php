@@ -32,10 +32,11 @@ class Perfiles extends CI_Controller{
 				break;
 		}
 
+		$this->load->view('backend/cliente/templates/head');
 		$this->load->view('backend/cliente/templates/header');
-		$this->load->view('backend/cliente/templates/topnavigation');
-		$this->load->view('backend/cliente/templates/navbar.php');
-		$this->load->view($seccion, $data);
+		$this->load->view('backend/cliente/templates/sideNav');
+			$this->load->view($seccion, $data);
+		$this->load->view('backend/cliente/templates/pre_footer');
 		$this->load->view('backend/cliente/templates/footer');
 	}
 }

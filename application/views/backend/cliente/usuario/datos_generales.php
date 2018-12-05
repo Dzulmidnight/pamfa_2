@@ -8,7 +8,7 @@
 			 ?>
 
 			<div class="col-md-9">
-				<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
+				<div class="card h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
 					<form class="js-validate" action="<? echo base_url();?>backend/cliente/cCliente/generales" method="post">
 
 
@@ -22,9 +22,9 @@
 							<div class="col-md-6">
 								<div class="row g-mb-20">
 									<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-                                     <?php
-           foreach($consulta_datos_gral as $fila){
-               ?>
+                        <?php
+           				foreach($consulta_datos_gral as $fila){ 
+           				?>
 										<label class="mb-0" for="#username">Usuario *</label>
 									</div>
 
@@ -274,22 +274,21 @@
 						</div>
 
 
-
-
-
-
-
-
-
 						<hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
 
 						<div>
 							<button class="btn btn-md btn-xl--md u-btn-lightblue-v3 g-width-160--md g-font-size-12 g-font-size-default--md g-mb-10" type="submit">Guardar cambios</button>
 							<button class="btn btn-md btn-xl--md u-btn-outline-gray-dark-v6 g-font-size-12 g-font-size-default--md g-mr-10 g-mb-10" type="reset">Cancelar</button>
 						</div>
-                        <? }?>
+                        <? 
+                    	}
+                    	// end foreach
+                    	?>
+
                          <input id="idcliente" name="idcliente" type="hidden" value="<? echo $fila->id_cliente;?>"/>
 					</form>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>

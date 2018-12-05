@@ -46,10 +46,12 @@ class Ccliente extends CI_Controller {
 		$data=$_POST;
 		$fechaM=time();
 		$this->mCliente->actualiza_generales($data,$fechaM);
+
+			$this->load->view('backend/cliente/templates/head');
 			$this->load->view('backend/cliente/templates/header');
-			$this->load->view('backend/cliente/templates/topnavigation');
-			$this->load->view('backend/cliente/templates/navbar.php');
-			$this->load->view('backend/cliente/index');
+			$this->load->view('backend/cliente/templates/sideNav');
+				$this->load->view('backend/cliente/index');
+			$this->load->view('backend/cliente/templates/pre_footer');
 			$this->load->view('backend/cliente/templates/footer');
 	}
 	
@@ -58,11 +60,14 @@ class Ccliente extends CI_Controller {
 		
 		$data=$_POST;
 		$this->mCliente->actualiza_fiscal($data);
+
+			$this->load->view('backend/cliente/templates/head');
 			$this->load->view('backend/cliente/templates/header');
-			$this->load->view('backend/cliente/templates/topnavigation');
-			$this->load->view('backend/cliente/templates/navbar.php');
-			$this->load->view('backend/cliente/index');
+			$this->load->view('backend/cliente/templates/sideNav');
+				$this->load->view('backend/cliente/index');
+			$this->load->view('backend/cliente/templates/pre_footer');
 			$this->load->view('backend/cliente/templates/footer');
+
 	}
 
 	public function generales_sol()
