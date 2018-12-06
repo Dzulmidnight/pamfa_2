@@ -25,17 +25,19 @@ class cLogin extends CI_Controller {
 			
 		if($this->session->userdata('s_tipo')=='cliente'){
 			
+			$this->load->view('backend/cliente/templates/head');
 			$this->load->view('backend/cliente/templates/header');
-			$this->load->view('backend/cliente/templates/topnavigation');
-			$this->load->view('backend/cliente/templates/navbar.php');
-			$this->load->view('backend/cliente/index');
+			$this->load->view('backend/cliente/templates/sideNav');
+				$this->load->view('backend/cliente/index');
+			$this->load->view('backend/cliente/templates/pre_footer');
 			$this->load->view('backend/cliente/templates/footer');	
 		}
 		if($this->session->userdata('s_tipo')=='auditor'){
+			$this->load->view('backend/auditor/templates/head');
 			$this->load->view('backend/auditor/templates/header');
-			$this->load->view('backend/auditor/templates/topnavigation');
-			$this->load->view('backend/auditor/templates/navbar.php');
-			$this->load->view('backend/auditor/index');
+			$this->load->view('backend/auditor/templates/sideNav');
+				$this->load->view('backend/auditor/index');
+			$this->load->view('backend/auditor/templates/pre_footer');
 			$this->load->view('backend/auditor/templates/footer');	
 		}
 		if($this->session->userdata('s_tipo')=='administrador'){
@@ -68,15 +70,15 @@ class cLogin extends CI_Controller {
 		if($res==true){
 		
 		if($this->session->userdata('s_tipo')=='cliente'){
-		$this->load->view('backend/cliente/templates/header');
-			$this->load->view('backend/cliente/templates/topnavigation');
-			$this->load->view('backend/cliente/templates/navbar.php');
-			$this->load->view('backend/cliente/index');
+			$this->load->view('backend/cliente/templates/head');
+			$this->load->view('backend/cliente/templates/header');
+			$this->load->view('backend/cliente/templates/sideNav.php');
+				$this->load->view('backend/cliente/index');
+			$this->load->view('backend/cliente/templates/pre_footer');
 			$this->load->view('backend/cliente/templates/footer');
 		}
 		if($this->session->userdata('s_tipo')=='auditor'){
 		$this->load->view('backend/auditor/templates/header');
-			$this->load->view('backend/auditor/templates/topnavigation');
 			$this->load->view('backend/auditor/templates/navbar.php');
 			$this->load->view('backend/auditor/index');
 			$this->load->view('backend/auditor/templates/footer');	

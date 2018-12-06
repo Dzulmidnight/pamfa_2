@@ -12,7 +12,7 @@
 					<form class="js-validate" action="<? echo base_url();?>backend/cliente/cCliente/fiscal" method="post">
 
 						<header>
-							<h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">DATOS FISCALES</h2>
+							<h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">DATOS 	DE FACTURACIÓN</h2>
 						</header>
 
 						<hr class="d-flex g-brd-gray-light-v7 g-my-15 g-my-30--md">
@@ -22,7 +22,7 @@
 								<div class="row g-mb-20">
 									<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
                                     <?php
-           foreach($consulta_fiscal as $fila){
+           			foreach($consulta_fiscal as $fila){
                ?>
 										<label class="mb-0" for="#rfc">R.F.C</label>
 									</div>
@@ -58,7 +58,7 @@
 							<div class="col-md-6">
 								<div class="row g-mb-20">
 									<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-										<label class="mb-0" for="#emailFactura">Email</label>
+										<label class="mb-0" for="#emailFactura">Correo electrónico para envío de la factura</label>
 									</div>
 
 									<div class="col-md-9 align-self-center">
@@ -76,7 +76,7 @@
 							<div class="col-md-6">
 								<div class="row g-mb-20">
 									<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-										<label class="mb-0" for="#nombreFactura">Nombre de contacto</label>
+										<label class="mb-0" for="#nombreFactura">Nombre de contacto para la facturación</label>
 									</div>
 
 									<div class="col-md-9 align-self-center">
@@ -134,7 +134,7 @@
 							<div class="col-md-6">
 								<div class="row g-mb-20">
 									<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-										<label class="mb-0" for="#banco">Cuenta de banco</label>
+										<label class="mb-0" for="#banco">Ultimos 4 digitos del número de cuenta</label>
 									</div>
 
 									<div class="col-md-9 align-self-center">
@@ -171,7 +171,7 @@
 							<div class="col-md-12">
 								<div class="row g-mb-20">
 									<div class="col-md-3 align-self-center g-mb-5 g-mb-0--md">
-										<label class="mb-0" for="#dirFiscal">Dirección fiscal</label>
+										<label class="mb-0" for="#dirFiscal">Dirección en el R.F.C</label>
 									</div>
 
 									<div class="col-md-9 align-self-center">

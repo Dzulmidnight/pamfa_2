@@ -1,3 +1,4 @@
+<!-- Sidebar Nav -->
 <div id="sideNav" class="col-auto u-sidebar-navigation-v1 u-sidebar-navigation--light">
 	<ul id="sideNavMenu" class="u-sidebar-navigation-v1-menu u-side-nav--top-level-menu g-min-height-100vh mb-0">
 		<!-- Dashboards -->
@@ -112,4 +113,11 @@
 </div>
 <!-- End Sidebar Nav -->
 
-
+<!-- inicia DIV MAESTRO -->
+<!-- fondo gris
+	<div class="g-bg-lightblue-v10-opacity-0_5 g-ml-45 g-ml-0--lg g-pb-65--md">
+-->
+<!-- fondo blanco
+	<div class="col g-ml-45 g-ml-0--lg g-pb-65--md">
+-->
+<div class="g-bg-lightblue-v10-opacity-0_5 col g-ml-45 g-ml-0--lg g-pb-65--md">
