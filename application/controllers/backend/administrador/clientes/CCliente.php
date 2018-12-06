@@ -100,6 +100,7 @@ class cCliente extends MY_Controller {
 		$this->mCliente->actualiza_generales_sol($data,$fechaM);
 			
 	}
+	
 	public function fiscal_sol()
 	{
 		
@@ -107,4 +108,14 @@ class cCliente extends MY_Controller {
 		$this->mCliente->actualiza_fiscal_sol($data);
 			
 	}
+	public function password()
+	{
+		
+		$data=$_POST;
+		$this->mCliente->actualiza_pass($data);
+			
+	}
+
+
+	
 }

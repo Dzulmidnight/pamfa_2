@@ -6,6 +6,7 @@ function __construct(){
 		parent:: __construct();
 		$this->load->model('mCliente');
 		$this->load->model('mSolicitud');
+		$this->load->model('mPais');
 	}
 	function index($seccion = null){
 
@@ -17,10 +18,12 @@ function __construct(){
 				$seccion = 'backend/administrador/usuario/datos_fiscales';
 				break;
 			case 'datos_generales':
-				$seccion = 'backend/administrador/usuario/datos_generales';
+			$data['consulta_datos_gral'] = $this->mCliente->consulta_datos_gral();
+				$seccion = 'backend/administrador/usuario/datos_generale';
 				break;
 			default:
-			$data['consulta_gral'] = $this->mCliente->consulta_gral();
+			//$data['consulta_gral'] = $this->mCliente->consulta_gral();
+			$data['consulta_gral'] = $this->mCliente->consulta_gral_adm();
 				$seccion = 'backend/administrador/clientes/listado_clientes';
 				break;
 		}
@@ -33,8 +36,11 @@ function __construct(){
 		$this->load->view('backend/administrador/templates/footer');
 	}
 
-	function detalleCliente(){
+	function detalleCliente($id){
+		$data['consulta_datos_gral'] = $this->mCliente->consulta_datos_gral_admin($id);
+		$data['consulta_datos_fiscal'] = $this->mCliente->consulta_fiscal_admin($id);
 		$data['consulta_todo']= $this->mSolicitud->consulta_solicitudes();
+		$data['pais'] = $this->mPais->paises();
 		$this->load->view('backend/administrador/templates/head');
 		$this->load->view('backend/administrador/templates/header');
 	$this->load->view('backend/administrador/templates/sideNav',$data);

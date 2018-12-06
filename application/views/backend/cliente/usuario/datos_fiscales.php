@@ -9,7 +9,7 @@
 
 			<div class="col-md-9">
 				<div class="h-100 g-brd-around g-brd-gray-light-v7 g-rounded-4 g-pa-15 g-pa-20--md">
-					<form class="js-validate" action="<? echo base_url();?>cCliente/fiscal" method="post">
+					<form class="js-validate" action="<? echo base_url();?>backend/cliente/cCliente/fiscal" method="post">
 
 						<header>
 							<h2 class="text-uppercase g-font-size-12 g-font-size-default--md g-color-black mb-0">DATOS FISCALES</h2>
@@ -118,8 +118,15 @@
 											<span class="g-pos-abs g-top-0 g-right-0 d-block g-width-40 h-100 opacity-0 g-opacity-1--success">
 												<i class="hs-admin-check g-absolute-centered g-font-size-default g-color-lightblue-v3"></i>
 											</span>
-											<input id="formaPago" name="formaPago" class="form-control form-control-md g-brd-gray-light-v7 g-brd-lightblue-v3--focus g-brd-lightred-v2--error g-rounded-4 g-px-20 g-py-12" type="text" value="<? echo $fila->formaPago;?>" required="required" data-msg="This field is mandatory"
-										data-error-class="u-has-error-v3" data-success-class="has-success" aria-required="true">
+
+											<select class="form-control" name="formaPago" id="formaPago" required>                  
+                  
+                    							<option <?php if($fila->formaPago=="efectivo"){?> selected="" <? }?>value="efectivo" >Efectivo</option>
+                    							<option <?php if($fila->formaPago=="transferencia"){?> selected="" <? }?>value="transferencia" >Transferencia</option>
+                    							<option <?php if($fila->formaPago=="cheque"){?> selected="" <? }?>value="cheque" >Cheque</option>
+                 
+               								 </select>
+											
 										</div>
 									</div>
 								</div>	
