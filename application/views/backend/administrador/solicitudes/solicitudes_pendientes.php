@@ -1,5 +1,5 @@
 
-<div class="g-pa-20">
+<div class="g-pa-20" >
 	<div class="row">
 		<div class="col-lg-12">
 
@@ -43,7 +43,7 @@
 
 						<!-- Panel body -->
 
-						<div class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after g-height-300 g-pa-10">
+						<div class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after  g-pa-10">
 							<table class="table table-striped g-font-size-12">
 								<thead>
 									<tr>
@@ -281,6 +281,7 @@
 </div>
 <div id="x" >
   </div>
+
 <script type="text/javascript">
 	function llamar_modal(id)
 	{

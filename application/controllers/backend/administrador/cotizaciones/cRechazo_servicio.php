@@ -1,5 +1,5 @@
 <?php
-class cRechazo_servicio extends CI_Controller {
+class cRechazo_servicio extends MY_Controller {
 
 	
 	function __construct(){

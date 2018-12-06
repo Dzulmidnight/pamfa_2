@@ -1,5 +1,5 @@
 <?php
-class cExcel extends CI_Controller {
+class cExcel extends MY_Controller {
 
 	
 	function __construct(){

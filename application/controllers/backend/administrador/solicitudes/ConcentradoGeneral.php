@@ -1,6 +1,6 @@
 <?php
 	
-class ConcentradoGeneral extends CI_Controller{
+class ConcentradoGeneral extends MY_Controller{
 
 	function index(){
 

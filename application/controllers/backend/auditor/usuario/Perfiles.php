@@ -1,6 +1,6 @@
 <?php
 	
-class Perfiles extends CI_Controller{
+class Perfiles extends MY_Controller{
 	function __construct(){
 		parent:: __construct();
 		$this->load->model('mAuditor');

@@ -1,5 +1,5 @@
 <?php
-class cProducto_srrc extends CI_Controller {
+class cProducto_srrc extends MY_Controller {
 
 	
 	function __construct(){

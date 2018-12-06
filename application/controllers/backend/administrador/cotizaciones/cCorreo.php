@@ -1,5 +1,5 @@
    <?php
-class cCorreo extends CI_Controller {
+class cCorreo extends MY_Controller {
    
        function __construct(){
     parent:: __construct();
@@ -35,7 +35,8 @@ $data['consulta_sol_id']= $this->mSolicitud->consulta_solicitudes_full_id($id);
 
  $filename = $data['consulta_rechazo']->fk_id_admin."_".$data['consulta_rechazo']->fecha;
  $f=date('d/m/Y',$data['consulta_rechazo']->fecha);
- $pdfFilePath = "cotizacion/$filename.pdf";
+ $pdfFilePath = "docs_rechazo/$filename.pdf";
+ 
 }
 
 
@@ -54,8 +55,9 @@ $data['consulta_sol_id']= $this->mSolicitud->consulta_solicitudes_full_id($id);
   $filename = $data['consulta_pago']->fk_id_admin."_".$data['consulta_pago']->fecha;
  $f=date('d/m/Y',$data['consulta_pago']->fecha);
 
-  
-$pdfFilePath = "docs_rechazo/$filename.pdf";
+  $pdfFilePath = "cotizacion/$filename.pdf";
+
+$this->mPago->url_cotizacion($pdfFilePath,$id);
 }
 
 else
@@ -168,7 +170,7 @@ if (file_exists($pdfFilePath) == FALSE)
         } else {
             $data["message"] = "¡Mensaje enviado correctamente!";
         }
-        //$this->load->view('sent_mail',$data);
+        
     }
 }
 

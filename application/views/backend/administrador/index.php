@@ -161,7 +161,7 @@
 							<!-- Panel Header -->
 							<div class="card-header d-flex align-items-center justify-content-between g-bg-gray-light-v5 border-0 g-mb-15">
 								<h3 class="h6 mb-0">
-									<i class="icon-layers g-pos-rel g-top-1 g-mr-5"></i> Solicitudes por revisar <span class="d-inline-block text-center g-min-width-35 g-bg-red g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1"><?php echo $consulta_todo;?></span>
+									<i class="icon-layers g-pos-rel g-top-1 g-mr-5"></i> Solicitudes por revisar <span class="d-inline-block text-center g-min-width-35 g-bg-red g-font-size-12 g-color-white g-rounded-15 g-px-8 g-py-1"><?php echo $consulta_todo3;?></span>
 								</h3>
 								<div class="dropdown g-mb-10 g-mb-0--md">
 									<span class="d-block g-color-primary--hover g-cursor-pointer g-mr-minus-5 g-pa-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -186,10 +186,10 @@
 							<div class="js-scrollbar card-block u-info-v1-1 g-bg-white-gradient-v1--after g-height-400 g-pa-0">
 
 
-								<?php if (isset($consulta_full)) {?>
+								<?php if (isset($consulta_full2)) {?>
 								<ul class="list-unstyled">
 									<?php 
-									foreach($consulta_full as $fila) { 
+									foreach($consulta_full2 as $fila) { 
 									?>
 									<a href="#" id="solicitud<?= $i; ?>" onmouseover="resaltar(this.id, 'li')" onmouseout="normalizar(this.id, 'li')">
 										<li class="media  g-brd-around g-brd-gray-light-v4 g-brd-left-3 g-brd-orange-left rounded g-pa-20 g-mb-10" >
@@ -199,8 +199,18 @@
 											</div>
 											<div class="media-body">
 												<div class="d-flex justify-content-between">
-													<h5 class="h6 g-font-weight-600 g-color-black"><?php echo $fila->nombreLegal; ?></h5>
-													<span class="small text-nowrap g-color-blue"><?php echo date('d/m/Y',$fila->fecha_envio);?></span>
+													<a   href="<?php echo base_url('backend/administrador/solicitud/solicitudes/nueva_solicitud/'.$fila->id_solicitud.'/'.$fila->fk_id_cliente.''); ?>">
+														<h5 class="h6 g-font-weight-600 g-color-black"><?php echo $fila->nombreLegal; ?></h5>
+													</a>
+
+
+
+
+													
+
+
+
+													<span class="small text-nowrap g-color-blue"><?php echo date('d/m/Y',$fila->fecha);?></span>
 												</div>
 												<p>
 													 <?php echo "Pais: ".$fila->nombre.", ".$fila->estado; ?>

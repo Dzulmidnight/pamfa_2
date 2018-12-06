@@ -1,5 +1,5 @@
 <?php
-class cMexico extends CI_Controller {
+class cMexico extends MY_Controller {
 
 	
 	function __construct(){

@@ -4,6 +4,7 @@ class cLogin extends CI_Controller {
 	
 	function __construct(){
 		parent:: __construct();
+		
 		$this->load->model('mLogin');
 
 		$this->load->model('mSolicitud');
@@ -40,10 +41,11 @@ class cLogin extends CI_Controller {
 			$this->load->view('backend/auditor/templates/footer');	
 		}
 		if($this->session->userdata('s_tipo')=='administrador'){
-			$data['consulta_todo'] = $this->mSolicitud->consulta_solicitudes();
+			$data['consulta_todo3'] = $this->mSolicitud->consulta_solicitudes3();
+				$data['consulta_todo'] = $this->mSolicitud->consulta_solicitudes();
 				$data['consulta_full'] = $this->mSolicitud->consulta_solicitudes_full();
+				$data['consulta_full2'] = $this->mSolicitud->consulta_solicitudes_full2();
 				$data['consulta_gral'] = $this->mCliente->consulta_pendientes();
-				$data['consulta_sol']= $this->mSolicitud->consulta_solicitudes();
 			$this->load->view('backend/administrador/templates/head');
 			$this->load->view('backend/administrador/templates/header');
 			$this->load->view('backend/administrador/templates/sideNav',$data);
@@ -65,7 +67,7 @@ class cLogin extends CI_Controller {
 		$res=$this->mLogin->ingresar($usu,$pass,$tipo);
 		
 		
-		if($res==1){
+		if($res==true){
 		
 		if($this->session->userdata('s_tipo')=='cliente'){
 			$this->load->view('backend/cliente/templates/head');
@@ -82,10 +84,11 @@ class cLogin extends CI_Controller {
 			$this->load->view('backend/auditor/templates/footer');	
 		}
 		if($this->session->userdata('s_tipo')=='administrador'){
-			$data['consulta_todo'] = $this->mSolicitud->consulta_solicitudes();
+			$data['consulta_todo3'] = $this->mSolicitud->consulta_solicitudes3();
+				$data['consulta_todo'] = $this->mSolicitud->consulta_solicitudes();
 				$data['consulta_full'] = $this->mSolicitud->consulta_solicitudes_full();
+				$data['consulta_full2'] = $this->mSolicitud->consulta_solicitudes_full2();
 				$data['consulta_gral'] = $this->mCliente->consulta_pendientes();
-				$data['consulta_sol']= $this->mSolicitud->consulta_solicitudes();
 			$this->load->view('backend/administrador/templates/head');
 			$this->load->view('backend/administrador/templates/header');
 			$this->load->view('backend/administrador/templates/sideNav',$data);

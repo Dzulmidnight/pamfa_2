@@ -29,6 +29,9 @@
 										</tr>
 									</thead>
 									<tbody>
+										<?php foreach ($consulta_gral as $fila) {
+											# code...
+										?>
 										<tr>
 											<!-- ID -->
 											<td>
@@ -40,26 +43,26 @@
 											</td>
 											<!-- Entidad -->
 											<td>
-												<a href="<?php echo base_url('backend/administrador/clientes/clientes/detalleCliente'); ?>">
-													<i class="fa fa-search"></i> Inforganic Technologies
+												<a href="<?php echo base_url('backend/administrador/clientes/clientes/detalleCliente/'.$fila->id_cliente); ?>">
+													<i class="fa fa-search"></i> <?php echo $fila->nombreLegal; ?>
 												</a>
 											</td>
 											<!-- Representante -->
 											<td>
-												Jesus Martínez
+												<?php echo $fila->nombreRepresentante; ?>
 											</td>
 
 											<!-- Dirección -->
 											<td>
-												Oaxaca, Mexico
+												<?php echo $fila->direccion.", ".$fila->colonia.", ".$fila->municipio.", ".$fila->estado.", ".$fila->nombre; ?>
 											</td>
 											<!-- Email -->
 											<td>
-												soporte@inforganic.net
+												<?php echo $fila->email; ?>
 											</td>
 											<!-- Telefono -->
 											<td>
-												951199923949
+												<?php echo $fila->telefono; ?>
 											</td>
 											<!-- Acciones -->
 											<td class="text-right">
@@ -109,6 +112,7 @@
 												<!-- End acciones -->
 											</td>
 										</tr>
+									<?php }?>
 									</tbody>
 								</table>
 							</div>

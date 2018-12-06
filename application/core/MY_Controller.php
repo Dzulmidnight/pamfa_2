@@ -1,0 +1,20 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+class MY_Controller extends CI_Controller {
+	public function __construct()
+	{
+		 parent::__construct();
+		 $this->load->library('session');
+     //For example I have set logged_in = true in authentication on success
+     //Checking whether userdata logged_in not set ... if true redirecting to login screen
+		 if(!$this->session->has_userdata('s_tipo') ){
+			// $this->load->view('templates/header');
+		//$this->load->view('logins/inicio');
+			//$this->load->view('templates/footer');
+			 //exit;
+		 	 redirect($this->load->view('logins/inicio'));
+			 exit;
+
+		 }
+	}
+}

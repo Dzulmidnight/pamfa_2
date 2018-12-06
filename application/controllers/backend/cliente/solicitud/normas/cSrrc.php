@@ -1,5 +1,5 @@
 <?php
-class cSrrc extends CI_Controller {
+class cSrrc extends MY_Controller {
 
 	
 	function __construct(){

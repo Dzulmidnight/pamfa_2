@@ -1,10 +1,11 @@
 <?php
 	
-class Solicitudes extends CI_Controller{
+class Solicitudes extends MY_Controller{
 
 	
 	function __construct(){
 		parent:: __construct();
+		 $this->load->library('My_PHPMailer');
 		$this->load->model('mCliente');
 		$this->load->model('mPais');
 		$this->load->model('mMexico');
@@ -170,6 +171,31 @@ $idsol="";
 		
 		$this->mSolicitud->actualiza_final($data,$idsol);
 		
+
+		 $mail = new PHPMailer();
+        $mail->IsSMTP(); // establecemos que utilizaremos SMTP
+        $mail->SMTPAuth   = true; // habilitamos la autenticación SMTP
+        //$mail->SMTPSecure = "ssl";  // establecemos el prefijo del protocolo seguro de comunicación con el servidor
+        $mail->Host       = "smtp.mailtrap.io";      // establecemos GMail como nuestro servidor SMTP
+        $mail->Port       = 2525;                   // establecemos el puerto SMTP en el servidor de GMail
+        $mail->Username   = "cf83702fd87684";  // la cuenta de correo GMail
+        $mail->Password   = "f1d7231c8fe3c7";            // password de la cuenta GMail
+       $mail->SetFrom('soporte@inforganic.net', 'Nombre Apellido');  //Quien envía el correo
+        //$mail->AddReplyTo("response@tudominio.com","Nombre Apellido");  //A quien debe ir dirigida la respuesta
+        $mail->Subject    = "solicitud enviada";  //Asunto del mensaje
+        $mail->Body      = "Cuerpo en HTML<br />";
+        $mail->AltBody    = "Cuerpo en texto plano";
+        $destino = "meruta@wokcy.com";
+        $mail->AddAddress($destino, "Juan Palotes");
+
+        //$mail->AddAttachment($pdfFilePath);      // añadimos archivos adjuntos si es necesario
+        //$mail->AddAttachment("images/phpmailer_mini.gif"); // tantos como queramos
+
+        if(!$mail->Send()) {
+            $data["message"] = "Error en el envío: " . $mail->ErrorInfo;
+        } else {
+            $data["message"] = "¡Mensaje enviado correctamente!";
+        }
 			
 	}
 }

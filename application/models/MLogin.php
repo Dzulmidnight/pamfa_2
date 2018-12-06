@@ -46,9 +46,11 @@ class mLogin extends CI_Model {
 	
 	$this->session->set_userdata($s_usuario);
 	
-	return 1;
+	 return true;
 	
 	}
-	else { return 0;}
+	else { 
+	$this->session->unset_userdata('s_usuario');
+	 return false;}
 	}
 }

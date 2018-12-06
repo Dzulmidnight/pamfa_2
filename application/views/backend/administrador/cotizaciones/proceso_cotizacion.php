@@ -53,7 +53,7 @@
 								</li>
 								<li class="col-2 list-inline-item">
 									<span class="d-block u-icon-v2 u-icon-size--sm g-rounded-50x g-brd-gray-light-v2 g-color-gray-dark-v5 g-brd-primary--active g-color-white--parent-active g-bg-primary--active g-color-white--checked g-bg-primary--checked mx-auto mb-3">
-										<?php if (!isset($consulta_pago)) {?> 
+										<?php if (!isset($consulta_pago) || $consulta_pago->estatus=="no") {?> 
 										 <i class="g-font-style-normal g-font-weight-700 g-hide-check">4</i>
 										<i class="fa fa-check g-show-check"></i> 
 											
@@ -714,13 +714,13 @@
 												</div>
 
 												<div class="dropdown g-mb-10 g-mb-0--md">
-													<button type="button" <?php if (isset($consulta_pago)) {?>disabled="" <?php }else {?> <?php }?> class="btn u-btn-primary g-mr-10" onclick="procesoFinalizado2()" name="envio_cotizacion" id="envio_cotizacion">
+													<button type="button" <?php if (isset($consulta_pago)) {?>disabled="" <?php }else {?>disabled="" <?php }?> class="btn u-btn-primary g-mr-10" onclick="procesoFinalizado2()" name="envio_cotizacion" id="envio_cotizacion">
 														<i class="hs-admin-check-box"></i> Aprobar envi
 													</button>
 													<a href="#" class="btn u-btn-bluegray g-mr-10">
 														<i class="hs-admin-printer"></i> Imprimir
 													</a>
-													<a href="#" class="btn u-btn-bluegray">
+													<a <?php if (isset($consulta_pago)) {?> target="_blank" href="<?php echo base_url().$consulta_pago->url_cotizacion; ?>" <?php }?>  class="btn u-btn-bluegray">
 														<i class="hs-admin-download"></i> Descargar
 													</a>
 													
@@ -1454,7 +1454,7 @@
 					                 if(isset($consulta_pago)){
 					                	$fech=$consulta_pago->fecha;
 					                	$estat=$consulta_pago->estatus;
-					                	$url=$consulta_pago->url;
+					                	$url=$consulta_pago->url_pago;
 
 					                }?>
 
@@ -1862,11 +1862,13 @@ $.ajax({
  	type:'POST',
                      url:base_url+"backend/administrador/cotizaciones/cPago/aprobar/",
                      data: {idsolicitud:idsolicitud,estatus:estatus},
-			
+						
 		            	success: function(data) {
 		            		
 		                       }
 		});
+
+
 			} else {
 				swal("volver a revisar!");
 			}
@@ -2045,7 +2047,7 @@ var tabla = document.getElementById("tablaCotizacion");
 		
 			
 			 var con=document.getElementById("pre_total"+i).value;
-			 a
+			 
 			if (con!=="") 
 			{
 				t1=t1+1;

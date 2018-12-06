@@ -1,5 +1,5 @@
 <?php
-	class Main extends CI_Controller{
+	class Main extends MY_Controller{
 
 
 		function __construct(){
@@ -13,8 +13,10 @@
 		public function index(){
 			if($this->session->userdata('s_tipo')=='administrador'){
 
+				$data['consulta_todo3'] = $this->mSolicitud->consulta_solicitudes3();
 				$data['consulta_todo'] = $this->mSolicitud->consulta_solicitudes();
 				$data['consulta_full'] = $this->mSolicitud->consulta_solicitudes_full();
+				$data['consulta_full2'] = $this->mSolicitud->consulta_solicitudes_full2();
 				$data['consulta_gral'] = $this->mCliente->consulta_pendientes();
 
 				

@@ -1,6 +1,6 @@
 <?php
 
-class Main_contratos extends CI_Controller{
+class Main_contratos extends MY_Controller{
 
 	function __construct(){
 		parent:: __construct();
@@ -97,5 +97,6 @@ function guardar($id_contrato)
 		
 		
 		$this->mContrato->actualizar($data);
+		$this->mSolicitud->actualiza_contrato($this->input->post('idsolicitud'));
 	}
 }

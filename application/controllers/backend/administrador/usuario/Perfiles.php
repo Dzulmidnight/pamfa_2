@@ -1,6 +1,6 @@
 <?php
 	
-class Perfiles extends CI_Controller{
+class Perfiles extends MY_Controller{
 
 	function index($seccion = null){
 

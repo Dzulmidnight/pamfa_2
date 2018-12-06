@@ -1,5 +1,5 @@
 <?php
-class cObservacion extends CI_Controller {
+class cObservacion extends MY_Controller {
 
 	
 	function __construct(){

@@ -174,6 +174,21 @@ public function consulta_gral()
             return $query->result();
         }
 }
+public function consulta_gral_adm()
+
+	{
+		
+		 $this->db->select('cliente.id_cliente,cliente.nombreLegal,cliente.nombreRepresentante,cliente.direccion,cliente.colonia,cliente.municipio,cliente.estado,cliente.email,cliente.telefono,pais.nombre');    
+$this->db->from('cliente');
+$this->db->join('pais', 'cliente.pais = pais.id_pais');
+$this->db->where('cliente.estatus', 1);
+$query = $this->db->get();
+ if($query->num_rows() > 0 )
+        {
+           return $query->result();
+        }
+		
+}
 public function consulta_pendientes()
 
 	{
@@ -232,6 +247,17 @@ public function estatus($e,$id,$fm)
 		'telefono'=>$params['telefono'],
 		'fax'=>$params['fax'],
 		'fechaModificacion'=>$fm);
+		$this->db->where('id_cliente', $params['idcliente']);
+		$this->db->update('cliente',$campos);
+		
+		
+		
+	}
+	public function actualiza_pass($params)
+	{
+		
+		$campos=array(
+		'password'=>$params['n_pass']);
 		$this->db->where('id_cliente', $params['idcliente']);
 		$this->db->update('cliente',$campos);
 		
