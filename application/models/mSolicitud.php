@@ -178,6 +178,25 @@ $this->db->delete('producto_solicitud');
         }
 		
 	}
+	public function consulta_solicitudes_cliente($id)
+	{
+		
+		$this->db->select('*');
+		
+		$this->db->from('solicitud');
+		$this->db->where('estatus',2);
+		$this->db->or_where('estatus',1);
+			$this->db->where('id_solicitud',$id);
+		
+		
+		
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->result();
+        }
+		
+	}
 	public function consulta_solicitudes()
 	{
 		

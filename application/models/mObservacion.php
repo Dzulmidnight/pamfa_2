@@ -113,6 +113,41 @@ $this->db->delete('producto_srrc');
         }
 		
 	}
-	
+	public function consulta_obs_cliente($id,$campo)
+	{
+		
+		$this->db->select('*');
+		$this->db->where('fk_id_solicitud',$id);
+		$this->db->where('campo',$campo);
+
+		$this->db->from('observacion_solicitud');
+		
+		
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->result() ;
+        }
+		
+	}
+	public function consulta_obs_campo($id)
+	{
+		
+		$this->db->select('*');
+		$this->db->where('fk_id_solicitud',$id);
+		$this->db->from('observacion_solicitud');
+		$this->db->order_by('seccion');
+		$this->db->order_by('norma');
+		$this->db->order_by('id_observacion');
+		//$this->db->order_by('id_observacion','asc');
+		
+		
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->row();
+        }
+		
+	}
 	
 }

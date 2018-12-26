@@ -28,9 +28,9 @@
 									</div>
 
 									<div class="dropdown g-mb-10 g-mb-0--md">
-										<button type="button" <?php if (isset($consulta_cont)) {?>disabled="" <?php }?> class="btn u-btn-primary g-mr-10" onclick="procesoFinalizado2()" name="envio_contrato" id="envio_contrato">
+										<?php /*<button type="button" <?php if (isset($consulta_cont)) {?>disabled="" <?php }?> class="btn u-btn-primary g-mr-10" onclick="procesoFinalizado2()" name="envio_contrato" id="envio_contrato">
 														<i class="hs-admin-check-box"></i> Aprobar envi
-													</button>
+													</button>*/?>
 										<a href="#" class="btn u-btn-bluegray g-mr-10">
 											<i class="hs-admin-printer"></i> Imprimir
 										</a>
@@ -80,7 +80,7 @@
 											</tr>
 											<tr class="">
 												<td style="padding:0px;">
-													Fecha de emisión: <?= date('d/m/Y', time()) ?>
+													Fecha de emisión: <?= date('d/m/Y', $consulta_contrato->fecha) ?>
 												</td>
 											</tr>
 				            			</table>
@@ -91,7 +91,7 @@
 							                <!-- Fecha del contrato -->
 							                <div class="col-lg-12">
 							                    <p>
-							                    	Fecha: <?= date('d/m/Y', time()) ?>
+							                    	Fecha: <?= date('d/m/Y', $consulta_contrato->fecha) ?>
 							                    </p>
 
 							                    <p>
@@ -542,7 +542,7 @@
 
 					                 if(isset($consulta_contrato)){
 					                	$fech=$consulta_contrato->fecha;
-					                	$estat=$consulta_contrato->estatus;
+					                	$estat=$consulta_contrato->estatus_cliente;
 					                	//$url=$consulta_contrato->url;
 
 					                }?>
@@ -649,7 +649,7 @@
 										</div>*/?>
 										<div class="col-sm-6">
 											<label class="u-check" style="width:100%">
-												<input <?php if ($estat==2){?> disabled="" <?php } ?>class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn2_4" type="radio" required data-msg="This field is mandatory" data-error-class="u-has-error-v1" data-success-class="u-has-success-v1" onclick="aprobarCotizacion('si')">
+												<input <?php if ($estat==1 || $estat==2){?> disabled="" <?php } ?>class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn2_4" type="radio" required data-msg="This field is mandatory" data-error-class="u-has-error-v1" data-success-class="u-has-success-v1" onclick="aprobarCotizacion('si')">
 												<span class="btn btn-md btn-block u-btn-outline-lightgray g-color-white--checked g-bg-primary--checked g-brd-left-none--md rounded-0">
 													<i class="hs-admin-check"></i> Aprobar
 												</span>
@@ -657,8 +657,8 @@
 										</div>
 										<div class="col-sm-6">
 											<label class="u-check" style="width:100%">
-												<input <?php if ($estat==1){?> disabled="" <?php } ?>  class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn2_4" type="radio" required data-msg="This field is mandatory" data-error-class="u-has-error-v1" data-success-class="u-has-success-v1" onclick="aprobarCotizacion2('no')">
-												<span class="btn btn-md btn-block u-btn-outline-lightgray g-color-white--checked g-bg-primary--checked g-brd-left-none--md rounded-0">
+												<input <?php if ($estat==1 || $estat==2){?> disabled=""  <?php } ?>  class="g-hidden-xs-up g-pos-abs g-top-0 g-left-0" name="radGroupBtn2_4" type="radio" required data-msg="This field is mandatory" data-error-class="u-has-error-v1" data-success-class="u-has-success-v1" onclick="aprobarCotizacion2('no')">
+												<span  class="btn btn-md btn-block u-btn-outline-lightgray g-color-white--checked g-bg-primary--checked g-brd-left-none--md rounded-0">
 													<i class="hs-admin-close"></i> Rechazar
 												</span>
 											</label>	
@@ -689,6 +689,7 @@
 	function aprobarCotizacion(desicion){
 
 		var estatus=1;
+		
 		swal({
 			title: "Aprobar contrato",
 			text: "Se ha revisado la información y se aprueba",
@@ -704,7 +705,7 @@
 
 				$.ajax({
  					 	type:'POST',
-                     url:base_url+"backend/administrador/contratos/Main_contratos/actualizar/",
+                     url:base_url+"backend/cliente/solicitud/Contrato/actualizar/",
                       
                       data:{idsolicitud:idsolicitud,estatus:estatus},
                       
@@ -723,6 +724,7 @@
 	function aprobarCotizacion2(desicion){
 
 	var estatus=2;
+
 swal({
 			title: "Rechazar contrato",
 			text: "Indique las razones del rechazo",
@@ -737,7 +739,7 @@ swal({
   $.ajax({
  	
     type:'POST',
-                     url:base_url+"backend/administrador/contratos/Main_contratos/actualizar/",
+                    url:base_url+"backend/cliente/solicitud/Contrato/actualizar/",
                      data: {idsolicitud:idsolicitud,estatus:estatus,text:text},
 			
 		            	success: function(data) {

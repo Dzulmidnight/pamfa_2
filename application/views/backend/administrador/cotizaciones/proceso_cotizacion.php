@@ -1516,6 +1516,7 @@
 
 					                    <div class="row">
 					                    	<div class="col-sm-12">
+					                    		 <?php if ($estat=='no'){?>
 					                    	<input type="file" name="file1" id="file1" class="form-control">
 					                    	<input type="button " class="btn btn-info" value="Enviar" onClick="uploadFile(1)" id="aux">
 
@@ -1532,6 +1533,7 @@
 														<input id="fecha_do" name="fecha_do" type="hidden" value="<? echo $fechado;?>"/>
 
                     									</div>
+                    									<?} else {?><p class="h2">Enviado</p><?}?>
 											<div class="col-sm-12">
 												
 													<p class="g-pa-10" id="no_d" name="no_d"  <?php if ($estat=='no'){?> style="background: #e74c3c; color:white;display: block;" <?php }else {?> style="background: #e74c3c; color:white;display: none;" <?}?>>

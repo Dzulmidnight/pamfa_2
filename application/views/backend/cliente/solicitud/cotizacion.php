@@ -12,6 +12,8 @@
 					</div>
 
 				</div>
+				<?php /*
+
 
 				<div class="dropdown g-mb-10 g-mb-0--md">
 					<button type="button" <?php if (isset($consulta_pago)) {?>disabled="" <?php }else {?> <?php }?> class="btn u-btn-primary g-mr-10" onclick="procesoFinalizado2()" name="envio_cotizacion" id="envio_cotizacion">
@@ -28,7 +30,20 @@
 					</a>
 					
 				</div>
-			</div>
+
+				*/?>
+			</div><?php
+			$s=0;
+											
+
+												 foreach($consulta_cotizacion as $filax)
+										 	 	{ $s=$s+($filax->costo*$filax->cantidad);
+																
+																
+																$iva=$s*0.16;
+																$t=$s+$iva;
+															}?>
+
 
 			<div class="card u-info-v1-1 g-bg-white-gradient-v1--after g-pa-20">
 			<!-- Info cotización -->
@@ -50,25 +65,31 @@
 	                </div>
 	                <!-- END Info empresa -->
 
-	                <!-- Info cliente -->
-	                <div class="col-lg-4 text-right">
-	                    <p class="h2">Cliente</p>
-	                    <address>
-	                        lorem<br>
-	                        lorem<br>
-	                        lorem<br>
-	                        <i class="icon-phone"></i> lorem
-	                    </address>
-	                </div>
+
+	                <!-- Info cliente --><?php 
+	                 foreach($consulta_sol_id as $fila){
+
+               ?>
+					<div class="col-lg-4 text-right">
+					<p class="h2"><?php echo $fila->nombreLegal;?></p>
+					<address>
+					<?php echo $fila->direccion.",".$fila->colonia.",".$fila->municipio;?><br>
+					<?php echo $fila->estado."," .$fila->nombre;?><br>
+					<?php echo $fila->cp;?><br>
+					<i class="icon-phone"></i> <?php echo $fila->telefono;?>
+					</address>
+					</div>
+										            <?php }?>
 		            <!-- END Info cliente -->
 					<!-- Total cotización -->
 					<div class="h1 col-lg-4 text-right g-color-blue">
-						<p class="text-muted h5">
-							Total
-						</p>
-						<span  name="tot_g"  id="tot_g">
-							$ 3453.00
-						</span>
+					<p class="text-muted h5">
+					Total
+					</p>
+					<span  name="tot_g"  id="tot_g"><?echo $t;?></span>
+
+
+
 					</div>
 					<!-- End Total cotización -->
 	        	</div>
@@ -93,37 +114,53 @@
 	                    </thead>
 	                    <tbody>
 							
-							<tr >
-								<td class="text-center">
-									
-								</td>
-								<td>
-									<input class='form-control' type="text" readonly="" value="">
-									<div class="text-muted">
-										<textarea class="form-control"></textarea>
-										
-									</div>
-								</td>
-								<td class="text-right"><input type="number"  value="" class="form-control" ></td>
-								<td class="text-center" >
-									<span class="u-label g-rounded-20 g-px-15 g-bg-primary g-mr-10 g-mb-15"><input type="number"   value=""></span>
-								</td>
-								<td class="text-right">$ <input  type="number"   class="form-control" readonly="" value=""></td>
-							</tr>
+
+							 <?php $sub=0;
+										                
+
+										 	 foreach($consulta_cotizacion as $filaz)
+										 	 	{?>
+
+
+																
+																	<tr >
+																		<td class="text-center">
+																			
+																		</td>
+																		<td>
+																			<input class='form-control' type="text" readonly="" value="<?php echo $filaz->concepto;?>">
+																			<div class="text-muted">
+																				<textarea class="form-control"><?php echo $filaz->descripcion;?>.</textarea>
+																				
+																			</div>
+																		</td>
+																		<td class="text-right"><input type="number"  value="<?php echo $filaz->costo;?>" class="form-control" ></td>
+																		<td class="text-center" >
+																			<span class="u-label g-rounded-20 g-px-15 g-bg-primary g-mr-10 g-mb-15"><input type="number"   value="<?php echo $filaz->cantidad;?>"></span>
+																		</td>
+																		<td class="text-right">$ <input  type="number"   class="form-control" readonly="" value="<?php echo $filaz->costo*$filaz->cantidad;?>"></td>
+																	</tr>
+																<?php
+																$sub=$sub+($filaz->costo*$filaz->cantidad);
+																}
+																?>
 
 							<tr>
-								<td colspan="4" class="font-w600 text-right">Subtotal</td>
-								<td class="text-right"><span  name="sub_t"  id="sub_t"></span></td>
-							</tr>
+																	<td colspan="4" class="font-w600 text-right">Subtotal</td>
+																	<td class="text-right"><span  name="sub_t"  id="sub_t"><?php echo $sub?></span></td>
+																</tr>
+																<?php
+																$iva=$sub*0.16;
+																?>
+																<tr>
+																	<td colspan="4" class="font-w600 text-right">I.V.A</td>
+																	<td class="text-right">16%</td>
+																</tr>
+																<tr class="active">
+																	<td colspan="4" class="font-w700 text-uppercase text-right">Total</td>
+																	<td class="font-w700 text-right"><span  name="tot"  id="tot"><?php echo $sub+$iva;?></span></td>
+																</tr>
 
-							<tr>
-								<td colspan="4" class="font-w600 text-right">I.V.A</td>
-								<td class="text-right">16%</td>
-							</tr>
-							<tr class="active">
-								<td colspan="4" class="font-w700 text-uppercase text-right">Total</td>
-								<td class="font-w700 text-right"><span  name="tot"  id="tot"></span></td>
-							</tr>
 	                
 	                	</tbody>
 	                </table>

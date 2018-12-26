@@ -43,7 +43,7 @@
                       <label for="example-text-input" class="col-2 col-form-label">Nombre del representante</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="nombreRepresentante" id="nombreRepresentante" type="text" placeholder="" value="<?php echo $fila->nombreRepresentante; ?>">
+                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="nombreRepresentante" id="nombreRepresentante" type="text" placeholder="" value="<?php echo $fila->nombreRepresentante;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
@@ -54,7 +54,7 @@
                       <label for="example-search-input" class="col-2 col-form-label">ID</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input disabled="" class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" placeholder="" value="<?php echo $fila->id_cliente; ?>">
+                          <input disabled="" class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" placeholder="" value="<?php echo $fila->id_cliente;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
@@ -65,7 +65,7 @@
                       <label for="example-email-input" class="col-2 col-form-label">Nombre legal</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="nombreLegal" id="nombreLegal" type="text" placeholder=""  value="<?php echo $fila->nombreLegal; ?>">
+                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="nombreLegal" id="nombreLegal" type="text" placeholder=""  value="<?php echo $fila->nombreLegal;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
@@ -76,7 +76,7 @@
                       <label for="example-url-input" class="col-2 col-form-label">Email</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" name="email" id="email" placeholder="" value="<?php echo $fila->email; ?>">
+                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" name="email" id="email" placeholder="" value="<?php echo $fila->email;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
@@ -87,7 +87,7 @@
                       <label for="example-tel-input" class="col-2 col-form-label">Teléfono</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="telefono" id="telefono" type="text" placeholder="" value="<?php echo $fila->telefono; ?>">
+                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="telefono" id="telefono" type="text" placeholder="" value="<?php echo $fila->telefono;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
@@ -98,7 +98,7 @@
                       <label for="example-password-input" class="col-2 col-form-label">Fax</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" name="fax" id="fax" placeholder="" value="<?php echo $fila->fax; ?>">
+                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" name="fax" id="fax" placeholder="" value="<?php echo $fila->fax;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
@@ -132,7 +132,7 @@
                       <label for="example-search-input" class="col-2 col-form-label">Estado</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="estado" id="estado" type="text" placeholder="" value="<?php echo $fila->estado; ?>">
+                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="estado" id="estado" type="text" placeholder="" value="<?php echo $fila->estado;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
@@ -143,7 +143,7 @@
                       <label for="example-email-input" class="col-2 col-form-label">Municipio</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="municipio" id="municipio" type="text" placeholder="" value="<?php echo $fila->municipio; ?>">
+                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="municipio" id="municipio" type="text" placeholder="" value="<?php echo $fila->municipio;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
@@ -154,7 +154,7 @@
                       <label for="example-url-input" class="col-2 col-form-label">Colonia</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="colonia" id="colonia" type="text" placeholder=""value="<?php echo $fila->colonia; ?>">
+                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="colonia" id="colonia" type="text" placeholder=""value="<?php echo $fila->colonia;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
@@ -165,7 +165,7 @@
                       <label for="example-tel-input" class="col-2 col-form-label">Código Postal</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="cp" id="cp" type="text" placeholder="" value="<?php echo $fila->cp; ?>">
+                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" name="cp" id="cp" type="text" placeholder="" value="<?php echo $fila->cp;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
@@ -176,7 +176,7 @@
                       <label for="example-password-input" class="col-2 col-form-label">Dirección</label>
                       <div class="col-10">
                         <div class="input-group g-brd-primary--focus">
-                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" name="direccion" id="direccion" placeholder="" value="<?php echo $fila->direccion; ?>">
+                          <input class="form-control form-control-md border-right-0 rounded-0 g-py-13 pr-0" type="text" name="direccion" id="direccion" placeholder="" value="<?php echo $fila->direccion;?>">
                           <div class="input-group-append">
                             <span class="input-group-text g-bg-white g-color-gray-light-v1 rounded-0"><i class="icon-pencil"></i></span>
                           </div>
