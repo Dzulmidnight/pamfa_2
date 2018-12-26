@@ -4,6 +4,7 @@ class Cotizacion extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
+
 		$this->load->model('mCotizacion');
 		$this->load->model('mRechazo_servicio');
 		$this->load->model('mSolicitud');
@@ -18,6 +19,7 @@ class Cotizacion extends CI_Controller{
 		$this->load->view('backend/cliente/templates/header');
 		$this->load->view('backend/cliente/templates/sideNav');
 			$this->load->view('backend/cliente/solicitud/cotizacion',$data);
+
 		$this->load->view('backend/cliente/templates/pre_footer');
 		$this->load->view('backend/cliente/templates/footer');
 	}

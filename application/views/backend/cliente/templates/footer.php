@@ -247,9 +247,11 @@
 								
 			function addObservacion(seccion,d,id){
 				
+
 				console.log('SECCIÓN: '+seccion+' ID: '+id+"dfkgo");
 				
 				
+
 				$('#modal1').modal('show');
 				
 								
@@ -278,7 +280,6 @@
 			}
 			
 </script>
-
 
 
 

@@ -33,6 +33,7 @@ class cLogin extends CI_Controller {
 				$data['consulta_pago']= $this->mPago->consulta_todo();
 				$data['consulta_rechazo']= $this->mRechazo_servicio->consulta_rechazo_c();
 			
+
 			$data['consulta_contrato']= $this->mContrato->consulta_todo();
 
 			
@@ -41,6 +42,7 @@ class cLogin extends CI_Controller {
 			$this->load->view('backend/cliente/templates/sideNav');
 			$data['vistaOb'] = $this->load->view('backend/cliente/index',$data,true);
 			$this->load->view('backend/administrador/solicitudes/vob',$data);
+
 			$this->load->view('backend/cliente/templates/pre_footer');
 			$this->load->view('backend/cliente/templates/footer');	
 		}
@@ -83,6 +85,7 @@ class cLogin extends CI_Controller {
 		
 		if($this->session->userdata('s_tipo')=='cliente'){
 
+
 			$data['consulta_todo_c'] = $this->mSolicitud->consulta_solicitudes_cliente($this->session->userdata('s_idusuario'));
 				$data['consulta_totales']= $this->mObservacion->consulta_totales();
 				$data['consulta_pago']= $this->mPago->consulta_todo();
@@ -96,6 +99,7 @@ class cLogin extends CI_Controller {
 			$data['vistaOb'] = $this->load->view('backend/cliente/index',$data,true);
 			$this->load->view('backend/administrador/solicitudes/vob',$data);
 			
+
 			$this->load->view('backend/cliente/templates/pre_footer');
 			$this->load->view('backend/cliente/templates/footer');
 		}

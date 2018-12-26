@@ -1,6 +1,7 @@
 <?php
 
 class Contrato extends CI_Controller{
+
 	
 	function __construct(){
 		parent:: __construct();
@@ -89,5 +90,6 @@ class Contrato extends CI_Controller{
 		$this->mContrato->actualizar_de_cliente($data);
 		
 	}
+
 
 }

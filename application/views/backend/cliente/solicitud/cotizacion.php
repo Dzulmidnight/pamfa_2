@@ -14,6 +14,7 @@
 				</div>
 				<?php /*
 
+
 				<div class="dropdown g-mb-10 g-mb-0--md">
 					<button type="button" <?php if (isset($consulta_pago)) {?>disabled="" <?php }else {?> <?php }?> class="btn u-btn-primary g-mr-10" onclick="procesoFinalizado2()" name="envio_cotizacion" id="envio_cotizacion">
 						<i class="fa fa-check"></i> Aceptar cotización
@@ -29,6 +30,7 @@
 					</a>
 					
 				</div>
+
 				*/?>
 			</div><?php
 			$s=0;
@@ -41,6 +43,7 @@
 																$iva=$s*0.16;
 																$t=$s+$iva;
 															}?>
+
 
 			<div class="card u-info-v1-1 g-bg-white-gradient-v1--after g-pa-20">
 			<!-- Info cotización -->
@@ -61,6 +64,7 @@
 	                    </address>
 	                </div>
 	                <!-- END Info empresa -->
+
 
 	                <!-- Info cliente --><?php 
 	                 foreach($consulta_sol_id as $fila){
@@ -83,6 +87,7 @@
 					Total
 					</p>
 					<span  name="tot_g"  id="tot_g"><?echo $t;?></span>
+
 
 
 					</div>
@@ -109,6 +114,7 @@
 	                    </thead>
 	                    <tbody>
 							
+
 							 <?php $sub=0;
 										                
 
@@ -154,6 +160,7 @@
 																	<td colspan="4" class="font-w700 text-uppercase text-right">Total</td>
 																	<td class="font-w700 text-right"><span  name="tot"  id="tot"><?php echo $sub+$iva;?></span></td>
 																</tr>
+
 	                
 	                	</tbody>
 	                </table>

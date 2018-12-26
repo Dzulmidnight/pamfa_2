@@ -18,6 +18,7 @@
 		public function index(){
 			if($this->session->userdata('s_tipo')=='cliente'){
 
+
 				$data['consulta_todo_c'] = $this->mSolicitud->consulta_solicitudes_cliente($this->session->userdata('s_idusuario'));
 				$data['consulta_totales']= $this->mObservacion->consulta_totales();
 				$data['consulta_pago']= $this->mPago->consulta_todo();
@@ -29,6 +30,7 @@
 			$this->load->view('backend/cliente/templates/sideNav');
 				$data['vistaOb'] = $this->load->view('backend/cliente/index',$data,true);
 			$this->load->view('backend/administrador/solicitudes/vob',$data);
+
 			$this->load->view('backend/cliente/templates/pre_footer');
 			$this->load->view('backend/cliente/templates/footer');
 		}
