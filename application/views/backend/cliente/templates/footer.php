@@ -247,14 +247,9 @@
 								
 			function addObservacion(seccion,d,id){
 				
-				console.log('SECCIÓN: '+seccion+' ID: '+id);
+				console.log('SECCIÓN: '+seccion+' ID: '+id+"dfkgo");
 				
-				document.getElementById('seccion_observacion').value = seccion;
-				document.getElementById('id_pregunta_observacion').value = id;
-				document.getElementById('norma').value = "";
-				//document.getElementById('spanSeccion').innerHTML = seccion;
-				document.getElementById("sp").innerHTML = d;
-				document.getElementById("norma").innerHTML = "";
+				
 				$('#modal1').modal('show');
 				
 								
@@ -283,6 +278,7 @@
 			}
 			
 </script>
+
 
 
 

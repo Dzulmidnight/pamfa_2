@@ -5,7 +5,14 @@ class Ccliente extends MY_Controller {
 	function __construct(){
 		parent:: __construct();
 		$this->load->model('mCliente');
+		$this->load->model('mSolicitud');
 		$this->load->model('mPais');
+		$this->load->model('mPago');
+		$this->load->model('mCotizacion');
+		$this->load->model('mRechazo_servicio');
+		$this->load->model('mObservacion');
+		$this->load->model('mSeccion');
+
 	}
 	public function index()
 	{
@@ -86,5 +93,60 @@ class Ccliente extends MY_Controller {
 			
 	}
 	
+	public function cotiz_cliente()
+	{
+		
+		$data=$_POST;
+		$this->mPago->cotiz_cliente($data);
+			
+	}
+	public function obser()
+	{
+		$id=$_POST['id'];
+
+		$data['ids']=$id;
+		$data['consulta_sol_id'] = $this->mSolicitud->consulta_solicitudes_full_id($id);
+		$data['consulta_rechazo']= $this->mRechazo_servicio->consulta_rechazo($id);
+		$modal=$this->load->view('backend/cliente/modal_rechazo',$data,true);
+		echo $modal;
+		
+	}
+	public function pag()
+	{
+		$id=$_POST['id'];
+
+		$data['ids']=$id;
+		$data['consulta_sol_id'] = $this->mSolicitud->consulta_solicitudes_full_id($id);
+		$data['consulta_pago']= $this->mPago->consulta_pago($id);
+		$data['consulta_cotizacion']= $this->mCotizacion->consulta_cotizacion($id);
+		$modal=$this->load->view('backend/cliente/modal_pago',$data,true);
+		echo $modal;
+		
+	}
+	public function obser2()
+	{
+		$id=$_POST['id'];
+
+		$id=$_POST['id'];
+		$data['ids']=$id;
+		$data['seccion']= $this->mSeccion->consulta();
+		$data['observaciones'] = $this->mObservacion->consulta_obs($id);
+		$modal=$this->load->view('backend/cliente/observaciones_c',$data,true);
+		echo $modal;
+		
+	}
+	public function obser4()
+	{
+		$id=$_POST['id'];
+		$campo=$_POST['campo'];
+
+		$id=$_POST['id'];
+		$data['ids']=$id;
+		$data['seccion']= $this->mSeccion->consulta();
+		$data['observaciones'] = $this->mObservacion->consulta_obs_cliente($id,$campo);
+		$modal=$this->load->view('backend/cliente/observaciones_c_sol',$data,true);
+		echo $modal;
+		
+	}
 	
 }

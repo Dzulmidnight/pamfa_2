@@ -126,6 +126,17 @@ class mPago extends CI_Model {
 		
 	
 	}
+	public function cotiz_cliente($params)
+	{
+		
+		$campos=array(
+		'estatus_cliente'=>$params['estatus']);
+		$this->db->where('fk_id_solicitud', $params['idsolicitud']);
+		$this->db->update('cotizacion_pago',$campos);
+		
+		
+		
+	}
 	public function url_cotizacion($url,$id)
 	{
 		

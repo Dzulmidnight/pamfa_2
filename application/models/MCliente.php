@@ -253,6 +253,8 @@ public function estatus($e,$id,$fm)
 		
 		
 	}
+	
+	
 	public function actualiza_pass($params)
 	{
 		

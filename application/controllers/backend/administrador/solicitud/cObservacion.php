@@ -8,6 +8,14 @@ class cObservacion extends MY_Controller {
 		$this->load->model('mSolicitud');
 		$this->load->model('mSeccion');
 
+
+		$this->load->model('mCliente');
+		$this->load->model('mObservacion');
+		$this->load->model('mPago');
+		$this->load->model('mRechazo_servicio');
+
+		$this->load->model('mContrato');
+
 		
 	
 		
@@ -53,6 +61,28 @@ class cObservacion extends MY_Controller {
 			
 			
 	}
+	public function actualizar_de_cliente()
+	{
+		$data=$_POST;
+		$this->mObservacion->actualizar($data);
+
+		$data2['consulta_todo_c'] = $this->mSolicitud->consulta_solicitudes_cliente($this->session->userdata('s_idusuario'));
+				$data2['consulta_totales']= $this->mObservacion->consulta_totales();
+				$data2['consulta_pago']= $this->mPago->consulta_todo();
+				$data2['consulta_rechazo']= $this->mRechazo_servicio->consulta_rechazo_c();
+				$data2['consulta_contrato']= $this->mContrato->consulta_todo();
+					//echo $data['consulta_todo'];
+			$this->load->view('backend/cliente/templates/head');
+			$this->load->view('backend/cliente/templates/header');
+			$this->load->view('backend/cliente/templates/sideNav');
+				
+			
+
+				$data['vistaOb'] = $this->load->view('backend/cliente/index',$data2,true);
+			echo $data['vistaOb'];
+			
+			
+	}
 	
 	Public function tabla($id)
 	{
@@ -64,5 +94,6 @@ class cObservacion extends MY_Controller {
 		//$this->load->view('backend/cliente/solicitud/nueva_solicitud',$data);
 	}
 	
+
 	
 }

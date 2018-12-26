@@ -50,7 +50,7 @@ class mRechazo_servicio extends CI_Model {
 		$this->db->select('*');
 		$this->db->where('fk_id_solicitud', $id);
 		$this->db->from('rechazo_servicio');
-		$this->db->group_by('fk_id_solicitud',$id);
+		
 		
 		
 		
@@ -58,6 +58,24 @@ class mRechazo_servicio extends CI_Model {
         if($query->num_rows() > 0 )
         {
             return $query->row();
+        }
+		
+	}
+	public function consulta_rechazo_c()
+	{
+		
+		$this->db->select('*');
+		
+		$this->db->from('rechazo_servicio');
+		
+
+		
+		
+		
+	    $query = $this->db->get();
+        if($query->num_rows() > 0 )
+        {
+            return $query->result();
         }
 		
 	}
